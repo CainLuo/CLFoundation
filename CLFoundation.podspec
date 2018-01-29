@@ -1,6 +1,3 @@
-#
-#  Be sure to run `pod spec lint CLFoundation.podspec' to ensure this is a
-
 Pod::Spec.new do |s|
 
   s.name         = "CLFoundation"
