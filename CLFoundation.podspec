@@ -1,14 +1,18 @@
-Pod::Spec.new do |spec|
+#
+#  Be sure to run `pod spec lint CLFoundation.podspec' to ensure this is a
 
-  spec.name         = "CLFoundation"
-  spec.version      = "1.3.2"
-  spec.summary      = "CLFoundation for iOS"
-  spec.homepage     = "https://github.com/CainLuo/CLFoundation"
-  spec.license      = { :type => "MIT", :file => "LICENSE" }
-  spec.author       = { "CainLuo" => "350116542@qq.com" }
-  spec.platform     = :ios, '8.0'
-  spec.source       = { :git => "https://github.com/CainLuo/CLFoundation.git", :tag => "#{spec.version}" }
-  spec.source_files = 'CLFoundation/**/*.{h,m}'
-  spec.requires_arc = true
-  spec.frameworks   = 'UIKit', 'Foundation'
+Pod::Spec.new do |s|
+
+  s.name         = "CLFoundation"
+  s.version      = "1.3.2"
+  s.summary      = "A short description of CLFoundation."
+  s.homepage     = "https://github.com/CainLuo/CLFoundation"
+  s.license      = { :type => "MIT", :file => "LICENSE" }
+  s.author             = { "CainLuo" => "350116542@qq.com" }
+
+  s.source       = { :git => "https://github.com/CainLuo/CLFoundation.git", :tag => "#{s.version}" }
+
+  s.source_files  = "CLFoundation", "CLFoundation/**/*.{h,m}"
+
+  s.frameworks = "UIKit", "Foundation"
 end
