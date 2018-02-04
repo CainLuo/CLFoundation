@@ -177,8 +177,8 @@
 		A49A2DB9201F6A73004782F7 /* NSMutableAttributedString+CLMutableAttributedString */ = {
 			isa = PBXGroup;
 			children = (
-				A49A2DBA201F6A73004782F7 /* NSMutableAttributedString+CLMutableAttributedString.m */,
 				A49A2DBB201F6A73004782F7 /* NSMutableAttributedString+CLMutableAttributedString.h */,
+				A49A2DBA201F6A73004782F7 /* NSMutableAttributedString+CLMutableAttributedString.m */,
 			);
 			path = "NSMutableAttributedString+CLMutableAttributedString";
 			sourceTree = "<group>";

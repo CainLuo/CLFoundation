@@ -10,43 +10,84 @@
 
 @implementation NSMutableAttributedString (CLMutableAttributedString)
 
-+ (NSMutableAttributedString *)cl_attributeStringWithPrefixString:(NSString *)prefixString
-                                                 subffixImageName:(NSString *)subffixImageName {
++ (NSMutableAttributedString *)cl_attributeStringWithSubffixString:(NSString *)subffixString
+                                                      subffixImage:(UIImage *)subffixImage {
     
-    NSMutableAttributedString *mutableAttributedString = [[NSMutableAttributedString alloc] initWithString:prefixString];
+    NSMutableAttributedString *cl_mutableAttributedString = [[NSMutableAttributedString alloc] init];
     
-    UIImage *image = [UIImage imageNamed:subffixImageName];
+    NSTextAttachment *cl_backAttachment = [[NSTextAttachment alloc] init];
     
-    NSTextAttachment *backAttachment = [[NSTextAttachment alloc] init];
+    cl_backAttachment.image = subffixImage;
+    cl_backAttachment.bounds = CGRectMake(0, -2, subffixImage.size.width, subffixImage.size.height);
     
-    backAttachment.image = image;
-    backAttachment.bounds = CGRectMake(0, -2, image.size.width, image.size.height);
+    NSAttributedString *cl_backString = [NSAttributedString attributedStringWithAttachment:cl_backAttachment];
+    NSAttributedString *cl_attributedString = [[NSAttributedString alloc] initWithString:subffixString];
     
-    NSAttributedString *backString = [NSAttributedString attributedStringWithAttachment:backAttachment];
+    [cl_mutableAttributedString appendAttributedString:cl_backString];
+    [cl_mutableAttributedString appendAttributedString:cl_attributedString];
     
-    [mutableAttributedString appendAttributedString:backString];
-    
-    return mutableAttributedString;
+    return cl_mutableAttributedString;
 }
 
 + (NSMutableAttributedString *)cl_attributeStringWithSubffixString:(NSString *)subffixString
-                                                   prefixImageName:(NSString *)prefixImageName {
+                                                     subffixImages:(NSArray<UIImage *> *)subffixImages {
     
-    NSMutableAttributedString *mutableAttributedString = [[NSMutableAttributedString alloc] initWithString:subffixString];
+    NSMutableAttributedString *cl_mutableAttributedString = [[NSMutableAttributedString alloc] init];
     
-    UIImage *image = [UIImage imageNamed:prefixImageName];
-    NSTextAttachment *backAttachment = [[NSTextAttachment alloc] init];
+    [subffixImages enumerateObjectsUsingBlock:^(UIImage * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        NSTextAttachment *cl_backAttachment = [[NSTextAttachment alloc] init];
+        
+        cl_backAttachment.image = obj;
+        cl_backAttachment.bounds = CGRectMake(0, -2, obj.size.width, obj.size.height);
+        
+        NSAttributedString *cl_backString = [NSAttributedString attributedStringWithAttachment:cl_backAttachment];
+        
+        [cl_mutableAttributedString appendAttributedString:cl_backString];
+    }];
     
-    backAttachment.image = image;
-    backAttachment.bounds = CGRectMake(0, -2, image.size.width, image.size.height);
+    NSAttributedString *cl_attributedString = [[NSAttributedString alloc] initWithString:subffixString];
     
-    NSAttributedString *backString = [NSAttributedString attributedStringWithAttachment:backAttachment];
+    [cl_mutableAttributedString appendAttributedString:cl_attributedString];
     
-    [mutableAttributedString appendAttributedString:backString];
-    [mutableAttributedString appendAttributedString:[[NSMutableAttributedString alloc] initWithString:subffixString]];
+    return cl_mutableAttributedString;
+}
+
++ (NSMutableAttributedString *)cl_attributeStringWithPrefixString:(NSString *)prefixString
+                                                      prefixImage:(UIImage *)prefixImage {
     
-    return mutableAttributedString;
+    NSMutableAttributedString *cl_mutableAttributedString = [[NSMutableAttributedString alloc] initWithString:prefixString];
     
+    NSTextAttachment *cl_backAttachment = [[NSTextAttachment alloc] init];
+    
+    cl_backAttachment.image = prefixImage;
+    cl_backAttachment.bounds = CGRectMake(0, -2, prefixImage.size.width, prefixImage.size.height);
+    
+    NSAttributedString *cl_backString = [NSAttributedString attributedStringWithAttachment:cl_backAttachment];
+    
+    [cl_mutableAttributedString appendAttributedString:cl_backString];
+    
+    return cl_mutableAttributedString;
+}
+
++ (NSMutableAttributedString *)cl_attributeStringWithPrefixString:(NSString *)prefixString
+                                                     prefixImages:(NSArray<UIImage *> *)prefixImages {
+    
+    NSMutableAttributedString *cl_mutableAttributedString = [[NSMutableAttributedString alloc] initWithString:prefixString];
+    
+    [prefixImages enumerateObjectsUsingBlock:^(UIImage * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        NSTextAttachment *cl_backAttachment = [[NSTextAttachment alloc] init];
+        
+        cl_backAttachment.image = obj;
+        cl_backAttachment.bounds = CGRectMake(0, -2, obj.size.width, obj.size.height);
+        
+        NSAttributedString *cl_backString = [NSAttributedString attributedStringWithAttachment:cl_backAttachment];
+        
+        [cl_mutableAttributedString appendAttributedString:cl_backString];
+    }];
+    
+    return cl_mutableAttributedString;
 }
 
 + (NSMutableAttributedString *)cl_attributedStringWithString:(NSString *)string

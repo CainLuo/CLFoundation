@@ -14,22 +14,41 @@
 /**
  添加图片在字符串之前
  
- @param prefixString     富文本
- @param subffixImageName 图片名
- @return NSMutableAttributedString
- */
-+ (NSMutableAttributedString *)cl_attributeStringWithPrefixString:(NSString *)prefixString
-                                                 subffixImageName:(NSString *)subffixImageName;
-
-/**
- 添加图片在字符串之后
- 
  @param subffixString 字符串
- @param prefixImageName 图片名
+ @param subffixImage 图片
  @return NSMutableAttributedString
  */
 + (NSMutableAttributedString *)cl_attributeStringWithSubffixString:(NSString *)subffixString
-                                                   prefixImageName:(NSString *)prefixImageName;
+                                                      subffixImage:(UIImage *)subffixImage;
+
+/**
+ 添加多张图片在字符串之前
+
+ @param subffixString 字符串
+ @param subffixImages 图片数组
+ @return NSMutableAttributedString
+ */
++ (NSMutableAttributedString *)cl_attributeStringWithSubffixString:(NSString *)subffixString
+                                                     subffixImages:(NSArray<UIImage *> *)subffixImages;
+/**
+ 添加图片在字符串之后
+ 
+ @param prefixString 富文本
+ @param prefixImage 图片
+ @return NSMutableAttributedString
+ */
++ (NSMutableAttributedString *)cl_attributeStringWithPrefixString:(NSString *)prefixString
+                                                      prefixImage:(UIImage *)prefixImage;
+
+/**
+ 添加多张图片在字符串之前
+ 
+ @param prefixString 字符串
+ @param prefixImages 图片数组
+ @return NSMutableAttributedString
+ */
++ (NSMutableAttributedString *)cl_attributeStringWithPrefixString:(NSString *)prefixString
+                                                     prefixImages:(NSArray<UIImage *> *)prefixImages;
 
 /**
  给指定字符串设置行距
