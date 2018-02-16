@@ -21,7 +21,7 @@
  根据索引安全的插入一个对象
 
  @param object 对象
- @param index 索引
+ @param index NSUInteger
  */
 - (void)cl_insertSafeObject:(id)object
                       index:(NSUInteger)index;
@@ -29,23 +29,23 @@
 /**
  根据索引安全的插入一个数组
 
- @param array 数组
- @param index 索引
+ @param array NSArray
+ @param indexSet NSIndexSet
  */
 - (void)cl_insertSafeArray:(NSArray *)array
-                     index:(NSIndexSet *)index;
+                  indexSet:(NSIndexSet *)indexSet;
 
 /**
  根据索引安全的删除一个对象
 
- @param index 索引
+ @param index NSUInteger
  */
 - (void)cl_safeRemoveObjectAtIndex:(NSUInteger)index;
 
 /**
  根据范围安全的删除
 
- @param range 范围
+ @param range NSRange
  */
 - (void)cl_safeRemoveObjectsInRange:(NSRange)range;
 

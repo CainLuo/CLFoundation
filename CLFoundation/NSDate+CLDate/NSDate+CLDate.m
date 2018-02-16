@@ -89,7 +89,7 @@
 
 + (NSString *)cl_displayTimeWithTimeStamp:(NSTimeInterval)timeStamp {
     
-    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:timeStamp / 1000];
+    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:timeStamp];
     
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     
@@ -99,11 +99,13 @@
     NSDateComponents *referenceComponents = [calendar components:unitFlags
                                                         fromDate:confromTimesp];
     
-    NSInteger referenceYear  = referenceComponents.year;
-    NSInteger referenceMonth = referenceComponents.month;
-    NSInteger referenceDay   = referenceComponents.day;
-    
-    return [NSString stringWithFormat:@"%ld年%ld月%ld日", (long)referenceYear, (long)referenceMonth, (long)referenceDay];
+    NSInteger referenceYear   = referenceComponents.year;
+    NSInteger referenceMonth  = referenceComponents.month;
+    NSInteger referenceDay    = referenceComponents.day;
+    NSInteger referenceHour   = referenceComponents.hour;
+    NSInteger referenceMinute = referenceComponents.minute;
+
+    return [NSString stringWithFormat:@"%ld年%ld月%ld日 %ld:%ld", (long)referenceYear, (long)referenceMonth, (long)referenceDay, (long)referenceHour, (long)referenceMinute];
 }
 
 
@@ -130,10 +132,10 @@
     
     NSCalendar *cl_calendar = [NSCalendar currentCalendar];
         
-    NSDateComponents *theComponents = [cl_calendar components:NSCalendarUnitWeekday
-                                                     fromDate:date];
+    NSDateComponents *cl_dateComponents = [cl_calendar components:NSCalendarUnitWeekday
+                                                         fromDate:date];
     
-    return theComponents.weekday;
+    return cl_dateComponents.weekday;
 }
 
 + (NSInteger)cl_getDateTimeDifferenceWithBeginDate:(NSDate *)beginDate
@@ -148,7 +150,6 @@
     
     return cl_dateComponents.day;
 }
-
 
 + (NSString *)cl_getDays:(NSDate *)date {
     
@@ -200,10 +201,10 @@
 
 + (NSDate *)cl_getTomorrowDay:(NSDate *)date {
     
-    NSCalendar *cl_calendar = [NSCalendar currentCalendar];
+    NSCalendar *cl_calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     
     NSDateComponents *cl_dateComponents = [cl_calendar components:NSCalendarUnitWeekday | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay
-                                                  fromDate:date];
+                                                         fromDate:date];
     
     cl_dateComponents.day = cl_dateComponents.day + 1;
         

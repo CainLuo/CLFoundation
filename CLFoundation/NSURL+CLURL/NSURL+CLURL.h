@@ -24,4 +24,25 @@
  */
 + (void)cl_openBrowserWithURL:(NSString *)urlString;
 
+/**
+ 获取Document URL Path
+
+ @return NSURL
+ */
++ (NSURL *)cl_getDocumentURLPath;
+
+/**
+ 获取Library URL Path
+
+ @return NSURL
+ */
++ (NSURL *)cl_getLibraryURLPath;
+
+/**
+ 获取Caches URL Path
+
+ @return NSURL
+ */
++ (NSURL *)cl_getCachesURLPath;
+
 @end

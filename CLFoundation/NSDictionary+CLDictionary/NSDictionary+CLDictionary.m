@@ -10,64 +10,41 @@
 
 @implementation NSDictionary (CLDictionary)
 
-- (void)cl_setSafeObject:(id)object
-                  forKey:(id)key {
++ (NSDictionary *)cl_dictionaryWithURLString:(NSString *)urlString {
     
-    if ([key isKindOfClass:[NSNull class]]) {
-        
-        return;
-    }
+    NSString *cl_queryString;
     
-    if ([object isKindOfClass:[NSNull class]]) {
+    if ([urlString containsString:@"?"]) {
         
-        [self setValue:@""
-                forKey:key];
+        NSArray *cl_urlArray = [urlString componentsSeparatedByString:@"?"];
         
+        cl_queryString = cl_urlArray.lastObject;
     } else {
-        [self setValue:object
-                forKey:key];
-    }
-}
-
-- (id)cl_safeObjectForKey:(id)key {
-    
-    id object = nil;
-    
-    // 检查是否字典对象
-    if (![self isKindOfClass:[NSDictionary class]]) {
         
-        return object;
+        cl_queryString = urlString;
     }
     
-    // 保证key必须为字符串
-    if (key && [key isKindOfClass:[NSString class]]) {
-        
-        object  = [self cl_safeObjectForKey:key];
-    }
+    NSMutableDictionary *cl_queryDictionary = [NSMutableDictionary dictionary];
     
-    return object;
-}
-
-- (id)cl_safeKeyForValue:(id)value {
+    NSArray *cl_parameters = [cl_queryString componentsSeparatedByString:@"&"];
     
-    for (id key in self.allKeys) {
+    [cl_parameters enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
-        if ([value isEqual:[self objectForKey:key]]) {
+        NSArray *cl_contents = [obj componentsSeparatedByString:@"="];
+        
+        NSString *cl_key   = cl_contents.firstObject;
+        NSString *cl_value = cl_contents.lastObject;
+        
+        cl_value = [cl_value stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        
+        if (cl_key && cl_value) {
             
-            return key;
+            [cl_queryDictionary setObject:cl_value
+                                   forKey:cl_key];
         }
-    }
-    return nil;
-}
-
-- (NSString *)toJSONStringForDictionary {
+    }];
     
-    NSData *paramsJSONData = [NSJSONSerialization dataWithJSONObject:self
-                                                             options:0
-                                                               error:nil];
-    
-    return [[NSString alloc] initWithData:paramsJSONData
-                                 encoding:NSUTF8StringEncoding];
+    return [cl_queryDictionary copy];
 }
 
 @end

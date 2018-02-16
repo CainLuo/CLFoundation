@@ -21,4 +21,27 @@
     [[UIApplication sharedApplication] openURL:[self URLWithString:urlString]];
 }
 
++ (NSURL *)cl_getURLForDirectory:(NSSearchPathDirectory)directory {
+    
+    NSArray *cl_urlArray = [NSFileManager.defaultManager URLsForDirectory:directory
+                                                                inDomains:NSUserDomainMask];
+    
+    return cl_urlArray.lastObject;
+}
+
++ (NSURL *)cl_getDocumentURLPath {
+    
+    return [self cl_getURLForDirectory:NSDocumentDirectory];
+}
+
++ (NSURL *)cl_getLibraryURLPath {
+    
+    return [self cl_getURLForDirectory:NSLibraryDirectory];
+}
+
++ (NSURL *)cl_getCachesURLPath {
+    
+    return [self cl_getURLForDirectory:NSCachesDirectory];
+}
+
 @end

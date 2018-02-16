@@ -50,11 +50,4 @@
  */
 + (NSArray *)cl_arrayWithPlistName:(NSString *)name;
 
-/**
- 将数组转换成JSON字符串
-
- @return NSString
- */
-- (NSString *)cl_jsonStringWithArray;
-
 @end

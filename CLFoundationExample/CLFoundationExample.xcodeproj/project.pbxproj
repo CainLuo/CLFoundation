@@ -1,0 +1,662 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A48D73A92034478B00378353 /* CLDateController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73A82034478B00378353 /* CLDateController.m */; };
+		A48D73CE2034544C00378353 /* NSBundle+CLBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73AD2034544C00378353 /* NSBundle+CLBundle.m */; };
+		A48D73CF2034544C00378353 /* NSData+CLData.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73AF2034544C00378353 /* NSData+CLData.m */; };
+		A48D73D02034544C00378353 /* NSMutableArray+CLMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73B32034544C00378353 /* NSMutableArray+CLMutableArray.m */; };
+		A48D73D12034544C00378353 /* NSAttributedString+CLAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73B62034544C00378353 /* NSAttributedString+CLAttributedString.m */; };
+		A48D73D22034544C00378353 /* NSMutableAttributedString+CLMutableAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73B82034544C00378353 /* NSMutableAttributedString+CLMutableAttributedString.m */; };
+		A48D73D32034544C00378353 /* NSMutableDictionary+CLMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73BC2034544C00378353 /* NSMutableDictionary+CLMutableDictionary.m */; };
+		A48D73D42034544C00378353 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A48D73BD2034544C00378353 /* Info.plist */; };
+		A48D73D52034544C00378353 /* NSURL+CLURL.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73C02034544C00378353 /* NSURL+CLURL.m */; };
+		A48D73D62034544C00378353 /* NSString+CLString.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73C32034544C00378353 /* NSString+CLString.m */; };
+		A48D73D72034544C00378353 /* NSDictionary+CLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73C62034544C00378353 /* NSDictionary+CLDictionary.m */; };
+		A48D73D82034544C00378353 /* NSDate+CLDate.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73CA2034544C00378353 /* NSDate+CLDate.m */; };
+		A48D73D92034544C00378353 /* NSArray+CLArray.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73CD2034544C00378353 /* NSArray+CLArray.m */; };
+		A48D73DD2035561B00378353 /* CLDictionaryController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73DC2035561B00378353 /* CLDictionaryController.m */; };
+		A48D73E12035AD3B00378353 /* CLStringController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73E02035AD3B00378353 /* CLStringController.m */; };
+		A48D73E52035B2AE00378353 /* CLURLController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73E42035B2AE00378353 /* CLURLController.m */; };
+		A4ACC49E2034103600E756D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC49D2034103600E756D1 /* AppDelegate.m */; };
+		A4ACC4A42034103600E756D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4ACC4A22034103600E756D1 /* Main.storyboard */; };
+		A4ACC4A62034103600E756D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4ACC4A52034103600E756D1 /* Assets.xcassets */; };
+		A4ACC4A92034103600E756D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4ACC4A72034103600E756D1 /* LaunchScreen.storyboard */; };
+		A4ACC4AC2034103600E756D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4AB2034103600E756D1 /* main.m */; };
+		A4ACC4E72034129100E756D1 /* CLExampleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4E62034129100E756D1 /* CLExampleTableViewController.m */; };
+		A4ACC4EE203419A200E756D1 /* CLArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4ED203419A200E756D1 /* CLArrayController.m */; };
+		A4ACC4F22034212400E756D1 /* CLAttributeStringController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4F12034212400E756D1 /* CLAttributeStringController.m */; };
+		A4ACC4F62034265700E756D1 /* CLBundleController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4F52034265700E756D1 /* CLBundleController.m */; };
+		A4ACC4FA20342A8E00E756D1 /* CLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4F920342A8E00E756D1 /* CLBaseViewController.m */; };
+		A4ACC4FE20342C0E00E756D1 /* CLDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4FD20342C0E00E756D1 /* CLDataController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A48D73A72034478B00378353 /* CLDateController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLDateController.h; sourceTree = "<group>"; };
+		A48D73A82034478B00378353 /* CLDateController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLDateController.m; sourceTree = "<group>"; };
+		A48D73AC2034544C00378353 /* NSBundle+CLBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+CLBundle.h"; sourceTree = "<group>"; };
+		A48D73AD2034544C00378353 /* NSBundle+CLBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+CLBundle.m"; sourceTree = "<group>"; };
+		A48D73AF2034544C00378353 /* NSData+CLData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CLData.m"; sourceTree = "<group>"; };
+		A48D73B02034544C00378353 /* NSData+CLData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CLData.h"; sourceTree = "<group>"; };
+		A48D73B22034544C00378353 /* NSMutableArray+CLMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+CLMutableArray.h"; sourceTree = "<group>"; };
+		A48D73B32034544C00378353 /* NSMutableArray+CLMutableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+CLMutableArray.m"; sourceTree = "<group>"; };
+		A48D73B52034544C00378353 /* NSAttributedString+CLAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+CLAttributedString.h"; sourceTree = "<group>"; };
+		A48D73B62034544C00378353 /* NSAttributedString+CLAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+CLAttributedString.m"; sourceTree = "<group>"; };
+		A48D73B82034544C00378353 /* NSMutableAttributedString+CLMutableAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+CLMutableAttributedString.m"; sourceTree = "<group>"; };
+		A48D73B92034544C00378353 /* NSMutableAttributedString+CLMutableAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+CLMutableAttributedString.h"; sourceTree = "<group>"; };
+		A48D73BB2034544C00378353 /* NSMutableDictionary+CLMutableDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+CLMutableDictionary.h"; sourceTree = "<group>"; };
+		A48D73BC2034544C00378353 /* NSMutableDictionary+CLMutableDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+CLMutableDictionary.m"; sourceTree = "<group>"; };
+		A48D73BD2034544C00378353 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A48D73BE2034544C00378353 /* CLFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLFoundation.h; sourceTree = "<group>"; };
+		A48D73C02034544C00378353 /* NSURL+CLURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+CLURL.m"; sourceTree = "<group>"; };
+		A48D73C12034544C00378353 /* NSURL+CLURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+CLURL.h"; sourceTree = "<group>"; };
+		A48D73C32034544C00378353 /* NSString+CLString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CLString.m"; sourceTree = "<group>"; };
+		A48D73C42034544C00378353 /* NSString+CLString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CLString.h"; sourceTree = "<group>"; };
+		A48D73C62034544C00378353 /* NSDictionary+CLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+CLDictionary.m"; sourceTree = "<group>"; };
+		A48D73C72034544C00378353 /* NSDictionary+CLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+CLDictionary.h"; sourceTree = "<group>"; };
+		A48D73C92034544C00378353 /* NSDate+CLDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CLDate.h"; sourceTree = "<group>"; };
+		A48D73CA2034544C00378353 /* NSDate+CLDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CLDate.m"; sourceTree = "<group>"; };
+		A48D73CC2034544C00378353 /* NSArray+CLArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CLArray.h"; sourceTree = "<group>"; };
+		A48D73CD2034544C00378353 /* NSArray+CLArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CLArray.m"; sourceTree = "<group>"; };
+		A48D73DB2035561B00378353 /* CLDictionaryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLDictionaryController.h; sourceTree = "<group>"; };
+		A48D73DC2035561B00378353 /* CLDictionaryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLDictionaryController.m; sourceTree = "<group>"; };
+		A48D73DF2035AD3B00378353 /* CLStringController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLStringController.h; sourceTree = "<group>"; };
+		A48D73E02035AD3B00378353 /* CLStringController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLStringController.m; sourceTree = "<group>"; };
+		A48D73E32035B2AE00378353 /* CLURLController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLURLController.h; sourceTree = "<group>"; };
+		A48D73E42035B2AE00378353 /* CLURLController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLURLController.m; sourceTree = "<group>"; };
+		A4ACC4992034103600E756D1 /* CLFoundationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CLFoundationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4ACC49C2034103600E756D1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A4ACC49D2034103600E756D1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A4ACC4A32034103600E756D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A4ACC4A52034103600E756D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A4ACC4A82034103600E756D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A4ACC4AA2034103600E756D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4ACC4AB2034103600E756D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A4ACC4E52034129100E756D1 /* CLExampleTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLExampleTableViewController.h; sourceTree = "<group>"; };
+		A4ACC4E62034129100E756D1 /* CLExampleTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLExampleTableViewController.m; sourceTree = "<group>"; };
+		A4ACC4E92034152600E756D1 /* CLFoundationExample-PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CLFoundationExample-PrefixHeader.pch"; sourceTree = "<group>"; };
+		A4ACC4EC203419A200E756D1 /* CLArrayController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLArrayController.h; sourceTree = "<group>"; };
+		A4ACC4ED203419A200E756D1 /* CLArrayController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLArrayController.m; sourceTree = "<group>"; };
+		A4ACC4F02034212400E756D1 /* CLAttributeStringController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLAttributeStringController.h; sourceTree = "<group>"; };
+		A4ACC4F12034212400E756D1 /* CLAttributeStringController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLAttributeStringController.m; sourceTree = "<group>"; };
+		A4ACC4F42034265700E756D1 /* CLBundleController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLBundleController.h; sourceTree = "<group>"; };
+		A4ACC4F52034265700E756D1 /* CLBundleController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLBundleController.m; sourceTree = "<group>"; };
+		A4ACC4F820342A8E00E756D1 /* CLBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLBaseViewController.h; sourceTree = "<group>"; };
+		A4ACC4F920342A8E00E756D1 /* CLBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLBaseViewController.m; sourceTree = "<group>"; };
+		A4ACC4FC20342C0E00E756D1 /* CLDataController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLDataController.h; sourceTree = "<group>"; };
+		A4ACC4FD20342C0E00E756D1 /* CLDataController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLDataController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A4ACC4962034103600E756D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A48D73A62034477E00378353 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				A48D73A72034478B00378353 /* CLDateController.h */,
+				A48D73A82034478B00378353 /* CLDateController.m */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		A48D73AA2034544C00378353 /* CLFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				A48D73BE2034544C00378353 /* CLFoundation.h */,
+				A48D73BD2034544C00378353 /* Info.plist */,
+				A48D73CB2034544C00378353 /* NSArray+CLArray */,
+				A48D73B42034544C00378353 /* NSAttributedString+CLAttributedString */,
+				A48D73AB2034544C00378353 /* NSBundle+CLBundle */,
+				A48D73AE2034544C00378353 /* NSData+CLData */,
+				A48D73C82034544C00378353 /* NSDate+CLDate */,
+				A48D73C52034544C00378353 /* NSDictionary+CLDictionary */,
+				A48D73B12034544C00378353 /* NSMutableArray+CLMutableArray */,
+				A48D73B72034544C00378353 /* NSMutableAttributedString+CLMutableAttributedString */,
+				A48D73BA2034544C00378353 /* NSMutableDictionary+CLMutableDictionary */,
+				A48D73C22034544C00378353 /* NSString+CLString */,
+				A48D73BF2034544C00378353 /* NSURL+CLURL */,
+			);
+			name = CLFoundation;
+			path = ../../CLFoundation;
+			sourceTree = "<group>";
+		};
+		A48D73AB2034544C00378353 /* NSBundle+CLBundle */ = {
+			isa = PBXGroup;
+			children = (
+				A48D73AC2034544C00378353 /* NSBundle+CLBundle.h */,
+				A48D73AD2034544C00378353 /* NSBundle+CLBundle.m */,
+			);
+			path = "NSBundle+CLBundle";
+			sourceTree = "<group>";
+		};
+		A48D73AE2034544C00378353 /* NSData+CLData */ = {
+			isa = PBXGroup;
+			children = (
+				A48D73AF2034544C00378353 /* NSData+CLData.m */,
+				A48D73B02034544C00378353 /* NSData+CLData.h */,
+			);
+			path = "NSData+CLData";
+			sourceTree = "<group>";
+		};
+		A48D73B12034544C00378353 /* NSMutableArray+CLMutableArray */ = {
+			isa = PBXGroup;
+			children = (
+				A48D73B22034544C00378353 /* NSMutableArray+CLMutableArray.h */,
+				A48D73B32034544C00378353 /* NSMutableArray+CLMutableArray.m */,
+			);
+			path = "NSMutableArray+CLMutableArray";
+			sourceTree = "<group>";
+		};
+		A48D73B42034544C00378353 /* NSAttributedString+CLAttributedString */ = {
+			isa = PBXGroup;
+			children = (
+				A48D73B52034544C00378353 /* NSAttributedString+CLAttributedString.h */,
+				A48D73B62034544C00378353 /* NSAttributedString+CLAttributedString.m */,
+			);
+			path = "NSAttributedString+CLAttributedString";
+			sourceTree = "<group>";
+		};
+		A48D73B72034544C00378353 /* NSMutableAttributedString+CLMutableAttributedString */ = {
+			isa = PBXGroup;
+			children = (
+				A48D73B92034544C00378353 /* NSMutableAttributedString+CLMutableAttributedString.h */,
+				A48D73B82034544C00378353 /* NSMutableAttributedString+CLMutableAttributedString.m */,
+			);
+			path = "NSMutableAttributedString+CLMutableAttributedString";
+			sourceTree = "<group>";
+		};
+		A48D73BA2034544C00378353 /* NSMutableDictionary+CLMutableDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				A48D73BB2034544C00378353 /* NSMutableDictionary+CLMutableDictionary.h */,
+				A48D73BC2034544C00378353 /* NSMutableDictionary+CLMutableDictionary.m */,
+			);
+			path = "NSMutableDictionary+CLMutableDictionary";
+			sourceTree = "<group>";
+		};
+		A48D73BF2034544C00378353 /* NSURL+CLURL */ = {
+			isa = PBXGroup;
+			children = (
+				A48D73C12034544C00378353 /* NSURL+CLURL.h */,
+				A48D73C02034544C00378353 /* NSURL+CLURL.m */,
+			);
+			path = "NSURL+CLURL";
+			sourceTree = "<group>";
+		};
+		A48D73C22034544C00378353 /* NSString+CLString */ = {
+			isa = PBXGroup;
+			children = (
+				A48D73C42034544C00378353 /* NSString+CLString.h */,
+				A48D73C32034544C00378353 /* NSString+CLString.m */,
+			);
+			path = "NSString+CLString";
+			sourceTree = "<group>";
+		};
+		A48D73C52034544C00378353 /* NSDictionary+CLDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				A48D73C72034544C00378353 /* NSDictionary+CLDictionary.h */,
+				A48D73C62034544C00378353 /* NSDictionary+CLDictionary.m */,
+			);
+			path = "NSDictionary+CLDictionary";
+			sourceTree = "<group>";
+		};
+		A48D73C82034544C00378353 /* NSDate+CLDate */ = {
+			isa = PBXGroup;
+			children = (
+				A48D73C92034544C00378353 /* NSDate+CLDate.h */,
+				A48D73CA2034544C00378353 /* NSDate+CLDate.m */,
+			);
+			path = "NSDate+CLDate";
+			sourceTree = "<group>";
+		};
+		A48D73CB2034544C00378353 /* NSArray+CLArray */ = {
+			isa = PBXGroup;
+			children = (
+				A48D73CC2034544C00378353 /* NSArray+CLArray.h */,
+				A48D73CD2034544C00378353 /* NSArray+CLArray.m */,
+			);
+			path = "NSArray+CLArray";
+			sourceTree = "<group>";
+		};
+		A48D73DA2035560B00378353 /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				A48D73DB2035561B00378353 /* CLDictionaryController.h */,
+				A48D73DC2035561B00378353 /* CLDictionaryController.m */,
+			);
+			path = Dictionary;
+			sourceTree = "<group>";
+		};
+		A48D73DE2035AD2500378353 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				A48D73DF2035AD3B00378353 /* CLStringController.h */,
+				A48D73E02035AD3B00378353 /* CLStringController.m */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		A48D73E22035B2A200378353 /* URL */ = {
+			isa = PBXGroup;
+			children = (
+				A48D73E32035B2AE00378353 /* CLURLController.h */,
+				A48D73E42035B2AE00378353 /* CLURLController.m */,
+			);
+			path = URL;
+			sourceTree = "<group>";
+		};
+		A4ACC4902034103600E756D1 = {
+			isa = PBXGroup;
+			children = (
+				A4ACC49B2034103600E756D1 /* CLFoundationExample */,
+				A4ACC49A2034103600E756D1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A4ACC49A2034103600E756D1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A4ACC4992034103600E756D1 /* CLFoundationExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A4ACC49B2034103600E756D1 /* CLFoundationExample */ = {
+			isa = PBXGroup;
+			children = (
+				A4ACC4E22034106000E756D1 /* AppDelegate */,
+				A4ACC4F720342A8300E756D1 /* Base */,
+				A48D73AA2034544C00378353 /* CLFoundation */,
+				A4ACC4E82034150B00E756D1 /* Module */,
+				A4ACC4E32034107600E756D1 /* Resource */,
+			);
+			path = CLFoundationExample;
+			sourceTree = "<group>";
+		};
+		A4ACC4E22034106000E756D1 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				A4ACC49C2034103600E756D1 /* AppDelegate.h */,
+				A4ACC49D2034103600E756D1 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		A4ACC4E32034107600E756D1 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A4ACC4A52034103600E756D1 /* Assets.xcassets */,
+				A4ACC4E92034152600E756D1 /* CLFoundationExample-PrefixHeader.pch */,
+				A4ACC4AA2034103600E756D1 /* Info.plist */,
+				A4ACC4A72034103600E756D1 /* LaunchScreen.storyboard */,
+				A4ACC4AB2034103600E756D1 /* main.m */,
+				A4ACC4A22034103600E756D1 /* Main.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		A4ACC4E82034150B00E756D1 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				A4ACC4EB2034198B00E756D1 /* Array */,
+				A4ACC4EF203420CE00E756D1 /* AttributeString */,
+				A4ACC4F32034264600E756D1 /* Bundle */,
+				A4ACC4FB20342BFF00E756D1 /* Data */,
+				A48D73A62034477E00378353 /* Date */,
+				A48D73DA2035560B00378353 /* Dictionary */,
+				A4ACC4EA203416AA00E756D1 /* Home */,
+				A48D73DE2035AD2500378353 /* String */,
+				A48D73E22035B2A200378353 /* URL */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		A4ACC4EA203416AA00E756D1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A4ACC4E52034129100E756D1 /* CLExampleTableViewController.h */,
+				A4ACC4E62034129100E756D1 /* CLExampleTableViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A4ACC4EB2034198B00E756D1 /* Array */ = {
+			isa = PBXGroup;
+			children = (
+				A4ACC4EC203419A200E756D1 /* CLArrayController.h */,
+				A4ACC4ED203419A200E756D1 /* CLArrayController.m */,
+			);
+			path = Array;
+			sourceTree = "<group>";
+		};
+		A4ACC4EF203420CE00E756D1 /* AttributeString */ = {
+			isa = PBXGroup;
+			children = (
+				A4ACC4F02034212400E756D1 /* CLAttributeStringController.h */,
+				A4ACC4F12034212400E756D1 /* CLAttributeStringController.m */,
+			);
+			path = AttributeString;
+			sourceTree = "<group>";
+		};
+		A4ACC4F32034264600E756D1 /* Bundle */ = {
+			isa = PBXGroup;
+			children = (
+				A4ACC4F42034265700E756D1 /* CLBundleController.h */,
+				A4ACC4F52034265700E756D1 /* CLBundleController.m */,
+			);
+			path = Bundle;
+			sourceTree = "<group>";
+		};
+		A4ACC4F720342A8300E756D1 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A4ACC4F820342A8E00E756D1 /* CLBaseViewController.h */,
+				A4ACC4F920342A8E00E756D1 /* CLBaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		A4ACC4FB20342BFF00E756D1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A4ACC4FC20342C0E00E756D1 /* CLDataController.h */,
+				A4ACC4FD20342C0E00E756D1 /* CLDataController.m */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A4ACC4982034103600E756D1 /* CLFoundationExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4ACC4AF2034103600E756D1 /* Build configuration list for PBXNativeTarget "CLFoundationExample" */;
+			buildPhases = (
+				A4ACC4952034103600E756D1 /* Sources */,
+				A4ACC4962034103600E756D1 /* Frameworks */,
+				A4ACC4972034103600E756D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CLFoundationExample;
+			productName = CLFoundationExample;
+			productReference = A4ACC4992034103600E756D1 /* CLFoundationExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A4ACC4912034103600E756D1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Cain Luo";
+				TargetAttributes = {
+					A4ACC4982034103600E756D1 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A4ACC4942034103600E756D1 /* Build configuration list for PBXProject "CLFoundationExample" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A4ACC4902034103600E756D1;
+			productRefGroup = A4ACC49A2034103600E756D1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A4ACC4982034103600E756D1 /* CLFoundationExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A4ACC4972034103600E756D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A48D73D42034544C00378353 /* Info.plist in Resources */,
+				A4ACC4A92034103600E756D1 /* LaunchScreen.storyboard in Resources */,
+				A4ACC4A62034103600E756D1 /* Assets.xcassets in Resources */,
+				A4ACC4A42034103600E756D1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A4ACC4952034103600E756D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4ACC4F62034265700E756D1 /* CLBundleController.m in Sources */,
+				A48D73E12035AD3B00378353 /* CLStringController.m in Sources */,
+				A48D73D22034544C00378353 /* NSMutableAttributedString+CLMutableAttributedString.m in Sources */,
+				A48D73E52035B2AE00378353 /* CLURLController.m in Sources */,
+				A48D73CE2034544C00378353 /* NSBundle+CLBundle.m in Sources */,
+				A4ACC4FA20342A8E00E756D1 /* CLBaseViewController.m in Sources */,
+				A4ACC4E72034129100E756D1 /* CLExampleTableViewController.m in Sources */,
+				A48D73CF2034544C00378353 /* NSData+CLData.m in Sources */,
+				A4ACC4F22034212400E756D1 /* CLAttributeStringController.m in Sources */,
+				A48D73DD2035561B00378353 /* CLDictionaryController.m in Sources */,
+				A48D73D72034544C00378353 /* NSDictionary+CLDictionary.m in Sources */,
+				A4ACC4AC2034103600E756D1 /* main.m in Sources */,
+				A4ACC49E2034103600E756D1 /* AppDelegate.m in Sources */,
+				A48D73D52034544C00378353 /* NSURL+CLURL.m in Sources */,
+				A48D73D32034544C00378353 /* NSMutableDictionary+CLMutableDictionary.m in Sources */,
+				A48D73D82034544C00378353 /* NSDate+CLDate.m in Sources */,
+				A4ACC4EE203419A200E756D1 /* CLArrayController.m in Sources */,
+				A4ACC4FE20342C0E00E756D1 /* CLDataController.m in Sources */,
+				A48D73D62034544C00378353 /* NSString+CLString.m in Sources */,
+				A48D73A92034478B00378353 /* CLDateController.m in Sources */,
+				A48D73D92034544C00378353 /* NSArray+CLArray.m in Sources */,
+				A48D73D02034544C00378353 /* NSMutableArray+CLMutableArray.m in Sources */,
+				A48D73D12034544C00378353 /* NSAttributedString+CLAttributedString.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A4ACC4A22034103600E756D1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4ACC4A32034103600E756D1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A4ACC4A72034103600E756D1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4ACC4A82034103600E756D1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A4ACC4AD2034103600E756D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A4ACC4AE2034103600E756D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A4ACC4B02034103600E756D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J26ST3TDCL;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/Resource/CLFoundationExample-PrefixHeader.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/CLFoundationExample/Resource/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CainLuo.SimpleProjects;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A4ACC4B12034103600E756D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J26ST3TDCL;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/Resource/CLFoundationExample-PrefixHeader.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/CLFoundationExample/Resource/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CainLuo.SimpleProjects;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A4ACC4942034103600E756D1 /* Build configuration list for PBXProject "CLFoundationExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4ACC4AD2034103600E756D1 /* Debug */,
+				A4ACC4AE2034103600E756D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4ACC4AF2034103600E756D1 /* Build configuration list for PBXNativeTarget "CLFoundationExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4ACC4B02034103600E756D1 /* Debug */,
+				A4ACC4B12034103600E756D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A4ACC4912034103600E756D1 /* Project object */;
+}

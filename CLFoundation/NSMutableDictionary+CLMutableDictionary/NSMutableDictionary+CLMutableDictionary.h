@@ -16,15 +16,23 @@
  @param object 值
  @param key 键
  */
-- (void)cl_safeSetObject:(id)object
-                  forKey:(id<NSCopying>)key;
+- (void)cl_setSafeObject:(id)object
+                  forKey:(id)key;
 
 /**
  安全的根据一个键获取对应的对象
 
- @param key 键
- @return 对象
+ @param key key
+ @return id
  */
-- (id)cl_safeObjectForKey:(id<NSCopying>)key;
+- (id)cl_safeObjectForKey:(id)key;
+
+/**
+ 安全的根据value获取对应的key
+
+ @param value id object
+ @return id
+ */
+- (id)cl_safeKeyForValue:(id)value;
 
 @end

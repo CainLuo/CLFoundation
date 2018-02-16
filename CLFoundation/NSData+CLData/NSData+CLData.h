@@ -11,6 +11,13 @@
 
 @interface NSData (CLData)
 
+/**
+ 将指定的图片转成NSData, 可输入指定压缩比例
+
+ @param image UIImage
+ @param compressionQuality 压缩比例
+ @return NSData
+ */
 + (NSData *)cl_compressOriginalImage:(UIImage *)image
                   compressionQuality:(CGFloat)compressionQuality;
 

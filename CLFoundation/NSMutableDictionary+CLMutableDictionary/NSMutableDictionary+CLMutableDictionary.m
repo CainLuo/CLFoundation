@@ -10,20 +10,26 @@
 
 @implementation NSMutableDictionary (CLMutableDictionary)
 
-- (void)cl_safeSetObject:(id)object
-                  forKey:(id<NSCopying>)key {
+- (void)cl_setSafeObject:(id)object
+                  forKey:(id)key {
     
-    if (object && ![object isKindOfClass:[NSNull class]] && key) {
-        
-        [self setObject:object forKey:key];
-        
-    } else {
+    if ([key isKindOfClass:[NSNull class]]) {
         
         return;
     }
+    
+    if ([object isKindOfClass:[NSNull class]]) {
+        
+        [self setValue:@""
+                forKey:key];
+        
+    } else {
+        [self setValue:object
+                forKey:key];
+    }
 }
 
-- (id)cl_safeObjectForKey:(id<NSCopying>)key {
+- (id)cl_safeObjectForKey:(id)key {
     
     if (key != nil) {
         
@@ -33,6 +39,18 @@
         
         return nil;
     }
+}
+
+- (id)cl_safeKeyForValue:(id)value {
+    
+    for (id key in self.allKeys) {
+        
+        if ([value isEqual:[self objectForKey:key]]) {
+            
+            return key;
+        }
+    }
+    return nil;
 }
 
 @end

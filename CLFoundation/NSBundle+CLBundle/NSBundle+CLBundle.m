@@ -16,17 +16,6 @@
 
 @implementation NSBundle (CLBundle)
 
-//+ (void)load {
-//    
-//    NSArray *bundleID = @[@"com.fishSwimInformation.FishSwimInformation",
-//                          @"com.CainLuo.SimpleProject"];
-//    
-//    if (![bundleID containsObject:[[NSBundle mainBundle] bundleIdentifier]]) {
-//        
-//        NSAssert(nil, @"你没有权利使用该框架");
-//    }
-//}
-
 + (NSString *)cl_getBundleDisplayName {
     
     return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"];

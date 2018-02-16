@@ -30,7 +30,9 @@
         
     } else if (index > self.count) {
         
-        return;
+        [self insertObject:object
+                   atIndex:self.count];
+        
     } else {
         
         [self insertObject:object
@@ -39,20 +41,20 @@
 }
 
 - (void)cl_insertSafeArray:(NSArray *)array
-                     index:(NSIndexSet *)index {
+                  indexSet:(NSIndexSet *)indexSet {
     
-    NSUInteger firstIndex = index.firstIndex;
-    
-    if (index == nil) {
+    if (indexSet == nil) {
         
         return;
-    } else if (index.count != array.count || firstIndex > array.count) {
+    } else if (indexSet.count != array.count || indexSet.firstIndex > array.count) {
         
-        return;
+        [self insertObject:array
+                   atIndex:self.count];
+        
     } else {
         
         [self insertObjects:array
-                  atIndexes:index];
+                  atIndexes:indexSet];
     }
 }
 

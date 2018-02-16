@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A49A2DA0201F6A0A004782F7 /* CLFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = A49A2D9E201F6A0A004782F7 /* CLFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A49A2DCE201F6A74004782F7 /* CLDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = A49A2DA6201F6A72004782F7 /* CLDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A49A2DCF201F6A74004782F7 /* NSString+CLRegular.m in Sources */ = {isa = PBXBuildFile; fileRef = A49A2DA8201F6A72004782F7 /* NSString+CLRegular.m */; };
-		A49A2DD0201F6A74004782F7 /* NSString+CLRegular.h in Headers */ = {isa = PBXBuildFile; fileRef = A49A2DA9201F6A72004782F7 /* NSString+CLRegular.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A49A2DD1201F6A74004782F7 /* NSMutableDictionary+CLMutableDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = A49A2DAB201F6A72004782F7 /* NSMutableDictionary+CLMutableDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A49A2DD2201F6A74004782F7 /* NSMutableDictionary+CLMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = A49A2DAC201F6A72004782F7 /* NSMutableDictionary+CLMutableDictionary.m */; };
 		A49A2DD3201F6A74004782F7 /* NSAttributedString+CLAttributedString.h in Headers */ = {isa = PBXBuildFile; fileRef = A49A2DAE201F6A72004782F7 /* NSAttributedString+CLAttributedString.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,8 +28,6 @@
 		A49A2DE2201F6A75004782F7 /* NSMutableArray+CLMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = A49A2DC4201F6A73004782F7 /* NSMutableArray+CLMutableArray.m */; };
 		A49A2DE3201F6A75004782F7 /* NSArray+CLArray.h in Headers */ = {isa = PBXBuildFile; fileRef = A49A2DC6201F6A74004782F7 /* NSArray+CLArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A49A2DE4201F6A75004782F7 /* NSArray+CLArray.m in Sources */ = {isa = PBXBuildFile; fileRef = A49A2DC7201F6A74004782F7 /* NSArray+CLArray.m */; };
-		A49A2DE5201F6A75004782F7 /* NSString+CLEncryption.h in Headers */ = {isa = PBXBuildFile; fileRef = A49A2DC9201F6A74004782F7 /* NSString+CLEncryption.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A49A2DE6201F6A75004782F7 /* NSString+CLEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = A49A2DCA201F6A74004782F7 /* NSString+CLEncryption.m */; };
 		A49A2DE7201F6A75004782F7 /* NSDate+CLDate.h in Headers */ = {isa = PBXBuildFile; fileRef = A49A2DCC201F6A74004782F7 /* NSDate+CLDate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A49A2DE8201F6A75004782F7 /* NSDate+CLDate.m in Sources */ = {isa = PBXBuildFile; fileRef = A49A2DCD201F6A74004782F7 /* NSDate+CLDate.m */; };
 /* End PBXBuildFile section */
@@ -41,9 +36,6 @@
 		A49A2D9B201F6A0A004782F7 /* CLFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CLFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A49A2D9E201F6A0A004782F7 /* CLFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLFoundation.h; sourceTree = "<group>"; };
 		A49A2D9F201F6A0A004782F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A49A2DA6201F6A72004782F7 /* CLDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLDefine.h; sourceTree = "<group>"; };
-		A49A2DA8201F6A72004782F7 /* NSString+CLRegular.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CLRegular.m"; sourceTree = "<group>"; };
-		A49A2DA9201F6A72004782F7 /* NSString+CLRegular.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CLRegular.h"; sourceTree = "<group>"; };
 		A49A2DAB201F6A72004782F7 /* NSMutableDictionary+CLMutableDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+CLMutableDictionary.h"; sourceTree = "<group>"; };
 		A49A2DAC201F6A72004782F7 /* NSMutableDictionary+CLMutableDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+CLMutableDictionary.m"; sourceTree = "<group>"; };
 		A49A2DAE201F6A72004782F7 /* NSAttributedString+CLAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+CLAttributedString.h"; sourceTree = "<group>"; };
@@ -64,8 +56,6 @@
 		A49A2DC4201F6A73004782F7 /* NSMutableArray+CLMutableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+CLMutableArray.m"; sourceTree = "<group>"; };
 		A49A2DC6201F6A74004782F7 /* NSArray+CLArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CLArray.h"; sourceTree = "<group>"; };
 		A49A2DC7201F6A74004782F7 /* NSArray+CLArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CLArray.m"; sourceTree = "<group>"; };
-		A49A2DC9201F6A74004782F7 /* NSString+CLEncryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CLEncryption.h"; sourceTree = "<group>"; };
-		A49A2DCA201F6A74004782F7 /* NSString+CLEncryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CLEncryption.m"; sourceTree = "<group>"; };
 		A49A2DCC201F6A74004782F7 /* NSDate+CLDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CLDate.h"; sourceTree = "<group>"; };
 		A49A2DCD201F6A74004782F7 /* NSDate+CLDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CLDate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,7 +90,6 @@
 		A49A2D9D201F6A0A004782F7 /* CLFoundation */ = {
 			isa = PBXGroup;
 			children = (
-				A49A2DA6201F6A72004782F7 /* CLDefine.h */,
 				A49A2D9E201F6A0A004782F7 /* CLFoundation.h */,
 				A49A2D9F201F6A0A004782F7 /* Info.plist */,
 				A49A2DC5201F6A74004782F7 /* NSArray+CLArray */,
@@ -112,21 +101,10 @@
 				A49A2DC2201F6A73004782F7 /* NSMutableArray+CLMutableArray */,
 				A49A2DB9201F6A73004782F7 /* NSMutableAttributedString+CLMutableAttributedString */,
 				A49A2DAA201F6A72004782F7 /* NSMutableDictionary+CLMutableDictionary */,
-				A49A2DC8201F6A74004782F7 /* NSString+CLEncryption */,
-				A49A2DA7201F6A72004782F7 /* NSString+CLRegular */,
 				A49A2DB0201F6A72004782F7 /* NSString+CLString */,
 				A49A2DBC201F6A73004782F7 /* NSURL+CLURL */,
 			);
 			path = CLFoundation;
-			sourceTree = "<group>";
-		};
-		A49A2DA7201F6A72004782F7 /* NSString+CLRegular */ = {
-			isa = PBXGroup;
-			children = (
-				A49A2DA8201F6A72004782F7 /* NSString+CLRegular.m */,
-				A49A2DA9201F6A72004782F7 /* NSString+CLRegular.h */,
-			);
-			path = "NSString+CLRegular";
 			sourceTree = "<group>";
 		};
 		A49A2DAA201F6A72004782F7 /* NSMutableDictionary+CLMutableDictionary */ = {
@@ -150,8 +128,8 @@
 		A49A2DB0201F6A72004782F7 /* NSString+CLString */ = {
 			isa = PBXGroup;
 			children = (
-				A49A2DB1201F6A72004782F7 /* NSString+CLString.m */,
 				A49A2DB2201F6A72004782F7 /* NSString+CLString.h */,
+				A49A2DB1201F6A72004782F7 /* NSString+CLString.m */,
 			);
 			path = "NSString+CLString";
 			sourceTree = "<group>";
@@ -168,8 +146,8 @@
 		A49A2DB6201F6A73004782F7 /* NSData+CLData */ = {
 			isa = PBXGroup;
 			children = (
-				A49A2DB7201F6A73004782F7 /* NSData+CLData.m */,
 				A49A2DB8201F6A73004782F7 /* NSData+CLData.h */,
+				A49A2DB7201F6A73004782F7 /* NSData+CLData.m */,
 			);
 			path = "NSData+CLData";
 			sourceTree = "<group>";
@@ -186,8 +164,8 @@
 		A49A2DBC201F6A73004782F7 /* NSURL+CLURL */ = {
 			isa = PBXGroup;
 			children = (
-				A49A2DBD201F6A73004782F7 /* NSURL+CLURL.m */,
 				A49A2DBE201F6A73004782F7 /* NSURL+CLURL.h */,
+				A49A2DBD201F6A73004782F7 /* NSURL+CLURL.m */,
 			);
 			path = "NSURL+CLURL";
 			sourceTree = "<group>";
@@ -195,8 +173,8 @@
 		A49A2DBF201F6A73004782F7 /* NSDictionary+CLDictionary */ = {
 			isa = PBXGroup;
 			children = (
-				A49A2DC0201F6A73004782F7 /* NSDictionary+CLDictionary.m */,
 				A49A2DC1201F6A73004782F7 /* NSDictionary+CLDictionary.h */,
+				A49A2DC0201F6A73004782F7 /* NSDictionary+CLDictionary.m */,
 			);
 			path = "NSDictionary+CLDictionary";
 			sourceTree = "<group>";
@@ -217,15 +195,6 @@
 				A49A2DC7201F6A74004782F7 /* NSArray+CLArray.m */,
 			);
 			path = "NSArray+CLArray";
-			sourceTree = "<group>";
-		};
-		A49A2DC8201F6A74004782F7 /* NSString+CLEncryption */ = {
-			isa = PBXGroup;
-			children = (
-				A49A2DC9201F6A74004782F7 /* NSString+CLEncryption.h */,
-				A49A2DCA201F6A74004782F7 /* NSString+CLEncryption.m */,
-			);
-			path = "NSString+CLEncryption";
 			sourceTree = "<group>";
 		};
 		A49A2DCB201F6A74004782F7 /* NSDate+CLDate */ = {
@@ -250,11 +219,8 @@
 				A49A2DE0201F6A75004782F7 /* NSDictionary+CLDictionary.h in Headers */,
 				A49A2DD3201F6A74004782F7 /* NSAttributedString+CLAttributedString.h in Headers */,
 				A49A2DE3201F6A75004782F7 /* NSArray+CLArray.h in Headers */,
-				A49A2DE5201F6A75004782F7 /* NSString+CLEncryption.h in Headers */,
-				A49A2DCE201F6A74004782F7 /* CLDefine.h in Headers */,
 				A49A2DD7201F6A74004782F7 /* NSBundle+CLBundle.h in Headers */,
 				A49A2DDA201F6A74004782F7 /* NSData+CLData.h in Headers */,
-				A49A2DD0201F6A74004782F7 /* NSString+CLRegular.h in Headers */,
 				A49A2DE7201F6A75004782F7 /* NSDate+CLDate.h in Headers */,
 				A49A2DDC201F6A74004782F7 /* NSMutableAttributedString+CLMutableAttributedString.h in Headers */,
 				A49A2DD1201F6A74004782F7 /* NSMutableDictionary+CLMutableDictionary.h in Headers */,
@@ -336,9 +302,7 @@
 				A49A2DDB201F6A74004782F7 /* NSMutableAttributedString+CLMutableAttributedString.m in Sources */,
 				A49A2DD8201F6A74004782F7 /* NSBundle+CLBundle.m in Sources */,
 				A49A2DE8201F6A75004782F7 /* NSDate+CLDate.m in Sources */,
-				A49A2DCF201F6A74004782F7 /* NSString+CLRegular.m in Sources */,
 				A49A2DD2201F6A74004782F7 /* NSMutableDictionary+CLMutableDictionary.m in Sources */,
-				A49A2DE6201F6A75004782F7 /* NSString+CLEncryption.m in Sources */,
 				A49A2DD5201F6A74004782F7 /* NSString+CLString.m in Sources */,
 				A49A2DE4201F6A75004782F7 /* NSArray+CLArray.m in Sources */,
 				A49A2DDF201F6A74004782F7 /* NSDictionary+CLDictionary.m in Sources */,

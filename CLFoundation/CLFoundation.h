@@ -13,10 +13,8 @@
 //  Copyright © 2016年 Cain. All rights reserved.
 //
 
-#pragma mark - NSString+CLRegular
-#import "NSString+CLRegular.h"
+#pragma mark - NSString+CLString
 #import "NSString+CLString.h"
-#import "NSString+CLEncryption.h"
 
 #pragma mark - NSBundle+CLBundle
 #import "NSBundle+CLBundle.h"
@@ -30,9 +28,6 @@
 #pragma mark - NSURL+CLURL
 #import "NSURL+CLURL.h"
 
-#pragma mark - CLDefine
-#import "CLDefine.h"
-
 #pragma mark - CLAttributedString
 #import "NSAttributedString+CLAttributedString.h"
 #import "NSMutableAttributedString+CLMutableAttributedString.h"
@@ -44,3 +39,19 @@
 #pragma mark - CLDictionary
 #import "NSDictionary+CLDictionary.h"
 #import "NSMutableDictionary+CLMutableDictionary.h"
+
+#pragma mark - Define
+
+#define CL_WEAK_SELF(type)  __weak __typeof(&*self)weakSelf = self
+#define CL_STRONG_SELF(type)  __strong __typeof(&*self)weakSelf = self
+
+#define CL_GET_METHOD_RETURN_OBJC(objc) if (objc) return objc
+
+#define CL_ANGLE_TO_RADIAN(x) (M_PI * (x) / 180.0)
+#define CL_RADIAN_TO_ANGLE(radian) (radian * 180.0) / (M_PI)
+
+#ifdef DEBUG
+#define NSLog(format, ...) printf("\n[%s] %s [第%d行] %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSString stringWithFormat:format, ## __VA_ARGS__] UTF8String]);
+#else
+#define NSLog(...)
+#endif

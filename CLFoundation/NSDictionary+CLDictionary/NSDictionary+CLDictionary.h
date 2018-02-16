@@ -11,35 +11,11 @@
 @interface NSDictionary (CLDictionary)
 
 /**
- 安全的设置一个键值对
-
- @param object 值
- @param key 键
+ 将指定的URL字符串转成NSDictionary
+ 
+ @param urlString URL字符串, 格式: http://www.xxxx.com?a=1&b=2 || a=1&b=2
+ @return NSDictionary
  */
-- (void)cl_setSafeObject:(id)object
-                  forKey:(id)key;
-
-/**
- 根据指定的Key安全的获取对象
-
- @param key 键
- @return 喜爱那个
- */
-- (id)cl_safeObjectForKey:(id)key;
-
-/**
- 根据指定的值获取键
-
- @param value 值
- @return 键
- */
-- (id)cl_safeKeyForValue:(id)value;
-
-/**
- *  字段转成json的字符串
- *
- *  @return json 字符串
- */
-- (NSString *)toJSONStringForDictionary;
++ (NSDictionary *)cl_dictionaryWithURLString:(NSString *)urlString;
 
 @end

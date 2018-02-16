@@ -71,18 +71,8 @@
     
     NSString *path = [[NSBundle mainBundle] pathForResource:name
                                                      ofType:@"plist"];
-    
+        
     return [NSArray arrayWithContentsOfFile:path];
-}
-
-- (NSString *)cl_jsonStringWithArray {
-    
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self
-                                                       options:0
-                                                         error:nil];
-    
-    return [[NSString alloc] initWithData:jsonData
-                                 encoding:NSUTF8StringEncoding];
 }
 
 @end
