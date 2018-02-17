@@ -106,7 +106,7 @@ static char cl_base64EncodingTable[64] = {
 
 - (NSString *)cl_trimmedString {
     
-    return [self stringByTrimmingCharactersInSet:[NSCharacterSet decimalDigitCharacterSet]];
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 }
 
 + (NSString *)cl_stringMobileFormat:(NSString *)phoneNumber {
@@ -151,23 +151,29 @@ static char cl_base64EncodingTable[64] = {
 }
 
 
-+ (CGSize)cl_measureSinglelineStringSize:(NSString *)string
++ (CGSize)cl_measureStringSizeWithString:(NSString *)string
                                     font:(UIFont *)font {
     
-    if (string == nil) return CGSizeZero;
+    if ([self cl_checkEmptyWithString:string]) {
+        
+        return CGSizeZero;
+    }
     
     CGSize measureSize = [string boundingRectWithSize:CGSizeMake(0, 0)
-                                              options:NSStringDrawingUsesFontLeading
+                                              options:NSStringDrawingUsesLineFragmentOrigin
                                            attributes:[NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, nil]
                                               context:nil].size;
 
     return measureSize;
 }
 
-+ (CGFloat)cl_measureSinglelineStringWidth:(NSString *)string
-                                      font:(UIFont *)font {
++ (CGFloat)cl_measureSingleLineStringWidthWithString:(NSString *)string
+                                                font:(UIFont *)font {
  
-    if (string == nil) return 0;
+    if ([self cl_checkEmptyWithString:string]) {
+        
+        return 0;
+    }
     
     CGSize measureSize = [string boundingRectWithSize:CGSizeMake(0, 0)
                                               options:NSStringDrawingUsesFontLeading
@@ -177,11 +183,14 @@ static char cl_base64EncodingTable[64] = {
     return ceil(measureSize.width);
 }
 
-+ (CGFloat)cl_measureMutilineStringHeight:(NSString *)string
-                                     font:(UIFont *)font
-                                    width:(CGFloat)width {
++ (CGFloat)cl_measureHeightWithMutilineString:(NSString *)string
+                                         font:(UIFont *)font
+                                        width:(CGFloat)width {
     
-    if (string == nil || width <= 0) return 0;
+    if ([self cl_checkEmptyWithString:string] || width <= 0) {
+        
+        return 0;
+    }
     
     CGSize measureSize = [string boundingRectWithSize:CGSizeMake(width, MAXFLOAT)
                                               options:NSStringDrawingUsesLineFragmentOrigin
@@ -228,23 +237,6 @@ static char cl_base64EncodingTable[64] = {
     return jsonString;
 }
 
-+ (NSString *)cl_getDeviceUUID {
-
-    if (@available(iOS 6.0, *)) {
-        
-        return  [[NSUUID UUID] UUIDString];
-        
-    } else {
-        
-        CFUUIDRef uuidRef = CFUUIDCreate(NULL);
-        CFStringRef uuid  = CFUUIDCreateString(NULL, uuidRef);
-        
-        CFRelease(uuidRef);
-        
-        return (__bridge_transfer NSString *)uuid;
-    }
-}
-
 + (BOOL)cl_checkEmptyWithString:(NSString *)string {
     
     if (string == nil || string == NULL || [string isKindOfClass:[NSNull class]] || [string length] == 0 || [string isEqualToString: @"(null)"]) {
@@ -254,7 +246,7 @@ static char cl_base64EncodingTable[64] = {
     return NO;
 }
 
-#pragma mark - Base 64
+#pragma mark - 加密字符串方法
 + (NSString *)cl_base64StringFromData:(NSData *)data
                                length:(NSUInteger)length {
     
@@ -347,7 +339,7 @@ static char cl_base64EncodingTable[64] = {
 }
 
 #pragma mark - MD5
-+ (NSString *)cl_md5WithString:(NSString *)string {
++ (NSString *)cl_encodingMD5WithString:(NSString *)string {
     
     if([self cl_checkEmptyWithString:string]) {
         return nil;
@@ -369,6 +361,7 @@ static char cl_base64EncodingTable[64] = {
     return [NSString stringWithString:outputString];
 }
 
+#pragma mark - 获取字符串首字母
 + (NSString *)cl_transformPinYinWithString:(NSString *)string {
     
     NSMutableString *cl_string = [string mutableCopy];
@@ -386,6 +379,7 @@ static char cl_base64EncodingTable[64] = {
     return cl_string;
 }
 
+#pragma mark - NSString获取首字母
 + (NSString *)cl_getFirstCharactorWithString:(NSString *)string {
     
     NSString *cl_pinYin = [[self cl_transformPinYinWithString:string] uppercaseString];
@@ -417,8 +411,8 @@ static char cl_base64EncodingTable[64] = {
     return cl_pinYin;
 }
 
-#pragma mark - Test Numbers
-// 1
+#pragma mark - 正则表达式
+#pragma mark - 整数相关
 - (BOOL)cl_isNumber {
     
     NSString *rules = @"^[0-9]*$";
@@ -426,15 +420,13 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-// 2
-- (BOOL)cl_checkMoreNumber:(NSInteger)quantity {
+- (BOOL)cl_checkMostNumber:(NSInteger)quantity {
     
     NSString *rules = [NSString stringWithFormat:@"^\\d{%ld}$", (long)quantity];
     
     return [self cl_regularWithRule:rules];
 }
 
-// 3
 - (BOOL)cl_checkAtLeastNumber:(NSInteger)quantity {
     
     NSString *rules = [NSString stringWithFormat:@"^\\d{%ld,}$", (long)quantity];
@@ -442,32 +434,28 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-// 4
-- (BOOL)cl_checkLimitsNumber:(NSInteger)fistNumber
-                  lastNumber:(NSInteger)lastNumber {
-    
-    NSString *rules = [NSString stringWithFormat:@"^\\d{%ld,%ld}$", (long)fistNumber, (long)lastNumber];
+- (BOOL)cl_checkLeastNumber:(NSInteger)leastNumber
+                 mostNumber:(NSInteger)mostNumber {
+
+    NSString *rules = [NSString stringWithFormat:@"^\\d{%ld,%ld}$", (long)leastNumber, (long)mostNumber];
     
     return [self cl_regularWithRule:rules];
 }
 
-// 5
-- (BOOL)cl_isNonZeroStartNumber {
+- (BOOL)cl_isNotZeroStartNumber {
     
     NSString *rules = @"^(0|[1-9][0-9]*)$";
     
     return [self cl_regularWithRule:rules];
 }
 
-// 6
-- (BOOL)cl_isNonZeroStartNumberHaveOneOrTwoDecimal {
+- (BOOL)cl_isNotZeroStartNumberHaveOneOrTwoDecimal {
     
     NSString *rules = @"^([1-9][0-9]*)+(.[0-9]{1,2})?$";
     
     return [self cl_regularWithRule:rules];
 }
 
-// 7
 - (BOOL)cl_isHaveOneOrTwoDecimalPositiveOrNegative {
     
     NSString *rules = @"^(\\-)?\\d+(\\.\\d{1,2})?$";
@@ -475,7 +463,6 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-// 8
 - (BOOL)cl_realContainDecimal {
     
     NSString *rules = @"^(\\-|\\+)?\\d+(\\.\\d+)?$";
@@ -483,7 +470,6 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-// 9
 - (BOOL)cl_isPositiveRealHaveTwoDecimal {
     
     NSString *rules = @"^[0-9]+(.[0-9]{2})?$";
@@ -491,7 +477,6 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-// 10
 - (BOOL)cl_isHaveOneOrThreeDecimalPositiveOrNegative {
     
     NSString *rules = @"^[0-9]+(.[0-9]{1,3})?$";
@@ -499,55 +484,35 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-// 11
-- (BOOL)cl_isNonZeroPositiveInteger {
+- (BOOL)cl_isNotZeroPositiveInteger {
     
     NSString *rules = @"^[1-9]\\d*$";
     
     return [self cl_regularWithRule:rules];
 }
 
-// 12
-- (BOOL)cl_isNonZeroNegativeInteger {
+- (BOOL)cl_isNotZeroNegativeInteger {
     
     NSString *rules = @"^-[1-9]\\d*$";
     
     return [self cl_regularWithRule:rules];
 }
 
-// 13
-- (BOOL)cl_isNonNegativeInteger {
+- (BOOL)cl_isPositiveInteger {
     
     NSString *rules = @"^\\d+$";
     
     return [self cl_regularWithRule:rules];
 }
 
-// 14
-- (BOOL)cl_isNonPositiveInteger {
+- (BOOL)cl_isNegativeInteger {
     
     NSString *rules = @"^-[1-9]\\d*";
     
     return [self cl_regularWithRule:rules];
 }
 
-// 15
-- (BOOL)cl_isNonNegativeFloat {
-    
-    NSString *rules = @"^\\d(\\.\\d+)?$";
-    
-    return [self cl_regularWithRule:rules];
-}
-
-// 16
-- (BOOL)cl_isNonPositiveFloat {
-    
-    NSString *rules = @"^((-\\d+(\\.\\d+)?)|(0+(\\.0+)?))$";
-    
-    return [self cl_regularWithRule:rules];
-}
-
-// 17
+#pragma mark - 浮点数相关
 - (BOOL)cl_isPositiveFloat {
     
     NSString *rules = @"^[1-9]\\d*\\.\\d*|0\\.\\d*[1-9]\\d*$";
@@ -555,7 +520,6 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-// 18
 - (BOOL)cl_isNagativeFloat {
     
     NSString *rules = @"^-([1-9]\\d*\\.\\d*|0\\.\\d*[1-9]\\d*)$";
@@ -563,7 +527,6 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-// 19
 - (BOOL)cl_isFloat {
     
     NSString *rules = @"^(-?\\d+)(\\.\\d+)?$";
@@ -571,8 +534,7 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-#pragma mark - Test String
-// 1
+#pragma mark - 字符串相关
 - (BOOL)cl_isChineseCharacter {
     
     NSString *rules = @"^[\u4e00-\u9fa5]{0,}$";
@@ -580,15 +542,13 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-// 2
-- (BOOL)cl_isEnglishAndNumbers {
+- (BOOL)cl_isEnglishOrNumbers {
     
     NSString *rules = @"^[A-Za-z0-9]+$";
     
     return [self cl_regularWithRule:rules];
 }
 
-// 3
 - (BOOL)cl_limitinglength:(NSInteger)fistRange
                 lastRange:(NSInteger)lastRange {
     
@@ -597,7 +557,6 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-// 4
 - (BOOL)cl_checkString:(NSInteger)length {
     
     NSString *rules = @"^[A-Za-z0-9]+$";
@@ -610,7 +569,6 @@ static char cl_base64EncodingTable[64] = {
     return NO;
 }
 
-// 5
 - (BOOL)cl_isLettersString {
     
     NSString *rules = @"^[A-Za-z]+$";
@@ -618,7 +576,6 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-// 6
 - (BOOL)cl_isCapitalLetters {
     
     NSString *rules = @"^[A-Z]+$";
@@ -626,7 +583,6 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-// 7
 - (BOOL)cl_isLowercaseLetters {
     
     NSString *rules = @"^[a-z]+$";
@@ -634,31 +590,27 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-// 8
-- (BOOL)cl_isNumbersAndLettersOrUnderlineString {
+- (BOOL)cl_isNumbersOrLettersOrLineString {
     
-    NSString *rules = @"^\\w+$";
+    NSString *rules = @"^[A-Za-z0-9_]+$";
     
     return [self cl_regularWithRule:rules];
 }
 
-// 9
-- (BOOL)cl_isChineseCharacterAndEnglishAndNumbersAndUnderlineString {
+- (BOOL)cl_isChineseCharacterOrEnglishOrNumbersOrLineString {
     
     NSString *rules = @"^[\u4E00-\u9FA5A-Za-z0-9_]+$";
     
     return [self cl_regularWithRule:rules];
 }
 
-// 10
-- (BOOL)cl_isDoesNotContainUnderscoresChineseCharacterAndEnglishAndNumbersString {
+- (BOOL)cl_isDoesSpecialCharactersString {
     
     NSString *rules = @"^[\u4E00-\u9FA5A-Za-z0-9]+$";
     
     return [self cl_regularWithRule:rules];
 }
 
-// 11
 - (BOOL)cl_isContainSpecialCharacterString {
     
     NSString *rules = @"[^%&',;=?$\x22]+";
@@ -666,7 +618,6 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-// 12
 - (BOOL)cl_isContainCharacter:(NSString *)charater{
     
     NSString *rules = [NSString stringWithFormat:@"[^%@\x22]+", charater];
@@ -681,7 +632,6 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-// 14
 - (BOOL)cl_checkStringIsStrong {
     
     NSString *rules = @"^\\w*(?=\\w*\\d)(?=\\w*[a-zA-Z])\\w*$";
@@ -689,32 +639,35 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-#pragma mark - Special Needs
-// 1
-- (BOOL)cl_checkEmailAddress {
+- (BOOL)cl_checkChineseCharacter {
     
-    NSString *rules = @"^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$";
+    NSString *rules = @"[\u4e00-\u9fa5]";
     
     return [self cl_regularWithRule:rules];
 }
 
-// 2
-- (BOOL)cl_checkDomainName {
+- (BOOL)cl_checkDoubleByteCharacters {
     
-    NSString *rules = @"[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(/.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+/.?";
-    
-    return [self cl_regularWithRule:rules];
-}
-
-// 3
-- (BOOL)cl_checkURL {
-    
-    NSString *rules = @"^(http|https|ftp)\\://([a-zA-Z0-9\\.\\-]+(\\:[a-zA-Z0-9\\.&amp;%\\$\\-]+)*@)?((25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])|([a-zA-Z0-9\\-]+\\.)*[a-zA-Z0-9\\-]+\\.[a-zA-Z]{2,4})(\\:[0-9]+)?(/[^/][a-zA-Z0-9\\.\\,\\?\'\\/\\+&amp;%\\$#\\=~_\\-@]*)*$";
+    NSString *rules = @"[^\\x00-\\xff]";
     
     return [self cl_regularWithRule:rules];
 }
 
-// 4
+- (BOOL)cl_checkBlankLines {
+    
+    NSString *rules = @"\\n\\s*\\r";
+    
+    return [self cl_regularWithRule:rules];
+}
+
+- (BOOL)cl_checkFirstAndLastSpaceCharacters {
+    
+    NSString *rules = @"(^\\s*)|(\\s*$)";//@"^\\s*|\\s*$";
+    
+    return [self cl_regularWithRule:rules];
+}
+
+#pragma mark - 号码相关
 - (BOOL)cl_checkPhoneNumber {
     
     /**
@@ -741,10 +694,10 @@ static char cl_base64EncodingTable[64] = {
      */
     NSString *CT = @"(^1(33|53|77|8[019])\\d{8}$)|(^1700\\d{7}$)";
     /**
-     25         * 大陆地区固话及小灵通
-     26         * 区号：010,020,021,022,023,024,025,027,028,029
-     27         * 号码：七位或八位
-     28         */
+     * 大陆地区固话及小灵通
+     * 区号：010,020,021,022,023,024,025,027,028,029
+     * 号码：七位或八位
+     */
     NSString * PHS = @"^0(10|2[0-5789]|\\d{3})\\d{7,8}$";
     
     return [self cl_regularWithRule:MOBILE] ||
@@ -754,63 +707,67 @@ static char cl_base64EncodingTable[64] = {
     [self cl_regularWithRule:PHS];
 }
 
-// 5
 - (BOOL)cl_checkChinaMobelPhoneNumber {
     
+    /**
+     * 中国移动：China Mobile
+     * 134,135,136,137,138,139,150,151,152,157,158,159,182,183,184,187,188,147,178,1705
+     */
     NSString *rules = @"(^1(3[4-9]|4[7]|5[0-27-9]|7[8]|8[2-478])\\d{8}$)|(^1705\\d{7}$)";
     
     return [self cl_regularWithRule:rules];
 }
 
-// 6
 - (BOOL)cl_checkChinaUnicomPhoneNumber {
     
+    /**
+     * 中国联通：China Unicom
+     * 130,131,132,155,156,185,186,145,176,1709
+     */
     NSString *rules = @"(^1(3[0-2]|4[5]|5[56]|7[6]|8[56])\\d{8}$)|(^1709\\d{7}$)";
     
     return [self cl_regularWithRule:rules];
 }
 
-// 7
 - (BOOL)cl_checkChinaTelecomPhoneNumber {
     
+    /**
+     * 中国电信：China Telecom
+     * 133,153,180,181,189,177,1700
+     */
     NSString *rules = @"(^1(33|53|77|8[019])\\d{8}$)|(^1700\\d{7}$)";
     
     return [self cl_regularWithRule:rules];
 }
 
-// 8
 - (BOOL)cl_checkTelePhoneNumber {
     
-    NSString *rules = @"^(\\(\\d{3,4}-)|\\d{3.4}-)?\\d{7,8}$";
+    /**
+     * 大陆地区固话及小灵通
+     * 区号：010,020,021,022,023,024,025,027,028,029
+     * 号码：七位或八位
+     */
+    NSString *rules = @"^0(10|2[0-5789]|\\d{3})\\d{7,8}$";
     
     return [self cl_regularWithRule:rules];
 }
 
-// 9
-- (BOOL)cl_checkDomesticPhoneNumber {
+- (BOOL)cl_checkFormatTelePhoneNumber {
     
-    NSString *rules = @"\\d{3}-\\d{8}|\\d{4}-\\d{7}";
+    NSString *rules = @"^\\d{3}-\\d{8}|\\d{3}-\\d{7}|\\d{4}-\\d{7}|\\d{4}-\\d{8}";
     
     return [self cl_regularWithRule:rules];
 }
 
-// 10
+#pragma mark - 身份证相关
 - (BOOL)cl_checkIdentityCard {
     
-    NSString *rules = @"^\\d{15}|\\d{18}$";
+    NSString *rules = @"^\\d{15}|\\d{18}$|^([0-9]){7,18}(x|X)?$";
     
     return [self cl_regularWithRule:rules];
 }
 
-// 11
-- (BOOL)cl_checkShortIdentityCard {
-    
-    NSString *rules = @"^([0-9]){7,18}(x|X)?$";
-    
-    return [self cl_regularWithRule:rules];
-}
-
-// 12
+#pragma mark - 账号相关
 - (BOOL)cl_checkAccount {
     
     NSString *rules = @"^[a-zA-Z][a-zA-Z0-9_]{4,15}$";
@@ -818,7 +775,6 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-// 13
 - (BOOL)cl_checkPassword {
     
     NSString *rules = @"^[a-zA-Z]\\w{5,17}$";
@@ -826,7 +782,6 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-// 14
 - (BOOL)cl_checkStrongPassword:(NSInteger)briefest
                        longest:(NSInteger)longest {
     
@@ -835,7 +790,7 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-// 15
+#pragma mark - 日期相关
 - (BOOL)cl_checkChinaDateFormat {
     
     NSString *rules = @"^\\d{4}-\\d{1,2}-\\d{1,2}";
@@ -843,7 +798,6 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-// 16
 - (BOOL)cl_checkAbroadDateFormat {
     
     NSString *rules = @"^\\d{1,2}-\\d{1,2}-\\d{4}";
@@ -851,7 +805,6 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-// 17
 - (BOOL)cl_checkMonth {
     
     NSString *rules = @"^(0?[1-9]|1[0-2])$";
@@ -859,7 +812,6 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-// 18
 - (BOOL)cl_checkDay {
     
     NSString *rules = @"^((0?[1-9])|((1|2)[0-9])|30|31)$";
@@ -867,7 +819,28 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-// 25
+#pragma mark - 特殊正则
+- (BOOL)cl_checkEmailAddress {
+    
+    NSString *rules = @"^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$";
+    
+    return [self cl_regularWithRule:rules];
+}
+
+- (BOOL)cl_checkDomainName {
+    
+    NSString *rules = @"[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(/.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+/.?";
+    
+    return [self cl_regularWithRule:rules];
+}
+
+- (BOOL)cl_checkURL {
+    
+    NSString *rules = @"[a-zA-z]+://[^\\s]*";
+    
+    return [self cl_regularWithRule:rules];
+}
+
 - (BOOL)cl_checkXMLFile {
     
     NSString *rules = @"^([a-zA-Z]+-?)+[a-zA-Z0-9]+\\.[x|X][m|M][l|L]$";
@@ -875,31 +848,6 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-// 26
-- (BOOL)cl_checkChineseCharacter {
-    
-    NSString *rules = @"[\u4e00-\u9fa5]";
-    
-    return [self cl_regularWithRule:rules];
-}
-
-// 27
-- (BOOL)cl_checkDoubleByteCharacters {
-    
-    NSString *rules = @"[^\\x00-\\xff]";
-    
-    return [self cl_regularWithRule:rules];
-}
-
-// 28
-- (BOOL)cl_checkBlankLines {
-    
-    NSString *rules = @"\\n\\s*\\r";
-    
-    return [self cl_regularWithRule:rules];
-}
-
-// 29
 - (BOOL)cl_checkHTMLSign {
     
     NSString *rules = @"<(\\S*?)[^>]*>.*?</\\1>|<.*? />";
@@ -907,23 +855,13 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-// 30
-- (BOOL)cl_checkFirstAndLastSpaceCharacters {
-    
-    NSString *rules = @"^\\s*|\\s*$或(^\\s*)|(\\s*$)";
-    
-    return [self cl_regularWithRule:rules];
-}
-
-// 31
 - (BOOL)cl_checkQQNumber {
     
-    NSString *rules = @"[1-9][0-9]{4,}";
+    NSString *rules = @"[1-9][0-9]{4}";
     
     return [self cl_regularWithRule:rules];
 }
 
-// 32
 - (BOOL)cl_checkPostalCode {
     
     NSString *rules = @"[1-9]\\d{5}(?!\\d)";
@@ -931,7 +869,6 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-// 33
 - (BOOL)cl_checkIPv4InternetProtocol {
     
     NSString *rules = @"((?:(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d)\\.){3}(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d))";

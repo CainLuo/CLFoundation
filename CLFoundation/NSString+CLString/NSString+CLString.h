@@ -100,7 +100,7 @@
  @param font 字体
  @return CGFloat
  */
-+ (CGSize)cl_measureSinglelineStringSize:(NSString *)string
++ (CGSize)cl_measureStringSizeWithString:(NSString *)string
                                     font:(UIFont *)font;
 
 /**
@@ -110,8 +110,8 @@
  @param font 字体
  @return CGFloat
  */
-+ (CGFloat)cl_measureSinglelineStringWidth:(NSString *)string
-                                      font:(UIFont *)font;
++ (CGFloat)cl_measureSingleLineStringWidthWithString:(NSString *)string
+                                                font:(UIFont *)font;
 
 /**
  获取指定字符串的高度
@@ -121,9 +121,9 @@
  @param width 宽度
  @return CGFloat
  */
-+ (CGFloat)cl_measureMutilineStringHeight:(NSString *)string
-                                     font:(UIFont *)font
-                                    width:(CGFloat)width;
++ (CGFloat)cl_measureHeightWithMutilineString:(NSString *)string
+                                         font:(UIFont *)font
+                                        width:(CGFloat)width;
 
 /**
  将指定的NSDictionary转成URL字符串
@@ -142,14 +142,6 @@
 + (NSString *)cl_jsonStringWithObject:(NSObject *)object;
 
 /**
- 获取设备的UDID
-
- @return NSString
- */
-+ (NSString *)cl_getDeviceUUID;
-
-#pragma mark - 加密字符串方法
-/**
  判断字符串是否为空
  
  @param string 字符串
@@ -157,6 +149,7 @@
  */
 + (BOOL)cl_checkEmptyWithString:(NSString *)string;
 
+#pragma mark - 加密字符串方法
 /**
  将data数据转成Base64字符串
  
@@ -188,10 +181,9 @@
  
  @return NSString
  */
-+ (NSString *)cl_md5WithString:(NSString *)string;
++ (NSString *)cl_encodingMD5WithString:(NSString *)string;
 
 #pragma mark - NSString获取首字母
-
 /**
  获取字符串的首个字符
 
@@ -201,14 +193,15 @@
 + (NSString *)cl_getFirstCharactorWithString:(NSString *)string;
 
 /**
- 获取字符串首个拼音字母
+ 获取中文字符串首个拼音字母
 
  @param string NSString
  @return NSString
  */
 + (NSString *)cl_getFirstPinYinWithString:(NSString *)string;
 
-#pragma mark - Test Numbers
+#pragma mark - 正则表达式
+#pragma mark - 整数相关
 /**
  当前字符是否为数字
  
@@ -222,7 +215,7 @@
  @param quantity 限制数字的数量
  @return BOOL
  */
-- (BOOL)cl_checkMoreNumber:(NSInteger)quantity;
+- (BOOL)cl_checkMostNumber:(NSInteger)quantity;
 
 /**
  当前字符是否为至少number位的数字
@@ -233,27 +226,28 @@
 - (BOOL)cl_checkAtLeastNumber:(NSInteger)quantity;
 
 /**
- 当前字符是否为fistNumber-scondNumber位的数字
+ 当前字符是否为最少leastNumber个数字, 最多moreNumber个数字的
  
- @param fistNumber 开始
- @param lastNumber 结束
+ @param leastNumber 最少
+ @param mostNumber 最多
  @return BOOL
  */
-- (BOOL)cl_checkLimitsNumber:(NSInteger)fistNumber lastNumber:(NSInteger)lastNumber;
+- (BOOL)cl_checkLeastNumber:(NSInteger)leastNumber
+                 mostNumber:(NSInteger)mostNumber;
 
 /**
  当前字符是否为非零开头的数字
  
  @return BOOL
  */
-- (BOOL)cl_isNonZeroStartNumber;
+- (BOOL)cl_isNotZeroStartNumber;
 
 /**
  当前字符是否为非零开头的最多带两位小数的数字
  
  @return BOOL
  */
-- (BOOL)cl_isNonZeroStartNumberHaveOneOrTwoDecimal;
+- (BOOL)cl_isNotZeroStartNumberHaveOneOrTwoDecimal;
 
 /**
  当前字符是否为带1-2位小数的正数或负数
@@ -263,7 +257,7 @@
 - (BOOL)cl_isHaveOneOrTwoDecimalPositiveOrNegative;
 
 /**
- 当前字符是否为正数、负数、和小数
+ 当前字符是否为正数、负数、或小数
  
  @return BOOL
  */
@@ -289,7 +283,7 @@
  
  @return BOOL
  */
-- (BOOL)cl_isNonZeroPositiveInteger;
+- (BOOL)cl_isNotZeroPositiveInteger;
 
 
 /**
@@ -297,39 +291,24 @@
  
  @return BOOL
  */
-- (BOOL)cl_isNonZeroNegativeInteger;
+- (BOOL)cl_isNotZeroNegativeInteger;
 
 /**
- 当前字符是否为非负整数
+ 当前字符是否为正整数
  
  @return BOOL
  */
-- (BOOL)cl_isNonNegativeInteger;
+- (BOOL)cl_isPositiveInteger;
 
 
 /**
- 当前字符是否为非正整数
+ 当前字符是否为负整数
  
  @return BOOL
  */
-- (BOOL)cl_isNonPositiveInteger;
+- (BOOL)cl_isNegativeInteger;
 
-#pragma mark - Test Float
-/**
- 当前字符是否为非负浮点数
- 
- @return BOOL
- */
-- (BOOL)cl_isNonNegativeFloat;
-
-
-/**
- 当前字符是否为非正浮点数
- 
- @return BOOL
- */
-- (BOOL)cl_isNonPositiveFloat;
-
+#pragma mark - 浮点数相关
 /**
  当前字符是否为正浮点数
  
@@ -351,7 +330,7 @@
  */
 - (BOOL)cl_isFloat;
 
-#pragma mark - Test String
+#pragma mark - 字符串相关
 /**
  当前字符是否为汉字
  
@@ -360,11 +339,11 @@
 - (BOOL)cl_isChineseCharacter;
 
 /**
- 当前字符是否为由数字和26个英文字母组成的字符串
+ 当前字符是否为由数字或26个英文字母组成的字符串
  
  @return BOOL
  */
-- (BOOL)cl_isEnglishAndNumbers;
+- (BOOL)cl_isEnglishOrNumbers;
 
 /**
  当前字符是否为 长度为3-20的所有字符
@@ -377,7 +356,7 @@
                 lastRange:(NSInteger)lastRange;
 
 /**
- 当前字符长度是否位 length, 并且是由字母和数字所组成
+ 当前字符长度是否位 length, 并且是由字母或数字所组成
  
  @param length length 字符的长度
  @return BOOL
@@ -410,21 +389,21 @@
  
  @return BOOL
  */
-- (BOOL)cl_isNumbersAndLettersOrUnderlineString;
+- (BOOL)cl_isNumbersOrLettersOrLineString;
 
 /**
- 当前字符是否为中文、英文、数字包括下划线
+ 当前字符是否为中文、英文、数字或者下划线
  
  @return BOOL
  */
-- (BOOL)cl_isChineseCharacterAndEnglishAndNumbersAndUnderlineString;
+- (BOOL)cl_isChineseCharacterOrEnglishOrNumbersOrLineString;
 
 /**
- 当前字符是否为中文、英文、数字但不包括下划线等符号
+ 当前字符是否为中文、英文、数字但不包括特殊符号
  
  @return BOOL
  */
-- (BOOL)cl_isDoesNotContainUnderscoresChineseCharacterAndEnglishAndNumbersString;
+- (BOOL)cl_isDoesSpecialCharactersString;
 
 /**
  当前字符是否可以输入含有^%&',;=?$\"等字符
@@ -449,34 +428,41 @@
 - (BOOL)cl_isLetterStar;
 
 /**
- *  判断当前字符串是否是字母, 数字及下划线的组合
+ *  判断当前字符串是否是字母, 数字及下划线的强组合
  *
  *  @return BOOL
  */
 - (BOOL)cl_checkStringIsStrong;
 
-#pragma mark - Special Needs
 /**
- 当前字符是否为 Email地址
+ 当前字符是否为中文字符的正则表达式
  
  @return BOOL
  */
-- (BOOL)cl_checkEmailAddress;
+- (BOOL)cl_checkChineseCharacter;
 
 /**
- 当前字符是否为域名
+ 当前字符是否为双字节字符：(包括汉字在内，可以用来计算字符串的长度(一个双字节字符长度计2，ASCII字符计1))
  
  @return BOOL
  */
-- (BOOL)cl_checkDomainName;
+- (BOOL)cl_checkDoubleByteCharacters;
 
 /**
- 当前字符是否为Internet URL
+ 当前字符是否为空白行的正则表达式：(判断是否有空白行)
  
  @return BOOL
  */
-- (BOOL)cl_checkURL;
+- (BOOL)cl_checkBlankLines;
 
+/**
+ 当前字符是否为首尾空白字符的正则表达式：(可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式)
+ 
+ @return BOOL
+ */
+- (BOOL)cl_checkFirstAndLastSpaceCharacters;
+
+#pragma mark - 号码相关
 /**
  当前字符是否为手机号码
  
@@ -506,19 +492,20 @@
 - (BOOL)cl_checkChinaTelecomPhoneNumber;
 
 /**
- 当前字符是否为 电话号码("XXX-XXXXXXX"、"XXXX-XXXXXXXX"、"XXX-XXXXXXX"、"XXX-XXXXXXXX"、"XXXXXXX"和"XXXXXXXX)
+ 当前字符是否为 电话号码("0101234567"、"075512345678"、"01012345678")
  
  @return BOOL
  */
 - (BOOL)cl_checkTelePhoneNumber;
 
 /**
- 当前字符是否为 国内电话号码(0511-4405222、021-87888822)
+ 当前字符是否为 格式化国内电话号码(0511-4405222、021-87888822)
  
  @return BOOL
  */
-- (BOOL)cl_checkDomesticPhoneNumber;
+- (BOOL)cl_checkFormatTelePhoneNumber;
 
+#pragma mark - 身份证相关
 /**
  当前字符是否为身份证号(15位、18位数字)
  
@@ -526,22 +513,16 @@
  */
 - (BOOL)cl_checkIdentityCard;
 
+#pragma mark - 账号相关
 /**
- 当前字符是否为X结尾的身份证号码(数字、字母x结尾)
- 
- @return BOOL
- */
-- (BOOL)cl_checkShortIdentityCard;
-
-/**
- 当前字符是否为帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)
+ 当前字符是否为帐号是否是字母开头，最少5位最多16位，且是字母数字下划线组成
  
  @return BOOL
  */
 - (BOOL)cl_checkAccount;
 
 /**
- 当前字符是否为密码(以字母开头，长度在6~18之间, 并且密码是从0开始，只能包含字母、数字和下划线)
+ 当前字符是否以字母开头，长度在6~18之间, 并且密码是从0开始，只能包含字母、数字和下划线的密码
  
  @return BOOL
  */
@@ -557,6 +538,7 @@
 - (BOOL)cl_checkStrongPassword:(NSInteger)briefest
                        longest:(NSInteger)longest;
 
+#pragma mark - 日期相关
 /**
  当前字符是否为中国日期格式
  
@@ -585,6 +567,28 @@
  */
 - (BOOL)cl_checkDay;
 
+#pragma mark - 特殊正则
+/**
+ 当前字符是否为 Email地址
+ 
+ @return BOOL
+ */
+- (BOOL)cl_checkEmailAddress;
+
+/**
+ 当前字符是否为域名
+ 
+ @return BOOL
+ */
+- (BOOL)cl_checkDomainName;
+
+/**
+ 当前字符是否为Internet URL
+ 
+ @return BOOL
+ */
+- (BOOL)cl_checkURL;
+
 /**
  当前字符是否为xml文件
  
@@ -593,39 +597,11 @@
 - (BOOL)cl_checkXMLFile;
 
 /**
- 当前字符是否为中文字符的正则表达式
- 
- @return BOOL
- */
-- (BOOL)cl_checkChineseCharacter;
-
-/**
- 当前字符是否为双字节字符：(包括汉字在内，可以用来计算字符串的长度(一个双字节字符长度计2，ASCII字符计1))
- 
- @return BOOL
- */
-- (BOOL)cl_checkDoubleByteCharacters;
-
-/**
- 当前字符是否为空白行的正则表达式：(判断是否有空白行)
- 
- @return BOOL
- */
-- (BOOL)cl_checkBlankLines;
-
-/**
  当前字符是否为HTML标记的正则表达式：(网上流传的版本太糟糕，上面这个也仅仅能部分，对于复杂的嵌套标记依旧无能为力)
  
  @return BOOL
  */
 - (BOOL)cl_checkHTMLSign;
-
-/**
- 当前字符是否为首尾空白字符的正则表达式：(可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式)
- 
- @return BOOL
- */
-- (BOOL)cl_checkFirstAndLastSpaceCharacters;
 
 /**
  当前字符是否为腾讯QQ号：(腾讯QQ号从10000开始)
