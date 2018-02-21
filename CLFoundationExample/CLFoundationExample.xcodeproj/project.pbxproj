@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A42FEFE9203DC79C0054C8A3 /* NSObject+CLObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A42FEFE8203DC79C0054C8A3 /* NSObject+CLObject.m */; };
 		A48D73A92034478B00378353 /* CLDateController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73A82034478B00378353 /* CLDateController.m */; };
 		A48D73CE2034544C00378353 /* NSBundle+CLBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73AD2034544C00378353 /* NSBundle+CLBundle.m */; };
 		A48D73CF2034544C00378353 /* NSData+CLData.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73AF2034544C00378353 /* NSData+CLData.m */; };
@@ -37,6 +38,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A42FEFE7203DC79C0054C8A3 /* NSObject+CLObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+CLObject.h"; sourceTree = "<group>"; };
+		A42FEFE8203DC79C0054C8A3 /* NSObject+CLObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CLObject.m"; sourceTree = "<group>"; };
 		A48D73A72034478B00378353 /* CLDateController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLDateController.h; sourceTree = "<group>"; };
 		A48D73A82034478B00378353 /* CLDateController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLDateController.m; sourceTree = "<group>"; };
 		A48D73AC2034544C00378353 /* NSBundle+CLBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+CLBundle.h"; sourceTree = "<group>"; };
@@ -103,6 +106,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A42FEFE6203DC7840054C8A3 /* NSObject+CLObject */ = {
+			isa = PBXGroup;
+			children = (
+				A42FEFE7203DC79C0054C8A3 /* NSObject+CLObject.h */,
+				A42FEFE8203DC79C0054C8A3 /* NSObject+CLObject.m */,
+			);
+			path = "NSObject+CLObject";
+			sourceTree = "<group>";
+		};
 		A48D73A62034477E00378353 /* Date */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +138,7 @@
 				A48D73B12034544C00378353 /* NSMutableArray+CLMutableArray */,
 				A48D73B72034544C00378353 /* NSMutableAttributedString+CLMutableAttributedString */,
 				A48D73BA2034544C00378353 /* NSMutableDictionary+CLMutableDictionary */,
+				A42FEFE6203DC7840054C8A3 /* NSObject+CLObject */,
 				A48D73C22034544C00378353 /* NSString+CLString */,
 				A48D73BF2034544C00378353 /* NSURL+CLURL */,
 			);
@@ -466,6 +479,7 @@
 				A4ACC49E2034103600E756D1 /* AppDelegate.m in Sources */,
 				A48D73D52034544C00378353 /* NSURL+CLURL.m in Sources */,
 				A48D73D32034544C00378353 /* NSMutableDictionary+CLMutableDictionary.m in Sources */,
+				A42FEFE9203DC79C0054C8A3 /* NSObject+CLObject.m in Sources */,
 				A48D73D82034544C00378353 /* NSDate+CLDate.m in Sources */,
 				A4ACC4EE203419A200E756D1 /* CLArrayController.m in Sources */,
 				A4ACC4FE20342C0E00E756D1 /* CLDataController.m in Sources */,

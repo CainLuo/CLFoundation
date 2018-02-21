@@ -13,6 +13,9 @@
 //  Copyright © 2016年 Cain. All rights reserved.
 //
 
+#pragma mark - NSObject+CLObject
+#import "NSObject+CLObject.h"
+
 #pragma mark - NSString+CLString
 #import "NSString+CLString.h"
 
