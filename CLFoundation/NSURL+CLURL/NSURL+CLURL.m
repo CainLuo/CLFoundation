@@ -13,6 +13,7 @@
 //
 
 #import "NSURL+CLURL.h"
+#import "NSString+CLString.h"
 
 @implementation NSURL (CLURL)
 

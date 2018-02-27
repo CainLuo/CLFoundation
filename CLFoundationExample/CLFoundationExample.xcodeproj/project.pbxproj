@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85C74BD7E7ECAAA3D7B195E1 /* Pods_CLFoundationExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCCB4B4B5D99FC7A6BBD8E1 /* Pods_CLFoundationExample.framework */; };
 		A42FEFE9203DC79C0054C8A3 /* NSObject+CLObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A42FEFE8203DC79C0054C8A3 /* NSObject+CLObject.m */; };
-		A48D73A92034478B00378353 /* CLDateController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73A82034478B00378353 /* CLDateController.m */; };
+		A48D73A92034478B00378353 /* EXDateController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73A82034478B00378353 /* EXDateController.m */; };
 		A48D73CE2034544C00378353 /* NSBundle+CLBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73AD2034544C00378353 /* NSBundle+CLBundle.m */; };
 		A48D73CF2034544C00378353 /* NSData+CLData.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73AF2034544C00378353 /* NSData+CLData.m */; };
 		A48D73D02034544C00378353 /* NSMutableArray+CLMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73B32034544C00378353 /* NSMutableArray+CLMutableArray.m */; };
@@ -21,27 +22,36 @@
 		A48D73D72034544C00378353 /* NSDictionary+CLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73C62034544C00378353 /* NSDictionary+CLDictionary.m */; };
 		A48D73D82034544C00378353 /* NSDate+CLDate.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73CA2034544C00378353 /* NSDate+CLDate.m */; };
 		A48D73D92034544C00378353 /* NSArray+CLArray.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73CD2034544C00378353 /* NSArray+CLArray.m */; };
-		A48D73DD2035561B00378353 /* CLDictionaryController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73DC2035561B00378353 /* CLDictionaryController.m */; };
-		A48D73E12035AD3B00378353 /* CLStringController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73E02035AD3B00378353 /* CLStringController.m */; };
-		A48D73E52035B2AE00378353 /* CLURLController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73E42035B2AE00378353 /* CLURLController.m */; };
+		A48D73DD2035561B00378353 /* EXDictionaryController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73DC2035561B00378353 /* EXDictionaryController.m */; };
+		A48D73E12035AD3B00378353 /* EXStringController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73E02035AD3B00378353 /* EXStringController.m */; };
+		A48D73E52035B2AE00378353 /* EXURLController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73E42035B2AE00378353 /* EXURLController.m */; };
+		A4A6C32D203ED89B001EF8FD /* NSTimer+CLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A6C32C203ED89B001EF8FD /* NSTimer+CLTimer.m */; };
+		A4A6C331203EDF53001EF8FD /* EXTimerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A6C330203EDF53001EF8FD /* EXTimerController.m */; };
+		A4A8A40820404BE600FA9EC5 /* UINavigationItem+CLNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A8A40320404BE500FA9EC5 /* UINavigationItem+CLNavigationItem.m */; };
+		A4A8A40920404BE600FA9EC5 /* UIView+CLView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A8A40620404BE600FA9EC5 /* UIView+CLView.m */; };
+		A4A8A40D2040731700FA9EC5 /* EXObjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A8A40C2040731700FA9EC5 /* EXObjectController.m */; };
+		A4A8A4112042925100FA9EC5 /* NSNumber+CLNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A8A4102042925100FA9EC5 /* NSNumber+CLNumber.m */; };
+		A4A8A4152042931900FA9EC5 /* EXNumberController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A8A4142042931900FA9EC5 /* EXNumberController.m */; };
 		A4ACC49E2034103600E756D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC49D2034103600E756D1 /* AppDelegate.m */; };
 		A4ACC4A42034103600E756D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4ACC4A22034103600E756D1 /* Main.storyboard */; };
 		A4ACC4A62034103600E756D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4ACC4A52034103600E756D1 /* Assets.xcassets */; };
 		A4ACC4A92034103600E756D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4ACC4A72034103600E756D1 /* LaunchScreen.storyboard */; };
 		A4ACC4AC2034103600E756D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4AB2034103600E756D1 /* main.m */; };
-		A4ACC4E72034129100E756D1 /* CLExampleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4E62034129100E756D1 /* CLExampleTableViewController.m */; };
-		A4ACC4EE203419A200E756D1 /* CLArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4ED203419A200E756D1 /* CLArrayController.m */; };
-		A4ACC4F22034212400E756D1 /* CLAttributeStringController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4F12034212400E756D1 /* CLAttributeStringController.m */; };
-		A4ACC4F62034265700E756D1 /* CLBundleController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4F52034265700E756D1 /* CLBundleController.m */; };
-		A4ACC4FA20342A8E00E756D1 /* CLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4F920342A8E00E756D1 /* CLBaseViewController.m */; };
-		A4ACC4FE20342C0E00E756D1 /* CLDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4FD20342C0E00E756D1 /* CLDataController.m */; };
+		A4ACC4E72034129100E756D1 /* EXRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4E62034129100E756D1 /* EXRootController.m */; };
+		A4ACC4EE203419A200E756D1 /* EXArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4ED203419A200E756D1 /* EXArrayController.m */; };
+		A4ACC4F22034212400E756D1 /* EXAttributeStringController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4F12034212400E756D1 /* EXAttributeStringController.m */; };
+		A4ACC4F62034265700E756D1 /* EXBundleController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4F52034265700E756D1 /* EXBundleController.m */; };
+		A4ACC4FA20342A8E00E756D1 /* EXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4F920342A8E00E756D1 /* EXBaseViewController.m */; };
+		A4ACC4FE20342C0E00E756D1 /* EXDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4FD20342C0E00E756D1 /* EXDataController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		70FF2BFBA5CE3B890BBD4BFC /* Pods-CLFoundationExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLFoundationExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CLFoundationExample/Pods-CLFoundationExample.debug.xcconfig"; sourceTree = "<group>"; };
+		8CCCB4B4B5D99FC7A6BBD8E1 /* Pods_CLFoundationExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CLFoundationExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42FEFE7203DC79C0054C8A3 /* NSObject+CLObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+CLObject.h"; sourceTree = "<group>"; };
 		A42FEFE8203DC79C0054C8A3 /* NSObject+CLObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CLObject.m"; sourceTree = "<group>"; };
-		A48D73A72034478B00378353 /* CLDateController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLDateController.h; sourceTree = "<group>"; };
-		A48D73A82034478B00378353 /* CLDateController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLDateController.m; sourceTree = "<group>"; };
+		A48D73A72034478B00378353 /* EXDateController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXDateController.h; sourceTree = "<group>"; };
+		A48D73A82034478B00378353 /* EXDateController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXDateController.m; sourceTree = "<group>"; };
 		A48D73AC2034544C00378353 /* NSBundle+CLBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+CLBundle.h"; sourceTree = "<group>"; };
 		A48D73AD2034544C00378353 /* NSBundle+CLBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+CLBundle.m"; sourceTree = "<group>"; };
 		A48D73AF2034544C00378353 /* NSData+CLData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CLData.m"; sourceTree = "<group>"; };
@@ -66,12 +76,26 @@
 		A48D73CA2034544C00378353 /* NSDate+CLDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CLDate.m"; sourceTree = "<group>"; };
 		A48D73CC2034544C00378353 /* NSArray+CLArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CLArray.h"; sourceTree = "<group>"; };
 		A48D73CD2034544C00378353 /* NSArray+CLArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CLArray.m"; sourceTree = "<group>"; };
-		A48D73DB2035561B00378353 /* CLDictionaryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLDictionaryController.h; sourceTree = "<group>"; };
-		A48D73DC2035561B00378353 /* CLDictionaryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLDictionaryController.m; sourceTree = "<group>"; };
-		A48D73DF2035AD3B00378353 /* CLStringController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLStringController.h; sourceTree = "<group>"; };
-		A48D73E02035AD3B00378353 /* CLStringController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLStringController.m; sourceTree = "<group>"; };
-		A48D73E32035B2AE00378353 /* CLURLController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLURLController.h; sourceTree = "<group>"; };
-		A48D73E42035B2AE00378353 /* CLURLController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLURLController.m; sourceTree = "<group>"; };
+		A48D73DB2035561B00378353 /* EXDictionaryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXDictionaryController.h; sourceTree = "<group>"; };
+		A48D73DC2035561B00378353 /* EXDictionaryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXDictionaryController.m; sourceTree = "<group>"; };
+		A48D73DF2035AD3B00378353 /* EXStringController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXStringController.h; sourceTree = "<group>"; };
+		A48D73E02035AD3B00378353 /* EXStringController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXStringController.m; sourceTree = "<group>"; };
+		A48D73E32035B2AE00378353 /* EXURLController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXURLController.h; sourceTree = "<group>"; };
+		A48D73E42035B2AE00378353 /* EXURLController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXURLController.m; sourceTree = "<group>"; };
+		A4A6C32B203ED89B001EF8FD /* NSTimer+CLTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+CLTimer.h"; sourceTree = "<group>"; };
+		A4A6C32C203ED89B001EF8FD /* NSTimer+CLTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+CLTimer.m"; sourceTree = "<group>"; };
+		A4A6C32F203EDF53001EF8FD /* EXTimerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTimerController.h; sourceTree = "<group>"; };
+		A4A6C330203EDF53001EF8FD /* EXTimerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXTimerController.m; sourceTree = "<group>"; };
+		A4A8A40320404BE500FA9EC5 /* UINavigationItem+CLNavigationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+CLNavigationItem.m"; sourceTree = "<group>"; };
+		A4A8A40420404BE500FA9EC5 /* UINavigationItem+CLNavigationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+CLNavigationItem.h"; sourceTree = "<group>"; };
+		A4A8A40620404BE600FA9EC5 /* UIView+CLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CLView.m"; sourceTree = "<group>"; };
+		A4A8A40720404BE600FA9EC5 /* UIView+CLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CLView.h"; sourceTree = "<group>"; };
+		A4A8A40B2040731700FA9EC5 /* EXObjectController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXObjectController.h; sourceTree = "<group>"; };
+		A4A8A40C2040731700FA9EC5 /* EXObjectController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXObjectController.m; sourceTree = "<group>"; };
+		A4A8A40F2042925100FA9EC5 /* NSNumber+CLNumber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSNumber+CLNumber.h"; sourceTree = "<group>"; };
+		A4A8A4102042925100FA9EC5 /* NSNumber+CLNumber.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+CLNumber.m"; sourceTree = "<group>"; };
+		A4A8A4132042931900FA9EC5 /* EXNumberController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXNumberController.h; sourceTree = "<group>"; };
+		A4A8A4142042931900FA9EC5 /* EXNumberController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXNumberController.m; sourceTree = "<group>"; };
 		A4ACC4992034103600E756D1 /* CLFoundationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CLFoundationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4ACC49C2034103600E756D1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A4ACC49D2034103600E756D1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -80,19 +104,20 @@
 		A4ACC4A82034103600E756D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4ACC4AA2034103600E756D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4ACC4AB2034103600E756D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A4ACC4E52034129100E756D1 /* CLExampleTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLExampleTableViewController.h; sourceTree = "<group>"; };
-		A4ACC4E62034129100E756D1 /* CLExampleTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLExampleTableViewController.m; sourceTree = "<group>"; };
+		A4ACC4E52034129100E756D1 /* EXRootController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXRootController.h; sourceTree = "<group>"; };
+		A4ACC4E62034129100E756D1 /* EXRootController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXRootController.m; sourceTree = "<group>"; };
 		A4ACC4E92034152600E756D1 /* CLFoundationExample-PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CLFoundationExample-PrefixHeader.pch"; sourceTree = "<group>"; };
-		A4ACC4EC203419A200E756D1 /* CLArrayController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLArrayController.h; sourceTree = "<group>"; };
-		A4ACC4ED203419A200E756D1 /* CLArrayController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLArrayController.m; sourceTree = "<group>"; };
-		A4ACC4F02034212400E756D1 /* CLAttributeStringController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLAttributeStringController.h; sourceTree = "<group>"; };
-		A4ACC4F12034212400E756D1 /* CLAttributeStringController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLAttributeStringController.m; sourceTree = "<group>"; };
-		A4ACC4F42034265700E756D1 /* CLBundleController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLBundleController.h; sourceTree = "<group>"; };
-		A4ACC4F52034265700E756D1 /* CLBundleController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLBundleController.m; sourceTree = "<group>"; };
-		A4ACC4F820342A8E00E756D1 /* CLBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLBaseViewController.h; sourceTree = "<group>"; };
-		A4ACC4F920342A8E00E756D1 /* CLBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLBaseViewController.m; sourceTree = "<group>"; };
-		A4ACC4FC20342C0E00E756D1 /* CLDataController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLDataController.h; sourceTree = "<group>"; };
-		A4ACC4FD20342C0E00E756D1 /* CLDataController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLDataController.m; sourceTree = "<group>"; };
+		A4ACC4EC203419A200E756D1 /* EXArrayController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXArrayController.h; sourceTree = "<group>"; };
+		A4ACC4ED203419A200E756D1 /* EXArrayController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXArrayController.m; sourceTree = "<group>"; };
+		A4ACC4F02034212400E756D1 /* EXAttributeStringController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXAttributeStringController.h; sourceTree = "<group>"; };
+		A4ACC4F12034212400E756D1 /* EXAttributeStringController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXAttributeStringController.m; sourceTree = "<group>"; };
+		A4ACC4F42034265700E756D1 /* EXBundleController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXBundleController.h; sourceTree = "<group>"; };
+		A4ACC4F52034265700E756D1 /* EXBundleController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXBundleController.m; sourceTree = "<group>"; };
+		A4ACC4F820342A8E00E756D1 /* EXBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXBaseViewController.h; sourceTree = "<group>"; };
+		A4ACC4F920342A8E00E756D1 /* EXBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXBaseViewController.m; sourceTree = "<group>"; };
+		A4ACC4FC20342C0E00E756D1 /* EXDataController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXDataController.h; sourceTree = "<group>"; };
+		A4ACC4FD20342C0E00E756D1 /* EXDataController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXDataController.m; sourceTree = "<group>"; };
+		D8AFC4BF0E762F1B9F28A338 /* Pods-CLFoundationExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLFoundationExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-CLFoundationExample/Pods-CLFoundationExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85C74BD7E7ECAAA3D7B195E1 /* Pods_CLFoundationExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,13 +141,13 @@
 			path = "NSObject+CLObject";
 			sourceTree = "<group>";
 		};
-		A48D73A62034477E00378353 /* Date */ = {
+		A48D73A62034477E00378353 /* EXDate */ = {
 			isa = PBXGroup;
 			children = (
-				A48D73A72034478B00378353 /* CLDateController.h */,
-				A48D73A82034478B00378353 /* CLDateController.m */,
+				A48D73A72034478B00378353 /* EXDateController.h */,
+				A48D73A82034478B00378353 /* EXDateController.m */,
 			);
-			path = Date;
+			path = EXDate;
 			sourceTree = "<group>";
 		};
 		A48D73AA2034544C00378353 /* CLFoundation */ = {
@@ -138,8 +164,10 @@
 				A48D73B12034544C00378353 /* NSMutableArray+CLMutableArray */,
 				A48D73B72034544C00378353 /* NSMutableAttributedString+CLMutableAttributedString */,
 				A48D73BA2034544C00378353 /* NSMutableDictionary+CLMutableDictionary */,
+				A4A8A40E2042923D00FA9EC5 /* NSNumber+CLNumber */,
 				A42FEFE6203DC7840054C8A3 /* NSObject+CLObject */,
 				A48D73C22034544C00378353 /* NSString+CLString */,
+				A4A6C32A203ED884001EF8FD /* NSTimer+CLTimer */,
 				A48D73BF2034544C00378353 /* NSURL+CLURL */,
 			);
 			name = CLFoundation;
@@ -245,31 +273,102 @@
 			path = "NSArray+CLArray";
 			sourceTree = "<group>";
 		};
-		A48D73DA2035560B00378353 /* Dictionary */ = {
+		A48D73DA2035560B00378353 /* EXDictionary */ = {
 			isa = PBXGroup;
 			children = (
-				A48D73DB2035561B00378353 /* CLDictionaryController.h */,
-				A48D73DC2035561B00378353 /* CLDictionaryController.m */,
+				A48D73DB2035561B00378353 /* EXDictionaryController.h */,
+				A48D73DC2035561B00378353 /* EXDictionaryController.m */,
 			);
-			path = Dictionary;
+			path = EXDictionary;
 			sourceTree = "<group>";
 		};
-		A48D73DE2035AD2500378353 /* String */ = {
+		A48D73DE2035AD2500378353 /* EXString */ = {
 			isa = PBXGroup;
 			children = (
-				A48D73DF2035AD3B00378353 /* CLStringController.h */,
-				A48D73E02035AD3B00378353 /* CLStringController.m */,
+				A48D73DF2035AD3B00378353 /* EXStringController.h */,
+				A48D73E02035AD3B00378353 /* EXStringController.m */,
 			);
-			path = String;
+			path = EXString;
 			sourceTree = "<group>";
 		};
-		A48D73E22035B2A200378353 /* URL */ = {
+		A48D73E22035B2A200378353 /* EXURL */ = {
 			isa = PBXGroup;
 			children = (
-				A48D73E32035B2AE00378353 /* CLURLController.h */,
-				A48D73E42035B2AE00378353 /* CLURLController.m */,
+				A48D73E32035B2AE00378353 /* EXURLController.h */,
+				A48D73E42035B2AE00378353 /* EXURLController.m */,
 			);
-			path = URL;
+			path = EXURL;
+			sourceTree = "<group>";
+		};
+		A497E093E1144E8CED93D686 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CCCB4B4B5D99FC7A6BBD8E1 /* Pods_CLFoundationExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A4A6C32A203ED884001EF8FD /* NSTimer+CLTimer */ = {
+			isa = PBXGroup;
+			children = (
+				A4A6C32B203ED89B001EF8FD /* NSTimer+CLTimer.h */,
+				A4A6C32C203ED89B001EF8FD /* NSTimer+CLTimer.m */,
+			);
+			path = "NSTimer+CLTimer";
+			sourceTree = "<group>";
+		};
+		A4A6C32E203EDCA7001EF8FD /* EXTimer */ = {
+			isa = PBXGroup;
+			children = (
+				A4A6C32F203EDF53001EF8FD /* EXTimerController.h */,
+				A4A6C330203EDF53001EF8FD /* EXTimerController.m */,
+			);
+			path = EXTimer;
+			sourceTree = "<group>";
+		};
+		A4A8A40220404BE500FA9EC5 /* UINavigationItem+CLNavigationItem */ = {
+			isa = PBXGroup;
+			children = (
+				A4A8A40420404BE500FA9EC5 /* UINavigationItem+CLNavigationItem.h */,
+				A4A8A40320404BE500FA9EC5 /* UINavigationItem+CLNavigationItem.m */,
+			);
+			path = "UINavigationItem+CLNavigationItem";
+			sourceTree = "<group>";
+		};
+		A4A8A40520404BE600FA9EC5 /* UIView+CLView */ = {
+			isa = PBXGroup;
+			children = (
+				A4A8A40720404BE600FA9EC5 /* UIView+CLView.h */,
+				A4A8A40620404BE600FA9EC5 /* UIView+CLView.m */,
+			);
+			path = "UIView+CLView";
+			sourceTree = "<group>";
+		};
+		A4A8A40A2040730200FA9EC5 /* EXObject */ = {
+			isa = PBXGroup;
+			children = (
+				A4A8A40B2040731700FA9EC5 /* EXObjectController.h */,
+				A4A8A40C2040731700FA9EC5 /* EXObjectController.m */,
+			);
+			path = EXObject;
+			sourceTree = "<group>";
+		};
+		A4A8A40E2042923D00FA9EC5 /* NSNumber+CLNumber */ = {
+			isa = PBXGroup;
+			children = (
+				A4A8A40F2042925100FA9EC5 /* NSNumber+CLNumber.h */,
+				A4A8A4102042925100FA9EC5 /* NSNumber+CLNumber.m */,
+			);
+			path = "NSNumber+CLNumber";
+			sourceTree = "<group>";
+		};
+		A4A8A4122042930800FA9EC5 /* EXNumber */ = {
+			isa = PBXGroup;
+			children = (
+				A4A8A4132042931900FA9EC5 /* EXNumberController.h */,
+				A4A8A4142042931900FA9EC5 /* EXNumberController.m */,
+			);
+			path = EXNumber;
 			sourceTree = "<group>";
 		};
 		A4ACC4902034103600E756D1 = {
@@ -277,6 +376,8 @@
 			children = (
 				A4ACC49B2034103600E756D1 /* CLFoundationExample */,
 				A4ACC49A2034103600E756D1 /* Products */,
+				DCE8D1436616542F3B34396A /* Pods */,
+				A497E093E1144E8CED93D686 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -325,71 +426,85 @@
 		A4ACC4E82034150B00E756D1 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				A4ACC4EB2034198B00E756D1 /* Array */,
-				A4ACC4EF203420CE00E756D1 /* AttributeString */,
-				A4ACC4F32034264600E756D1 /* Bundle */,
-				A4ACC4FB20342BFF00E756D1 /* Data */,
-				A48D73A62034477E00378353 /* Date */,
-				A48D73DA2035560B00378353 /* Dictionary */,
-				A4ACC4EA203416AA00E756D1 /* Home */,
-				A48D73DE2035AD2500378353 /* String */,
-				A48D73E22035B2A200378353 /* URL */,
+				A4ACC4EB2034198B00E756D1 /* EXArray */,
+				A4ACC4EF203420CE00E756D1 /* EXAttributeString */,
+				A4ACC4F32034264600E756D1 /* EXBundle */,
+				A4ACC4FB20342BFF00E756D1 /* EXData */,
+				A48D73A62034477E00378353 /* EXDate */,
+				A48D73DA2035560B00378353 /* EXDictionary */,
+				A4A8A4122042930800FA9EC5 /* EXNumber */,
+				A4A8A40A2040730200FA9EC5 /* EXObject */,
+				A4ACC4EA203416AA00E756D1 /* EXRoot */,
+				A48D73DE2035AD2500378353 /* EXString */,
+				A4A6C32E203EDCA7001EF8FD /* EXTimer */,
+				A48D73E22035B2A200378353 /* EXURL */,
 			);
 			path = Module;
 			sourceTree = "<group>";
 		};
-		A4ACC4EA203416AA00E756D1 /* Home */ = {
+		A4ACC4EA203416AA00E756D1 /* EXRoot */ = {
 			isa = PBXGroup;
 			children = (
-				A4ACC4E52034129100E756D1 /* CLExampleTableViewController.h */,
-				A4ACC4E62034129100E756D1 /* CLExampleTableViewController.m */,
+				A4ACC4E52034129100E756D1 /* EXRootController.h */,
+				A4ACC4E62034129100E756D1 /* EXRootController.m */,
 			);
-			path = Home;
+			path = EXRoot;
 			sourceTree = "<group>";
 		};
-		A4ACC4EB2034198B00E756D1 /* Array */ = {
+		A4ACC4EB2034198B00E756D1 /* EXArray */ = {
 			isa = PBXGroup;
 			children = (
-				A4ACC4EC203419A200E756D1 /* CLArrayController.h */,
-				A4ACC4ED203419A200E756D1 /* CLArrayController.m */,
+				A4ACC4EC203419A200E756D1 /* EXArrayController.h */,
+				A4ACC4ED203419A200E756D1 /* EXArrayController.m */,
 			);
-			path = Array;
+			path = EXArray;
 			sourceTree = "<group>";
 		};
-		A4ACC4EF203420CE00E756D1 /* AttributeString */ = {
+		A4ACC4EF203420CE00E756D1 /* EXAttributeString */ = {
 			isa = PBXGroup;
 			children = (
-				A4ACC4F02034212400E756D1 /* CLAttributeStringController.h */,
-				A4ACC4F12034212400E756D1 /* CLAttributeStringController.m */,
+				A4ACC4F02034212400E756D1 /* EXAttributeStringController.h */,
+				A4ACC4F12034212400E756D1 /* EXAttributeStringController.m */,
 			);
-			path = AttributeString;
+			path = EXAttributeString;
 			sourceTree = "<group>";
 		};
-		A4ACC4F32034264600E756D1 /* Bundle */ = {
+		A4ACC4F32034264600E756D1 /* EXBundle */ = {
 			isa = PBXGroup;
 			children = (
-				A4ACC4F42034265700E756D1 /* CLBundleController.h */,
-				A4ACC4F52034265700E756D1 /* CLBundleController.m */,
+				A4ACC4F42034265700E756D1 /* EXBundleController.h */,
+				A4ACC4F52034265700E756D1 /* EXBundleController.m */,
 			);
-			path = Bundle;
+			path = EXBundle;
 			sourceTree = "<group>";
 		};
 		A4ACC4F720342A8300E756D1 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				A4ACC4F820342A8E00E756D1 /* CLBaseViewController.h */,
-				A4ACC4F920342A8E00E756D1 /* CLBaseViewController.m */,
+				A4A8A40220404BE500FA9EC5 /* UINavigationItem+CLNavigationItem */,
+				A4A8A40520404BE600FA9EC5 /* UIView+CLView */,
+				A4ACC4F820342A8E00E756D1 /* EXBaseViewController.h */,
+				A4ACC4F920342A8E00E756D1 /* EXBaseViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
 		};
-		A4ACC4FB20342BFF00E756D1 /* Data */ = {
+		A4ACC4FB20342BFF00E756D1 /* EXData */ = {
 			isa = PBXGroup;
 			children = (
-				A4ACC4FC20342C0E00E756D1 /* CLDataController.h */,
-				A4ACC4FD20342C0E00E756D1 /* CLDataController.m */,
+				A4ACC4FC20342C0E00E756D1 /* EXDataController.h */,
+				A4ACC4FD20342C0E00E756D1 /* EXDataController.m */,
 			);
-			path = Data;
+			path = EXData;
+			sourceTree = "<group>";
+		};
+		DCE8D1436616542F3B34396A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				70FF2BFBA5CE3B890BBD4BFC /* Pods-CLFoundationExample.debug.xcconfig */,
+				D8AFC4BF0E762F1B9F28A338 /* Pods-CLFoundationExample.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,9 +514,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4ACC4AF2034103600E756D1 /* Build configuration list for PBXNativeTarget "CLFoundationExample" */;
 			buildPhases = (
+				C79681A92F9386EE0B76B067 /* [CP] Check Pods Manifest.lock */,
 				A4ACC4952034103600E756D1 /* Sources */,
 				A4ACC4962034103600E756D1 /* Frameworks */,
 				A4ACC4972034103600E756D1 /* Resources */,
+				165E26174C68C545AF0FF164 /* [CP] Embed Pods Frameworks */,
+				07FEF6C9E42CD5C3DA88D4F4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -459,32 +577,93 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		07FEF6C9E42CD5C3DA88D4F4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CLFoundationExample/Pods-CLFoundationExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		165E26174C68C545AF0FF164 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CLFoundationExample/Pods-CLFoundationExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CLFoundationExample/Pods-CLFoundationExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C79681A92F9386EE0B76B067 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CLFoundationExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A4ACC4952034103600E756D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4ACC4F62034265700E756D1 /* CLBundleController.m in Sources */,
-				A48D73E12035AD3B00378353 /* CLStringController.m in Sources */,
+				A4A6C331203EDF53001EF8FD /* EXTimerController.m in Sources */,
+				A4ACC4F62034265700E756D1 /* EXBundleController.m in Sources */,
+				A48D73E12035AD3B00378353 /* EXStringController.m in Sources */,
 				A48D73D22034544C00378353 /* NSMutableAttributedString+CLMutableAttributedString.m in Sources */,
-				A48D73E52035B2AE00378353 /* CLURLController.m in Sources */,
+				A48D73E52035B2AE00378353 /* EXURLController.m in Sources */,
+				A4A8A40D2040731700FA9EC5 /* EXObjectController.m in Sources */,
 				A48D73CE2034544C00378353 /* NSBundle+CLBundle.m in Sources */,
-				A4ACC4FA20342A8E00E756D1 /* CLBaseViewController.m in Sources */,
-				A4ACC4E72034129100E756D1 /* CLExampleTableViewController.m in Sources */,
+				A4ACC4FA20342A8E00E756D1 /* EXBaseViewController.m in Sources */,
+				A4ACC4E72034129100E756D1 /* EXRootController.m in Sources */,
 				A48D73CF2034544C00378353 /* NSData+CLData.m in Sources */,
-				A4ACC4F22034212400E756D1 /* CLAttributeStringController.m in Sources */,
-				A48D73DD2035561B00378353 /* CLDictionaryController.m in Sources */,
+				A4ACC4F22034212400E756D1 /* EXAttributeStringController.m in Sources */,
+				A48D73DD2035561B00378353 /* EXDictionaryController.m in Sources */,
+				A4A8A40820404BE600FA9EC5 /* UINavigationItem+CLNavigationItem.m in Sources */,
 				A48D73D72034544C00378353 /* NSDictionary+CLDictionary.m in Sources */,
 				A4ACC4AC2034103600E756D1 /* main.m in Sources */,
+				A4A6C32D203ED89B001EF8FD /* NSTimer+CLTimer.m in Sources */,
 				A4ACC49E2034103600E756D1 /* AppDelegate.m in Sources */,
+				A4A8A40920404BE600FA9EC5 /* UIView+CLView.m in Sources */,
 				A48D73D52034544C00378353 /* NSURL+CLURL.m in Sources */,
+				A4A8A4112042925100FA9EC5 /* NSNumber+CLNumber.m in Sources */,
 				A48D73D32034544C00378353 /* NSMutableDictionary+CLMutableDictionary.m in Sources */,
 				A42FEFE9203DC79C0054C8A3 /* NSObject+CLObject.m in Sources */,
 				A48D73D82034544C00378353 /* NSDate+CLDate.m in Sources */,
-				A4ACC4EE203419A200E756D1 /* CLArrayController.m in Sources */,
-				A4ACC4FE20342C0E00E756D1 /* CLDataController.m in Sources */,
+				A4ACC4EE203419A200E756D1 /* EXArrayController.m in Sources */,
+				A4ACC4FE20342C0E00E756D1 /* EXDataController.m in Sources */,
+				A4A8A4152042931900FA9EC5 /* EXNumberController.m in Sources */,
 				A48D73D62034544C00378353 /* NSString+CLString.m in Sources */,
-				A48D73A92034478B00378353 /* CLDateController.m in Sources */,
+				A48D73A92034478B00378353 /* EXDateController.m in Sources */,
 				A48D73D92034544C00378353 /* NSArray+CLArray.m in Sources */,
 				A48D73D02034544C00378353 /* NSMutableArray+CLMutableArray.m in Sources */,
 				A48D73D12034544C00378353 /* NSAttributedString+CLAttributedString.m in Sources */,
@@ -619,6 +798,7 @@
 		};
 		A4ACC4B02034103600E756D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70FF2BFBA5CE3B890BBD4BFC /* Pods-CLFoundationExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -636,6 +816,7 @@
 		};
 		A4ACC4B12034103600E756D1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8AFC4BF0E762F1B9F28A338 /* Pods-CLFoundationExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

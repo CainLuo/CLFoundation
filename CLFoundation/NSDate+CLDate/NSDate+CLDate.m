@@ -16,98 +16,86 @@
 
 @implementation NSDate (CLDate)
 
+#pragma mark - 时间戳处理/计算日期
 + (NSString *)cl_compareCureentTimeWithDate:(NSTimeInterval)timeStamp {
     
-    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:timeStamp];
+    NSDate *cl_timeDate = [NSDate dateWithTimeIntervalSince1970:timeStamp];
     
-    NSTimeInterval  timeInterval = [confromTimesp timeIntervalSinceNow];
+    NSTimeInterval cl_timeInterval = [cl_timeDate timeIntervalSinceNow];
     
-    timeInterval = -timeInterval;
+    cl_timeInterval = -cl_timeInterval;
     
     NSInteger temp = 0;
     
-    NSString *result;
+    NSCalendar *cl_calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSInteger cl_unitFlags  = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekday |
+                              NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
     
-    NSInteger unitFlags  = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekday |
-    NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+    NSDateComponents *cl_dateComponents = [cl_calendar components:cl_unitFlags
+                                                         fromDate:cl_timeDate];
     
-    NSDateComponents *referenceComponents = [calendar components:unitFlags
-                                                        fromDate:confromTimesp];
-    
-    //        NSInteger referenceYear  = referenceComponents.year;
-    //        NSInteger referenceMonth = referenceComponents.month;
-    //        NSInteger referenceDay   = referenceComponents.day;
-    NSInteger referenceHour = referenceComponents.hour;
-    //        NSInteger referemceMinute = referenceComponents.minute;
-    
-    if (timeInterval < 60) {
+    if (cl_timeInterval < 60) {
         
-        result = [NSString stringWithFormat:@"刚刚"];
+        return [NSString stringWithFormat:@"刚刚"];
         
-    } else if((temp= timeInterval / 60) < 60){
+    } else if((temp = cl_timeInterval / 60) < 60){
         
-        result = [NSString stringWithFormat:@"%ld分钟前", (long)temp];
+        return [NSString stringWithFormat:@"%ld分钟前", (long)temp];
         
-    } else if((temp = timeInterval / 3600) < 24){
+    } else if((temp = cl_timeInterval / 3600) < 24){
         
-        result = [NSString stringWithFormat:@"%ld小时前", (long)temp];
+        return [NSString stringWithFormat:@"%ld小时前", (long)temp];
         
-    } else if ((temp = timeInterval / 3600 / 24) == 1) {
+    } else if ((temp = cl_timeInterval / 3600 / 24) == 1) {
         
-        result = [NSString stringWithFormat:@"昨天%ld时", (long)referenceHour];
+        return [NSString stringWithFormat:@"昨天%ld时", (long)cl_dateComponents.hour];
         
-    } else if ((temp = timeInterval / 3600 / 24) == 2) {
+    } else if ((temp = cl_timeInterval / 3600 / 24) == 2) {
         
-        result = [NSString stringWithFormat:@"前天%ld时", (long)referenceHour];
+        return [NSString stringWithFormat:@"前天%ld时", (long)cl_dateComponents.hour];
         
-    } else if((temp = timeInterval / 3600 / 24) < 31){
+    } else if((temp = cl_timeInterval / 3600 / 24) < 31){
         
-        result = [NSString stringWithFormat:@"%ld天前", (long)temp];
+        return [NSString stringWithFormat:@"%ld天前", (long)temp];
         
-    } else if((temp = timeInterval / 3600 / 24 / 30) <12){
+    } else if((temp = cl_timeInterval / 3600 / 24 / 30) < 12){
         
-        result = [NSString stringWithFormat:@"%ld个月前",(long)temp];
+        return [NSString stringWithFormat:@"%ld个月前",(long)temp];
         
     } else {
         
-        temp = temp / 12;
-        
-        result = [NSString stringWithFormat:@"%ld年前", (long)temp];
+        return [NSString stringWithFormat:@"%ld年前", (long)temp / 12];
     }
-    
-    return  result;
 }
 
-+ (NSString *)cl_changeCureentTimeToTimeStamp {
++ (NSString *)cl_getCurrentTimeStamp {
     
-    NSDate *cureentDate = [NSDate date];
+    NSDate *cl_cureentDate = [NSDate date];
     
-    return [NSString stringWithFormat:@"%ld", (long)[cureentDate timeIntervalSince1970]];
+    return [NSString stringWithFormat:@"%ld", (long)[cl_cureentDate timeIntervalSince1970]];
 }
 
 + (NSString *)cl_displayTimeWithTimeStamp:(NSTimeInterval)timeStamp {
     
-    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:timeStamp];
+    NSDate *cl_timeDate = [NSDate dateWithTimeIntervalSince1970:timeStamp];
     
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSCalendar *cl_calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     
-    NSInteger unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekday |
-    NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+    NSInteger cl_unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekday |
+                             NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
     
-    NSDateComponents *referenceComponents = [calendar components:unitFlags
-                                                        fromDate:confromTimesp];
+    NSDateComponents *cl_dateComponents = [cl_calendar components:cl_unitFlags
+                                                         fromDate:cl_timeDate];
     
-    NSInteger referenceYear   = referenceComponents.year;
-    NSInteger referenceMonth  = referenceComponents.month;
-    NSInteger referenceDay    = referenceComponents.day;
-    NSInteger referenceHour   = referenceComponents.hour;
-    NSInteger referenceMinute = referenceComponents.minute;
+    NSInteger cl_year   = cl_dateComponents.year;
+    NSInteger cl_month  = cl_dateComponents.month;
+    NSInteger cl_day    = cl_dateComponents.day;
+    NSInteger cl_hour   = cl_dateComponents.hour;
+    NSInteger cl_minute = cl_dateComponents.minute;
 
-    return [NSString stringWithFormat:@"%ld年%ld月%ld日 %ld:%ld", (long)referenceYear, (long)referenceMonth, (long)referenceDay, (long)referenceHour, (long)referenceMinute];
+    return [NSString stringWithFormat:@"%ld年%ld月%ld日 %ld:%ld", (long)cl_year, (long)cl_month, (long)cl_day, (long)cl_hour, (long)cl_minute];
 }
-
 
 + (NSString *)cl_displayTimeWithTimeStamp:(NSTimeInterval)timeStamp
                                 formatter:(NSString *)formatter {
@@ -117,23 +105,119 @@
         timeStamp /= 1000.0f;
     }
     
-    NSDate *timestampDate = [NSDate dateWithTimeIntervalSince1970:timeStamp];
+    NSDate *cl_timeDate = [NSDate dateWithTimeIntervalSince1970:timeStamp];
     
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *cl_dateFormatter = [[NSDateFormatter alloc] init];
     
-    [dateFormatter setDateFormat:formatter];
+    cl_dateFormatter.dateFormat = formatter;
     
-    NSString *dateString = [dateFormatter stringFromDate:timestampDate];
+    return [cl_dateFormatter stringFromDate:cl_timeDate];
+}
+
++ (NSString *)cl_getDateStringWithDate:(NSDate *)date
+                             formatter:(NSString *)formatter {
     
-    return dateString;
+    NSDateFormatter *cl_dateFormatter = [[NSDateFormatter alloc] init];
+    
+    cl_dateFormatter.dateFormat = formatter;
+    
+    return [cl_dateFormatter stringFromDate:date];
+}
+
++ (NSString *)cl_calculateDaysWithDate:(NSDate *)date {
+    
+    NSDate *cl_currentDate = [NSDate date];
+    
+    NSCalendar *cl_calendar = [NSCalendar autoupdatingCurrentCalendar];
+    
+    NSDateComponents *comps_today = [cl_calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay)
+                                                   fromDate:cl_currentDate];
+    NSDateComponents *comps_other = [cl_calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay)
+                                                   fromDate:date];
+    
+    if (comps_today.year == comps_other.year &&
+        comps_today.month == comps_other.month &&
+        comps_today.day == comps_other.day) {
+        
+        return @"今天";
+        
+    } else if (comps_today.year == comps_other.year &&
+               comps_today.month == comps_other.month &&
+               (comps_today.day - comps_other.day) == -1 ) {
+        
+        return @"明天";
+        
+    } else if (comps_today.year == comps_other.year &&
+               comps_today.month == comps_other.month &&
+               (comps_today.day - comps_other.day) == -2) {
+        
+        return @"后天";
+    }
+    
+    return @"";
+}
+
+#pragma mark - 获取日期
++ (NSUInteger)cl_getEraWithDate:(NSDate *)date {
+    
+    NSDateComponents *cl_dateComponents = [self cl_getCalendarWithUnitFlags:NSCalendarUnitEra
+                                                                       date:date];
+    
+    return cl_dateComponents.era;
+}
+
++ (NSUInteger)cl_getYearWithDate:(NSDate *)date {
+
+    NSDateComponents *cl_dateComponents = [self cl_getCalendarWithUnitFlags:NSCalendarUnitYear
+                                                                       date:date];
+    
+    return cl_dateComponents.year;
+}
+
++ (NSUInteger)cl_getMonthWithDate:(NSDate *)date {
+    
+    NSDateComponents *cl_dateComponents = [self cl_getCalendarWithUnitFlags:NSCalendarUnitMonth
+                                                                       date:date];
+    
+    return cl_dateComponents.month;
+}
+
++ (NSUInteger)cl_getDayWithDate:(NSDate *)date {
+    
+    NSDateComponents *cl_dateComponents = [self cl_getCalendarWithUnitFlags:NSCalendarUnitDay
+                                                                       date:date];
+    
+    return cl_dateComponents.day;
+}
+
++ (NSUInteger)cl_getHourWithDate:(NSDate *)date {
+    
+    NSDateComponents *cl_dateComponents = [self cl_getCalendarWithUnitFlags:NSCalendarUnitHour
+                                                                       date:date];
+    
+    return cl_dateComponents.hour;
+}
+
++ (NSUInteger)cl_getMinuteWithDate:(NSDate *)date {
+    
+    NSDateComponents *cl_dateComponents = [self cl_getCalendarWithUnitFlags:NSCalendarUnitMinute
+                                                                       date:date];
+    
+    return cl_dateComponents.minute;
+}
+
++ (NSUInteger)cl_getSecondWithDate:(NSDate *)date {
+    
+    NSDateComponents *cl_dateComponents = [self cl_getCalendarWithUnitFlags:NSCalendarUnitSecond
+                                                                       date:date];
+    
+    return cl_dateComponents.second;
 }
 
 + (NSInteger)cl_getWeekdayStringFromDate:(NSDate *)date {
     
-    NSCalendar *cl_calendar = [NSCalendar currentCalendar];
-        
-    NSDateComponents *cl_dateComponents = [cl_calendar components:NSCalendarUnitWeekday
-                                                         fromDate:date];
+    NSDateComponents *cl_dateComponents = [self cl_getCalendarWithUnitFlags:NSCalendarUnitWeekday
+                                                                       date:date];
     
     return cl_dateComponents.weekday;
 }
@@ -151,52 +235,34 @@
     return cl_dateComponents.day;
 }
 
-+ (NSString *)cl_getDays:(NSDate *)date {
++ (NSDate *)cl_getMonthFirstDeteWithDate:(NSDate *)date {
     
-    NSDate *cl_currentDate = [NSDate date];
-    
-    NSCalendar *cl_calendar = [NSCalendar currentCalendar];
-
-    NSDateComponents *comps_today = [cl_calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay)
-                                                   fromDate:cl_currentDate];
-    NSDateComponents *comps_other = [cl_calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay)
-                                                   fromDate:date];
-    
-    if (comps_today.year == comps_other.year &&
-        comps_today.month == comps_other.month &&
-        comps_today.day == comps_other.day) {
-        
-        return @"今天";
-        
-    } else if (comps_today.year == comps_other.year &&
-               comps_today.month == comps_other.month &&
-              (comps_today.day - comps_other.day) == -1 ) {
-        
-        return @"明天";
-        
-    } else if (comps_today.year == comps_other.year &&
-               comps_today.month == comps_other.month &&
-              (comps_today.day - comps_other.day) == -2) {
-        
-        return @"后天";
-    }
-    
-    return @"";
+    return [self cl_getDaysDateWithDate:date
+                                   days:-[self cl_getDayWithDate:date] + 1];
 }
 
-+ (BOOL)cl_checkTodayWithDate:(NSDate *)date {
++ (NSDate *)cl_getMonthLastDayWithDate:(NSDate *)date {
     
-    NSCalendar *cl_calendar   = [NSCalendar currentCalendar];
-    NSInteger cl_calendarUnit = NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear;
+    NSDate *cl_firstDate = [self cl_getMonthFirstDeteWithDate:date];
+    NSDate *cl_monthDate = [self cl_getMonthDateWithDate:cl_firstDate
+                                                  months:1];
+    return [self cl_getDaysDateWithDate:cl_monthDate
+                                   days:-1];
+}
+
++ (NSUInteger)cl_getWeekOfYearWithDate:(NSDate *)date {
+
+    NSUInteger cl_week = 1;
+    NSUInteger cl_year = [self cl_getYearWithDate:date];
+
+    NSDate *cl_lastDate = [self cl_getMonthLastDayWithDate:date];
     
-    NSDateComponents *cl_nowDateComponents = [cl_calendar components:cl_calendarUnit
-                                                            fromDate:date];
-    NSDateComponents *cl_currentDateComponents = [cl_calendar components:cl_calendarUnit
-                                                                fromDate:[NSDate date]];
-    
-    return (cl_currentDateComponents.year == cl_nowDateComponents.year) &&
-           (cl_currentDateComponents.month == cl_nowDateComponents.month) &&
-           (cl_currentDateComponents.day == cl_nowDateComponents.day);
+    while ([self cl_getYearWithDate:[self cl_getDaysDateWithDate:cl_lastDate
+                                                            days:-7 * cl_week]] == cl_year) {
+        cl_week++;
+    };
+
+    return cl_week;
 }
 
 + (NSDate *)cl_getTomorrowDay:(NSDate *)date {
@@ -211,17 +277,96 @@
     return [cl_calendar dateFromComponents:cl_dateComponents];
 }
 
-+ (NSDate *)cl_getDays:(NSDate *)date
-                  days:(NSInteger)days {
++ (NSDate *)cl_getYearDateWithDate:(NSDate *)date
+                             years:(NSInteger)years {
     
-    NSCalendar *cl_calendar = [NSCalendar currentCalendar];
+    NSCalendar *cl_calendar = [NSCalendar autoupdatingCurrentCalendar];
+
+    NSDateComponents *cl_dateComponents = [[NSDateComponents alloc] init];
     
-    NSDateComponents *cl_dateComponents = [cl_calendar components:NSCalendarUnitWeekday | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay
-                                                         fromDate:date];
+    cl_dateComponents.year = years;
+
+    return [cl_calendar dateByAddingComponents:cl_dateComponents
+                                        toDate:date
+                                       options:0];
+}
+
++ (NSDate *)cl_getMonthDateWithDate:(NSDate *)date
+                             months:(NSInteger)months {
     
-    cl_dateComponents.day = cl_dateComponents.day + days;
     
-    return [cl_calendar dateFromComponents:cl_dateComponents];
+    NSDateComponents *cl_dateComponents = [[NSDateComponents alloc] init];
+    
+    cl_dateComponents.month = months;
+    
+    return [self cl_getDateWithDateComponents:cl_dateComponents
+                                         date:date];
+}
+
++ (NSDate *)cl_getDaysDateWithDate:(NSDate *)date
+                              days:(NSInteger)days {
+    
+    NSDateComponents *cl_dateComponents = [[NSDateComponents alloc] init];
+    
+    cl_dateComponents.day = days;
+    
+    return [self cl_getDateWithDateComponents:cl_dateComponents
+                                         date:date];
+}
+
++ (NSDate *)cl_getHoursDateWithDate:(NSDate *)date
+                              hours:(NSInteger)hours {
+    
+    NSDateComponents *cl_dateComponents = [[NSDateComponents alloc] init];
+    
+    cl_dateComponents.hour = hours;
+    
+    return [self cl_getDateWithDateComponents:cl_dateComponents
+                                         date:date];
+}
+
++ (NSDate *)cl_getDateWithDateComponents:(NSDateComponents *)dateComponents
+                                    date:(NSDate *)date {
+    
+    NSCalendar *cl_calendar = [NSCalendar autoupdatingCurrentCalendar];
+    
+    return [cl_calendar dateByAddingComponents:dateComponents
+                                        toDate:date
+                                       options:0];
+}
+
+#pragma mark - 日期判断
++ (BOOL)cl_isLeapYear:(NSDate *)date {
+    
+    NSUInteger cl_year = [self cl_getYearWithDate:date];
+    
+    return ((cl_year % 4 == 0) && (cl_year % 100 != 0)) || (cl_year % 400 == 0);
+}
+
++ (BOOL)cl_checkTodayWithDate:(NSDate *)date {
+    
+    NSInteger cl_calendarUnit = NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear;
+    
+    NSDateComponents *cl_dateComponents = [self cl_getCalendarWithUnitFlags:cl_calendarUnit
+                                                                       date:date];
+
+    NSDateComponents *cl_currentDateComponents = [self cl_getCalendarWithUnitFlags:cl_calendarUnit
+                                                                              date:[NSDate date]];
+    
+    return (cl_currentDateComponents.year == cl_dateComponents.year) &&
+           (cl_currentDateComponents.month == cl_dateComponents.month) &&
+           (cl_currentDateComponents.day == cl_dateComponents.day);
+}
+
+
+#pragma mark - 获取NSDateComponents
++ (NSDateComponents *)cl_getCalendarWithUnitFlags:(NSCalendarUnit)unitFlags
+                                             date:(NSDate *)date {
+    
+    NSCalendar *cl_calendar = [NSCalendar autoupdatingCurrentCalendar];
+    
+    return [cl_calendar components:unitFlags
+                          fromDate:date];
 }
 
 @end

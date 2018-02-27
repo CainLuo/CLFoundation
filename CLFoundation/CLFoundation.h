@@ -13,6 +13,12 @@
 //  Copyright © 2016年 Cain. All rights reserved.
 //
 
+#pragma mark - NSNumber+CLNumber
+#import "NSNumber+CLNumber.h"
+
+#pragma mark - NSTimer+CLTimer
+#import "NSTimer+CLTimer.h"
+
 #pragma mark - NSObject+CLObject
 #import "NSObject+CLObject.h"
 

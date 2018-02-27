@@ -1,0 +1,6 @@
+framework module Pods_CLFoundationExample {
+  umbrella header "Pods-CLFoundationExample-umbrella.h"
+
+  export *
+  module * { export * }
+}
