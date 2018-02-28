@@ -32,7 +32,7 @@
  @param range range, 这里就算超出了索引也不会引起问题
  @return NSArray
  */
-- (NSArray *)cl_safeSubarrayWithRange:(NSRange)range;
+- (NSArray *)cl_safeArrayWithRange:(NSRange)range;
 
 /**
  根据对象返回对应的索引
@@ -48,6 +48,6 @@
  @param name Plist文件名
  @return NSArray
  */
-+ (NSArray *)cl_arrayWithPlistName:(NSString *)name;
++ (NSArray *)cl_getArrayWithPlistName:(NSString *)name;
 
 @end

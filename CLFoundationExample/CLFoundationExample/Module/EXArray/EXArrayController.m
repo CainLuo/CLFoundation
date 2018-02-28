@@ -32,9 +32,9 @@
     
     [self.ex_textViewString appendFormat:@"NSArray:\n创建数组: %@\n", cl_safeArray];
     [self.ex_textViewString appendFormat:@"获取对象的索引: %lud\n", (unsigned long)[cl_safeArray cl_safeIndexOfObject:@"Hello Word"]];
-    [self.ex_textViewString appendFormat:@"获取指定区间的数组: %@\n", [cl_safeArray cl_safeSubarrayWithRange:NSMakeRange(0, 10)]];
+    [self.ex_textViewString appendFormat:@"获取指定区间的数组: %@\n", [cl_safeArray cl_safeArrayWithRange:NSMakeRange(0, 10)]];
     [self.ex_textViewString appendFormat:@"获取指定索引的对象: %@\n", [cl_safeArray cl_safeObjectAtIndex:10]];
-    [self.ex_textViewString appendFormat:@"获取指定Plist文件的数组: %@\n\n", [NSArray cl_arrayWithPlistName:@"Array"]];
+    [self.ex_textViewString appendFormat:@"获取指定Plist文件的数组: %@\n\n", [NSArray cl_getArrayWithPlistName:@"Array"]];
 }
 
 - (void)cl_mutableArray {

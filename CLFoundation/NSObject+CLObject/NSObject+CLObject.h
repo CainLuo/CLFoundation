@@ -14,9 +14,17 @@ typedef void(^CLObject)(void);
 @interface NSObject (CLObject)
 
 #pragma mark - Runtime
+/**
+ 交换两个实例方法
+
+ @param class Clss类
+ @param originalSelector 被交换方法
+ @param swizzledSelector 交换方法
+ */
 + (void)cl_exchangeImplementationsWithClass:(Class)class
                            originalSelector:(SEL)originalSelector
                            swizzledSelector:(SEL)swizzledSelector;
+
 /**
  给指定类添加额外的方法
  

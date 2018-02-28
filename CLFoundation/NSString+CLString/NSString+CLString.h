@@ -18,6 +18,7 @@
 
 @interface NSString (CLString)
 
+#pragma mark - 字符串处理
 /**
  返回过滤后的数字
 
@@ -65,6 +66,14 @@
  @return NSString
  */
 - (NSString *)cl_trimmedString;
+
+/**
+ 去除指定的字符
+
+ @param character 指定的字符
+ @return NSString
+ */
+- (NSString *)cl_removeStringCharacterWithCharacter:(NSString *)character;
 
 /**
  手机号格式化, 默认: 138 0013 8000
@@ -202,9 +211,17 @@
 + (NSString *)cl_getFirstPinYinWithString:(NSString *)string;
 
 #pragma mark - 正则表达式
-#pragma mark - 整数相关
+#pragma mark - 数字字符判断
 /**
  当前字符是否为数字
+ 
+ @return BOOL
+ */
+- (BOOL)cl_realContainDecimal;
+
+#pragma mark - 整数相关
+/**
+ 当前字符是否为整数
  
  @return BOOL
  */
@@ -243,41 +260,6 @@
  */
 - (BOOL)cl_isNotZeroStartNumber;
 
-/**
- 当前字符是否为非零开头的最多带两位小数的数字
- 
- @return BOOL
- */
-- (BOOL)cl_isNotZeroStartNumberHaveOneOrTwoDecimal;
-
-/**
- 当前字符是否为带1-2位小数的正数或负数
- 
- @return BOOL
- */
-- (BOOL)cl_isHaveOneOrTwoDecimalPositiveOrNegative;
-
-/**
- 当前字符是否为正数、负数、或小数
- 
- @return BOOL
- */
-- (BOOL)cl_realContainDecimal;
-
-/**
- 当前字符是否为有两位小数的正实数
- 
- @return BOOL
- */
-- (BOOL)cl_isPositiveRealHaveTwoDecimal;
-
-/**
- 当前字符是否为有1~3位小数的正实数
- 
- @return BOOL
- */
-- (BOOL)cl_isHaveOneOrThreeDecimalPositiveOrNegative;
-
 
 /**
  当前字符是否为非零的正整数
@@ -301,7 +283,6 @@
  */
 - (BOOL)cl_isPositiveInteger;
 
-
 /**
  当前字符是否为负整数
  
@@ -310,6 +291,13 @@
 - (BOOL)cl_isNegativeInteger;
 
 #pragma mark - 浮点数相关
+/**
+ 当前字符是否为浮点数
+ 
+ @return BOOL
+ */
+- (BOOL)cl_isFloat;
+
 /**
  当前字符是否为正浮点数
  
@@ -325,11 +313,32 @@
 - (BOOL)cl_isNagativeFloat;
 
 /**
- 当前字符是否为浮点数
+ 当前字符是否为非零开头的最多带两位小数的数字
  
  @return BOOL
  */
-- (BOOL)cl_isFloat;
+- (BOOL)cl_isNotZeroStartNumberHaveOneOrTwoDecimal;
+
+/**
+ 当前字符是否为带1-2位小数的正数或负数
+ 
+ @return BOOL
+ */
+- (BOOL)cl_isHaveOneOrTwoDecimalPositiveOrNegative;
+
+/**
+ 当前字符是否为有两位小数的正实数
+ 
+ @return BOOL
+ */
+- (BOOL)cl_isPositiveRealHaveTwoDecimal;
+
+/**
+ 当前字符是否为有1~3位小数的正实数
+ 
+ @return BOOL
+ */
+- (BOOL)cl_isHaveOneOrThreeDecimalPositiveOrNegative;
 
 #pragma mark - 字符串相关
 /**
@@ -619,7 +628,7 @@
 - (BOOL)cl_checkPostalCode;
 
 /**
- 当前字符是否为IP地址
+ 当前字符是否为IPv4地址
  
  @return BOOL
  */

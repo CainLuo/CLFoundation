@@ -33,7 +33,7 @@
     }
 }
 
-- (NSArray *)cl_safeSubarrayWithRange:(NSRange)range {
+- (NSArray *)cl_safeArrayWithRange:(NSRange)range {
     
     NSUInteger location = range.location;
     NSUInteger length   = range.length;
@@ -45,7 +45,7 @@
             
             length = (self.count - location);
             
-            return [self cl_safeSubarrayWithRange:NSMakeRange(location, length)];
+            return [self cl_safeArrayWithRange:NSMakeRange(location, length)];
         }
         
         return nil;
@@ -67,7 +67,7 @@
     }
 }
 
-+ (NSArray *)cl_arrayWithPlistName:(NSString *)name {
++ (NSArray *)cl_getArrayWithPlistName:(NSString *)name {
     
     NSString *path = [[NSBundle mainBundle] pathForResource:name
                                                      ofType:@"plist"];

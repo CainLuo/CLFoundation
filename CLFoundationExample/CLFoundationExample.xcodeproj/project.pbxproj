@@ -186,8 +186,8 @@
 		A48D73AE2034544C00378353 /* NSData+CLData */ = {
 			isa = PBXGroup;
 			children = (
-				A48D73AF2034544C00378353 /* NSData+CLData.m */,
 				A48D73B02034544C00378353 /* NSData+CLData.h */,
+				A48D73AF2034544C00378353 /* NSData+CLData.m */,
 			);
 			path = "NSData+CLData";
 			sourceTree = "<group>";
@@ -808,7 +808,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/CLFoundationExample/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.CainLuo.SimpleProjects;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CainLuo.CLFoundationExamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -826,7 +826,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/CLFoundationExample/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.CainLuo.SimpleProjects;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CainLuo.CLFoundationExamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

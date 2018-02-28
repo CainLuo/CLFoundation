@@ -152,6 +152,12 @@ static char cl_base64EncodingTable[64] = {
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 }
 
+- (NSString *)cl_removeStringCharacterWithCharacter:(NSString *)character {
+    
+    return [self stringByReplacingOccurrencesOfString:character
+                                           withString:@""];
+}
+
 + (NSString *)cl_stringMobileFormat:(NSString *)phoneNumber {
     
     return [self cl_stringMobileFormat:phoneNumber
@@ -455,6 +461,14 @@ static char cl_base64EncodingTable[64] = {
 }
 
 #pragma mark - 正则表达式
+
+- (BOOL)cl_realContainDecimal {
+    
+    NSString *rules = @"^(\\-|\\+)?\\d+(\\.\\d+)?$";
+    
+    return [self cl_regularWithRule:rules];
+}
+
 #pragma mark - 整数相关
 - (BOOL)cl_isNumber {
     
@@ -492,41 +506,6 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-- (BOOL)cl_isNotZeroStartNumberHaveOneOrTwoDecimal {
-    
-    NSString *rules = @"^([1-9][0-9]*)+(.[0-9]{1,2})?$";
-    
-    return [self cl_regularWithRule:rules];
-}
-
-- (BOOL)cl_isHaveOneOrTwoDecimalPositiveOrNegative {
-    
-    NSString *rules = @"^(\\-)?\\d+(\\.\\d{1,2})?$";
-    
-    return [self cl_regularWithRule:rules];
-}
-
-- (BOOL)cl_realContainDecimal {
-    
-    NSString *rules = @"^(\\-|\\+)?\\d+(\\.\\d+)?$";
-    
-    return [self cl_regularWithRule:rules];
-}
-
-- (BOOL)cl_isPositiveRealHaveTwoDecimal {
-    
-    NSString *rules = @"^[0-9]+(.[0-9]{2})?$";
-    
-    return [self cl_regularWithRule:rules];
-}
-
-- (BOOL)cl_isHaveOneOrThreeDecimalPositiveOrNegative {
-    
-    NSString *rules = @"^[0-9]+(.[0-9]{1,3})?$";
-    
-    return [self cl_regularWithRule:rules];
-}
-
 - (BOOL)cl_isNotZeroPositiveInteger {
     
     NSString *rules = @"^[1-9]\\d*$";
@@ -556,6 +535,13 @@ static char cl_base64EncodingTable[64] = {
 }
 
 #pragma mark - 浮点数相关
+- (BOOL)cl_isFloat {
+    
+    NSString *rules = @"^(-?\\d+)(\\.\\d+)?$";
+    
+    return [self cl_regularWithRule:rules];
+}
+
 - (BOOL)cl_isPositiveFloat {
     
     NSString *rules = @"^[1-9]\\d*\\.\\d*|0\\.\\d*[1-9]\\d*$";
@@ -570,9 +556,30 @@ static char cl_base64EncodingTable[64] = {
     return [self cl_regularWithRule:rules];
 }
 
-- (BOOL)cl_isFloat {
+- (BOOL)cl_isNotZeroStartNumberHaveOneOrTwoDecimal {
     
-    NSString *rules = @"^(-?\\d+)(\\.\\d+)?$";
+    NSString *rules = @"^([1-9][0-9]*)+(.[0-9]{1,2})?$";
+    
+    return [self cl_regularWithRule:rules];
+}
+
+- (BOOL)cl_isHaveOneOrTwoDecimalPositiveOrNegative {
+    
+    NSString *rules = @"^(\\-)?\\d+(\\.\\d{1,2})?$";
+    
+    return [self cl_regularWithRule:rules];
+}
+
+- (BOOL)cl_isPositiveRealHaveTwoDecimal {
+    
+    NSString *rules = @"^[0-9]+(.[0-9]{2})?$";
+    
+    return [self cl_regularWithRule:rules];
+}
+
+- (BOOL)cl_isHaveOneOrThreeDecimalPositiveOrNegative {
+    
+    NSString *rules = @"^[0-9]+(.[0-9]{1,3})?$";
     
     return [self cl_regularWithRule:rules];
 }
@@ -721,33 +728,11 @@ static char cl_base64EncodingTable[64] = {
      * 电信号段: 133,153,180,181,189,177,1700
      */
     NSString *MOBILE = @"^1(3[0-9]|4[57]|5[0-35-9]|8[0-9]|70)\\d{8}$";
-    /**
-     * 中国移动：China Mobile
-     * 134,135,136,137,138,139,150,151,152,157,158,159,182,183,184,187,188,147,178,1705
-     */
-    NSString *CM = @"(^1(3[4-9]|4[7]|5[0-27-9]|7[8]|8[2-478])\\d{8}$)|(^1705\\d{7}$)";
-    /**
-     * 中国联通：China Unicom
-     * 130,131,132,155,156,185,186,145,176,1709
-     */
-    NSString *CU = @"(^1(3[0-2]|4[5]|5[56]|7[6]|8[56])\\d{8}$)|(^1709\\d{7}$)";
-    /**
-     * 中国电信：China Telecom
-     * 133,153,180,181,189,177,1700
-     */
-    NSString *CT = @"(^1(33|53|77|8[019])\\d{8}$)|(^1700\\d{7}$)";
-    /**
-     * 大陆地区固话及小灵通
-     * 区号：010,020,021,022,023,024,025,027,028,029
-     * 号码：七位或八位
-     */
-    NSString * PHS = @"^0(10|2[0-5789]|\\d{3})\\d{7,8}$";
     
     return [self cl_regularWithRule:MOBILE] ||
-    [self cl_regularWithRule:CM] ||
-    [self cl_regularWithRule:CU] ||
-    [self cl_regularWithRule:CT] ||
-    [self cl_regularWithRule:PHS];
+           [self cl_checkChinaMobelPhoneNumber] ||
+           [self cl_checkChinaUnicomPhoneNumber] ||
+           [self cl_checkChinaTelecomPhoneNumber];
 }
 
 - (BOOL)cl_checkChinaMobelPhoneNumber {
