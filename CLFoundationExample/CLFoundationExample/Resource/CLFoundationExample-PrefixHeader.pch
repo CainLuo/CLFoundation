@@ -12,7 +12,4 @@
 #import "CLFoundation.h"
 #import "Masonry.h"
 
-#import "UIView+CLView.h"
-#import "UINavigationItem+CLNavigationItem.h"
-
 #endif /* CLFoundationExample_PrefixHeader_pch */

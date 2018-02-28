@@ -27,8 +27,6 @@
 		A48D73E52035B2AE00378353 /* EXURLController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73E42035B2AE00378353 /* EXURLController.m */; };
 		A4A6C32D203ED89B001EF8FD /* NSTimer+CLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A6C32C203ED89B001EF8FD /* NSTimer+CLTimer.m */; };
 		A4A6C331203EDF53001EF8FD /* EXTimerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A6C330203EDF53001EF8FD /* EXTimerController.m */; };
-		A4A8A40820404BE600FA9EC5 /* UINavigationItem+CLNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A8A40320404BE500FA9EC5 /* UINavigationItem+CLNavigationItem.m */; };
-		A4A8A40920404BE600FA9EC5 /* UIView+CLView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A8A40620404BE600FA9EC5 /* UIView+CLView.m */; };
 		A4A8A40D2040731700FA9EC5 /* EXObjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A8A40C2040731700FA9EC5 /* EXObjectController.m */; };
 		A4A8A4112042925100FA9EC5 /* NSNumber+CLNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A8A4102042925100FA9EC5 /* NSNumber+CLNumber.m */; };
 		A4A8A4152042931900FA9EC5 /* EXNumberController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A8A4142042931900FA9EC5 /* EXNumberController.m */; };
@@ -86,10 +84,6 @@
 		A4A6C32C203ED89B001EF8FD /* NSTimer+CLTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+CLTimer.m"; sourceTree = "<group>"; };
 		A4A6C32F203EDF53001EF8FD /* EXTimerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTimerController.h; sourceTree = "<group>"; };
 		A4A6C330203EDF53001EF8FD /* EXTimerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXTimerController.m; sourceTree = "<group>"; };
-		A4A8A40320404BE500FA9EC5 /* UINavigationItem+CLNavigationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+CLNavigationItem.m"; sourceTree = "<group>"; };
-		A4A8A40420404BE500FA9EC5 /* UINavigationItem+CLNavigationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+CLNavigationItem.h"; sourceTree = "<group>"; };
-		A4A8A40620404BE600FA9EC5 /* UIView+CLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CLView.m"; sourceTree = "<group>"; };
-		A4A8A40720404BE600FA9EC5 /* UIView+CLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CLView.h"; sourceTree = "<group>"; };
 		A4A8A40B2040731700FA9EC5 /* EXObjectController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXObjectController.h; sourceTree = "<group>"; };
 		A4A8A40C2040731700FA9EC5 /* EXObjectController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXObjectController.m; sourceTree = "<group>"; };
 		A4A8A40F2042925100FA9EC5 /* NSNumber+CLNumber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSNumber+CLNumber.h"; sourceTree = "<group>"; };
@@ -326,24 +320,6 @@
 			path = EXTimer;
 			sourceTree = "<group>";
 		};
-		A4A8A40220404BE500FA9EC5 /* UINavigationItem+CLNavigationItem */ = {
-			isa = PBXGroup;
-			children = (
-				A4A8A40420404BE500FA9EC5 /* UINavigationItem+CLNavigationItem.h */,
-				A4A8A40320404BE500FA9EC5 /* UINavigationItem+CLNavigationItem.m */,
-			);
-			path = "UINavigationItem+CLNavigationItem";
-			sourceTree = "<group>";
-		};
-		A4A8A40520404BE600FA9EC5 /* UIView+CLView */ = {
-			isa = PBXGroup;
-			children = (
-				A4A8A40720404BE600FA9EC5 /* UIView+CLView.h */,
-				A4A8A40620404BE600FA9EC5 /* UIView+CLView.m */,
-			);
-			path = "UIView+CLView";
-			sourceTree = "<group>";
-		};
 		A4A8A40A2040730200FA9EC5 /* EXObject */ = {
 			isa = PBXGroup;
 			children = (
@@ -481,8 +457,6 @@
 		A4ACC4F720342A8300E756D1 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				A4A8A40220404BE500FA9EC5 /* UINavigationItem+CLNavigationItem */,
-				A4A8A40520404BE600FA9EC5 /* UIView+CLView */,
 				A4ACC4F820342A8E00E756D1 /* EXBaseViewController.h */,
 				A4ACC4F920342A8E00E756D1 /* EXBaseViewController.m */,
 			);
@@ -648,12 +622,10 @@
 				A48D73CF2034544C00378353 /* NSData+CLData.m in Sources */,
 				A4ACC4F22034212400E756D1 /* EXAttributeStringController.m in Sources */,
 				A48D73DD2035561B00378353 /* EXDictionaryController.m in Sources */,
-				A4A8A40820404BE600FA9EC5 /* UINavigationItem+CLNavigationItem.m in Sources */,
 				A48D73D72034544C00378353 /* NSDictionary+CLDictionary.m in Sources */,
 				A4ACC4AC2034103600E756D1 /* main.m in Sources */,
 				A4A6C32D203ED89B001EF8FD /* NSTimer+CLTimer.m in Sources */,
 				A4ACC49E2034103600E756D1 /* AppDelegate.m in Sources */,
-				A4A8A40920404BE600FA9EC5 /* UIView+CLView.m in Sources */,
 				A48D73D52034544C00378353 /* NSURL+CLURL.m in Sources */,
 				A4A8A4112042925100FA9EC5 /* NSNumber+CLNumber.m in Sources */,
 				A48D73D32034544C00378353 /* NSMutableDictionary+CLMutableDictionary.m in Sources */,
