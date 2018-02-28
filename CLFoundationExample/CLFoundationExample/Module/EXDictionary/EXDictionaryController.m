@@ -14,28 +14,6 @@
 
 @implementation EXDictionaryController
 
-+ (void)load {
-    
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        
-        [self cl_replaceMethodWithClass:[self class]
-                       originalSelector:@selector(viewWillAppear:)
-                       swizzledSelector:@selector(xx_viewWillAppear:)];
-    });
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-
-- (void)xx_viewWillAppear:(BOOL)animated {
-    
-    [self xx_viewWillAppear:animated];
-    
-    NSLog(@"viewWillAppear: %@", self);
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     

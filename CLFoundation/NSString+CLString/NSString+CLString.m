@@ -14,6 +14,7 @@
 
 #import "NSString+CLString.h"
 #import "NSObject+CLObject.h"
+#import <CommonCrypto/CommonDigest.h>
 
 static char cl_base64EncodingTable[64] = {
     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
@@ -23,50 +24,6 @@ static char cl_base64EncodingTable[64] = {
 };
 
 @implementation NSString (CLString)
-
-+ (void)load {
-    
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        
-        Class clazz = object_getClass((id)self);
-
-        [NSObject cl_exchangeImplementationsWithClass:clazz
-                                     originalSelector:@selector(resolveInstanceMethod:)
-                                     swizzledSelector:@selector(myResolveInstanceMethod:)];
-    });
-}
-
-+ (BOOL)myResolveInstanceMethod:(SEL)sel {
-    
-    if(! [self myResolveInstanceMethod:sel]) {
-        
-        NSString *selString = NSStringFromSelector(sel);
-        
-        if([selString isEqualToString:@"countAll"] || [selString isEqualToString:@"pushViewController"]) {
-            
-//            class_addMethod(self,
-//                            sel,
-//                            class_getMethodImplementation(self, @selector(dynamicMethodIMP)),
-//                            "v@:");
-
-            [NSObject cl_addMethodWithClass:self
-                           originalSelector:sel
-                           swizzledSelector:@selector(dynamicMethodIMP)];
-            
-            return YES;
-        } else {
-            
-            return NO;
-        }
-    }
-    
-    return YES;
-}
-
-- (void)dynamicMethodIMP {
-    NSLog(@"我是动态加入的函数");
-}
 
 + (NSString *)cl_getNumberWithString:(NSString *)string {
     
