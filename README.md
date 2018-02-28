@@ -1,8 +1,6 @@
 # CLFoundation
 
-[![Build Status](https://travis-ci.org/AFNetworking/AFNetworking.svg)](https://travis-ci.org/AFNetworking/AFNetworking)[![codecov.io](https://codecov.io/github/CLFoundation/CLFoundation/coverage.svg?branch=master)](https://codecov.io/github/CLFoundation/CLFoundation?branch=master)[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/CLFoundation.svg)](https://img.shields.io/cocoapods/v/CLFoundation.svg)[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)[![Platform](https://img.shields.io/cocoapods/p/CLFoundation.svg?style=flat)](http://cocoadocs.org/docsets/CLFoundation)
-
-[TOC]
+[![Build Status](https://travis-ci.org/AFNetworking/AFNetworking.svg)](https://travis-ci.org/AFNetworking/AFNetworking) [![codecov.io](https://codecov.io/github/CLFoundation/CLFoundation/coverage.svg?branch=master)](https://codecov.io/github/CLFoundation/CLFoundation?branch=master) [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/CLFoundation.svg)](https://img.shields.io/cocoapods/v/CLFoundation.svg) [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Platform](https://img.shields.io/cocoapods/p/CLFoundation.svg?style=flat)](http://cocoadocs.org/docsets/CLFoundation) [![Language](https://img.shields.io/badge/language-ObjC-blue.svg)](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html) 
 
 ## CLFoundation简介
 
@@ -12,7 +10,9 @@
 
 > pod 'CLFoundation', '~> 1.4.1'
 
+## 目录
 
+- [NSArray+CLArray](#NSArray+CLArray)
 
 ## NSArray+CLArray
 
