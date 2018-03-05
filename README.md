@@ -226,6 +226,39 @@
 
 
 
+## NSFileManager+CLFileManager@
+
+针对`Foundation`的`NSFileManager`进行系统外的方法补充:
+
+```objective-c
++ (BOOL)cl_saveDataCacheWithData:(NSData *)data
+                      identifier:(NSString *)identifier;
+
++ (BOOL)cl_saveDataCacheWithData:(NSData *)data
+                       cacheName:(NSString *)cacheName
+                      identifier:(NSString *)identifier;
+
++ (NSData *)cl_getDataCacheWithIdentifier:(NSString *)identifier;
+
++ (NSData *)cl_getDataCacheWithCacheName:(NSString *)cacheName
+                              identifier:(NSString *)identifier;
+
++ (BOOL)cl_removeDataWithCache;
+
++ (BOOL)cl_removeDataWithCacheWithCacheName:(NSString *)cacheName;
+
++ (BOOL)cl_saveDocumentWithObject:(id)object
+                         fileName:(NSString *)fileName;
+
++ (BOOL)cl_removeDocumentObjectWithFileName:(NSString *)fileName;
+
++ (id)cl_getDocumentObjectWithFileName:(NSString *)fileName;
+
++ (BOOL)cl_checkFileExistWithFilePath:(NSString *)filePath;
+```
+
+
+
 ## NSMutableArray+CLMutableArray@
 
 针对`Foundation`的`NSMutableArray`进行系统外的方法补充:
