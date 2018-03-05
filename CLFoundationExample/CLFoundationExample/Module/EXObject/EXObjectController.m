@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self.ex_textViewString appendFormat:@"RunTime:\n"];
+    [self.ex_textViewString appendFormat:@"----------RunTime----------\n"];
     [self.ex_textViewString appendFormat:@"获取已注册类的列表数量(太多了): %ld\n\n", [[NSObject cl_getClassList] count]];
     [self.ex_textViewString appendFormat:@"获取指定类的方法列表: %@\n\n", [NSObject cl_getClassMethodListWithClass:[NSArray class]]];
     [self.ex_textViewString appendFormat:@"获取指定类的属性列表: %@\n\n", [NSObject cl_getPropertyListWithClass:[NSArray class]]];

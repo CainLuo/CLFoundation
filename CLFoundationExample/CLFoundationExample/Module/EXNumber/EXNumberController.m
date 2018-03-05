@@ -23,7 +23,7 @@
     NSNumber *cl_ceilingNumber = [[NSNumber alloc] initWithDouble:cl_float];
     NSNumber *cl_floorNumber   = [[NSNumber alloc] initWithDouble:-cl_float];
 
-    [self.ex_textViewString appendString:@"NSNumber四舍五入:\n"];
+    [self.ex_textViewString appendString:@"----------NSNumber四舍五入----------\n"];
     [self.ex_textViewString appendFormat:@"将%f四舍五入并限制最长位5位: %@\n", cl_float, [NSNumber cl_roundingWithNumber:cl_number
                                                                                                                   digit:5]];
     [self.ex_textViewString appendFormat:@"将%f正无穷的四舍五入并限制最长位5位: %@\n", cl_float, [NSNumber cl_roundFloorWithNumber:cl_ceilingNumber
@@ -31,7 +31,7 @@
     [self.ex_textViewString appendFormat:@"将-%f负无穷的四舍五入并限制最长位5位: %@\n", cl_float, [NSNumber cl_roundFloorWithNumber:cl_floorNumber
                                                                                                                            digit:5]];
     
-    [self.ex_textViewString appendString:@"\nNSString四舍五入:\n"];
+    [self.ex_textViewString appendString:@"\n----------NSString四舍五入----------\n"];
     [self.ex_textViewString appendFormat:@"将%f四舍五入并限制最长位2位: %@\n", cl_float, [NSNumber cl_displayDecimalWithNumber:cl_ceilingNumber
                                                                                                                      digit:2]];
     [self.ex_textViewString appendFormat:@"将%f四舍五入添加货币符号并限制最长位2位: %@\n", cl_float, [NSNumber cl_displayCurrencyWithNumber:cl_ceilingNumber

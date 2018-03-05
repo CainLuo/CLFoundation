@@ -39,6 +39,7 @@
     
     NSString *cl_baseString = @"a3b2c13d4e5fg98098";
     
+    [self.ex_textViewString appendString:@"\n----------字符串过滤----------\n"];
     [self.ex_textViewString appendFormat:@"获取\"%@\"过滤后获得的数字为: %@\n\n", cl_baseString, [NSString cl_getNumberWithString:cl_baseString]];
 }
 
@@ -47,6 +48,7 @@
     
     NSString *cl_cradNumber = @"1234567890987654321";
     
+    [self.ex_textViewString appendString:@"\n----------字符串格式化----------\n"];
     [self.ex_textViewString appendFormat:@"屏蔽银行卡号\"%@\"中间八位数: %@\n", cl_cradNumber, [NSString cl_getSecrectStringWithCardNumber:cl_cradNumber]];
 
     NSString *cl_unwantedZero = @"10.000000";
@@ -72,6 +74,7 @@
     
     NSString *cl_baseString = @"Hello Word";
     
+    [self.ex_textViewString appendString:@"\n----------字体相关----------\n"];
     [self.ex_textViewString appendFormat:@"获取指定\"%@\"字号的高度: %f\n", cl_baseString, [cl_baseString cl_heightWithFontSize:20
                                                                                                                        width:cl_baseString.length]];
     
@@ -91,6 +94,7 @@
     NSDictionary *cl_dictionary = @{@"account":@"13800138000",
                                     @"password":@"123456"};
     
+    [self.ex_textViewString appendString:@"\n----------字符串转换----------\n"];
     [self.ex_textViewString appendFormat:@"将\"%@\"转成URL字符串: %@\n", cl_dictionary, [NSString cl_urlQueryStringWithDictionary:cl_dictionary]];
     [self.ex_textViewString appendFormat:@"将\"%@\"转成JSON字符串: %@\n\n", cl_dictionary, [NSString cl_jsonStringWithObject:cl_dictionary]];
 }
@@ -101,6 +105,7 @@
     NSString *cl_baseString   = @"Hello Word";
     NSString *cl_base64String = [NSString cl_encodingBase64WithString:cl_baseString];
     
+    [self.ex_textViewString appendString:@"\n----------字符串加密----------\n"];
     [self.ex_textViewString appendFormat:@"将\"%@\"加密成Base 64: %@\n", cl_baseString, cl_base64String];
     [self.ex_textViewString appendFormat:@"解密\"%@\"为: %@\n", cl_base64String, [NSString cl_decodedBase64WithString:cl_base64String]];
     [self.ex_textViewString appendFormat:@"将\"%@\"加密成MD5: %@\n\n", cl_baseString, [NSString cl_encodingMD5WithString:cl_baseString]];
@@ -112,6 +117,7 @@
     NSString *cl_baseString    = @"Hello Word";
     NSString *cl_chineseString = @"你好 世界";
 
+    [self.ex_textViewString appendString:@"\n----------获取首字母----------\n"];
     [self.ex_textViewString appendFormat:@"获取\"%@\"的首字母: %@\n", cl_baseString, [NSString cl_getFirstCharactorWithString:cl_baseString]];
     [self.ex_textViewString appendFormat:@"获取中文字符\"%@\"的首字母: %@\n\n", cl_chineseString, [NSString cl_getFirstPinYinWithString:cl_chineseString]];
 }
@@ -131,7 +137,8 @@
     NSString *cl_lineString             = @"a_";
     NSString *cl_chineseLineString      = @"你好_a_1";
 
-    [self.ex_textViewString appendFormat:@"\n正则表达式:\n检测\"%@\"是否为空: %@\n", cl_baseString, [NSString cl_checkEmptyWithString:cl_baseString] ? @"YES" : @"NO"];
+    [self.ex_textViewString appendString:@"\n----------数字的正则----------\n"];
+    [self.ex_textViewString appendFormat:@"检测\"%@\"是否为空: %@\n", cl_baseString, [NSString cl_checkEmptyWithString:cl_baseString] ? @"YES" : @"NO"];
     [self.ex_textViewString appendFormat:@"检测\"%@\"是否数字: %@\n", cl_baseString, [cl_baseString cl_isNumber] ? @"YES" : @"NO"];
 
     [self.ex_textViewString appendFormat:@"检测\"%@\"是否最多为5位数数字: %@\n", cl_numberString, [cl_numberString cl_checkMostNumber:5] ? @"YES" : @"NO"];
@@ -143,12 +150,14 @@
 
     
 #pragma mark - 整数
+    [self.ex_textViewString appendString:@"\n----------整数相关的正则----------\n"];
     [self.ex_textViewString appendFormat:@"检测\"%@\"是否是非零的正整数数字: %@\n", cl_numberString, [cl_numberString cl_isNotZeroPositiveInteger] ? @"YES" : @"NO"];
     [self.ex_textViewString appendFormat:@"检测\"%@\"是否是非零的负整数数字: %@\n", cl_numberString, [cl_numberString cl_isNotZeroNegativeInteger] ? @"YES" : @"NO"];
     [self.ex_textViewString appendFormat:@"检测\"%@\"是否是正整数数字: %@\n", cl_numberString, [cl_numberString cl_isPositiveInteger] ? @"YES" : @"NO"];
     [self.ex_textViewString appendFormat:@"检测\"%@\"是否是负整数数字: %@\n", cl_numberString, [cl_numberString cl_isNegativeInteger] ? @"YES" : @"NO"];
     
 #pragma mark - 浮点数
+    [self.ex_textViewString appendString:@"\n----------浮点数相关的正则----------\n"];
     [self.ex_textViewString appendFormat:@"检测\"%@\"是否是正浮点数字: %@\n", cl_floatString, [cl_floatString cl_isPositiveFloat] ? @"YES" : @"NO"];
     [self.ex_textViewString appendFormat:@"检测\"%@\"是否是负浮点数字: %@\n", cl_floatString, [cl_floatString cl_isNagativeFloat] ? @"YES" : @"NO"];
     [self.ex_textViewString appendFormat:@"检测\"%@\"是否是浮点数字: %@\n", cl_floatString, [cl_floatString cl_isFloat] ? @"YES" : @"NO"];
@@ -178,7 +187,8 @@
     NSString *cl_telePhone       = @"0101234567";
     NSString *cl_formatTelePhone = @"010-1234567";
 
-    [self.ex_textViewString appendFormat:@"\n号码相关正则:\n检测\"%@\"是否是手机号码: %@\n", cl_phoneNumber, [cl_phoneNumber cl_checkPhoneNumber] ? @"YES" : @"NO"];
+    [self.ex_textViewString appendString:@"\n----------号码相关的正则----------\n"];
+    [self.ex_textViewString appendFormat:@"检测\"%@\"是否是手机号码: %@\n", cl_phoneNumber, [cl_phoneNumber cl_checkPhoneNumber] ? @"YES" : @"NO"];
     [self.ex_textViewString appendFormat:@"检测\"%@\"是否是移动手机号码: %@\n", cl_chinaMobel, [cl_chinaMobel cl_checkChinaMobelPhoneNumber] ? @"YES" : @"NO"];
     [self.ex_textViewString appendFormat:@"检测\"%@\"是否是联通手机号码: %@\n", cl_chinaUnicom, [cl_chinaUnicom cl_checkChinaUnicomPhoneNumber] ? @"YES" : @"NO"];
     [self.ex_textViewString appendFormat:@"检测\"%@\"是否是电信手机号码: %@\n", cl_chinaTelecom, [cl_chinaTelecom cl_checkChinaTelecomPhoneNumber] ? @"YES" : @"NO"];
@@ -188,14 +198,16 @@
 #pragma mark - 身份证相关
     NSString *cl_identityNumber = @"12345678901234567X";
 
-    [self.ex_textViewString appendFormat:@"\n身份证相关正则:\n检测\"%@\"是否是有效身份证号码: %@\n", cl_identityNumber, [cl_identityNumber cl_checkIdentityCard] ? @"YES" : @"NO"];
+    [self.ex_textViewString appendString:@"\n----------身份证相关的正则----------\n"];
+    [self.ex_textViewString appendFormat:@"检测\"%@\"是否是有效身份证号码: %@\n", cl_identityNumber, [cl_identityNumber cl_checkIdentityCard] ? @"YES" : @"NO"];
     
 #pragma mark - 账号相关
     NSString *cl_accountString  = @"a1234567890_123";
     NSString *cl_passwordString = @"a1234567890_1";
     NSString *cl_strongPassword = @"1a234567890A";
     
-    [self.ex_textViewString appendFormat:@"\n账号相关正则:\n检测\"%@\"是否是字母开头至少5位至多16位的账号(可含有\"_\"): %@\n", cl_accountString, [cl_accountString cl_checkAccount] ? @"YES" : @"NO"];
+    [self.ex_textViewString appendString:@"\n----------账号相关的正则----------\n"];
+    [self.ex_textViewString appendFormat:@"检测\"%@\"是否是字母开头至少5位至多16位的账号(可含有\"_\"): %@\n", cl_accountString, [cl_accountString cl_checkAccount] ? @"YES" : @"NO"];
     [self.ex_textViewString appendFormat:@"检测\"%@\"是否是字母开头至少6位至多18位的密码(可含有\"_\"): %@\n", cl_passwordString, [cl_passwordString cl_checkPassword] ? @"YES" : @"NO"];
     [self.ex_textViewString appendFormat:@"检测\"%@\"是否包含大小写字母至少6位至多12位的强密码: %@\n", cl_strongPassword, [cl_strongPassword cl_checkStrongPassword:6
                                                                                                                                                     longest:12] ? @"YES" : @"NO"];
@@ -205,6 +217,7 @@
     NSString *cl_monthString = @"02";
     NSString *cl_dayString   = @"31";
 
+    [self.ex_textViewString appendString:@"\n----------日期相关的正则----------\n"];
     [self.ex_textViewString appendFormat:@"检测\"%@\"是否是中国日期: %@\n", cl_dateString, [cl_dateString cl_checkChinaDateFormat] ? @"YES" : @"NO"];
     [self.ex_textViewString appendFormat:@"检测\"%@\"是否是国外日期: %@\n", cl_dateString, [cl_dateString cl_checkAbroadDateFormat] ? @"YES" : @"NO"];
     [self.ex_textViewString appendFormat:@"检测\"%@\"是否是一年的12个月: %@\n", cl_monthString, [cl_monthString cl_checkMonth] ? @"YES" : @"NO"];
@@ -219,7 +232,8 @@
     NSString *cl_codeNumber   = @"100101";
     NSString *cl_ipv4Number   = @"192.168.0.0";
 
-    [self.ex_textViewString appendFormat:@"\n特殊正则:\n检测\"%@\"是否是邮箱地址: %@\n", cl_emailString, [cl_emailString cl_checkEmailAddress] ? @"YES" : @"NO"];
+    [self.ex_textViewString appendString:@"\n----------特殊正则----------\n"];
+    [self.ex_textViewString appendFormat:@"检测\"%@\"是否是邮箱地址: %@\n", cl_emailString, [cl_emailString cl_checkEmailAddress] ? @"YES" : @"NO"];
     [self.ex_textViewString appendFormat:@"检测\"%@\"是否是URL地址: %@\n", cl_urlString, [cl_urlString cl_checkURL] ? @"YES" : @"NO"];
 
     [self.ex_textViewString appendFormat:@"检测\"%@\"是否是QQ号码: %@\n", cl_qqNumber, [cl_qqNumber cl_checkQQNumber] ? @"YES" : @"NO"];
@@ -227,7 +241,9 @@
     [self.ex_textViewString appendFormat:@"检测\"%@\"是否是IPv4地址: %@\n", cl_ipv4Number, [cl_ipv4Number cl_checkIPv4InternetProtocol] ? @"YES" : @"NO"];
     
 #warning 有疑问的正则
-    [self.ex_textViewString appendFormat:@"\n有疑问的正则:\n检测\"%@\"是否是含有空格: %@\n", cl_blankString, [cl_blankString cl_checkBlankLines] ? @"YES" : @"NO"];
+    
+    [self.ex_textViewString appendString:@"\n----------有疑问的正则----------\n"];
+    [self.ex_textViewString appendFormat:@"检测\"%@\"是否是含有空格: %@\n", cl_blankString, [cl_blankString cl_checkBlankLines] ? @"YES" : @"NO"];
     [self.ex_textViewString appendFormat:@"检测\"%@\"是否含有首尾空白字符: %@\n", cl_spaceString, [cl_spaceString cl_checkFirstAndLastSpaceCharacters] ? @"YES" : @"NO"];
 
     [self.ex_textViewString appendFormat:@"\n待解决的正则:\n检测\"%@\"是否是非0开头并且最多带两位小数的数字: %@\n", cl_numberString, [cl_numberString cl_isNotZeroStartNumberHaveOneOrTwoDecimal] ? @"YES" : @"NO"];

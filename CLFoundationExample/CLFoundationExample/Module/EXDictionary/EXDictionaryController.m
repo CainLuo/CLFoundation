@@ -27,8 +27,11 @@
     
     NSDictionary *cl_urlDictionary = [NSDictionary cl_dictionaryWithURLString:@"http://www.baidu.com?acount=13800138000&password=123456"];
     
-    [self.ex_textViewString appendFormat:@"NSDictionary:\nURL Dictionary: %@\n\n", cl_urlDictionary];
-    [self.ex_textViewString appendFormat:@"NSMutableDictionary:\n安全的存储一个空的键值对: %@\n", cl_mutableDictionary];
+    [self.ex_textViewString appendString:@"----------NSDictionary----------\n"];
+    [self.ex_textViewString appendFormat:@"URL Dictionary: %@\n\n", cl_urlDictionary];
+    
+    [self.ex_textViewString appendString:@"----------NSMutableDictionary----------\n"];
+    [self.ex_textViewString appendFormat:@"安全的存储一个空的键值对: %@\n", cl_mutableDictionary];
     [self.ex_textViewString appendFormat:@"安全的获取一个空的Key: %@\n", [cl_mutableDictionary cl_safeKeyForValue:@"13800138000"]];
     [self.ex_textViewString appendFormat:@"安全的获取一个空的Value: %@\n", [cl_mutableDictionary cl_safeObjectForKey:@"acount"]];
 

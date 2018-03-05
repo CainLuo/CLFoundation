@@ -41,6 +41,9 @@
 		A4ACC4F62034265700E756D1 /* EXBundleController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4F52034265700E756D1 /* EXBundleController.m */; };
 		A4ACC4FA20342A8E00E756D1 /* EXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4F920342A8E00E756D1 /* EXBaseViewController.m */; };
 		A4ACC4FE20342C0E00E756D1 /* EXDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4FD20342C0E00E756D1 /* EXDataController.m */; };
+		A4BA3137204BA00F002E0ED7 /* EXFileManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BA3136204BA00F002E0ED7 /* EXFileManagerController.m */; };
+		A4BA313C204CCD95002E0ED7 /* CLFoundationExample.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4BA313B204CCD95002E0ED7 /* CLFoundationExample.bundle */; };
+		A4F17CEB204705B500C70EA7 /* NSFileManager+CLFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F17CEA204705B500C70EA7 /* NSFileManager+CLFileManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +114,11 @@
 		A4ACC4F920342A8E00E756D1 /* EXBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXBaseViewController.m; sourceTree = "<group>"; };
 		A4ACC4FC20342C0E00E756D1 /* EXDataController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXDataController.h; sourceTree = "<group>"; };
 		A4ACC4FD20342C0E00E756D1 /* EXDataController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXDataController.m; sourceTree = "<group>"; };
+		A4BA3135204BA00F002E0ED7 /* EXFileManagerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXFileManagerController.h; sourceTree = "<group>"; };
+		A4BA3136204BA00F002E0ED7 /* EXFileManagerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXFileManagerController.m; sourceTree = "<group>"; };
+		A4BA313B204CCD95002E0ED7 /* CLFoundationExample.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CLFoundationExample.bundle; sourceTree = "<group>"; };
+		A4F17CE9204705B500C70EA7 /* NSFileManager+CLFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+CLFileManager.h"; sourceTree = "<group>"; };
+		A4F17CEA204705B500C70EA7 /* NSFileManager+CLFileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+CLFileManager.m"; sourceTree = "<group>"; };
 		D8AFC4BF0E762F1B9F28A338 /* Pods-CLFoundationExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLFoundationExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-CLFoundationExample/Pods-CLFoundationExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,6 +163,7 @@
 				A48D73AE2034544C00378353 /* NSData+CLData */,
 				A48D73C82034544C00378353 /* NSDate+CLDate */,
 				A48D73C52034544C00378353 /* NSDictionary+CLDictionary */,
+				A4F17CE82047058B00C70EA7 /* NSFileManager+CLFileManager */,
 				A48D73B12034544C00378353 /* NSMutableArray+CLMutableArray */,
 				A48D73B72034544C00378353 /* NSMutableAttributedString+CLMutableAttributedString */,
 				A48D73BA2034544C00378353 /* NSMutableDictionary+CLMutableDictionary */,
@@ -389,6 +398,7 @@
 		A4ACC4E32034107600E756D1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A4BA313B204CCD95002E0ED7 /* CLFoundationExample.bundle */,
 				A4ACC4A52034103600E756D1 /* Assets.xcassets */,
 				A4ACC4E92034152600E756D1 /* CLFoundationExample-PrefixHeader.pch */,
 				A4ACC4AA2034103600E756D1 /* Info.plist */,
@@ -408,6 +418,7 @@
 				A4ACC4FB20342BFF00E756D1 /* EXData */,
 				A48D73A62034477E00378353 /* EXDate */,
 				A48D73DA2035560B00378353 /* EXDictionary */,
+				A4BA3134204B9FF1002E0ED7 /* EXFileManager */,
 				A4A8A4122042930800FA9EC5 /* EXNumber */,
 				A4A8A40A2040730200FA9EC5 /* EXObject */,
 				A4ACC4EA203416AA00E756D1 /* EXRoot */,
@@ -470,6 +481,24 @@
 				A4ACC4FD20342C0E00E756D1 /* EXDataController.m */,
 			);
 			path = EXData;
+			sourceTree = "<group>";
+		};
+		A4BA3134204B9FF1002E0ED7 /* EXFileManager */ = {
+			isa = PBXGroup;
+			children = (
+				A4BA3135204BA00F002E0ED7 /* EXFileManagerController.h */,
+				A4BA3136204BA00F002E0ED7 /* EXFileManagerController.m */,
+			);
+			path = EXFileManager;
+			sourceTree = "<group>";
+		};
+		A4F17CE82047058B00C70EA7 /* NSFileManager+CLFileManager */ = {
+			isa = PBXGroup;
+			children = (
+				A4F17CE9204705B500C70EA7 /* NSFileManager+CLFileManager.h */,
+				A4F17CEA204705B500C70EA7 /* NSFileManager+CLFileManager.m */,
+			);
+			path = "NSFileManager+CLFileManager";
 			sourceTree = "<group>";
 		};
 		DCE8D1436616542F3B34396A /* Pods */ = {
@@ -545,6 +574,7 @@
 				A48D73D42034544C00378353 /* Info.plist in Resources */,
 				A4ACC4A92034103600E756D1 /* LaunchScreen.storyboard in Resources */,
 				A4ACC4A62034103600E756D1 /* Assets.xcassets in Resources */,
+				A4BA313C204CCD95002E0ED7 /* CLFoundationExample.bundle in Resources */,
 				A4ACC4A42034103600E756D1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -623,12 +653,14 @@
 				A4ACC4F22034212400E756D1 /* EXAttributeStringController.m in Sources */,
 				A48D73DD2035561B00378353 /* EXDictionaryController.m in Sources */,
 				A48D73D72034544C00378353 /* NSDictionary+CLDictionary.m in Sources */,
+				A4BA3137204BA00F002E0ED7 /* EXFileManagerController.m in Sources */,
 				A4ACC4AC2034103600E756D1 /* main.m in Sources */,
 				A4A6C32D203ED89B001EF8FD /* NSTimer+CLTimer.m in Sources */,
 				A4ACC49E2034103600E756D1 /* AppDelegate.m in Sources */,
 				A48D73D52034544C00378353 /* NSURL+CLURL.m in Sources */,
 				A4A8A4112042925100FA9EC5 /* NSNumber+CLNumber.m in Sources */,
 				A48D73D32034544C00378353 /* NSMutableDictionary+CLMutableDictionary.m in Sources */,
+				A4F17CEB204705B500C70EA7 /* NSFileManager+CLFileManager.m in Sources */,
 				A42FEFE9203DC79C0054C8A3 /* NSObject+CLObject.m in Sources */,
 				A48D73D82034544C00378353 /* NSDate+CLDate.m in Sources */,
 				A4ACC4EE203419A200E756D1 /* EXArrayController.m in Sources */,

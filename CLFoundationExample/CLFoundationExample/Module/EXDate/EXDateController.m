@@ -21,7 +21,7 @@
     
     cl_dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm";
 
-    [self.ex_textViewString appendString:@"时间戳处理/计算日期:\n"];
+    [self.ex_textViewString appendString:@"----------时间戳处理/计算日期----------\n"];
     [self.ex_textViewString appendFormat:@"获取与当前时间的时间差: %@\n", [NSDate cl_compareCureentTimeWithDate:1508617983]];
     [self.ex_textViewString appendFormat:@"当前的时间戳: %@\n", [NSDate cl_getCurrentTimeStamp]];
     [self.ex_textViewString appendFormat:@"时间戳转日期: %@\n", [NSDate cl_displayTimeWithTimeStamp:1508617983]];
@@ -34,7 +34,7 @@
     NSDate *cl_nDate = [NSDate cl_getDaysDateWithDate:[NSDate date]
                                                  days:10];
     
-    [self.ex_textViewString appendString:@"\n日期相关处理:\n"];
+    [self.ex_textViewString appendString:@"\n----------日期相关处理----------\n"];
     [self.ex_textViewString appendFormat:@"获取指定当前日期的纪元: %ld\n", (long)[NSDate cl_getEraWithDate:[NSDate date]]];
     [self.ex_textViewString appendFormat:@"获取指定当前日期的年: %ld\n", (long)[NSDate cl_getYearWithDate:[NSDate date]]];
     [self.ex_textViewString appendFormat:@"获取指定当前日期的月: %ld\n", (long)[NSDate cl_getMonthWithDate:[NSDate date]]];
@@ -56,7 +56,7 @@
     [self.ex_textViewString appendFormat:@"获取指定日期的第二天: %@\n", [cl_dateFormatter stringFromDate:cl_tomorrowDate]];
     [self.ex_textViewString appendFormat:@"获取指定日期的第N天: %@\n", [cl_dateFormatter stringFromDate:cl_nDate]];
     
-    [self.ex_textViewString appendString:@"\n日期判断:\n"];
+    [self.ex_textViewString appendString:@"\n----------日期判断----------\n"];
     [self.ex_textViewString appendFormat:@"判断当前日期是否是闰年: %@\n", [NSDate cl_isLeapYear:[NSDate date]] ? @"YES" : @"NO"];
     [self.ex_textViewString appendFormat:@"判断当前日期是否是今天: %@\n", [NSDate cl_checkTodayWithDate:[NSDate date]] ? @"YES" : @"NO"];
 

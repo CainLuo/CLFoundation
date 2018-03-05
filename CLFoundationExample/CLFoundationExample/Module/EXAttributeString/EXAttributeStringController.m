@@ -37,7 +37,7 @@
                                                                                                         color:[UIColor redColor]
                                                                                                         range:[cl_string rangeOfString:@"Word"]];
     
-    NSString *cl_attributeHeightString = [NSString stringWithFormat:@"NSAttributedString:\n富文本的高度为: %f\n", [cl_colorAttributedString cl_attributedStringHeightWithContainWidth:cl_colorAttributedString.length]];
+    NSString *cl_attributeHeightString = [NSString stringWithFormat:@"----------NSAttributedString----------\n富文本的高度为: %f\n", [cl_colorAttributedString cl_attributedStringHeightWithContainWidth:cl_colorAttributedString.length]];
     
     NSMutableAttributedString *cl_mutableAttributedString = [[NSMutableAttributedString alloc] initWithString:cl_attributeHeightString];
     
@@ -52,7 +52,7 @@
 
     NSMutableAttributedString *cl_mutableAttributedString = [[NSMutableAttributedString alloc] init];
     
-    NSMutableAttributedString *cl_prefixImageAttributedString = [NSMutableAttributedString cl_attributeStringWithPrefixString:@"NSMutableAttributedString:\n图片在文字的后面"
+    NSMutableAttributedString *cl_prefixImageAttributedString = [NSMutableAttributedString cl_attributeStringWithPrefixString:@"----------NSMutableAttributedString----------\n图片在文字的后面"
                                                                                                                   prefixImage:[UIImage imageNamed:@"icon1"]];
     NSMutableAttributedString *cl_subffixImageAttributedString = [NSMutableAttributedString cl_attributeStringWithSubffixString:@"图片在文字的前面"
                                                                                                                    subffixImage:[UIImage imageNamed:@"icon1"]];

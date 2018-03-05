@@ -40,7 +40,9 @@
                                               @{@"title":@"EXObjectController",
                                                 @"controller":@"EXObjectController"},
                                               @{@"title":@"EXNumberController",
-                                                @"controller":@"EXNumberController"}]];
+                                                @"controller":@"EXNumberController"},
+                                              @{@"title":@"EXFileManagerController",
+                                                @"controller":@"EXFileManagerController"}]];
     
     [self.tableView reloadData];
 }

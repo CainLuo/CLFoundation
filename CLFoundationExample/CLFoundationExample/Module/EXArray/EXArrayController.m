@@ -30,7 +30,8 @@
     
     NSArray *cl_safeArray = [NSArray cl_initSafeArrayWithObject:nil];
     
-    [self.ex_textViewString appendFormat:@"NSArray:\n创建数组: %@\n", cl_safeArray];
+    [self.ex_textViewString appendString:@"----------NSArray----------\n"];
+    [self.ex_textViewString appendFormat:@"创建数组: %@\n", cl_safeArray];
     [self.ex_textViewString appendFormat:@"获取对象的索引: %lud\n", (unsigned long)[cl_safeArray cl_safeIndexOfObject:@"Hello Word"]];
     [self.ex_textViewString appendFormat:@"获取指定区间的数组: %@\n", [cl_safeArray cl_safeArrayWithRange:NSMakeRange(0, 10)]];
     [self.ex_textViewString appendFormat:@"获取指定索引的对象: %@\n", [cl_safeArray cl_safeObjectAtIndex:10]];
@@ -44,7 +45,8 @@
     [cl_safeMutableArray cl_addSafeObject:nil];
     [cl_safeMutableArray cl_addSafeObject:@"Hello Word"];
     
-    [self.ex_textViewString appendFormat:@"NSMutableArray:\n安全的添加一个对象: %@\n", cl_safeMutableArray];
+    [self.ex_textViewString appendString:@"----------NSMutableArray----------\n"];
+    [self.ex_textViewString appendFormat:@"安全的添加一个对象: %@\n", cl_safeMutableArray];
     
     [cl_safeMutableArray cl_insertSafeObject:@"13800138000"
                                        index:10];
