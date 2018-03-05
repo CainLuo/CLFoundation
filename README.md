@@ -10,6 +10,15 @@
 
 > pod 'CLFoundation'
 
+
+
+## 支助
+如果您觉得挺赞的话, 可以给我打赏打赏, 谢谢啦~
+
+![支付宝](https://raw.githubusercontent.com/CainRun/PayProject/master/WeChatPay-Objective-C/Images/支付宝QRC.jpg)
+
+
+
 ## 目录
 
 - [NSArray+CLArray@](#NSArray+CLArray)
