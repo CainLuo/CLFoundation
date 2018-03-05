@@ -22,6 +22,7 @@
   - [日期判断@](#日期判断)
 - [获取NSDateComponents@](#获取NSDateComponents)
 - [NSDictionary+CLDictionary@](#NSDictionary+CLDictionary)
+- [NSFileManager+CLFileManager@](#NSFileManager+CLFileManager)
 - [NSMutableArray+CLMutableArray@](#NSMutableArray+CLMutableArray)
 - [NSMutableAttributedString+CLMutableAttributedString@](#NSMutableAttributedString+CLMutableAttributedString)
 - [NSMutableDictionary+CLMutableDictionary@](#NSMutableDictionary+CLMutableDictionary)
