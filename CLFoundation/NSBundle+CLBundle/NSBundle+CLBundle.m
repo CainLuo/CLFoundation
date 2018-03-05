@@ -18,22 +18,29 @@
 
 + (NSString *)cl_getBundleDisplayName {
     
-    return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"];
+    return [[[self mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"];
 }
 
 + (NSString *)cl_getBundleShortVersionString {
     
-    return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    return [[[self mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
 }
 
 + (NSString *)cl_getBundleVersion {
     
-    return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    return [[[self mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
 }
 
 + (NSString *)cl_getBundleIdentifier {
     
-    return [[NSBundle mainBundle] bundleIdentifier];
+    return [[self mainBundle] bundleIdentifier];
+}
+
++ (NSString *)cl_getBundleFileWithName:(NSString *)name
+                                  type:(NSString *)type {
+    
+    return [[self mainBundle] pathForResource:name
+                                       ofType:type];
 }
 
 @end

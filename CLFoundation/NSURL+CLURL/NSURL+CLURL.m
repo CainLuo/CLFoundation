@@ -22,7 +22,41 @@
     [[UIApplication sharedApplication] openURL:[self URLWithString:urlString]];
 }
 
-+ (NSURL *)cl_getURLForDirectory:(NSSearchPathDirectory)directory {
+#pragma mark - Document
++ (NSURL *)cl_getDocumentFileURL {
+    
+    return [self cl_getFileURLForDirectory:NSDocumentDirectory];
+}
+
++ (NSString *)cl_getDocumentPathURL {
+    
+    return [self cl_getPathURLForDirectory:NSDocumentDirectory];
+}
+
+#pragma mark - Library
++ (NSURL *)cl_getLibraryFileURL {
+    
+    return [self cl_getFileURLForDirectory:NSLibraryDirectory];
+}
+
++ (NSString *)cl_getLibraryPathURL {
+    
+    return [self cl_getPathURLForDirectory:NSLibraryDirectory];
+}
+
+#pragma mark - Caches
++ (NSURL *)cl_getCachesFileURL {
+    
+    return [self cl_getFileURLForDirectory:NSCachesDirectory];
+}
+
++ (NSString *)cl_getCachesPathURL {
+    
+    return [self cl_getPathURLForDirectory:NSCachesDirectory];
+}
+
+#pragma mark - 获取File URL
++ (NSURL *)cl_getFileURLForDirectory:(NSSearchPathDirectory)directory {
     
     NSArray *cl_urlArray = [NSFileManager.defaultManager URLsForDirectory:directory
                                                                 inDomains:NSUserDomainMask];
@@ -30,19 +64,12 @@
     return cl_urlArray.lastObject;
 }
 
-+ (NSURL *)cl_getDocumentURLPath {
+#pragma mark - 获取Path URL
++ (NSString *)cl_getPathURLForDirectory:(NSSearchPathDirectory)directory {
     
-    return [self cl_getURLForDirectory:NSDocumentDirectory];
-}
-
-+ (NSURL *)cl_getLibraryURLPath {
+    NSArray *cl_urlArray = NSSearchPathForDirectoriesInDomains(directory, NSUserDomainMask, YES);
     
-    return [self cl_getURLForDirectory:NSLibraryDirectory];
-}
-
-+ (NSURL *)cl_getCachesURLPath {
-    
-    return [self cl_getURLForDirectory:NSCachesDirectory];
+    return [NSString stringWithFormat:@"%@", cl_urlArray.firstObject];
 }
 
 @end

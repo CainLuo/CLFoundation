@@ -13,11 +13,41 @@
 //  Copyright © 2016年 Cain. All rights reserved.
 //
 
+#pragma mark - NSArray+CLArray
+#import "NSArray+CLArray.h"
+
+#pragma mark - NSAttributedString+CLAttributedString
+#import "NSAttributedString+CLAttributedString.h"
+
+#pragma mark - NSBundle+CLBundle
+#import "NSBundle+CLBundle.h"
+
+#pragma mark - NSData+CLData
+#import "NSData+CLData.h"
+
+#pragma mark - NSDate+CLDate
+#import "NSDate+CLDate.h"
+
+#pragma mark - NSDictionary+CLDictionary
+#import "NSDictionary+CLDictionary.h"
+
+#pragma mark - NSFileManager+CLFileManager
+#import "NSFileManager+CLFileManager.h"
+
+#pragma mark - NSFileManager+CLFileManager
+#import "NSFileManager+CLFileManager.h"
+
+#pragma mark - NSMutableArray+CLMutableArray
+#import "NSMutableArray+CLMutableArray.h"
+
+#pragma mark - NSMutableAttributedString+CLMutableAttributedString
+#import "NSMutableAttributedString+CLMutableAttributedString.h"
+
+#pragma mark - NSMutableDictionary+CLMutableDictionary
+#import "NSMutableDictionary+CLMutableDictionary.h"
+
 #pragma mark - NSNumber+CLNumber
 #import "NSNumber+CLNumber.h"
-
-#pragma mark - NSTimer+CLTimer
-#import "NSTimer+CLTimer.h"
 
 #pragma mark - NSObject+CLObject
 #import "NSObject+CLObject.h"
@@ -25,29 +55,11 @@
 #pragma mark - NSString+CLString
 #import "NSString+CLString.h"
 
-#pragma mark - NSBundle+CLBundle
-#import "NSBundle+CLBundle.h"
-
-#pragma mark - NSDate+CLDate
-#import "NSDate+CLDate.h"
-
-#pragma mark - NSData+CLData
-#import "NSData+CLData.h"
+#pragma mark - NSTimer+CLTimer
+#import "NSTimer+CLTimer.h"
 
 #pragma mark - NSURL+CLURL
 #import "NSURL+CLURL.h"
-
-#pragma mark - CLAttributedString
-#import "NSAttributedString+CLAttributedString.h"
-#import "NSMutableAttributedString+CLMutableAttributedString.h"
-
-#pragma mark - CLArray
-#import "NSArray+CLArray.h"
-#import "NSMutableArray+CLMutableArray.h"
-
-#pragma mark - CLDictionary
-#import "NSDictionary+CLDictionary.h"
-#import "NSMutableDictionary+CLMutableDictionary.h"
 
 #pragma mark - Define
 

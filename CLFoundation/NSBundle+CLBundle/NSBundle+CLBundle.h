@@ -44,4 +44,14 @@
  */
 + (NSString *)cl_getBundleIdentifier;
 
+/**
+ 获取指定名字的Bundle
+
+ @param name NSString
+ @param type NSString
+ @return NSString
+ */
++ (NSString *)cl_getBundleFileWithName:(NSString *)name
+                                  type:(NSString *)type;
+
 @end
