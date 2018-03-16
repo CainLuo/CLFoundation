@@ -128,4 +128,48 @@
                                        isDirectory:&isDirectory];
 }
 
++ (NSUInteger)cl_getApplicationDocumentSize {
+        
+    NSString *cl_documentPath = [NSString stringWithFormat:@"%@", [NSURL cl_getDocumentPathURL]];
+    
+    return [self cl_getApplicationFileSizeWithFilePath:cl_documentPath];
+}
+
++ (NSUInteger)cl_getApplicationCacheSize {
+
+    NSString *cl_cachesPath = [NSString stringWithFormat:@"%@", [NSURL cl_getCachesPathURL]];
+    
+    return [self cl_getApplicationFileSizeWithFilePath:cl_cachesPath];
+}
+
++ (NSUInteger)cl_getApplicationLibrarySize {
+    
+    NSString *cl_libraryPath = [NSString stringWithFormat:@"%@", [NSURL cl_getLibraryPathURL]];
+    
+    return [self cl_getApplicationFileSizeWithFilePath:cl_libraryPath];
+}
+
++ (NSUInteger)cl_getApplicationFileSizeWithFilePath:(NSString *)folderPath {
+    
+    NSArray *cl_contentArray = [[self defaultManager] contentsOfDirectoryAtPath:folderPath
+                                                                          error:nil];
+    
+    NSEnumerator *cl_enumerator = [cl_contentArray objectEnumerator];
+    
+    NSString *cl_file;
+    
+    unsigned long long cl_folderSize = 0;
+    
+    while (cl_file = [cl_enumerator nextObject]) {
+        
+        NSString *cl_filePath = [folderPath stringByAppendingPathComponent:cl_file];
+
+        NSDictionary *cl_fileDictionary = [[NSFileManager defaultManager] attributesOfItemAtPath:cl_filePath
+                                                                                           error:nil];
+        cl_folderSize += [[cl_fileDictionary objectForKey:NSFileSize] intValue];
+    }
+    
+    return cl_folderSize;
+}
+
 @end

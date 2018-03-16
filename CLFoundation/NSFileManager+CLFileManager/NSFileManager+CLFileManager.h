@@ -98,4 +98,34 @@
  */
 + (BOOL)cl_checkFileExistWithFilePath:(NSString *)filePath;
 
+#pragma mark - 获取App的沙盒大小
+/**
+ 获取App的沙盒大小, 单位为字节
+ 
+ @return NSUInteger
+ */
++ (NSUInteger)cl_getApplicationDocumentSize;
+
+/**
+ 获取App的Cache大小, 单位为字节
+
+ @return NSUInteger
+ */
++ (NSUInteger)cl_getApplicationCacheSize;
+
+/**
+ 获取App的Library的大小, 单位为字节
+
+ @return NSUInteger
+ */
++ (NSUInteger)cl_getApplicationLibrarySize;
+
+/**
+ 获取指定文件夹路径的大小, 单位为字节
+
+ @param folderPath NSString
+ @return NSUInteger
+ */
++ (NSUInteger)cl_getApplicationFileSizeWithFilePath:(NSString *)folderPath;
+
 @end

@@ -25,6 +25,7 @@
     [self ex_clcache];
     [self ex_document];
     [self ex_checkFile];
+    [self ex_getFilesSize];
     
     [self ex_reloadTextView];
 }
@@ -87,6 +88,19 @@
     
     [self.ex_textViewString appendString:@"\n----------查询文件是否存在----------\n"];
     [self.ex_textViewString appendFormat:@"检查%@文件是否存在: %@\n", ex_filePath, ex_fileReal ? @"YES" : @"NO"];
+}
+
+#pragma mark - 获取沙盒的存储大小
+- (void)ex_getFilesSize {
+    
+    NSUInteger ex_documentSize = [NSFileManager cl_getApplicationDocumentSize];
+    NSUInteger ex_cachesSize   = [NSFileManager cl_getApplicationCacheSize];
+    NSUInteger ex_librarySize  = [NSFileManager cl_getApplicationLibrarySize];
+    
+    [self.ex_textViewString appendString:@"\n----------获取App的存储大小----------\n"];
+    [self.ex_textViewString appendFormat:@"获取App沙盒的大小: %lu\n", (unsigned long)ex_documentSize];
+    [self.ex_textViewString appendFormat:@"获取Caches的大小: %lu\n", (unsigned long)ex_cachesSize];
+    [self.ex_textViewString appendFormat:@"获取Library的大小: %lu\n", (unsigned long)ex_librarySize];
 }
 
 - (NSString *)ex_string {
