@@ -158,7 +158,7 @@
     
     NSString *cl_file;
     
-    unsigned long long cl_folderSize = 0;
+    NSUInteger cl_folderSize = 0;
     
     while (cl_file = [cl_enumerator nextObject]) {
         
