@@ -24,13 +24,37 @@
  */
 + (void)cl_openBrowserWithURL:(NSString *)urlString;
 
-#pragma mark - Document
+#pragma mark - 获取Folder URL
 /**
  获取Document File URL
-
+ 
  @return NSURL
  */
 + (NSURL *)cl_getDocumentFileURL;
+
+/**
+ 获取Library File URL
+ 
+ @return NSURL
+ */
++ (NSURL *)cl_getLibraryFileURL;
+
+/**
+ 获取Caches File URL
+ 
+ @return NSURL
+ */
++ (NSURL *)cl_getCachesFileURL;
+
+/**
+ 获取指定NSSearchPathDirectory的File URL
+ 
+ @param directory NSSearchPathDirectory
+ @return NSURL
+ */
++ (NSURL *)cl_getFileURLForDirectory:(NSSearchPathDirectory)directory;
+
+#pragma mark - 获取Folder Path URL
 
 /**
  获取Document Path URL
@@ -39,14 +63,6 @@
  */
 + (NSString *)cl_getDocumentPathURL;
 
-#pragma mark - Library
-/**
- 获取Library File URL
-
- @return NSURL
- */
-+ (NSURL *)cl_getLibraryFileURL;
-
 /**
  获取Library Path URL
  
@@ -54,29 +70,12 @@
  */
 + (NSString *)cl_getLibraryPathURL;
 
-#pragma mark - Caches
-/**
- 获取Caches File URL
-
- @return NSURL
- */
-+ (NSURL *)cl_getCachesFileURL;
-
 /**
  获取Caches Path URL
 
  @return NSString
  */
 + (NSString *)cl_getCachesPathURL;
-
-#pragma mark - 获取路径
-/**
- 获取指定NSSearchPathDirectory的File URL
-
- @param directory NSSearchPathDirectory
- @return NSURL
- */
-+ (NSURL *)cl_getFileURLForDirectory:(NSSearchPathDirectory)directory;
 
 /**
  获取指定NSSearchPathDirectory的Path URL
