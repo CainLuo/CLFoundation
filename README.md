@@ -265,6 +265,14 @@
 + (id)cl_getDocumentObjectWithFileName:(NSString *)fileName;
 
 + (BOOL)cl_checkFileExistWithFilePath:(NSString *)filePath;
+
++ (NSUInteger)cl_getApplicationDocumentSize;
+
++ (NSUInteger)cl_getApplicationCacheSize;
+
++ (NSUInteger)cl_getApplicationLibrarySize;
+
++ (NSUInteger)cl_getApplicationFileSizeWithFilePath:(NSString *)folderPath;
 ```
 
 
@@ -649,10 +657,20 @@
 ```objective-c
 + (void)cl_openBrowserWithURL:(NSString *)urlString;
 
-+ (NSURL *)cl_getDocumentURLPath;
++ (NSURL *)cl_getDocumentFileURL;
 
-+ (NSURL *)cl_getLibraryURLPath;
++ (NSURL *)cl_getLibraryFileURL;
 
-+ (NSURL *)cl_getCachesURLPath;
++ (NSURL *)cl_getCachesFileURL;
+
++ (NSURL *)cl_getFileURLForDirectory:(NSSearchPathDirectory)directory;
+
++ (NSString *)cl_getDocumentPathURL;
+
++ (NSString *)cl_getLibraryPathURL;
+
++ (NSString *)cl_getCachesPathURL;
+
++ (NSString *)cl_getPathURLForDirectory:(NSSearchPathDirectory)directory;
 ```
 
