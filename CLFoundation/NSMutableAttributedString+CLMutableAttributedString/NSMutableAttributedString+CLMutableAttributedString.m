@@ -7,6 +7,7 @@
 //
 
 #import "NSMutableAttributedString+CLMutableAttributedString.h"
+#import "NSString+CLString.h"
 
 @implementation NSMutableAttributedString (CLMutableAttributedString)
 
@@ -93,6 +94,11 @@
 + (NSMutableAttributedString *)cl_attributedStringWithString:(NSString *)string
                                                  lineSpacing:(CGFloat)lineSpacing {
     
+    if ([NSString cl_checkEmptyWithString:string]) {
+        
+        return nil;
+    }
+    
     NSMutableAttributedString *cl_attributedString = [[NSMutableAttributedString alloc] initWithString:string];
     
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
@@ -109,6 +115,11 @@
 + (NSMutableAttributedString *)cl_attributedStringWithAttributedString:(NSAttributedString *)attributedString
                                                            lineSpacing:(CGFloat)lineSpacing {
     
+    if (attributedString.length <= 0) {
+        
+        return nil;
+    }
+
     NSMutableAttributedString *cl_attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:attributedString];
     
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
