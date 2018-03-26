@@ -8,6 +8,7 @@
 
 #import "NSAttributedString+CLAttributedString.h"
 #import <CoreText/CoreText.h>
+#import "NSString+CLString.h"
 
 @implementation NSAttributedString (CLAttributedString)
 
