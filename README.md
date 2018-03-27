@@ -314,6 +314,12 @@
 
 + (NSMutableAttributedString *)cl_attributedStringWithAttributedString:(NSAttributedString *)attributedString
                                                            lineSpacing:(CGFloat)lineSpacing;
+
++ (NSMutableAttributedString *)cl_attributedStringAddLineWithString:(NSString *)string
+                                                              range:(NSRange)range;
+
++ (NSMutableAttributedString *)cl_attributedStringAddLineWithAttributedString:(NSAttributedString *)attributedString
+                                                                        range:(NSRange)range;
 ```
 
 
