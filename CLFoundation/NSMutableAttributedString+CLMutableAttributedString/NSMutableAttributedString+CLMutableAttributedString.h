@@ -61,7 +61,7 @@
                                                  lineSpacing:(CGFloat)lineSpacing;
 
 /**
- 给指定字符串设置行距
+ 给指定富文本字符串设置行距
  
  @param attributedString NSAttributedString
  @param lineSpacing 行距
@@ -69,5 +69,27 @@
  */
 + (NSMutableAttributedString *)cl_attributedStringWithAttributedString:(NSAttributedString *)attributedString
                                                            lineSpacing:(CGFloat)lineSpacing;
+
+
+/**
+ 给指定字符串添加下划线
+
+ @param string NSString
+ @param range NSRange
+ @return NSMutableAttributedString
+ */
++ (NSMutableAttributedString *)cl_attributedStringAddLineWithString:(NSString *)string
+                                                              range:(NSRange)range;
+
+/**
+ 给指定富文本字符串添加下划线
+
+ @param attributedString NSAttributedString
+ @param range NSRange
+ @return NSMutableAttributedString
+ */
++ (NSMutableAttributedString *)cl_attributedStringAddLineWithAttributedString:(NSAttributedString *)attributedString
+                                                                        range:(NSRange)range;
+
 @end
 

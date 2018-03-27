@@ -133,5 +133,39 @@
     return cl_attributedString;
 }
 
++ (NSMutableAttributedString *)cl_attributedStringAddLineWithAttributedString:(NSAttributedString *)attributedString
+                                                                        range:(NSRange)range {
+    
+    if (attributedString.length <= 0) {
+        
+        return nil;
+    }
+    
+    NSMutableAttributedString *cl_mutableAttributedString = [[NSMutableAttributedString alloc] initWithAttributedString:attributedString];
+    
+    [cl_mutableAttributedString addAttribute:NSUnderlineStyleAttributeName
+                                       value:[NSNumber numberWithInteger:NSUnderlineStyleSingle]
+                                       range:range];
+    
+    return cl_mutableAttributedString;
+}
+
++ (NSMutableAttributedString *)cl_attributedStringAddLineWithString:(NSString *)string
+                                                              range:(NSRange)range {
+    
+    if ([NSString cl_checkEmptyWithString:string]) {
+
+        return nil;
+    }
+    
+    NSMutableAttributedString *cl_mutableAttributedString = [[NSMutableAttributedString alloc] initWithString:string];
+    
+    [cl_mutableAttributedString addAttribute:NSUnderlineStyleAttributeName
+                                       value:[NSNumber numberWithInteger:NSUnderlineStyleSingle]
+                                       range:range];
+    
+    return cl_mutableAttributedString;
+}
+
 @end
 
