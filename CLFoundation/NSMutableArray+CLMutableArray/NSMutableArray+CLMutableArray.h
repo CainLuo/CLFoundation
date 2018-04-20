@@ -11,6 +11,14 @@
 @interface NSMutableArray (CLMutableArray)
 
 /**
+ 序列化一个NSMutableArray
+
+ @param plist NSData
+ @return NSMutableArray
+ */
++ (NSMutableArray *)cl_mutableArrayWithPlistData:(NSData *)plist;
+
+/**
  安全的添加一个对象
 
  @param object 对象
@@ -27,6 +35,13 @@
                       index:(NSUInteger)index;
 
 /**
+ 安全的插入一个数组
+
+ @param array NSArray
+ */
+- (void)cl_insertSafeArray:(NSArray *)array;
+
+/**
  根据索引安全的插入一个数组
 
  @param array NSArray
@@ -34,6 +49,16 @@
  */
 - (void)cl_insertSafeArray:(NSArray *)array
                   indexSet:(NSIndexSet *)indexSet;
+
+/**
+ 安全的删除第一个对象
+ */
+- (void)cl_safeRemoveFirstObject;
+
+/**
+ 安全的删除最后一个对象
+ */
+- (void)cl_safeRemoveLastObject;
 
 /**
  根据索引安全的删除一个对象
@@ -48,5 +73,9 @@
  @param range NSRange
  */
 - (void)cl_safeRemoveObjectsInRange:(NSRange)range;
+
+- (NSMutableArray *)cl_getReverseArray;
+
+- (NSMutableArray *)cl_getDisorderArray;
 
 @end
