@@ -186,11 +186,116 @@
 + (NSString *)cl_decodedBase64WithString:(NSString *)string;
 
 /**
+ 加密成MD2字符串
+
+ @param string NSString
+ @return NSString
+ */
++ (NSString *)cl_encodingMD2WithString:(NSString *)string;
+
+/**
+ 加密成MD4字符串
+ 
+ @return NSString
+ */
++ (NSString *)cl_encodingMD4WithString:(NSString *)string;
+
+/**
  加密成MD5字符串
  
  @return NSString
  */
 + (NSString *)cl_encodingMD5WithString:(NSString *)string;
+
+/**
+ 获取使用指定Key HASH MD5加密后的NSString
+ 
+ @param key NSString
+ @return NSString
+ */
++ (NSString *)cl_hmacEncodingMD5StringWithString:(NSString *)string
+                                             key:(NSString *)key;
+
+#pragma mark - SHA加密字符串
+/**
+ 加密成SHA1字符串
+ 
+ @return NSString
+ */
++ (NSString *)cl_encodingSHA1WithString:(NSString *)string;
+
+/**
+ 获取使用指定Key HASH SHA1加密后的NSString
+ 
+ @param key NSString
+ @return NSString
+ */
++ (NSString *)cl_hmacEncodingSHA1StringWithString:(NSString *)string
+                                              key:(NSString *)key;
+
+/**
+ 加密成SHA224字符串
+ 
+ @return NSString
+ */
++ (NSString *)cl_encodingSHA224WithString:(NSString *)string;
+
+/**
+ 获取使用指定Key HASH SHA224加密后的NSString
+ 
+ @param key NSString
+ @return NSString
+ */
++ (NSString *)cl_hmacEncodingSHA224StringWithString:(NSString *)string
+                                                key:(NSString *)key;
+
+/**
+ 加密成SHA256字符串
+ 
+ @return NSString
+ */
++ (NSString *)cl_encodingSHA256WithString:(NSString *)string;
+
+/**
+ 获取使用指定Key HASH SHA256加密后的NSString
+ 
+ @param key NSString
+ @return NSString
+ */
++ (NSString *)cl_hmacEncodingSHA256StringWithString:(NSString *)string
+                                                key:(NSString *)key;
+
+/**
+ 加密成SHA384字符串
+ 
+ @return NSString
+ */
++ (NSString *)cl_encodingSHA384WithString:(NSString *)string;
+
+/**
+ 获取使用指定Key HASH SHA384加密后的NSString
+ 
+ @param key NSString
+ @return NSString
+ */
++ (NSString *)cl_hmacEncodingSHA384StringWithString:(NSString *)string
+                                                key:(NSString *)key;
+
+/**
+ 加密成SHA512字符串
+ 
+ @return NSString
+ */
++ (NSString *)cl_encodingSHA512WithString:(NSString *)string;
+
+/**
+ 获取使用指定Key HASH SHA512加密后的NSString
+ 
+ @param key NSString
+ @return NSString
+ */
++ (NSString *)cl_hmacEncodingSHA512StringWithString:(NSString *)string
+                                                key:(NSString *)key;
 
 #pragma mark - NSString获取首字母
 /**

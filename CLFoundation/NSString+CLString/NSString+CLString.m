@@ -344,27 +344,82 @@ static char cl_base64EncodingTable[64] = {
     return cl_decodedString;
 }
 
-#pragma mark - MD5
+#pragma mark - MD加密字符串
++ (NSString *)cl_encodingMD2WithString:(NSString *)string {
+    
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_encryptredMD2String];
+}
+
++ (NSString *)cl_encodingMD4WithString:(NSString *)string {
+    
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_encryptredMD4String];
+}
+
 + (NSString *)cl_encodingMD5WithString:(NSString *)string {
     
-    if([self cl_checkEmptyWithString:string]) {
-        return nil;
-    }
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_encryptredMD5String];
+}
+
++ (NSString *)cl_hmacEncodingMD5StringWithString:(NSString *)string
+                                             key:(NSString *)key {
     
-    const char *value = [string UTF8String];
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_hmacEncryptredMD5StringWithKey:key];
+}
+
+#pragma mark - SHA加密字符串
++ (NSString *)cl_encodingSHA1WithString:(NSString *)string {
     
-    unsigned char outputBuffer[CC_MD5_DIGEST_LENGTH];
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_encryptredSHA1String];
+}
+
++ (NSString *)cl_hmacEncodingSHA1StringWithString:(NSString *)string
+                                              key:(NSString *)key {
     
-    CC_MD5(value, (CC_LONG)strlen(value), outputBuffer);
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_hmacEncryptredSHA1StringWithKey:key];
+}
+
++ (NSString *)cl_encodingSHA224WithString:(NSString *)string {
     
-    NSMutableString *outputString = [[NSMutableString alloc] initWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_encryptredSHA224String];
+}
+
++ (NSString *)cl_hmacEncodingSHA224StringWithString:(NSString *)string
+                                                key:(NSString *)key {
     
-    for(NSInteger count = 0; count < CC_MD5_DIGEST_LENGTH; count++){
-        
-        [outputString appendFormat:@"%02x",outputBuffer[count]];
-    }
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_hmacEncryptredSHA224StringWithKey:key];
+}
+
++ (NSString *)cl_encodingSHA256WithString:(NSString *)string {
     
-    return [NSString stringWithString:outputString];
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_encryptredSHA256String];
+}
+
++ (NSString *)cl_hmacEncodingSHA256StringWithString:(NSString *)string
+                                                key:(NSString *)key {
+    
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_hmacEncryptredSHA256StringWithKey:key];
+}
+
++ (NSString *)cl_encodingSHA384WithString:(NSString *)string {
+    
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_encryptredSHA384String];
+}
+
++ (NSString *)cl_hmacEncodingSHA384StringWithString:(NSString *)string
+                                                key:(NSString *)key {
+    
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_hmacEncryptredSHA384StringWithKey:key];
+}
+
++ (NSString *)cl_encodingSHA512WithString:(NSString *)string {
+    
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_encryptredSHA512String];
+}
+
++ (NSString *)cl_hmacEncodingSHA512StringWithString:(NSString *)string
+                                                key:(NSString *)key {
+    
+    return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_hmacEncryptredSHA512StringWithKey:key];
 }
 
 #pragma mark - 获取字符串首字母
