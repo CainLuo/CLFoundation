@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"首页";
+    
     [self.cl_dataSource addObjectsFromArray:@[@{@"title":@"EXArrayController",
                                                 @"controller":@"EXArrayController"},
                                               @{@"title":@"EXAttributeStringController",
@@ -42,7 +44,9 @@
                                               @{@"title":@"EXNumberController",
                                                 @"controller":@"EXNumberController"},
                                               @{@"title":@"EXFileManagerController",
-                                                @"controller":@"EXFileManagerController"}]];
+                                                @"controller":@"EXFileManagerController"},
+                                              @{@"title":@"EXSpeechController",
+                                                @"controller":@"EXSpeechController"}]];
     
     [self.tableView reloadData];
 }
@@ -66,14 +70,20 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
-                                                            forIndexPath:indexPath];
+    UITableViewCell *ex_tableViewCell = [tableView dequeueReusableCellWithIdentifier:@"EXTableViewCell"];
+    
+    if (!ex_tableViewCell) {
+        
+        ex_tableViewCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                                  reuseIdentifier:@"EXTableViewCell"];
+    }
+    
     NSDictionary *model = self.cl_dataSource[indexPath.row];
     
-    cell.textLabel.text = model[@"title"];
-    cell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
+    ex_tableViewCell.textLabel.text = model[@"title"];
+    ex_tableViewCell.accessoryType  = UITableViewCellAccessoryDisclosureIndicator;
     
-    return cell;
+    return ex_tableViewCell;
 }
 
 #pragma mark - Table View Delegate

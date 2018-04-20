@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "EXRootController.h"
 
 @interface AppDelegate ()
 
@@ -14,9 +15,34 @@
 
 @implementation AppDelegate
 
+- (UIWindow *)window {
+    
+    CL_GET_METHOD_RETURN_OBJC(_window);
+    
+    _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    _window.backgroundColor = [UIColor whiteColor];
+    
+    return _window;
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    UINavigationController *ex_navigationController = [[UINavigationController alloc] initWithRootViewController:[EXRootController new]];
+    
+    ex_navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    NSDictionary *ex_dictionary = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    
+    [ex_navigationController.navigationBar setTitleTextAttributes:ex_dictionary];
+    [ex_navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationBarImage"]
+                                                forBarMetrics:UIBarMetricsDefault];
+    
+    self.window.rootViewController = ex_navigationController;
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

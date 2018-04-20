@@ -31,7 +31,6 @@
 		A4A8A4112042925100FA9EC5 /* NSNumber+CLNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A8A4102042925100FA9EC5 /* NSNumber+CLNumber.m */; };
 		A4A8A4152042931900FA9EC5 /* EXNumberController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A8A4142042931900FA9EC5 /* EXNumberController.m */; };
 		A4ACC49E2034103600E756D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC49D2034103600E756D1 /* AppDelegate.m */; };
-		A4ACC4A42034103600E756D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4ACC4A22034103600E756D1 /* Main.storyboard */; };
 		A4ACC4A62034103600E756D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4ACC4A52034103600E756D1 /* Assets.xcassets */; };
 		A4ACC4A92034103600E756D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4ACC4A72034103600E756D1 /* LaunchScreen.storyboard */; };
 		A4ACC4AC2034103600E756D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4AB2034103600E756D1 /* main.m */; };
@@ -44,6 +43,8 @@
 		A4BA3137204BA00F002E0ED7 /* EXFileManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BA3136204BA00F002E0ED7 /* EXFileManagerController.m */; };
 		A4BA313C204CCD95002E0ED7 /* CLFoundationExample.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4BA313B204CCD95002E0ED7 /* CLFoundationExample.bundle */; };
 		A4F17CEB204705B500C70EA7 /* NSFileManager+CLFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F17CEA204705B500C70EA7 /* NSFileManager+CLFileManager.m */; };
+		BF84D60F20897A890061D29F /* CLSpeechSunthesizer.m in Sources */ = {isa = PBXBuildFile; fileRef = BF84D60E20897A890061D29F /* CLSpeechSunthesizer.m */; };
+		BF84D61320897C770061D29F /* EXSpeechController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF84D61220897C770061D29F /* EXSpeechController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,7 +97,6 @@
 		A4ACC4992034103600E756D1 /* CLFoundationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CLFoundationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4ACC49C2034103600E756D1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A4ACC49D2034103600E756D1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A4ACC4A32034103600E756D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A4ACC4A52034103600E756D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4ACC4A82034103600E756D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4ACC4AA2034103600E756D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -119,6 +119,10 @@
 		A4BA313B204CCD95002E0ED7 /* CLFoundationExample.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CLFoundationExample.bundle; sourceTree = "<group>"; };
 		A4F17CE9204705B500C70EA7 /* NSFileManager+CLFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+CLFileManager.h"; sourceTree = "<group>"; };
 		A4F17CEA204705B500C70EA7 /* NSFileManager+CLFileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+CLFileManager.m"; sourceTree = "<group>"; };
+		BF84D60D20897A890061D29F /* CLSpeechSunthesizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLSpeechSunthesizer.h; sourceTree = "<group>"; };
+		BF84D60E20897A890061D29F /* CLSpeechSunthesizer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLSpeechSunthesizer.m; sourceTree = "<group>"; };
+		BF84D61120897C770061D29F /* EXSpeechController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXSpeechController.h; sourceTree = "<group>"; };
+		BF84D61220897C770061D29F /* EXSpeechController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXSpeechController.m; sourceTree = "<group>"; };
 		D8AFC4BF0E762F1B9F28A338 /* Pods-CLFoundationExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLFoundationExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-CLFoundationExample/Pods-CLFoundationExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +161,7 @@
 			children = (
 				A48D73BE2034544C00378353 /* CLFoundation.h */,
 				A48D73BD2034544C00378353 /* Info.plist */,
+				BF84D60C20897A7F0061D29F /* CLSpeechSunthesizer */,
 				A48D73CB2034544C00378353 /* NSArray+CLArray */,
 				A48D73B42034544C00378353 /* NSAttributedString+CLAttributedString */,
 				A48D73AB2034544C00378353 /* NSBundle+CLBundle */,
@@ -404,7 +409,6 @@
 				A4ACC4AA2034103600E756D1 /* Info.plist */,
 				A4ACC4A72034103600E756D1 /* LaunchScreen.storyboard */,
 				A4ACC4AB2034103600E756D1 /* main.m */,
-				A4ACC4A22034103600E756D1 /* Main.storyboard */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -412,6 +416,7 @@
 		A4ACC4E82034150B00E756D1 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				BF84D61020897C580061D29F /* EXSpeech */,
 				A4ACC4EB2034198B00E756D1 /* EXArray */,
 				A4ACC4EF203420CE00E756D1 /* EXAttributeString */,
 				A4ACC4F32034264600E756D1 /* EXBundle */,
@@ -501,6 +506,24 @@
 			path = "NSFileManager+CLFileManager";
 			sourceTree = "<group>";
 		};
+		BF84D60C20897A7F0061D29F /* CLSpeechSunthesizer */ = {
+			isa = PBXGroup;
+			children = (
+				BF84D60D20897A890061D29F /* CLSpeechSunthesizer.h */,
+				BF84D60E20897A890061D29F /* CLSpeechSunthesizer.m */,
+			);
+			path = CLSpeechSunthesizer;
+			sourceTree = "<group>";
+		};
+		BF84D61020897C580061D29F /* EXSpeech */ = {
+			isa = PBXGroup;
+			children = (
+				BF84D61120897C770061D29F /* EXSpeechController.h */,
+				BF84D61220897C770061D29F /* EXSpeechController.m */,
+			);
+			path = EXSpeech;
+			sourceTree = "<group>";
+		};
 		DCE8D1436616542F3B34396A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -575,7 +598,6 @@
 				A4ACC4A92034103600E756D1 /* LaunchScreen.storyboard in Resources */,
 				A4ACC4A62034103600E756D1 /* Assets.xcassets in Resources */,
 				A4BA313C204CCD95002E0ED7 /* CLFoundationExample.bundle in Resources */,
-				A4ACC4A42034103600E756D1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,6 +675,7 @@
 				A4ACC4F22034212400E756D1 /* EXAttributeStringController.m in Sources */,
 				A48D73DD2035561B00378353 /* EXDictionaryController.m in Sources */,
 				A48D73D72034544C00378353 /* NSDictionary+CLDictionary.m in Sources */,
+				BF84D61320897C770061D29F /* EXSpeechController.m in Sources */,
 				A4BA3137204BA00F002E0ED7 /* EXFileManagerController.m in Sources */,
 				A4ACC4AC2034103600E756D1 /* main.m in Sources */,
 				A4A6C32D203ED89B001EF8FD /* NSTimer+CLTimer.m in Sources */,
@@ -667,6 +690,7 @@
 				A4ACC4FE20342C0E00E756D1 /* EXDataController.m in Sources */,
 				A4A8A4152042931900FA9EC5 /* EXNumberController.m in Sources */,
 				A48D73D62034544C00378353 /* NSString+CLString.m in Sources */,
+				BF84D60F20897A890061D29F /* CLSpeechSunthesizer.m in Sources */,
 				A48D73A92034478B00378353 /* EXDateController.m in Sources */,
 				A48D73D92034544C00378353 /* NSArray+CLArray.m in Sources */,
 				A48D73D02034544C00378353 /* NSMutableArray+CLMutableArray.m in Sources */,
@@ -677,14 +701,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A4ACC4A22034103600E756D1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A4ACC4A32034103600E756D1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A4ACC4A72034103600E756D1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

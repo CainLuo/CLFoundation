@@ -13,6 +13,9 @@
 //  Copyright © 2016年 Cain. All rights reserved.
 //
 
+#pragma mark - CLSpeechSunthesizer
+#import "CLSpeechSunthesizer.h"
+
 #pragma mark - NSArray+CLArray
 #import "NSArray+CLArray.h"
 
