@@ -21,6 +21,7 @@
 
 ## 目录
 
+- [CLSpeechSunthesizer@](#CLSpeechSunthesizer)
 - [NSArray+CLArray@](#NSArray+CLArray)
 - [NSAttributedString+CLAttributedString@](#NSAttributedString+CLAttributedString)
 - [NSBundle+CLBundle@](#NSBundle+CLBundle)
@@ -56,7 +57,29 @@
 - [NSURL+CLURL@](#NSURL+CLURL)
 
 
+
+
+## CLSpeechSunthesizer@
+
+**CLSpeechSunthesizer**基于**AVFoundation**实现的语音播报工具类:
+
+```objective-c
++ (instancetype)sharedSpeechSynthesizer;
+
+- (BOOL)cl_isSpeaking;
+
+- (void)cl_speakString:(NSString *)string;
+
+- (void)cl_stopSpeak;
+
+- (void)cl_chooseVoiceWithLanguage:(NSString *)language
+                        speakSpeed:(CGFloat)speakSpeed;
+```
+
+
+
 ## NSArray+CLArray@
+
 针对`Foundation`的`NSArray`进行系统外的方法补充:
 
 ```objective-c
