@@ -72,8 +72,6 @@
     
     [self.ex_textField mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        (void)make.centerX;
-        
         make.top.left.right.with.insets(UIEdgeInsetsMake(30, 10, 0, 10));
         make.height.offset(40);
     }];
