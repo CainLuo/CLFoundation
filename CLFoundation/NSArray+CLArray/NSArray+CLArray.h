@@ -19,6 +19,14 @@
 + (instancetype)cl_initSafeArrayWithObject:(id)object;
 
 /**
+ 序列化创建一个NSArray
+
+ @param plist NSData
+ @return NSArray
+ */
++ (NSArray *)cl_arrayWithPlistData:(NSData *)plist;
+
+/**
  从数组里获取一个id对象, 索引超出之后, 也不会崩掉
 
  @param index 对象索引

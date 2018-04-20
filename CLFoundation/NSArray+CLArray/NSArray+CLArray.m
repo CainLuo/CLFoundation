@@ -22,6 +22,26 @@
     }
 }
 
++ (NSArray *)cl_arrayWithPlistData:(NSData *)plist {
+    
+    if (!plist) {
+        
+        return nil;
+    }
+    
+    NSArray *cl_array = [NSPropertyListSerialization propertyListWithData:plist
+                                                                  options:NSPropertyListImmutable
+                                                                   format:NULL
+                                                                    error:NULL];
+    
+    if ([cl_array isKindOfClass:[NSArray class]]) {
+        
+        return cl_array;
+    }
+    
+    return nil;
+}
+
 - (id)cl_safeObjectAtIndex:(NSUInteger)index {
     
     if (index >= self.count) {
