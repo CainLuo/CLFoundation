@@ -18,6 +18,7 @@
  */
 + (NSMutableArray *)cl_mutableArrayWithPlistData:(NSData *)plist;
 
+#pragma mark - 增加对象
 /**
  安全的添加一个对象
 
@@ -50,6 +51,7 @@
 - (void)cl_insertSafeArray:(NSArray *)array
                   indexSet:(NSIndexSet *)indexSet;
 
+#pragma mark - 删除对象
 /**
  安全的删除第一个对象
  */
@@ -74,8 +76,19 @@
  */
 - (void)cl_safeRemoveObjectsInRange:(NSRange)range;
 
+#pragma mark - 数组排序
+/**
+ 获取倒序排列的数组
+
+ @return NSMutableArray
+ */
 - (NSMutableArray *)cl_getReverseArray;
 
+/**
+ 获取乱序排列的数组
+
+ @return NSMutableArray
+ */
 - (NSMutableArray *)cl_getDisorderArray;
 
 @end

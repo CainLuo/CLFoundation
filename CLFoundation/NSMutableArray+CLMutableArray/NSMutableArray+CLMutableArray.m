@@ -127,6 +127,7 @@
     }
 }
 
+#pragma mark - 数组排序
 - (NSMutableArray *)cl_getReverseArray {
 
     NSUInteger cl_arrayCount = self.count;
@@ -145,6 +146,7 @@
 - (NSMutableArray *)cl_getDisorderArray {
     
     for (NSUInteger i = self.count; i > 1; i--) {
+        
         [self exchangeObjectAtIndex:(i - 1)
                   withObjectAtIndex:arc4random_uniform((u_int32_t)i)];
     }
