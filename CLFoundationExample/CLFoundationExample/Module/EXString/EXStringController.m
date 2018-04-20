@@ -104,11 +104,37 @@
     
     NSString *cl_baseString   = @"Hello Word";
     NSString *cl_base64String = [NSString cl_encodingBase64WithString:cl_baseString];
-    
+    NSString *cl_encodingKey  = @"123";
+
     [self.ex_textViewString appendString:@"\n----------字符串加密----------\n"];
     [self.ex_textViewString appendFormat:@"将\"%@\"加密成Base 64: %@\n", cl_baseString, cl_base64String];
     [self.ex_textViewString appendFormat:@"解密\"%@\"为: %@\n", cl_base64String, [NSString cl_decodedBase64WithString:cl_base64String]];
+    [self.ex_textViewString appendFormat:@"将\"%@\"加密成MD2: %@\n\n", cl_baseString, [NSString cl_encodingMD2WithString:cl_baseString]];
+    [self.ex_textViewString appendFormat:@"将\"%@\"加密成MD4: %@\n\n", cl_baseString, [NSString cl_encodingMD4WithString:cl_baseString]];
     [self.ex_textViewString appendFormat:@"将\"%@\"加密成MD5: %@\n\n", cl_baseString, [NSString cl_encodingMD5WithString:cl_baseString]];
+    [self.ex_textViewString appendFormat:@"使用HASH Key:%@ 将\"%@\"HASH加密成MD5: %@\n\n", cl_encodingKey, cl_baseString, [NSString cl_hmacEncodingMD5StringWithString:cl_baseString
+                                                                                                                               key:cl_encodingKey]];
+
+    [self.ex_textViewString appendFormat:@"将\"%@\"加密成SHA1: %@\n\n", cl_baseString, [NSString cl_encodingSHA1WithString:cl_baseString]];
+    [self.ex_textViewString appendFormat:@"使用HASH Key:%@ 将\"%@\"HASH加密成SHA1: %@\n\n", cl_encodingKey, cl_baseString, [NSString cl_hmacEncodingSHA1StringWithString:cl_baseString
+                                                                                                                                                                  key:cl_encodingKey]];
+
+    [self.ex_textViewString appendFormat:@"将\"%@\"加密成SHA224: %@\n\n", cl_baseString, [NSString cl_encodingSHA224WithString:cl_baseString]];
+    [self.ex_textViewString appendFormat:@"使用HASH Key:%@ 将\"%@\"HASH加密成SHA224: %@\n\n", cl_encodingKey, cl_baseString, [NSString cl_hmacEncodingSHA224StringWithString:cl_baseString
+                                                                                                                                                                       key:cl_encodingKey]];
+
+    [self.ex_textViewString appendFormat:@"将\"%@\"加密成SHA256: %@\n\n", cl_baseString, [NSString cl_encodingSHA256WithString:cl_baseString]];
+    [self.ex_textViewString appendFormat:@"使用HASH Key:%@ 将\"%@\"HASH加密成SHA256: %@\n\n", cl_encodingKey, cl_baseString, [NSString cl_hmacEncodingSHA256StringWithString:cl_baseString
+                                                                                                                                                                       key:cl_encodingKey]];
+
+    [self.ex_textViewString appendFormat:@"将\"%@\"加密成SHA384: %@\n\n", cl_baseString, [NSString cl_encodingSHA384WithString:cl_baseString]];
+    [self.ex_textViewString appendFormat:@"使用HASH Key:%@ 将\"%@\"HASH加密成SHA384: %@\n\n", cl_encodingKey, cl_baseString, [NSString cl_hmacEncodingSHA384StringWithString:cl_baseString
+                                                                                                                                                                       key:cl_encodingKey]];
+
+    [self.ex_textViewString appendFormat:@"将\"%@\"加密成SHA512: %@\n\n", cl_baseString, [NSString cl_encodingSHA512WithString:cl_baseString]];
+    [self.ex_textViewString appendFormat:@"使用HASH Key:%@ 将\"%@\"HASH加密成SHA512: %@\n\n", cl_encodingKey, cl_baseString, [NSString cl_hmacEncodingSHA512StringWithString:cl_baseString
+                                                                                                                                                                      key:cl_encodingKey]];
+    
 }
 
 #pragma mark - 获取字符串/中文字符的首字母
@@ -147,7 +173,6 @@
     [self.ex_textViewString appendFormat:@"检测\"%@\"是否是非0开头的数字: %@\n", cl_numberString, [cl_numberString cl_isNotZeroStartNumber] ? @"YES" : @"NO"];
     [self.ex_textViewString appendFormat:@"检测\"%@\"是否是中文字符: %@\n", cl_chineseString, [cl_chineseString cl_checkChineseCharacter] ? @"YES" : @"NO"];
     [self.ex_textViewString appendFormat:@"检测\"%@\"是否是双字节字符: %@\n", cl_doubleByteString, [cl_doubleByteString cl_checkDoubleByteCharacters] ? @"YES" : @"NO"];
-
     
 #pragma mark - 整数
     [self.ex_textViewString appendString:@"\n----------整数相关的正则----------\n"];
