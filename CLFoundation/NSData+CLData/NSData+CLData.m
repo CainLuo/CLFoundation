@@ -8,7 +8,7 @@
 
 #import "NSData+CLData.h"
 #import "NSString+CLString.h"
-#import <CommonCrypto/CommonCryptor.h>
+#import <CommonCrypto/CommonCrypto.h>
 
 @implementation NSData (CLData)
 
@@ -66,7 +66,7 @@
 }
 
 + (NSString *)cl_transformBase64EncodedStringWithData:(NSData *)data
-                                            wrapWidth:(CLDataBaseType)wrapWidth {
+                                            wrapWidth:(CLEncodedType)wrapWidth {
     
     if (![data length]) {
         
@@ -76,10 +76,10 @@
     NSString *cl_dataEncodedString = nil;
     
     switch (wrapWidth) {
-        case CLDataBaseType64: {
+        case CLEncodedType64: {
             
             return [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-        } case CLDataBaseType76: {
+        } case CLEncodedType76: {
             
             return [data base64EncodedStringWithOptions:NSDataBase64Encoding76CharacterLineLength];
             
@@ -238,6 +238,99 @@
     }
     
     return nil;
+}
+
+- (NSData *)cl_encryptredMD2Data {
+    
+    unsigned char result[CC_MD2_DIGEST_LENGTH];
+    
+    CC_MD2(self.bytes, (CC_LONG)self.length, result);
+    
+    return [NSData dataWithBytes:result
+                          length:CC_MD2_DIGEST_LENGTH];
+}
+
+- (NSData *)cl_encryptredMD4Data {
+    
+    unsigned char result[CC_MD4_DIGEST_LENGTH];
+    
+    CC_MD4(self.bytes, (CC_LONG)self.length, result);
+    
+    return [NSData dataWithBytes:result
+                          length:CC_MD4_DIGEST_LENGTH];
+}
+
+- (NSData *)cl_encryptredMD5Data {
+    
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+    
+    CC_MD5(self.bytes, (CC_LONG)self.length, result);
+    
+    return [NSData dataWithBytes:result
+                          length:CC_MD5_DIGEST_LENGTH];
+}
+
+- (NSData *)cl_encryptredSHA1Data {
+    unsigned char result[CC_SHA1_DIGEST_LENGTH];
+    
+    CC_SHA1(self.bytes, (CC_LONG)self.length, result);
+    
+    return [NSData dataWithBytes:result length:CC_SHA1_DIGEST_LENGTH];
+}
+
+- (NSData *)cl_encryptredSHA224Data {
+    unsigned char result[CC_SHA224_DIGEST_LENGTH];
+    
+    CC_SHA224(self.bytes, (CC_LONG)self.length, result);
+    
+    return [NSData dataWithBytes:result
+                          length:CC_SHA224_DIGEST_LENGTH];
+}
+
+- (NSData *)cl_encryptredSHA256Data {
+    unsigned char result[CC_SHA256_DIGEST_LENGTH];
+    
+    CC_SHA256(self.bytes, (CC_LONG)self.length, result);
+    
+    return [NSData dataWithBytes:result
+                          length:CC_SHA256_DIGEST_LENGTH];
+}
+
+- (NSData *)cl_encryptredSHA384Data {
+    
+    unsigned char result[CC_SHA384_DIGEST_LENGTH];
+    
+    CC_SHA384(self.bytes, (CC_LONG)self.length, result);
+    
+    return [NSData dataWithBytes:result
+                          length:CC_SHA384_DIGEST_LENGTH];
+}
+
+- (id)cl_dataJSONValueDecoded {
+    
+    NSError *error = nil;
+    
+    id value = [NSJSONSerialization JSONObjectWithData:self
+                                               options:kNilOptions
+                                                 error:&error];
+    
+    if (error) {
+        NSLog(@"Data Json Value Decoded Error:%@", error);
+    }
+    
+    return value;
+}
+
++ (NSData *)cl_getDataWithBundleNamed:(NSString *)name {
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:name
+                                                     ofType:@""];
+    
+    if (!path) return nil;
+    
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    
+    return data;
 }
 
 @end

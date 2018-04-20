@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, CLDataBaseType) {
+typedef NS_ENUM(NSInteger, CLEncodedType) {
     
-    CLDataBaseType64 = 64,
-    CLDataBaseType76 = 76
+    CLEncodedType64 = 64,
+    CLEncodedType76 = 76
 };
 
 @interface NSData (CLData)
@@ -48,11 +48,11 @@ typedef NS_ENUM(NSInteger, CLDataBaseType) {
  将指定的NSData转成64或76的字符串
 
  @param data NSData
- @param wrapWidth CLDataBaseType
+ @param wrapWidth CLEncodedType
  @return NSString
  */
 + (NSString *)cl_transformBase64EncodedStringWithData:(NSData *)data
-                                            wrapWidth:(CLDataBaseType)wrapWidth;
+                                            wrapWidth:(CLEncodedType)wrapWidth;
 
 #pragma mark - AES加密/解密
 /**
@@ -95,5 +95,71 @@ typedef NS_ENUM(NSInteger, CLDataBaseType) {
  */
 - (NSData *)cl_decryptedDataWith3DEKey:(NSString *)key
                            decryptData:(NSData *)decryptData;
+
+#pragma mark - MD加密
+/**
+ 获取MD2加密后的NSData
+ 
+ @return NSData
+ */
+- (NSData *)cl_encryptredMD2Data;
+
+/**
+ 获取MD4加密后的NSData
+ 
+ @return NSData
+ */
+- (NSData *)cl_encryptredMD4Data;
+
+/**
+ 获取MD5加密后的NSData
+
+ @return NSData
+ */
+- (NSData *)cl_encryptredMD5Data;
+
+#pragma mark - SHA加密
+/**
+ 获取SHA1加密后的NSData
+ 
+ @return NSData
+ */
+- (NSData *)cl_encryptredSHA1Data;
+
+/**
+ 获取SHA224加密后的NSData
+ 
+ @return NSData
+ */
+- (NSData *)cl_encryptredSHA224Data;
+
+/**
+ 获取SHA256加密后的NSData
+ 
+ @return NSData
+ */
+- (NSData *)cl_encryptredSHA256Data;
+
+/**
+ 获取SHA384加密后的NSData
+ 
+ @return NSData
+ */
+- (NSData *)cl_encryptredSHA384Data;
+
+/**
+ 解析JSON数据
+
+ @return id
+ */
+- (id)cl_dataJSONValueDecoded;
+
+/**
+ 获取指定NSBundle获取NSData
+
+ @param name NSString
+ @return NSData
+ */
++ (NSData *)cl_getDataWithBundleNamed:(NSString *)name;
 
 @end
