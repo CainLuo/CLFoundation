@@ -14,6 +14,7 @@
 
 #import "NSString+CLString.h"
 #import "NSObject+CLObject.h"
+#import "NSData+CLData.h"
 #import <CommonCrypto/CommonDigest.h>
 
 static char cl_base64EncodingTable[64] = {
