@@ -155,8 +155,93 @@
 针对`Foundation`的`NSData`进行系统外的方法补充:
 
 ```objective-c
+typedef NS_ENUM(NSInteger, CLEncodedType) {
+    
+    CLEncodedType64 = 64,
+    CLEncodedType76 = 76
+};
+
 + (NSData *)cl_compressOriginalImage:(UIImage *)image
                   compressionQuality:(CGFloat)compressionQuality;
+
++ (NSString *)cl_replacingAPNsTokenWithData:(NSData *)data;
+
++ (NSData *)cl_transformDataWithBase64EncodedString:(NSString *)string;
+
++ (NSString *)cl_transformBase64EncodedStringWithData:(NSData *)data
+                                            wrapWidth:(CLEncodedType)wrapWidth;
+
+- (NSData *)cl_encryptedDataWithAESKey:(NSString *)key
+                           encryptData:(NSData *)encryptData;
+
+- (NSData *)cl_decryptedDataWithAESKey:(NSString *)key
+                           decryptData:(NSData *)decryptData;
+
+- (NSData *)cl_encryptedDataWith3DESKey:(NSString *)key
+                            encryptData:(NSData *)encryptData;
+
+- (NSData *)cl_decryptedDataWith3DEKey:(NSString *)key
+                           decryptData:(NSData *)decryptData;
+
+- (NSString *)cl_encryptredMD2String;
+
+- (NSData *)cl_encryptredMD2Data;
+
+- (NSString *)cl_encryptredMD4String;
+
+- (NSData *)cl_encryptredMD4Data;
+
+- (NSString *)cl_encryptredMD5String;
+
+- (NSString *)cl_hmacEncryptredMD5StringWithKey:(NSString *)key;
+
+- (NSData *)cl_encryptredMD5Data;
+
+- (NSData *)cl_hmacEncryptredMD5DataWithKey:(NSData *)key;
+
+- (NSString *)cl_encryptredSHA1String;
+
+- (NSString *)cl_hmacEncryptredSHA1StringWithKey:(NSString *)key;
+
+- (NSData *)cl_encryptredSHA1Data;
+
+- (NSData *)cl_hmacEncryptredSHA1DataWithKey:(NSData *)key;
+
+- (NSString *)cl_encryptredSHA224String;
+
+- (NSString *)cl_hmacEncryptredSHA224StringWithKey:(NSString *)key;
+
+- (NSData *)cl_encryptredSHA224Data;
+
+- (NSData *)cl_hmacEncryptredSHA224DataWithKey:(NSData *)key;
+
+- (NSString *)cl_encryptredSHA256String;
+
+- (NSString *)cl_hmacEncryptredSHA256StringWithKey:(NSString *)key;
+
+- (NSData *)cl_encryptredSHA256Data;
+
+- (NSData *)cl_hmacEncryptredSHA256DataWithKey:(NSData *)key;
+
+- (NSString *)cl_encryptredSHA384String;
+
+- (NSString *)cl_hmacEncryptredSHA384StringWithKey:(NSString *)key;
+
+- (NSData *)cl_encryptredSHA384Data;
+
+- (NSData *)cl_hmacEncryptredSHA384DataWithKey:(NSData *)key;
+
+- (NSString *)cl_encryptredSHA512String;
+
+- (NSString *)cl_hmacEncryptredSHA512StringWithKey:(NSString *)key;
+
+- (NSData *)cl_encryptredSHA512Data;
+
+- (NSData *)cl_hmacEncryptredSHA512DataWithKey:(NSData *)key;
+
+- (id)cl_dataJSONValueDecoded;
+
++ (NSData *)cl_getDataWithBundleNamed:(NSString *)name;
 ```
 
 
@@ -493,7 +578,39 @@
 
 + (NSString *)cl_decodedBase64WithString:(NSString *)string;
 
++ (NSString *)cl_encodingMD2WithString:(NSString *)string;
+
++ (NSString *)cl_encodingMD4WithString:(NSString *)string;
+
 + (NSString *)cl_encodingMD5WithString:(NSString *)string;
+
++ (NSString *)cl_hmacEncodingMD5StringWithString:(NSString *)string
+                                             key:(NSString *)key;
+
++ (NSString *)cl_encodingSHA1WithString:(NSString *)string;
+
++ (NSString *)cl_hmacEncodingSHA1StringWithString:(NSString *)string
+                                              key:(NSString *)key;
+
++ (NSString *)cl_encodingSHA224WithString:(NSString *)string;
+
++ (NSString *)cl_hmacEncodingSHA224StringWithString:(NSString *)string
+                                                key:(NSString *)key;
+
++ (NSString *)cl_encodingSHA256WithString:(NSString *)string;
+
++ (NSString *)cl_hmacEncodingSHA256StringWithString:(NSString *)string
+                                                key:(NSString *)key;
+
++ (NSString *)cl_encodingSHA384WithString:(NSString *)string;
+
++ (NSString *)cl_hmacEncodingSHA384StringWithString:(NSString *)string
+                                                key:(NSString *)key;
+
++ (NSString *)cl_encodingSHA512WithString:(NSString *)string;
+
++ (NSString *)cl_hmacEncodingSHA512StringWithString:(NSString *)string
+                                                key:(NSString *)key;
 ```
 
 
