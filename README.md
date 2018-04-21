@@ -21,7 +21,7 @@
 
 ## 目录
 
-- [CLSpeechSunthesizer@](#CLSpeechSunthesizer)
+- [CLSpeechSynthesizer@](#CLSpeechSynthesizer)
 - [NSArray+CLArray@](#NSArray+CLArray)
 - [NSAttributedString+CLAttributedString@](#NSAttributedString+CLAttributedString)
 - [NSBundle+CLBundle@](#NSBundle+CLBundle)
@@ -59,9 +59,9 @@
 
 
 
-## CLSpeechSunthesizer@
+## CLSpeechSynthesizer@
 
-**CLSpeechSunthesizer**基于**AVFoundation**实现的语音播报工具类:
+**CLSpeechSynthesizer**基于**AVFoundation**实现的语音播报工具类:
 
 ```objective-c
 + (instancetype)sharedSpeechSynthesizer;
