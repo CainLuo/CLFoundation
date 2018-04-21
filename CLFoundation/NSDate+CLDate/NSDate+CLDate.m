@@ -16,6 +16,78 @@
 
 @implementation NSDate (CLDate)
 
+- (NSInteger)cl_year {
+    return [[[NSCalendar currentCalendar] components:NSCalendarUnitYear fromDate:self] year];
+}
+
+- (NSInteger)cl_month {
+    return [[[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:self] month];
+}
+
+- (NSInteger)cl_day {
+    return [[[NSCalendar currentCalendar] components:NSCalendarUnitDay fromDate:self] day];
+}
+
+- (NSInteger)cl_hour {
+    return [[[NSCalendar currentCalendar] components:NSCalendarUnitHour fromDate:self] hour];
+}
+
+- (NSInteger)cl_minute {
+    return [[[NSCalendar currentCalendar] components:NSCalendarUnitMinute fromDate:self] minute];
+}
+
+- (NSInteger)cl_second {
+    return [[[NSCalendar currentCalendar] components:NSCalendarUnitSecond fromDate:self] second];
+}
+
+- (NSInteger)cl_nanosecond {
+    return [[[NSCalendar currentCalendar] components:NSCalendarUnitSecond fromDate:self] nanosecond];
+}
+
+- (NSInteger)cl_weekday {
+    return [[[NSCalendar currentCalendar] components:NSCalendarUnitWeekday fromDate:self] weekday];
+}
+
+- (NSInteger)cl_weekdayOrdinal {
+    return [[[NSCalendar currentCalendar] components:NSCalendarUnitWeekdayOrdinal fromDate:self] weekdayOrdinal];
+}
+
+- (NSInteger)cl_weekOfMonth {
+    return [[[NSCalendar currentCalendar] components:NSCalendarUnitWeekOfMonth fromDate:self] weekOfMonth];
+}
+
+- (NSInteger)cl_weekOfYear {
+    return [[[NSCalendar currentCalendar] components:NSCalendarUnitWeekOfYear fromDate:self] weekOfYear];
+}
+
+- (NSInteger)cl_yearForWeekOfYear {
+    return [[[NSCalendar currentCalendar] components:NSCalendarUnitYearForWeekOfYear fromDate:self] yearForWeekOfYear];
+}
+
+- (NSInteger)cl_quarter {
+    return [[[NSCalendar currentCalendar] components:NSCalendarUnitQuarter fromDate:self] quarter];
+}
+
+- (BOOL)cl_isLeapMonth {
+    return [[[NSCalendar currentCalendar] components:NSCalendarUnitQuarter fromDate:self] isLeapMonth];
+}
+
+- (BOOL)cl_isLeapYear {
+    NSUInteger year = self.cl_year;
+    return ((year % 400 == 0) || ((year % 100 != 0) && (year % 4 == 0)));
+}
+
+- (BOOL)cl_isToday {
+    if (fabs(self.timeIntervalSinceNow) >= 60 * 60 * 24) return NO;
+    return [NSDate new].cl_day == self.cl_day;
+}
+
+- (BOOL)cl_isYesterday {
+    NSDate *added = [NSDate cl_getDaysDateWithDate:self
+                                              days:1];
+    return [added cl_isToday];
+}
+
 #pragma mark - 时间戳处理/计算日期
 + (NSString *)cl_compareCureentTimeWithDate:(NSTimeInterval)timeStamp {
     
@@ -69,11 +141,14 @@
     }
 }
 
-+ (NSString *)cl_getCurrentTimeStamp {
++ (NSString *)cl_getCurrentTimeStampString {
     
-    NSDate *cl_cureentDate = [NSDate date];
+    return [NSString stringWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]];
+}
+
++ (NSTimeInterval)cl_getCurrentTimeStamp {
     
-    return [NSString stringWithFormat:@"%ld", (long)[cl_cureentDate timeIntervalSince1970]];
+    return [[NSDate date] timeIntervalSince1970];
 }
 
 + (NSString *)cl_displayTimeWithTimeStamp:(NSTimeInterval)timeStamp {
@@ -95,33 +170,6 @@
     NSInteger cl_minute = cl_dateComponents.minute;
 
     return [NSString stringWithFormat:@"%ld年%ld月%ld日 %ld:%ld", (long)cl_year, (long)cl_month, (long)cl_day, (long)cl_hour, (long)cl_minute];
-}
-
-+ (NSString *)cl_displayTimeWithTimeStamp:(NSTimeInterval)timeStamp
-                                formatter:(NSString *)formatter {
-    
-    if ([NSString stringWithFormat:@"%@", @(timeStamp)].length == 13) {
-        
-        timeStamp /= 1000.0f;
-    }
-    
-    NSDate *cl_timeDate = [NSDate dateWithTimeIntervalSince1970:timeStamp];
-    
-    NSDateFormatter *cl_dateFormatter = [[NSDateFormatter alloc] init];
-    
-    cl_dateFormatter.dateFormat = formatter;
-    
-    return [cl_dateFormatter stringFromDate:cl_timeDate];
-}
-
-+ (NSString *)cl_getDateStringWithDate:(NSDate *)date
-                             formatter:(NSString *)formatter {
-    
-    NSDateFormatter *cl_dateFormatter = [[NSDateFormatter alloc] init];
-    
-    cl_dateFormatter.dateFormat = formatter;
-    
-    return [cl_dateFormatter stringFromDate:date];
 }
 
 + (NSString *)cl_calculateDaysWithDate:(NSDate *)date {
@@ -325,14 +373,94 @@
                                          date:date];
 }
 
-+ (NSDate *)cl_getDateWithDateComponents:(NSDateComponents *)dateComponents
-                                    date:(NSDate *)date {
+#pragma mark - 日期格式化
++ (NSString *)cl_getStringDateWithTimeStamp:(NSTimeInterval)timeStamp
+                                  formatter:(NSString *)formatter {
     
-    NSCalendar *cl_calendar = [NSCalendar autoupdatingCurrentCalendar];
+    if ([NSString stringWithFormat:@"%@", @(timeStamp)].length == 13) {
+        
+        timeStamp /= 1000.0f;
+    }
     
-    return [cl_calendar dateByAddingComponents:dateComponents
-                                        toDate:date
-                                       options:0];
+    NSDate *cl_timeDate = [NSDate dateWithTimeIntervalSince1970:timeStamp];
+    
+    NSDateFormatter *cl_dateFormatter = [[NSDateFormatter alloc] init];
+    
+    cl_dateFormatter.dateFormat = formatter;
+    
+    return [cl_dateFormatter stringFromDate:cl_timeDate];
+}
+
+- (NSString *)cl_getStringDateWithFormatter:(NSString *)formatter {
+    
+    NSDateFormatter *cl_dateFormatter = [[NSDateFormatter alloc] init];
+    
+    cl_dateFormatter.dateFormat = formatter;
+    cl_dateFormatter.locale     = [NSLocale currentLocale];
+    
+    return [cl_dateFormatter stringFromDate:self];
+}
+
++ (NSString *)cl_getStringDateWithDate:(NSDate *)date
+                             formatter:(NSString *)formatter {
+    
+    NSDateFormatter *cl_dateFormatter = [[NSDateFormatter alloc] init];
+    
+    cl_dateFormatter.dateFormat = formatter;
+    
+    return [cl_dateFormatter stringFromDate:date];
+}
+
++ (NSString *)cl_getStringDateWithDate:(NSDate *)date
+                             formatter:(NSString *)formatter
+                              timeZone:(NSTimeZone *)timeZone
+                                locale:(NSLocale *)locale {
+    
+    NSDateFormatter *cl_dateFormatter = [[NSDateFormatter alloc] init];
+
+    [cl_dateFormatter setDateFormat:formatter];
+    
+    if (timeZone) {
+        [cl_dateFormatter setTimeZone:timeZone];
+    }
+    
+    if (locale) {
+        [cl_dateFormatter setLocale:locale];
+    }
+    
+    return [cl_dateFormatter stringFromDate:date];
+}
+
++ (NSDate *)cl_getDateWithDateString:(NSString *)dateString
+                           formatter:(NSString *)formatter {
+    
+    NSDateFormatter *cl_dateFormatter = [[NSDateFormatter alloc] init];
+    
+    [cl_dateFormatter setDateFormat:formatter];
+    
+    return [cl_dateFormatter dateFromString:dateString];
+}
+
++ (NSDate *)cl_getDateWithDateString:(NSString *)dateString
+                           formatter:(NSString *)formatter
+                            timeZone:(NSTimeZone *)timeZone
+                              locale:(NSLocale *)locale {
+    
+    NSDateFormatter *cl_dateFormatter = [[NSDateFormatter alloc] init];
+
+    [cl_dateFormatter setDateFormat:formatter];
+    
+    if (timeZone) {
+        
+        [cl_dateFormatter setTimeZone:timeZone];
+    }
+    
+    if (locale) {
+        
+        [cl_dateFormatter setLocale:locale];
+    }
+    
+    return [cl_dateFormatter dateFromString:dateString];
 }
 
 #pragma mark - 日期判断
@@ -367,6 +495,17 @@
     
     return [cl_calendar components:unitFlags
                           fromDate:date];
+}
+
+#pragma mark - 私有API
++ (NSDate *)cl_getDateWithDateComponents:(NSDateComponents *)dateComponents
+                                    date:(NSDate *)date {
+    
+    NSCalendar *cl_calendar = [NSCalendar autoupdatingCurrentCalendar];
+    
+    return [cl_calendar dateByAddingComponents:dateComponents
+                                        toDate:date
+                                       options:0];
 }
 
 @end

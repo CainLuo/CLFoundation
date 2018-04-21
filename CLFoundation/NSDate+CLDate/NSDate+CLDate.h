@@ -16,6 +16,24 @@
 
 @interface NSDate (CLDate)
 
+@property (nonatomic, readonly) NSInteger cl_year;              // 获取日期的年
+@property (nonatomic, readonly) NSInteger cl_month;             // 获取日期的月
+@property (nonatomic, readonly) NSInteger cl_day;               // 获取日期的日
+@property (nonatomic, readonly) NSInteger cl_hour;              // 获取日期的时
+@property (nonatomic, readonly) NSInteger cl_minute;            // 获取日期的分
+@property (nonatomic, readonly) NSInteger cl_second;            // 获取日期的秒
+@property (nonatomic, readonly) NSInteger cl_nanosecond;        // 获取日期的纳秒
+@property (nonatomic, readonly) NSInteger cl_weekday;           // 获取日期的周日期
+@property (nonatomic, readonly) NSInteger cl_weekdayOrdinal;    // 获取日期的周序号
+@property (nonatomic, readonly) NSInteger cl_weekOfMonth;       // 获取月里的第几周
+@property (nonatomic, readonly) NSInteger cl_weekOfYear;        // 获取日期是一年里的第几周
+@property (nonatomic, readonly) NSInteger cl_yearForWeekOfYear; // 获取日期所属的年份
+@property (nonatomic, readonly) NSInteger cl_quarter;           // 没搞懂是什么意思
+@property (nonatomic, readonly) BOOL cl_isLeapMonth;            // 获取日期是否是闰年的月
+@property (nonatomic, readonly) BOOL cl_isLeapYear;             // 获取日期是否是闰年
+@property (nonatomic, readonly) BOOL cl_isToday;                // 获取日期是否是今天
+@property (nonatomic, readonly) BOOL cl_isYesterday;            // 获取日期是否是昨天
+
 #pragma mark - 时间戳处理/计算日期
 /**
  通过时间戳计算出与当前时间差
@@ -26,11 +44,18 @@
 + (NSString *)cl_compareCureentTimeWithDate:(NSTimeInterval)timeStamp;
 
 /**
- 把当前时间转换成时间戳
+ 获取当前NSDate的时间戳字符串
  
- @return 时间戳
+ @return NSString
  */
-+ (NSString *)cl_getCurrentTimeStamp;
++ (NSString *)cl_getCurrentTimeStampString;
+
+/**
+ 获取当前NSDate的时间戳
+
+ @return NSTimeInterval
+ */
++ (NSTimeInterval)cl_getCurrentTimeStamp;
 
 /**
  通过传入的时间戳算出年月日
@@ -39,27 +64,6 @@
  @return 年月日, 默认格式xxxx年xx月xx日
  */
 + (NSString *)cl_displayTimeWithTimeStamp:(NSTimeInterval)timeStamp;
-
-
-/**
- 通过传入的时间戳和日期格式算出年月日
- 
- @param timeStamp 时间戳
- @param formatter 时间显示格式
- @return 年月日
- */
-+ (NSString *)cl_displayTimeWithTimeStamp:(NSTimeInterval)timeStamp
-                                formatter:(NSString *)formatter;
-
-/**
- 获取指定NSDate的字符串日期
-
- @param date NSDate
- @param formatter NSString
- @return NSString
- */
-+ (NSString *)cl_getDateStringWithDate:(NSDate *)date
-                             formatter:(NSString *)formatter;
 
 /**
  通过传入的NSDate计算出是今天/明天/后天
@@ -214,6 +218,73 @@
  */
 + (NSDate *)cl_getHoursDateWithDate:(NSDate *)date
                               hours:(NSInteger)hours;
+
+#pragma mark - 日期格式化
+/**
+ 获取指定NSTimeInterval NSDateFormat的字符串日期
+
+ @param timeStamp NSTimeInterval
+ @param formatter NSString
+ @return NSString
+ */
++ (NSString *)cl_getStringDateWithTimeStamp:(NSTimeInterval)timeStamp
+                                  formatter:(NSString *)formatter;
+
+/**
+ 获取当前NSDate指定的NSDateFormat字符串日期
+
+ @param formatter NSString
+ @return NSString
+ */
+- (NSString *)cl_getStringDateWithFormatter:(NSString *)formatter;
+
+/**
+ 获取指定NSDate NSDateFormat的字符串日期
+ 
+ @param date NSDate
+ @param formatter NSString
+ @return NSString
+ */
++ (NSString *)cl_getStringDateWithDate:(NSDate *)date
+                             formatter:(NSString *)formatter;
+
+/**
+ 获取指定NSDateFormat, NSTimeZone, NSLocale字符串日期
+
+ @param date NSDate
+ @param formatter NSString
+ @param timeZone NSTimeZone
+ @param locale NSLocale
+ @return NSString
+ */
++ (NSString *)cl_getStringDateWithDate:(NSDate *)date
+                             formatter:(NSString *)formatter
+                              timeZone:(NSTimeZone *)timeZone
+                                locale:(NSLocale *)locale;
+
+/**
+ 获取指定NSDateFormat字符串日期的NSDate
+
+ @param dateString NSString
+ @param formatter NSString
+ @return NSDate
+ */
++ (NSDate *)cl_getDateWithDateString:(NSString *)dateString
+                           formatter:(NSString *)formatter;
+
+/**
+ 获取指定NSDateFormat, NSTimeZone, NSLocale的NSDate
+
+ @param dateString NSString
+ @param formatter NSString
+ @param timeZone NSTimeZone
+ @param locale NSLocale
+ @return NSDate
+ */
++ (NSDate *)cl_getDateWithDateString:(NSString *)dateString
+                           formatter:(NSString *)formatter
+                            timeZone:(NSTimeZone *)timeZone
+                              locale:(NSLocale *)locale;
 
 #pragma mark - 日期判断
 /**
