@@ -16,14 +16,10 @@
 
 @implementation EXBaseViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
     
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-    [self.view addSubview:self.ex_textView];
-
-//    [self cl_addConstraintsWithSuperView];
+    [self ex_addConstraintsWithSuperView];
 }
 
 - (UITextView *)ex_textView {
@@ -49,6 +45,25 @@
 - (void)ex_reloadTextView {
     
     self.ex_textView.text = self.ex_textViewString;
+}
+
+- (void)ex_addConstraintsWithSuperView {
+    
+    [self.view addSubview:self.ex_textView];
+    
+    [self.ex_textView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        if (@available(iOS 11.0, *)) {
+            
+            make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
+            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
+            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
+            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight);
+        } else {
+            
+            (void)make.edges;
+        }
+    }];
 }
 
 @end
