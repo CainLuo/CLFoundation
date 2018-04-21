@@ -43,7 +43,7 @@
 		A4BA3137204BA00F002E0ED7 /* EXFileManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BA3136204BA00F002E0ED7 /* EXFileManagerController.m */; };
 		A4BA313C204CCD95002E0ED7 /* CLFoundationExample.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4BA313B204CCD95002E0ED7 /* CLFoundationExample.bundle */; };
 		A4F17CEB204705B500C70EA7 /* NSFileManager+CLFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F17CEA204705B500C70EA7 /* NSFileManager+CLFileManager.m */; };
-		BF84D60F20897A890061D29F /* CLSpeechSunthesizer.m in Sources */ = {isa = PBXBuildFile; fileRef = BF84D60E20897A890061D29F /* CLSpeechSunthesizer.m */; };
+		BF84D60F20897A890061D29F /* CLSpeechSynthesizer.m in Sources */ = {isa = PBXBuildFile; fileRef = BF84D60E20897A890061D29F /* CLSpeechSynthesizer.m */; };
 		BF84D61320897C770061D29F /* EXSpeechController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF84D61220897C770061D29F /* EXSpeechController.m */; };
 /* End PBXBuildFile section */
 
@@ -119,8 +119,8 @@
 		A4BA313B204CCD95002E0ED7 /* CLFoundationExample.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CLFoundationExample.bundle; sourceTree = "<group>"; };
 		A4F17CE9204705B500C70EA7 /* NSFileManager+CLFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+CLFileManager.h"; sourceTree = "<group>"; };
 		A4F17CEA204705B500C70EA7 /* NSFileManager+CLFileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+CLFileManager.m"; sourceTree = "<group>"; };
-		BF84D60D20897A890061D29F /* CLSpeechSunthesizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLSpeechSunthesizer.h; sourceTree = "<group>"; };
-		BF84D60E20897A890061D29F /* CLSpeechSunthesizer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLSpeechSunthesizer.m; sourceTree = "<group>"; };
+		BF84D60D20897A890061D29F /* CLSpeechSynthesizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLSpeechSynthesizer.h; sourceTree = "<group>"; };
+		BF84D60E20897A890061D29F /* CLSpeechSynthesizer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLSpeechSynthesizer.m; sourceTree = "<group>"; };
 		BF84D61120897C770061D29F /* EXSpeechController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXSpeechController.h; sourceTree = "<group>"; };
 		BF84D61220897C770061D29F /* EXSpeechController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXSpeechController.m; sourceTree = "<group>"; };
 		D8AFC4BF0E762F1B9F28A338 /* Pods-CLFoundationExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLFoundationExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-CLFoundationExample/Pods-CLFoundationExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 			children = (
 				A48D73BE2034544C00378353 /* CLFoundation.h */,
 				A48D73BD2034544C00378353 /* Info.plist */,
-				BF84D60C20897A7F0061D29F /* CLSpeechSunthesizer */,
+				BF84D60C20897A7F0061D29F /* CLSpeechSynthesizer */,
 				A48D73CB2034544C00378353 /* NSArray+CLArray */,
 				A48D73B42034544C00378353 /* NSAttributedString+CLAttributedString */,
 				A48D73AB2034544C00378353 /* NSBundle+CLBundle */,
@@ -506,13 +506,13 @@
 			path = "NSFileManager+CLFileManager";
 			sourceTree = "<group>";
 		};
-		BF84D60C20897A7F0061D29F /* CLSpeechSunthesizer */ = {
+		BF84D60C20897A7F0061D29F /* CLSpeechSynthesizer */ = {
 			isa = PBXGroup;
 			children = (
-				BF84D60D20897A890061D29F /* CLSpeechSunthesizer.h */,
-				BF84D60E20897A890061D29F /* CLSpeechSunthesizer.m */,
+				BF84D60D20897A890061D29F /* CLSpeechSynthesizer.h */,
+				BF84D60E20897A890061D29F /* CLSpeechSynthesizer.m */,
 			);
-			path = CLSpeechSunthesizer;
+			path = CLSpeechSynthesizer;
 			sourceTree = "<group>";
 		};
 		BF84D61020897C580061D29F /* EXSpeech */ = {
@@ -690,7 +690,7 @@
 				A4ACC4FE20342C0E00E756D1 /* EXDataController.m in Sources */,
 				A4A8A4152042931900FA9EC5 /* EXNumberController.m in Sources */,
 				A48D73D62034544C00378353 /* NSString+CLString.m in Sources */,
-				BF84D60F20897A890061D29F /* CLSpeechSunthesizer.m in Sources */,
+				BF84D60F20897A890061D29F /* CLSpeechSynthesizer.m in Sources */,
 				A48D73A92034478B00378353 /* EXDateController.m in Sources */,
 				A48D73D92034544C00378353 /* NSArray+CLArray.m in Sources */,
 				A48D73D02034544C00378353 /* NSMutableArray+CLMutableArray.m in Sources */,

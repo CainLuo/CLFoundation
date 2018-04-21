@@ -62,7 +62,7 @@
 
 - (void)ex_speechContent {
     
-    [[CLSpeechSunthesizer sharedSpeechSynthesizer] cl_speakString:self.ex_textField.text];
+    [[CLSpeechSynthesizer sharedSpeechSynthesizer] cl_speakString:self.ex_textField.text];
 }
 
 - (void)ex_addConstraintsWithSuperView {

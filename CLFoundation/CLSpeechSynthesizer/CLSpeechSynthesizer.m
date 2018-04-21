@@ -1,31 +1,31 @@
 //
-//  CLSpeechSunthesizer.m
+//  CLSpeechSynthesizer.m
 //  CLFoundationExample
 //
 //  Created by Cain Luo on 2018/4/20.
 //  Copyright © 2018年 Cain Luo. All rights reserved.
 //
 
-#import "CLSpeechSunthesizer.h"
+#import "CLSpeechSynthesizer.h"
 #import <AVFoundation/AVFoundation.h>
 
-@interface CLSpeechSunthesizer ()  <AVSpeechSynthesizerDelegate>
+@interface CLSpeechSynthesizer ()  <AVSpeechSynthesizerDelegate>
 
 @property (nonatomic, strong) AVSpeechSynthesizer *cl_speechSynthesizer;
 @property (nonatomic, strong) AVSpeechUtterance   *cl_avSpeechUtterance;
 
 @end
 
-@implementation CLSpeechSunthesizer
+@implementation CLSpeechSynthesizer
 
 + (instancetype)sharedSpeechSynthesizer {
     
-    static CLSpeechSunthesizer *cl_sharedInstance;
+    static CLSpeechSynthesizer *cl_sharedInstance;
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
         
-        cl_sharedInstance = [[CLSpeechSunthesizer alloc] init];
+        cl_sharedInstance = [[CLSpeechSynthesizer alloc] init];
     });
     
     return cl_sharedInstance;

@@ -1,5 +1,5 @@
 //
-//  CLSpeechSunthesizer.h
+//  CLSpeechSynthesizer.h
 //  CLFoundationExample
 //
 //  Created by Cain Luo on 2018/4/20.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
 
-@interface CLSpeechSunthesizer : NSObject
+@interface CLSpeechSynthesizer : NSObject
 
 + (instancetype)sharedSpeechSynthesizer;
 

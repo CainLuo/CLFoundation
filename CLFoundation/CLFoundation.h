@@ -14,7 +14,7 @@
 //
 
 #pragma mark - CLSpeechSunthesizer
-#import "CLSpeechSunthesizer.h"
+#import "CLSpeechSynthesizer.h"
 
 #pragma mark - NSArray+CLArray
 #import "NSArray+CLArray.h"
