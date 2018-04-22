@@ -151,6 +151,14 @@
 + (NSString *)cl_jsonStringWithObject:(NSObject *)object;
 
 /**
+ 将指定的NSObject转成带格式的JSON字符串
+
+ @param object NSArray || NSDictionary || NSObject
+ @return NSString
+ */
++ (NSString *)cl_jsonPrettyStringWithObject:(NSObject *)object;
+
+/**
  判断字符串是否为空
  
  @param string 字符串

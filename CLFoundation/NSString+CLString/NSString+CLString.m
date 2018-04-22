@@ -228,20 +228,36 @@ static char cl_base64EncodingTable[64] = {
 
 + (NSString *)cl_jsonStringWithObject:(NSObject *)object {
     
-    NSError *error = nil;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:object
-                                                       options:NSJSONWritingPrettyPrinted
-                                                         error:&error];
-    if (jsonData == nil) {
-#ifdef DEBUG
-        NSLog(@"fail to get JSON from dictionary: %@, error: %@", self, error);
-#endif
-        return nil;
+    if ([NSJSONSerialization isValidJSONObject:object]) {
+        
+        NSError *cl_error;
+        NSData *cl_JSONData = [NSJSONSerialization dataWithJSONObject:object
+                                                              options:0
+                                                                error:&cl_error];
+        
+        NSString *cl_jsonString = [[NSString alloc] initWithData:cl_JSONData
+                                                        encoding:NSUTF8StringEncoding];
+        return cl_jsonString;
     }
     
-    NSString *jsonString = [[NSString alloc] initWithData:jsonData
-                                                 encoding:NSUTF8StringEncoding];
-    return jsonString;
+    return nil;
+}
+
++ (NSString *)cl_jsonPrettyStringWithObject:(NSObject *)object {
+    
+    if ([NSJSONSerialization isValidJSONObject:object]) {
+        
+        NSError *cl_error;
+        NSData *cl_JSONData = [NSJSONSerialization dataWithJSONObject:object
+                                                              options:NSJSONWritingPrettyPrinted
+                                                                error:&cl_error];
+        
+        NSString *cl_jsonString = [[NSString alloc] initWithData:cl_JSONData
+                                                        encoding:NSUTF8StringEncoding];
+        return cl_jsonString;
+    }
+    
+    return nil;
 }
 
 + (BOOL)cl_checkEmptyWithString:(NSString *)string {
