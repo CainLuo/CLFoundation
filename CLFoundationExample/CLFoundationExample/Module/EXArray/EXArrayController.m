@@ -35,22 +35,22 @@
     [self.ex_textViewString appendFormat:@"获取对象的索引: %lud\n", (unsigned long)[ex_safeArray cl_safeIndexOfObject:@"Hello Word"]];
     [self.ex_textViewString appendFormat:@"获取指定区间的数组: %@\n", [ex_safeArray cl_safeArrayWithRange:NSMakeRange(0, 10)]];
     [self.ex_textViewString appendFormat:@"获取指定索引的对象: %@\n", [ex_safeArray cl_safeObjectAtIndex:10]];
-    [self.ex_textViewString appendFormat:@"获取指定Plist文件的数组: %@\n\n", [NSArray cl_getArrayWithPlistName:@"Array"]];
+    [self.ex_textViewString appendFormat:@"获取指定Plist文件的数组: %@\n", [NSArray cl_getArrayWithPlistName:@"Array"]];
     
     NSArray *ex_friendArray = @[@"A", @"B", @"C", @"E", @"F"];
     
-    NSData *ex_dictionaryData = [NSPropertyListSerialization dataWithPropertyList:ex_friendArray
-                                                                           format:NSPropertyListBinaryFormat_v1_0
-                                                                          options:NSPropertyListImmutable
-                                                                            error:nil];
+    NSData *ex_arrayData = [NSPropertyListSerialization dataWithPropertyList:ex_friendArray
+                                                                      format:NSPropertyListBinaryFormat_v1_0
+                                                                     options:NSPropertyListImmutable
+                                                                       error:nil];
     
-    NSArray *ex_array = [NSArray cl_arrayWithPlistData:ex_dictionaryData];
+    NSArray *ex_array = [NSArray cl_arrayWithPlistData:ex_arrayData];
     
     NSMutableArray *ex_mutableArray = [[NSMutableArray alloc] initWithArray:ex_array];
     
-    [self.ex_textViewString appendFormat:@"获取NSData序列化数组: %@\n\n", ex_array];
-    [self.ex_textViewString appendFormat:@"获取倒序排列的数组: %@\n\n", [ex_mutableArray cl_getReverseArray]];
-    [self.ex_textViewString appendFormat:@"获取乱序排列的数组: %@\n\n", [ex_mutableArray cl_getDisorderArray]];
+    [self.ex_textViewString appendFormat:@"获取长度为\"%ld\"NSData序列化数组: %@\n\n", ex_arrayData.length, ex_array];
+    [self.ex_textViewString appendFormat:@"获取倒序排列的数组: %@\n", [ex_mutableArray cl_getReverseArray]];
+    [self.ex_textViewString appendFormat:@"获取乱序排列的数组: %@\n", [ex_mutableArray cl_getDisorderArray]];
 }
 
 - (void)ex_mutableArray {
@@ -60,7 +60,7 @@
     [ex_safeMutableArray cl_addSafeObject:nil];
     [ex_safeMutableArray cl_addSafeObject:@"Hello Word"];
     
-    [self.ex_textViewString appendString:@"----------NSMutableArray----------\n"];
+    [self.ex_textViewString appendString:@"\n----------NSMutableArray----------\n"];
     [self.ex_textViewString appendFormat:@"安全的添加一个对象: %@\n", ex_safeMutableArray];
     
     [ex_safeMutableArray cl_insertSafeObject:@"13800138000"
