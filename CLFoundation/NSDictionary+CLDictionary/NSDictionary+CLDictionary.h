@@ -56,7 +56,4 @@
  */
 - (NSDictionary *)cl_getDictionaryForKeys:(NSArray *)keys;
 
-- (NSString *)jsonStringEncoded;
-- (NSString *)jsonPrettyStringEncoded;
-
 @end
