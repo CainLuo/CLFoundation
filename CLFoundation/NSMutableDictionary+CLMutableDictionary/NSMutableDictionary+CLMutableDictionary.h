@@ -35,4 +35,20 @@
  */
 - (id)cl_safeKeyForValue:(id)value;
 
+/**
+ 序列化创建一个NSMutableDictionary
+ 
+ @param plist NSData
+ @return NSMutableDictionary
+ */
++ (NSMutableDictionary *)cl_mutableDictionaryWithPlistData:(NSData *)plist;
+
+/**
+ 筛选出需要的Keys并组装成一个NSMutableDictionary, 其他的则会删除
+
+ @param keys NSArray
+ @return NSMutableDictionary
+ */
+- (NSMutableDictionary *)cl_popEntriesForKeys:(NSArray *)keys;
+
 @end

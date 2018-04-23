@@ -53,4 +53,43 @@
     return nil;
 }
 
++ (NSMutableDictionary *)cl_mutableDictionaryWithPlistData:(NSData *)plist {
+    
+    if (!plist) {
+        
+        return nil;
+    }
+    
+    NSMutableDictionary *cl_mutableDictionary = [NSPropertyListSerialization propertyListWithData:plist
+                                                                                          options:NSPropertyListMutableContainersAndLeaves
+                                                                                           format:NULL
+                                                                                            error:NULL];
+    
+    if ([cl_mutableDictionary isKindOfClass:[NSMutableDictionary class]]) {
+        
+        return cl_mutableDictionary;
+    }
+    
+    return nil;
+}
+
+- (NSMutableDictionary *)cl_popEntriesForKeys:(NSArray *)keys {
+
+    NSMutableDictionary *cl_mutableDictionary = [NSMutableDictionary dictionary];
+    
+    for (id key in keys) {
+        
+        id value = self[key];
+        
+        if (value) {
+            
+            [self removeObjectForKey:key];
+            
+            cl_mutableDictionary[key] = value;
+        }
+    }
+    
+    return cl_mutableDictionary;
+}
+
 @end
