@@ -43,6 +43,8 @@
 		A4BA3137204BA00F002E0ED7 /* EXFileManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BA3136204BA00F002E0ED7 /* EXFileManagerController.m */; };
 		A4BA313C204CCD95002E0ED7 /* CLFoundationExample.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4BA313B204CCD95002E0ED7 /* CLFoundationExample.bundle */; };
 		A4F17CEB204705B500C70EA7 /* NSFileManager+CLFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F17CEA204705B500C70EA7 /* NSFileManager+CLFileManager.m */; };
+		BF47C02E208D849F00FD5C78 /* EXNotificationCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF47C02D208D849F00FD5C78 /* EXNotificationCenterController.m */; };
+		BF47C037208DADBD00FD5C78 /* NSNotificationCenter+CLNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = BF47C036208DADBD00FD5C78 /* NSNotificationCenter+CLNotificationCenter.m */; };
 		BF84D60F20897A890061D29F /* CLSpeechSynthesizer.m in Sources */ = {isa = PBXBuildFile; fileRef = BF84D60E20897A890061D29F /* CLSpeechSynthesizer.m */; };
 		BF84D61320897C770061D29F /* EXSpeechController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF84D61220897C770061D29F /* EXSpeechController.m */; };
 /* End PBXBuildFile section */
@@ -119,6 +121,10 @@
 		A4BA313B204CCD95002E0ED7 /* CLFoundationExample.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CLFoundationExample.bundle; sourceTree = "<group>"; };
 		A4F17CE9204705B500C70EA7 /* NSFileManager+CLFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+CLFileManager.h"; sourceTree = "<group>"; };
 		A4F17CEA204705B500C70EA7 /* NSFileManager+CLFileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+CLFileManager.m"; sourceTree = "<group>"; };
+		BF47C02C208D849F00FD5C78 /* EXNotificationCenterController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXNotificationCenterController.h; sourceTree = "<group>"; };
+		BF47C02D208D849F00FD5C78 /* EXNotificationCenterController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXNotificationCenterController.m; sourceTree = "<group>"; };
+		BF47C035208DADBD00FD5C78 /* NSNotificationCenter+CLNotificationCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+CLNotificationCenter.h"; sourceTree = "<group>"; };
+		BF47C036208DADBD00FD5C78 /* NSNotificationCenter+CLNotificationCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+CLNotificationCenter.m"; sourceTree = "<group>"; };
 		BF84D60D20897A890061D29F /* CLSpeechSynthesizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLSpeechSynthesizer.h; sourceTree = "<group>"; };
 		BF84D60E20897A890061D29F /* CLSpeechSynthesizer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLSpeechSynthesizer.m; sourceTree = "<group>"; };
 		BF84D61120897C770061D29F /* EXSpeechController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXSpeechController.h; sourceTree = "<group>"; };
@@ -172,6 +178,7 @@
 				A48D73B12034544C00378353 /* NSMutableArray+CLMutableArray */,
 				A48D73B72034544C00378353 /* NSMutableAttributedString+CLMutableAttributedString */,
 				A48D73BA2034544C00378353 /* NSMutableDictionary+CLMutableDictionary */,
+				BF47C034208DAD9C00FD5C78 /* NSNotificationCenter+CLNotificationCenter */,
 				A4A8A40E2042923D00FA9EC5 /* NSNumber+CLNumber */,
 				A42FEFE6203DC7840054C8A3 /* NSObject+CLObject */,
 				A48D73C22034544C00378353 /* NSString+CLString */,
@@ -423,6 +430,7 @@
 				A48D73A62034477E00378353 /* EXDate */,
 				A48D73DA2035560B00378353 /* EXDictionary */,
 				A4BA3134204B9FF1002E0ED7 /* EXFileManager */,
+				BF47C02B208D841F00FD5C78 /* EXNotificationCenter */,
 				A4A8A4122042930800FA9EC5 /* EXNumber */,
 				A4A8A40A2040730200FA9EC5 /* EXObject */,
 				A4ACC4EA203416AA00E756D1 /* EXRoot */,
@@ -504,6 +512,24 @@
 				A4F17CEA204705B500C70EA7 /* NSFileManager+CLFileManager.m */,
 			);
 			path = "NSFileManager+CLFileManager";
+			sourceTree = "<group>";
+		};
+		BF47C02B208D841F00FD5C78 /* EXNotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				BF47C02C208D849F00FD5C78 /* EXNotificationCenterController.h */,
+				BF47C02D208D849F00FD5C78 /* EXNotificationCenterController.m */,
+			);
+			path = EXNotificationCenter;
+			sourceTree = "<group>";
+		};
+		BF47C034208DAD9C00FD5C78 /* NSNotificationCenter+CLNotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				BF47C035208DADBD00FD5C78 /* NSNotificationCenter+CLNotificationCenter.h */,
+				BF47C036208DADBD00FD5C78 /* NSNotificationCenter+CLNotificationCenter.m */,
+			);
+			path = "NSNotificationCenter+CLNotificationCenter";
 			sourceTree = "<group>";
 		};
 		BF84D60C20897A7F0061D29F /* CLSpeechSynthesizer */ = {
@@ -677,9 +703,11 @@
 				A48D73D72034544C00378353 /* NSDictionary+CLDictionary.m in Sources */,
 				BF84D61320897C770061D29F /* EXSpeechController.m in Sources */,
 				A4BA3137204BA00F002E0ED7 /* EXFileManagerController.m in Sources */,
+				BF47C037208DADBD00FD5C78 /* NSNotificationCenter+CLNotificationCenter.m in Sources */,
 				A4ACC4AC2034103600E756D1 /* main.m in Sources */,
 				A4A6C32D203ED89B001EF8FD /* NSTimer+CLTimer.m in Sources */,
 				A4ACC49E2034103600E756D1 /* AppDelegate.m in Sources */,
+				BF47C02E208D849F00FD5C78 /* EXNotificationCenterController.m in Sources */,
 				A48D73D52034544C00378353 /* NSURL+CLURL.m in Sources */,
 				A4A8A4112042925100FA9EC5 /* NSNumber+CLNumber.m in Sources */,
 				A48D73D32034544C00378353 /* NSMutableDictionary+CLMutableDictionary.m in Sources */,
