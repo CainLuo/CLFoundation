@@ -46,7 +46,9 @@
                                               @{@"title":@"EXFileManagerController",
                                                 @"controller":@"EXFileManagerController"},
                                               @{@"title":@"EXSpeechController",
-                                                @"controller":@"EXSpeechController"}]];
+                                                @"controller":@"EXSpeechController"},
+                                              @{@"title":@"EXNotificationCenterController",
+                                                @"controller":@"EXNotificationCenterController"}]];
     
     [self.tableView reloadData];
 }

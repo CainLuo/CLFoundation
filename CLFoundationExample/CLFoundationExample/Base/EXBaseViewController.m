@@ -16,6 +16,12 @@
 
 @implementation EXBaseViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+}
+
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
