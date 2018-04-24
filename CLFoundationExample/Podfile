@@ -5,4 +5,5 @@ use_frameworks!
 target 'CLFoundationExample' do
 
   pod 'Masonry'
+  pod 'CLUIKit'
 end

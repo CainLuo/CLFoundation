@@ -1,0 +1,6 @@
+framework module CLFoundation {
+  umbrella header "CLFoundation-umbrella.h"
+
+  export *
+  module * { export * }
+}

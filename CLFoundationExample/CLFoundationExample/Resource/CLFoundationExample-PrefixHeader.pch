@@ -10,6 +10,7 @@
 #define CLFoundationExample_PrefixHeader_pch
 
 #import "CLFoundation.h"
+#import "CLUIKit.h"
 #import "Masonry.h"
 
 #endif /* CLFoundationExample_PrefixHeader_pch */

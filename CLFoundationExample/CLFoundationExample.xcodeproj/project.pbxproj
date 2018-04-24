@@ -571,7 +571,6 @@
 				A4ACC4962034103600E756D1 /* Frameworks */,
 				A4ACC4972034103600E756D1 /* Resources */,
 				165E26174C68C545AF0FF164 /* [CP] Embed Pods Frameworks */,
-				07FEF6C9E42CD5C3DA88D4F4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -630,21 +629,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		07FEF6C9E42CD5C3DA88D4F4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CLFoundationExample/Pods-CLFoundationExample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		165E26174C68C545AF0FF164 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -652,10 +636,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CLFoundationExample/Pods-CLFoundationExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CLFoundation/CLFoundation.framework",
+				"${BUILT_PRODUCTS_DIR}/CLUIKit/CLUIKit.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CLFoundation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CLUIKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
