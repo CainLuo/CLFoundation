@@ -10,8 +10,7 @@
 
 @interface EXNotificationCenterController ()
 
-@property (nonatomic, strong) UIButton *ex_addButton;
-@property (nonatomic, strong) UIButton *ex_deleteButton;
+@property (nonatomic, strong) UIButton *ex_button;
 @property (nonatomic, strong) UILabel  *ex_label;
 
 @end
@@ -33,72 +32,134 @@
     [self ex_addConstraintsWithSuperView];
 }
 
-- (void)ex_configNotificationCenter {
+- (void)ex_buttonAction {
+    
+    NSArray *ex_titleArray = @[@"调用NotificationCenter",
+                               @"删除了NotificationCenter",
+                               @"阻塞主线程调用NotificationCenter",
+                               @"阻塞主线程调用NotificationCenter并推送Object",
+                               @"阻塞主线程调用NotificationCenter并推送Object和UserInfo"];
+    
+    [self cl_showSheetViewControllerWithTitle:nil
+                                      message:nil
+                                 actionTitles:ex_titleArray
+                                      handler:^(UIAlertAction *action, NSUInteger index) {
+        
+                                          self.ex_label.text = ex_titleArray[index];
+                                          
+                                          switch (index) {
+                                              case 0:
+                                                  
+                                                  [self ex_postNotificationOnMainThread];
+                                                  
+                                                  break;
+                                                  
+                                              case 1:
+                                                  
+                                                  [self ex_deleteButtonAction];
+                                                  
+                                                  break;
+                                              case 2:
+                                                  
+                                                  [self ex_postNotificationOnMainThreadWait];
+                                                  
+                                                  break;
+                                              case 3:
+                                                  
+                                                  [self ex_postNotificationOnMainThreadObject];
+                                                  
+                                                  break;
+                                              case 4:
+                                                  
+                                                  [self ex_postNotificationOnMainThreadUserInfo];
+                                                  
+                                                  break;
+                                              case 5:
+                                                  
+                                                  [self ex_postNotificationOnMainThreadUserInfoWait];
+                                                  
+                                                  break;
+                                              default:
+                                                  break;
+                                          }
+   
+                                      }];
+}
+
+#pragma mark - 通知的操作
+- (void)ex_postNotificationOnMainThread {
     
     NSNotification *ex_notification = [[NSNotification alloc] initWithName:@"EXShowNotificationCenter"
                                                                     object:@"ABCD"
                                                                   userInfo:@{@"age":@"16"}];
-
+    
     [[NSNotificationCenter defaultCenter] cl_postNotificationOnMainThread:ex_notification];
+}
+
+- (void)ex_postNotificationOnMainThreadWait {
+    
+    NSNotification *ex_notification = [[NSNotification alloc] initWithName:@"EXShowNotificationCenter"
+                                                                    object:@"BCDE"
+                                                                  userInfo:@{@"age":@"16"}];
+
+    [[NSNotificationCenter defaultCenter] cl_postNotificationOnMainThread:ex_notification
+                                                            waitUntilDone:YES];
+}
+
+- (void)ex_postNotificationOnMainThreadObject {
+    
+    [[NSNotificationCenter defaultCenter] cl_postNotificationOnMainThreadWithName:@"EXShowNotificationCenter"
+                                                                           object:@"Hello Word"];
+}
+
+- (void)ex_postNotificationOnMainThreadUserInfo {
+    
+    [[NSNotificationCenter defaultCenter] cl_postNotificationOnMainThreadWithName:@"EXShowNotificationCenter"
+                                                                           object:@"Hello Word"
+                                                                         userInfo:@{@"age":@"20",
+                                                                                    @"name":@"小明"}];
+}
+
+- (void)ex_postNotificationOnMainThreadUserInfoWait {
+    
+    [[NSNotificationCenter defaultCenter] cl_postNotificationOnMainThreadWithName:@"EXShowNotificationCenter"
+                                                                           object:@"Hello Word"
+                                                                         userInfo:@{@"age":@"20",
+                                                                                    @"name":@"小明"}
+                                                                    waitUntilDone:YES];
 }
 
 - (void)ex_showNotificationCenter:(NSNotification *)notification {
     
-    NSLog(@"调用了: %@", notification);
-    
-    self.ex_label.text = @"调用了NotificationCenter";
-}
-
-- (UIButton *)ex_addButton {
-    
-    CL_GET_METHOD_RETURN_OBJC(_ex_addButton);
-    
-    _ex_addButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    
-    _ex_addButton.backgroundColor = [UIColor blueColor];
-
-    [_ex_addButton setTitleColor:[UIColor whiteColor]
-                        forState:UIControlStateNormal];
-    [_ex_addButton setTitle:@"调用NotificationCenter"
-                   forState:UIControlStateNormal];
-    [_ex_addButton addTarget:self
-                      action:@selector(ex_addButtonAction)
-            forControlEvents:UIControlEventTouchUpInside];
-    
-    return _ex_addButton;
-}
-
-- (void)ex_addButtonAction {
-    
-    [self ex_configNotificationCenter];
-}
-
-- (UIButton *)ex_deleteButton {
-    
-    CL_GET_METHOD_RETURN_OBJC(_ex_deleteButton);
-    
-    _ex_deleteButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    
-    _ex_deleteButton.backgroundColor = [UIColor blueColor];
-    
-    [_ex_deleteButton setTitleColor:[UIColor whiteColor]
-                           forState:UIControlStateNormal];
-    [_ex_deleteButton setTitle:@"删除NotificationCenter"
-                      forState:UIControlStateNormal];
-    [_ex_deleteButton addTarget:self
-                         action:@selector(ex_deleteButtonAction)
-               forControlEvents:UIControlEventTouchUpInside];
-
-    return _ex_deleteButton;
+    NSLog(@"打印NSNotification: %@", notification);
 }
 
 - (void)ex_deleteButtonAction {
-        
-    self.ex_label.text = @"删除了NotificationCenter";
+    
+    NSLog(@"删除了通知");
     
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:@"EXShowNotificationCenter"
                                                   object:nil];
+}
+
+#pragma mark - 控件的懒加载
+- (UIButton *)ex_button {
+    
+    CL_GET_METHOD_RETURN_OBJC(_ex_button);
+    
+    _ex_button = [UIButton buttonWithType:UIButtonTypeSystem];
+    
+    _ex_button.backgroundColor = [UIColor cl_colorWithHex:0x2e7ae6];
+    
+    [_ex_button cl_setNormalButtonWithTitle:@"调用NotificationCenter"];
+    [_ex_button cl_setNormalButtonWithTitleColor:[UIColor whiteColor]];
+    [_ex_button cl_addButtonActionComplete:^(UIButton *sender) {
+        
+        [self ex_buttonAction];
+    }];
+    
+    return _ex_button;
 }
 
 - (UILabel *)ex_label {
@@ -111,6 +172,7 @@
     _ex_label.font          = [UIFont systemFontOfSize:18];
     _ex_label.textColor     = [UIColor blackColor];
     _ex_label.textAlignment = NSTextAlignmentCenter;
+    _ex_label.numberOfLines = 0;
     
     return _ex_label;
 }
@@ -118,31 +180,21 @@
 - (void)ex_addConstraintsWithSuperView {
     
     [self.view addSubview:self.ex_label];
-    [self.view addSubview:self.ex_addButton];
-    [self.view addSubview:self.ex_deleteButton];
+    [self.view addSubview:self.ex_button];
     
     [self.ex_label mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.top.offset(50);
         make.left.offset(10);
         make.right.offset(-10);
-        make.height.mas_equalTo(40);
     }];
 
-    [self.ex_addButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.ex_button mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.left.offset(10);
         make.right.offset(-10);
         make.height.mas_equalTo(40);
         make.top.equalTo(self.ex_label.mas_bottom).offset(50);
-    }];
-    
-    [self.ex_deleteButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.left.offset(10);
-        make.right.offset(-10);
-        make.height.mas_equalTo(40);
-        make.top.equalTo(self.ex_addButton.mas_bottom).offset(10);
     }];
 }
 

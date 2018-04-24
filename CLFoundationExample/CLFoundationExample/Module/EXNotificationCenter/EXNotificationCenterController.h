@@ -6,8 +6,8 @@
 //  Copyright © 2018年 Cain Luo. All rights reserved.
 //
 
-#import "EXBaseViewController.h"
+#import "CLViewController.h"
 
-@interface EXNotificationCenterController : EXBaseViewController
+@interface EXNotificationCenterController : CLViewController
 
 @end
