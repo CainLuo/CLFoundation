@@ -7,6 +7,76 @@
 //
 
 #import "NSObject+CLObject.h"
+#import <objc/objc.h>
+
+static const int CLObjectKVOBlockCategoryKey;
+
+#pragma mark - KVO Block Object Category
+@interface CLObjectKVOBlockCategory : NSObject
+
+@property (nonatomic, copy) CLObjectKVOBlock cl_objectKVOBlock;
+
+- (instancetype)initWithObjectKVOBlock:(CLObjectKVOBlock)block;
+
+@end
+
+@implementation CLObjectKVOBlockCategory
+
+- (instancetype)initWithObjectKVOBlock:(CLObjectKVOBlock)block {
+    
+    self = [super init];
+    
+    if (self) {
+        
+        self.cl_objectKVOBlock = block;
+    }
+    
+    return self;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary<NSKeyValueChangeKey,id> *)change
+                       context:(void *)context {
+    
+    if (!self.cl_objectKVOBlock) {
+        return;
+    }
+    
+    BOOL cl_isPrior = [[change objectForKey:NSKeyValueChangeNotificationIsPriorKey] boolValue];
+    
+    if (cl_isPrior) {
+        
+        return;
+    }
+    
+    NSKeyValueChange cl_keyValueChange = [[change objectForKey:NSKeyValueChangeKindKey] integerValue];
+    
+    if (cl_keyValueChange != NSKeyValueChangeSetting) {
+        return;
+    }
+    
+    id oldValue = [change objectForKey:NSKeyValueChangeOldKey];
+    
+    if (oldValue == [NSNull null]) {
+        
+        oldValue = nil;
+    }
+    
+    id newValue = [change objectForKey:NSKeyValueChangeNewKey];
+    
+    if (newValue == [NSNull null]) {
+        
+        newValue = nil;
+    }
+    
+    if (self.cl_objectKVOBlock) {
+        
+        self.cl_objectKVOBlock(object, oldValue, newValue);
+    }
+}
+
+@end
 
 @implementation NSObject (CLObject)
 
@@ -207,10 +277,10 @@
     dispatch_async(cl_globalQueue, complete);
 }
 
-- (void)cl_performMainThreadWithComplete:(CLObject)complete
-                                  isWait:(BOOL)isWait {
-
-    if (isWait) {
+- (void)cl_performMainThreadWithWait:(BOOL)wait
+                            complete:(CLObject)complete {
+    
+    if (wait) {
         
         dispatch_sync(dispatch_get_main_queue(), complete);
     } else {
@@ -227,4 +297,82 @@
     dispatch_after(cl_time, dispatch_get_main_queue(), complete);
 }
 
+- (void)cl_addObserverWithKeyPath:(NSString *)keyPath
+                         complete:(CLObjectKVOBlock)complete {
+    
+    if ([NSString cl_checkEmptyWithString:keyPath] || !complete) {
+        return;
+    }
+    
+    CLObjectKVOBlockCategory *cl_objectKVOBlockCategory = [[CLObjectKVOBlockCategory alloc] initWithObjectKVOBlock:complete];
+    
+    NSMutableDictionary *cl_mutableDictionary = [self cl_allObjectObserverBlocks];
+    
+    NSMutableArray *cl_mutableArray = cl_mutableDictionary[keyPath];
+    
+    if (!cl_mutableArray) {
+        
+        cl_mutableArray = [NSMutableArray array];
+        
+        cl_mutableDictionary[keyPath] = cl_mutableArray;
+    }
+    
+    [cl_mutableArray addObject:cl_objectKVOBlockCategory];
+    
+    [self addObserver:cl_objectKVOBlockCategory
+           forKeyPath:keyPath
+              options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld
+              context:NULL];
+}
+
+- (void)cl_removeObserverWithKeyPath:(NSString *)keyPath {
+    
+    if ([NSString cl_checkEmptyWithString:keyPath]) {
+        return;
+    }
+    
+    NSMutableDictionary *cl_mutableDictionary = [self cl_allObjectObserverBlocks];
+    
+    NSMutableArray *cl_mutableArray = cl_mutableDictionary[keyPath];
+    
+    [cl_mutableArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        [self removeObserver:obj
+                  forKeyPath:keyPath];
+    }];
+    
+    [cl_mutableDictionary removeObjectForKey:keyPath];
+}
+
+- (void)cl_removeAllObserver {
+    
+    NSMutableDictionary *cl_mutableDictionary = [self cl_allObjectObserverBlocks];
+
+    [cl_mutableDictionary enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSArray *obj, BOOL * _Nonnull stop) {
+        
+        [obj enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            
+            [self removeObserver:obj
+                      forKeyPath:key];
+        }];
+    }];
+    
+    [cl_mutableDictionary removeAllObjects];
+}
+
+- (NSMutableDictionary *)cl_allObjectObserverBlocks {
+    
+    NSMutableDictionary *cl_mutableDictionary = objc_getAssociatedObject(self, &CLObjectKVOBlockCategoryKey);
+    
+    if (!cl_mutableDictionary) {
+        
+        cl_mutableDictionary = [NSMutableDictionary dictionary];
+        
+        objc_setAssociatedObject(self, &CLObjectKVOBlockCategoryKey, cl_mutableDictionary, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    
+    return cl_mutableDictionary;
+}
+
 @end
+

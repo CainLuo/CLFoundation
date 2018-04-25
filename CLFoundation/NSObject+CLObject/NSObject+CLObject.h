@@ -10,6 +10,7 @@
 #import <objc/runtime.h>
 
 typedef void(^CLObject)(void);
+typedef void(^CLObjectKVOBlock)(__weak id obj, id oldValue, id newValue);
 
 @interface NSObject (CLObject)
 
@@ -114,10 +115,10 @@ typedef void(^CLObject)(void);
  在主线程中执行GCD, 是否需要等待
 
  @param complete CLObject
- @param isWait BOOL
+ @param wait BOOL
  */
-- (void)cl_performMainThreadWithComplete:(CLObject)complete
-                               isWait:(BOOL)isWait;
+- (void)cl_performMainThreadWithWait:(BOOL)wait
+                            complete:(CLObject)complete;
 
 /**
  指点延迟几秒后执行
@@ -127,4 +128,27 @@ typedef void(^CLObject)(void);
  */
 - (void)cl_performWithAfterSecond:(NSTimeInterval)afterSecond
                          complete:(CLObject)complete;
+
+#pragma mark - KVO
+/**
+ 给对象添加KVO
+
+ @param keyPath NSString, 需要监听的属性
+ @param complete CLObjectKVOBlock
+ */
+- (void)cl_addObserverWithKeyPath:(NSString *)keyPath
+                         complete:(CLObjectKVOBlock)complete;
+
+/**
+ 移除对象的KVO
+
+ @param keyPath NSString, 需要监听的属性
+ */
+- (void)cl_removeObserverWithKeyPath:(NSString *)keyPath;
+
+/**
+ 移除对象所有的KVO
+ */
+- (void)cl_removeAllObserver;
+
 @end
