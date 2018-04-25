@@ -39,6 +39,10 @@
     [self.ex_textViewString appendFormat:@"将%f四舍五入添加百分号并限制最长位3位: %@\n", cl_float, [NSNumber cl_displayPercentWithNumber:cl_ceilingNumber
                                                                                                                              digit:3]];
 
+    [self.ex_textViewString appendString:@"\n----------NSNumber转换----------\n"];
+    [self.ex_textViewString appendFormat:@"将字符串转换为NSNumber: %@\n", [NSNumber cl_numberWithString:@"0x123412"]];
+
+    
     [self ex_reloadTextView];
 }
 

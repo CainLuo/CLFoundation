@@ -38,9 +38,11 @@
 - (void)cl_filterString {
     
     NSString *cl_baseString = @"a3b2c13d4e5fg98098";
-    
+    NSString *cl_specialString = @" abcddcba ";
+
     [self.ex_textViewString appendString:@"\n----------字符串过滤----------\n"];
     [self.ex_textViewString appendFormat:@"获取\"%@\"过滤后获得的数字为: %@\n\n", cl_baseString, [NSString cl_getNumberWithString:cl_baseString]];
+    [self.ex_textViewString appendFormat:@"获取\"%@\"过滤后获得的字符串为: \"%@\"\n\n", cl_specialString, [cl_specialString cl_trimmedString]];
 }
 
 #pragma mark - 格式化字符串
