@@ -26,9 +26,15 @@
     
     NSString *cl_hash = @"hash";
     NSString *cl_isa = @"isa";
-
+    
     [self.ex_textViewString appendFormat:@"NSObject是否包含\"%@\"属性: %@\n\n", cl_hash, [NSObject cl_hasPropertyWithKey:cl_hash] ? @"YES" : @"NO"];
     [self.ex_textViewString appendFormat:@"NSObject是否包含\"%@\"成员变量: %@\n\n", cl_isa, [NSObject cl_hasIvarWithKey:cl_isa] ? @"YES" : @"NO"];
+    
+    [self.ex_textView cl_addObserverWithKeyPath:@"text"
+                                       complete:^(__weak id obj, id oldValue, id newValue) {
+                                           
+                                           NSLog(@"Object: %@, Old Value: %@, New Value: %@", obj, oldValue, newValue);
+                                       }];
 
     [self ex_reloadTextView];
 }
