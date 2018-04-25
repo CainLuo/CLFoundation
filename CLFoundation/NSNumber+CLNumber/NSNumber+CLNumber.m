@@ -7,6 +7,7 @@
 //
 
 #import "NSNumber+CLNumber.h"
+#import "NSString+CLString.h"
 
 @implementation NSNumber (CLNumber)
 
@@ -89,6 +90,76 @@
     cl_numberFormatter.roundingMode = roundingMode;
     
     return cl_numberFormatter;
+}
+
+#pragma mark - NSNumber转换
++ (NSNumber *)cl_numberWithString:(NSString *)string {
+    
+    NSString *cl_string = [[string cl_trimmedString] lowercaseString];
+    
+    if ([NSString cl_checkEmptyWithString:cl_string]) {
+        
+        return nil;
+    }
+    
+    static NSDictionary *cl_dictionary;
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        cl_dictionary = @{@"true" :   @(YES),
+                @"yes" :    @(YES),
+                @"false" :  @(NO),
+                @"no" :     @(NO),
+                @"nil" :    [NSNull null],
+                @"null" :   [NSNull null],
+                @"<null>" : [NSNull null]};
+    });
+    
+    NSNumber *cl_number = cl_dictionary[cl_string];
+    
+    if (cl_number != nil) {
+        
+        if (cl_number == (id)[NSNull null])  {
+            return nil;
+        }
+        
+        return cl_number;
+    }
+    
+    // hex number
+    NSInteger cl_sign = 0;
+    
+    if ([cl_string hasPrefix:@"0x"]) {
+        cl_sign = 1;
+        
+    } else if ([cl_string hasPrefix:@"-0x"]) {
+        cl_sign = -1;
+        
+    }
+    
+    if (cl_sign != 0) {
+        
+        NSScanner *scan = [NSScanner scannerWithString:cl_string];
+        
+        unsigned num = -1;
+        
+        BOOL cl_suc = [scan scanHexInt:&num];
+        
+        if (cl_suc) {
+            
+            return [NSNumber numberWithLong:((long)num * cl_sign)];
+            
+        } else {
+            return nil;
+        }
+    }
+    
+    // normal number
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    
+    return [formatter numberFromString:string];
 }
 
 @end

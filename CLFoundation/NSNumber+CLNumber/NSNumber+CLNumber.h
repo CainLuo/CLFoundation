@@ -69,4 +69,14 @@
  */
 + (NSNumber *)cl_roundFloorWithNumber:(NSNumber *)number
                                 digit:(NSUInteger)digit;
+
+#pragma mark - NSNumber转换
+/**
+ 将字符串数字转换成NSNumber, 支持的格式为@"12", @"12.345", @" -0xFF", @" .23e99 "...
+
+ @param string NSString
+ @return NSNumber
+ */
++ (NSNumber *)cl_numberWithString:(NSString *)string;
+
 @end
