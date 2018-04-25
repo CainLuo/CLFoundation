@@ -26,57 +26,6 @@ static char cl_base64EncodingTable[64] = {
 
 @implementation NSString (CLString)
 
-+ (NSString *)cl_getNumberWithString:(NSString *)string {
-    
-    NSMutableString *cl_string = [[NSMutableString alloc] init];
-
-    for (NSInteger i = 0; i < string.length; i++) {
-        
-        NSString *cl_numberString = [string substringWithRange:NSMakeRange(i, 1)];
-        
-        if ([cl_numberString cl_isNumber]) {
-            
-            [cl_string appendString:cl_numberString];
-        }
-    }
-    
-    return cl_string;
-}
-
-+ (NSString *)cl_getSecrectStringWithPhoneNumber:(NSString *)phoneNumber {
-    
-    if (![phoneNumber cl_checkPhoneNumber]) {
-        
-        return nil;
-    }
-    
-    NSMutableString *cl_phoneNumberString = [NSMutableString stringWithString:phoneNumber];
-    
-    NSRange cl_phoneNumberRange = NSMakeRange(3, 4);
-    
-    [cl_phoneNumberString replaceCharactersInRange:cl_phoneNumberRange
-                                        withString:@"****"];
-    
-    return cl_phoneNumberString;
-}
-
-+ (NSString *)cl_getSecrectStringWithCardNumber:(NSString *)cardNumber {
-    
-    if (cardNumber.length < 8) {
-        
-        return nil;
-    }
-    
-    NSMutableString *cl_cardNumber = [NSMutableString stringWithString:cardNumber];
-    
-    NSRange cl_cardRange = NSMakeRange(4, 8);
-    
-    [cl_cardNumber replaceCharactersInRange:cl_cardRange
-                                 withString:@" **** **** "];
-
-    return cl_cardNumber;
-}
-
 - (CGFloat)cl_heightWithFontSize:(CGFloat)fontSize
                            width:(CGFloat)width {
     
@@ -107,6 +56,13 @@ static char cl_base64EncodingTable[64] = {
 
 - (NSString *)cl_trimmedString {
     
+    NSCharacterSet *cl_characterSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    
+    return [self stringByTrimmingCharactersInSet:cl_characterSet];
+}
+
+- (NSString *)cl_trimmedAllString {
+    
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 }
 
@@ -115,48 +71,6 @@ static char cl_base64EncodingTable[64] = {
     return [self stringByReplacingOccurrencesOfString:character
                                            withString:@""];
 }
-
-+ (NSString *)cl_stringMobileFormat:(NSString *)phoneNumber {
-    
-    return [self cl_stringMobileFormat:phoneNumber
-                             separator:@" "];
-}
-
-+ (NSString *)cl_stringMobileFormat:(NSString *)phoneNumber
-                          separator:(NSString *)separator {
-    
-    if ([phoneNumber cl_checkPhoneNumber]) {
-        
-        NSMutableString *value = [[NSMutableString alloc] initWithString:phoneNumber];
-        
-        [value insertString:separator
-                    atIndex:3];
-        [value insertString:separator
-                    atIndex:8];
-        
-        return value;
-    }
-    
-    return nil;
-}
-
-+ (NSString *)cl_stringUnitFormat:(CGFloat)value
-                       unitString:(NSString *)unitString {
-    
-    if (value / 100000000 >= 1) {
-        
-        return [NSString stringWithFormat:@"%.0f%@", value / 100000000, unitString];
-        
-    } else if (value / 10000 >= 1 && value / 100000000 < 1) {
-        
-        return [NSString stringWithFormat:@"%.0f%@", value / 10000, unitString];
-        
-    } else {
-        
-        return [NSString stringWithFormat:@"%.0f", value];
-    }
-}
-
 
 + (CGSize)cl_measureStringSizeWithString:(NSString *)string
                                     font:(UIFont *)font {
@@ -267,6 +181,99 @@ static char cl_base64EncodingTable[64] = {
         return YES;
     }
     return NO;
+}
+
+#pragma mark - 字符串格式化
++ (NSString *)cl_getNumberWithString:(NSString *)string {
+    
+    NSMutableString *cl_string = [[NSMutableString alloc] init];
+    
+    for (NSInteger i = 0; i < string.length; i++) {
+        
+        NSString *cl_numberString = [string substringWithRange:NSMakeRange(i, 1)];
+        
+        if ([cl_numberString cl_isNumber]) {
+            
+            [cl_string appendString:cl_numberString];
+        }
+    }
+    
+    return cl_string;
+}
+
++ (NSString *)cl_getSecrectStringWithCardNumber:(NSString *)cardNumber {
+    
+    if (cardNumber.length < 8) {
+        
+        return nil;
+    }
+    
+    NSMutableString *cl_cardNumber = [NSMutableString stringWithString:cardNumber];
+    
+    NSRange cl_cardRange = NSMakeRange(4, 8);
+    
+    [cl_cardNumber replaceCharactersInRange:cl_cardRange
+                                 withString:@" **** **** "];
+    
+    return cl_cardNumber;
+}
+
++ (NSString *)cl_getSecrectStringWithPhoneNumber:(NSString *)phoneNumber {
+    
+    if (![phoneNumber cl_checkPhoneNumber]) {
+        
+        return nil;
+    }
+    
+    NSMutableString *cl_phoneNumberString = [NSMutableString stringWithString:phoneNumber];
+    
+    NSRange cl_phoneNumberRange = NSMakeRange(3, 4);
+    
+    [cl_phoneNumberString replaceCharactersInRange:cl_phoneNumberRange
+                                        withString:@"****"];
+    
+    return cl_phoneNumberString;
+}
+
++ (NSString *)cl_stringMobileFormat:(NSString *)phoneNumber {
+    
+    return [self cl_stringMobileFormat:phoneNumber
+                             separator:@" "];
+}
+
++ (NSString *)cl_stringMobileFormat:(NSString *)phoneNumber
+                          separator:(NSString *)separator {
+    
+    if ([phoneNumber cl_checkPhoneNumber]) {
+        
+        NSMutableString *value = [[NSMutableString alloc] initWithString:phoneNumber];
+        
+        [value insertString:separator
+                    atIndex:3];
+        [value insertString:separator
+                    atIndex:8];
+        
+        return value;
+    }
+    
+    return nil;
+}
+
++ (NSString *)cl_stringUnitFormat:(CGFloat)value
+                       unitString:(NSString *)unitString {
+    
+    if (value / 100000000 >= 1) {
+        
+        return [NSString stringWithFormat:@"%.0f%@", value / 100000000, unitString];
+        
+    } else if (value / 10000 >= 1 && value / 100000000 < 1) {
+        
+        return [NSString stringWithFormat:@"%.0f%@", value / 10000, unitString];
+        
+    } else {
+        
+        return [NSString stringWithFormat:@"%.0f", value];
+    }
 }
 
 #pragma mark - 加密字符串方法

@@ -18,29 +18,6 @@
 @interface NSString (CLString)
 
 #pragma mark - 字符串处理
-/**
- 返回过滤后的数字
-
- @param string 字符串
- @return 数字
- */
-+ (NSString *)cl_getNumberWithString:(NSString *)string;
-
-/**
- 隐藏电话号码中间4位数字
-
- @param phoneNumber 手机号
- @return 隐藏后的手机号
- */
-+ (NSString *)cl_getSecrectStringWithPhoneNumber:(NSString *)phoneNumber;
-
-/**
- 隐藏银行卡号中间8位数字
-
- @param cardNumber 银行卡号
- @return 隐藏后的银行卡号
- */
-+ (NSString *)cl_getSecrectStringWithCardNumber:(NSString *)cardNumber;
 
 /**
  根据条件计算文字的高度
@@ -61,10 +38,17 @@
 
 /**
  去掉字符串前后的空格
-
+ 
  @return NSString
  */
 - (NSString *)cl_trimmedString;
+
+/**
+ 去掉字符串前后中间的空格
+
+ @return NSString
+ */
+- (NSString *)cl_trimmedAllString;
 
 /**
  去除指定的字符
@@ -73,34 +57,6 @@
  @return NSString
  */
 - (NSString *)cl_removeStringCharacterWithCharacter:(NSString *)character;
-
-/**
- 手机号格式化, 默认: 138 0013 8000
-
- @param phoneNumber 手机号
- @return NSString
- */
-+ (NSString *)cl_stringMobileFormat:(NSString *)phoneNumber;
-
-/**
- 手机号格式化
-
- @param phoneNumber 手机号
- @param separator 号码分隔符, 比如: 138-0013-8000
- @return NSString
- */
-+ (NSString *)cl_stringMobileFormat:(NSString *)phoneNumber
-                          separator:(NSString *)separator;
-
-/**
- 字符串单位格式化
-
- @param value 数值
- @param unitString 单位, 比如亿, 万
- @return NSString
- */
-+ (NSString *)cl_stringUnitFormat:(CGFloat)value
-                       unitString:(NSString *)unitString;
 
 /**
  获取指定字符串的尺寸
@@ -165,6 +121,59 @@
  @return BOOL, YES为空, NO不为空
  */
 + (BOOL)cl_checkEmptyWithString:(NSString *)string;
+
+#pragma mark - 字符串格式化
+/**
+ 返回过滤后的数字
+ 
+ @param string 字符串
+ @return 数字
+ */
++ (NSString *)cl_getNumberWithString:(NSString *)string;
+
+/**
+ 隐藏银行卡号中间8位数字
+ 
+ @param cardNumber 银行卡号
+ @return 隐藏后的银行卡号
+ */
++ (NSString *)cl_getSecrectStringWithCardNumber:(NSString *)cardNumber;
+
+/**
+ 隐藏电话号码中间4位数字
+ 
+ @param phoneNumber 手机号
+ @return 隐藏后的手机号
+ */
++ (NSString *)cl_getSecrectStringWithPhoneNumber:(NSString *)phoneNumber;
+
+/**
+ 手机号格式化, 默认: 138 0013 8000
+ 
+ @param phoneNumber 手机号
+ @return NSString
+ */
++ (NSString *)cl_stringMobileFormat:(NSString *)phoneNumber;
+
+/**
+ 手机号格式化
+ 
+ @param phoneNumber 手机号
+ @param separator 号码分隔符, 比如: 138-0013-8000
+ @return NSString
+ */
++ (NSString *)cl_stringMobileFormat:(NSString *)phoneNumber
+                          separator:(NSString *)separator;
+
+/**
+ 字符串单位格式化
+ 
+ @param value 数值
+ @param unitString 单位, 比如亿, 万
+ @return NSString
+ */
++ (NSString *)cl_stringUnitFormat:(CGFloat)value
+                       unitString:(NSString *)unitString;
 
 #pragma mark - 加密字符串方法
 /**
