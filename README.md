@@ -43,9 +43,14 @@
   - [RunTime@](#RunTime)
   - [GCD@](#GCD)
 - [NSString+CLString@](#NSString+CLString)
-  - [字符串处理@](#字符串处理)
-  - [加密字符串@](#加密字符串)
-  - [取首字母@](#取首字母)
+  - [字符串计算@](#字符串计算)
+  - [字符串过滤@](#字符串过滤)
+  - [字符串转换@](#字符串转换)
+  - [字符串格式化@](#字符串格式化)
+  - [Base64加密字符串@](#Base64加密字符串)
+  - [MD加密字符串@](#MD加密字符串)
+  - [SHA加密字符串@](#SHA加密字符串)
+  - [NSString获取首字母@](#NSString获取首字母)
   - [正则表达式(数字相关)@](#正则表达式(数字相关))
   - [正则表达式验证(整数相关)@](#正则表达式验证(整数相关))
   - [正则表达式验证(浮点数相关)@](#正则表达式验证(浮点数相关))
@@ -592,23 +597,52 @@ typedef NS_ENUM(NSInteger, CLEncodedType) {
 
 
 
-### 字符串处理@
+### 字符串计算
 
 ```objective-c
-+ (NSString *)cl_getNumberWithString:(NSString *)string;
-
-+ (NSString *)cl_getSecrectStringWithPhoneNumber:(NSString *)phoneNumber;
-
-+ (NSString *)cl_getSecrectStringWithCardNumber:(NSString *)cardNumber;
-
 - (CGFloat)cl_heightWithFontSize:(CGFloat)fontSize
                            width:(CGFloat)width;
 
++ (CGFloat)cl_measureHeightWithMutilineString:(NSString *)string
+                                         font:(UIFont *)font
+                                        width:(CGFloat)width;
+
++ (CGFloat)cl_measureSingleLineStringWidthWithString:(NSString *)string
+                                                font:(UIFont *)font;
+
++ (CGSize)cl_measureStringSizeWithString:(NSString *)string
+                                    font:(UIFont *)font;
+
++ (CGSize)cl_measureStringWithString:(NSString *)string
+                                font:(UIFont *)font
+                                size:(CGSize)size
+                                mode:(NSLineBreakMode)lineBreakMode;
+```
+
+
+
+### 字符串过滤
+
+```objective-c
 - (NSString *)cl_removeUnwantedZero;
 
 - (NSString *)cl_trimmedString;
 
+- (NSString *)cl_trimmedAllString;
+
 - (NSString *)cl_removeStringCharacterWithCharacter:(NSString *)character;
+```
+
+
+
+### 字符串格式化
+
+```objective-c
++ (NSString *)cl_getNumberWithString:(NSString *)string;
+
++ (NSString *)cl_getSecrectStringWithCardNumber:(NSString *)cardNumber;
+
++ (NSString *)cl_getSecrectStringWithPhoneNumber:(NSString *)phoneNumber;
 
 + (NSString *)cl_stringMobileFormat:(NSString *)phoneNumber;
 
@@ -617,29 +651,11 @@ typedef NS_ENUM(NSInteger, CLEncodedType) {
 
 + (NSString *)cl_stringUnitFormat:(CGFloat)value
                        unitString:(NSString *)unitString;
-
-+ (CGSize)cl_measureStringSizeWithString:(NSString *)string
-                                    font:(UIFont *)font;
-
-+ (CGFloat)cl_measureSingleLineStringWidthWithString:(NSString *)string
-                                                font:(UIFont *)font;
-
-+ (CGFloat)cl_measureHeightWithMutilineString:(NSString *)string
-                                         font:(UIFont *)font
-                                        width:(CGFloat)width;
-
-+ (NSString *)cl_urlQueryStringWithDictionary:(NSDictionary *)dictionary;
-
-+ (NSString *)cl_jsonStringWithObject:(NSObject *)object;
-
-+ (NSString *)cl_jsonPrettyStringWithObject:(NSObject *)object;
-
-+ (BOOL)cl_checkEmptyWithString:(NSString *)string;
 ```
 
 
 
-### 加密字符串@
+### Base64加密字符串
 
 ```objective-c
 + (NSString *)cl_base64StringFromData:(NSData *)data
@@ -648,7 +664,13 @@ typedef NS_ENUM(NSInteger, CLEncodedType) {
 + (NSString *)cl_encodingBase64WithString:(NSString *)string;
 
 + (NSString *)cl_decodedBase64WithString:(NSString *)string;
+```
 
+
+
+### MD加密字符串@
+
+```objective-c
 + (NSString *)cl_encodingMD2WithString:(NSString *)string;
 
 + (NSString *)cl_encodingMD4WithString:(NSString *)string;
@@ -657,7 +679,13 @@ typedef NS_ENUM(NSInteger, CLEncodedType) {
 
 + (NSString *)cl_hmacEncodingMD5StringWithString:(NSString *)string
                                              key:(NSString *)key;
+```
 
+
+
+### SHA加密字符串@
+
+```objective-c
 + (NSString *)cl_encodingSHA1WithString:(NSString *)string;
 
 + (NSString *)cl_hmacEncodingSHA1StringWithString:(NSString *)string
@@ -686,7 +714,7 @@ typedef NS_ENUM(NSInteger, CLEncodedType) {
 
 
 
-### 取首字母@
+### NSString获取首字母@
 
 ```objective-c
 + (NSString *)cl_getFirstCharactorWithString:(NSString *)string;
