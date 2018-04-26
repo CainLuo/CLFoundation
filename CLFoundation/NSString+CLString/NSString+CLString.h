@@ -215,7 +215,7 @@
 + (NSString *)cl_stringUnitFormat:(CGFloat)value
                        unitString:(NSString *)unitString;
 
-#pragma mark - 加密字符串方法
+#pragma mark - Base64加密字符串
 /**
  将data数据转成Base64字符串
  
@@ -242,6 +242,7 @@
  */
 + (NSString *)cl_decodedBase64WithString:(NSString *)string;
 
+#pragma mark - MD加密字符串
 /**
  加密成MD2字符串
 

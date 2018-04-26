@@ -462,7 +462,7 @@ static char cl_base64EncodingTable[64] = {
     }
 }
 
-#pragma mark - 加密字符串方法
+#pragma mark - Base 64加密
 + (NSString *)cl_base64StringFromData:(NSData *)data
                                length:(NSUInteger)length {
     
