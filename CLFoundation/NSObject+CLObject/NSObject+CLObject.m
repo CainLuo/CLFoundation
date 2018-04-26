@@ -7,6 +7,7 @@
 //
 
 #import "NSObject+CLObject.h"
+#import "NSString+CLString.h"
 #import <objc/objc.h>
 
 static const int CLObjectKVOBlockCategoryKey;
