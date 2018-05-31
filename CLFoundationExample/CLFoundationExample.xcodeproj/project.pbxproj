@@ -8,27 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		85C74BD7E7ECAAA3D7B195E1 /* Pods_CLFoundationExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCCB4B4B5D99FC7A6BBD8E1 /* Pods_CLFoundationExample.framework */; };
-		A42FEFE9203DC79C0054C8A3 /* NSObject+CLObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A42FEFE8203DC79C0054C8A3 /* NSObject+CLObject.m */; };
 		A48D73A92034478B00378353 /* EXDateController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73A82034478B00378353 /* EXDateController.m */; };
-		A48D73CE2034544C00378353 /* NSBundle+CLBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73AD2034544C00378353 /* NSBundle+CLBundle.m */; };
-		A48D73CF2034544C00378353 /* NSData+CLData.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73AF2034544C00378353 /* NSData+CLData.m */; };
-		A48D73D02034544C00378353 /* NSMutableArray+CLMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73B32034544C00378353 /* NSMutableArray+CLMutableArray.m */; };
-		A48D73D12034544C00378353 /* NSAttributedString+CLAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73B62034544C00378353 /* NSAttributedString+CLAttributedString.m */; };
-		A48D73D22034544C00378353 /* NSMutableAttributedString+CLMutableAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73B82034544C00378353 /* NSMutableAttributedString+CLMutableAttributedString.m */; };
-		A48D73D32034544C00378353 /* NSMutableDictionary+CLMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73BC2034544C00378353 /* NSMutableDictionary+CLMutableDictionary.m */; };
 		A48D73D42034544C00378353 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A48D73BD2034544C00378353 /* Info.plist */; };
-		A48D73D52034544C00378353 /* NSURL+CLURL.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73C02034544C00378353 /* NSURL+CLURL.m */; };
-		A48D73D62034544C00378353 /* NSString+CLString.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73C32034544C00378353 /* NSString+CLString.m */; };
-		A48D73D72034544C00378353 /* NSDictionary+CLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73C62034544C00378353 /* NSDictionary+CLDictionary.m */; };
-		A48D73D82034544C00378353 /* NSDate+CLDate.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73CA2034544C00378353 /* NSDate+CLDate.m */; };
-		A48D73D92034544C00378353 /* NSArray+CLArray.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73CD2034544C00378353 /* NSArray+CLArray.m */; };
 		A48D73DD2035561B00378353 /* EXDictionaryController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73DC2035561B00378353 /* EXDictionaryController.m */; };
 		A48D73E12035AD3B00378353 /* EXStringController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73E02035AD3B00378353 /* EXStringController.m */; };
 		A48D73E52035B2AE00378353 /* EXURLController.m in Sources */ = {isa = PBXBuildFile; fileRef = A48D73E42035B2AE00378353 /* EXURLController.m */; };
-		A4A6C32D203ED89B001EF8FD /* NSTimer+CLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A6C32C203ED89B001EF8FD /* NSTimer+CLTimer.m */; };
 		A4A6C331203EDF53001EF8FD /* EXTimerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A6C330203EDF53001EF8FD /* EXTimerController.m */; };
 		A4A8A40D2040731700FA9EC5 /* EXObjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A8A40C2040731700FA9EC5 /* EXObjectController.m */; };
-		A4A8A4112042925100FA9EC5 /* NSNumber+CLNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A8A4102042925100FA9EC5 /* NSNumber+CLNumber.m */; };
 		A4A8A4152042931900FA9EC5 /* EXNumberController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4A8A4142042931900FA9EC5 /* EXNumberController.m */; };
 		A4ACC49E2034103600E756D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC49D2034103600E756D1 /* AppDelegate.m */; };
 		A4ACC4A62034103600E756D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4ACC4A52034103600E756D1 /* Assets.xcassets */; };
@@ -42,58 +28,44 @@
 		A4ACC4FE20342C0E00E756D1 /* EXDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4FD20342C0E00E756D1 /* EXDataController.m */; };
 		A4BA3137204BA00F002E0ED7 /* EXFileManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BA3136204BA00F002E0ED7 /* EXFileManagerController.m */; };
 		A4BA313C204CCD95002E0ED7 /* CLFoundationExample.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4BA313B204CCD95002E0ED7 /* CLFoundationExample.bundle */; };
-		A4F17CEB204705B500C70EA7 /* NSFileManager+CLFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F17CEA204705B500C70EA7 /* NSFileManager+CLFileManager.m */; };
 		BF47C02E208D849F00FD5C78 /* EXNotificationCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF47C02D208D849F00FD5C78 /* EXNotificationCenterController.m */; };
-		BF47C037208DADBD00FD5C78 /* NSNotificationCenter+CLNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = BF47C036208DADBD00FD5C78 /* NSNotificationCenter+CLNotificationCenter.m */; };
 		BF84D60F20897A890061D29F /* CLSpeechSynthesizer.m in Sources */ = {isa = PBXBuildFile; fileRef = BF84D60E20897A890061D29F /* CLSpeechSynthesizer.m */; };
 		BF84D61320897C770061D29F /* EXSpeechController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF84D61220897C770061D29F /* EXSpeechController.m */; };
+		BFAE1C7B20BFC2B1002B6230 /* NSObject+CLObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C4D20BFC2B1002B6230 /* NSObject+CLObject.m */; };
+		BFAE1C7C20BFC2B1002B6230 /* NSNotificationCenter+CLNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C5020BFC2B1002B6230 /* NSNotificationCenter+CLNotificationCenter.m */; };
+		BFAE1C7D20BFC2B1002B6230 /* NSAttributedString+CLAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C5220BFC2B1002B6230 /* NSAttributedString+CLAttributedString.m */; };
+		BFAE1C7E20BFC2B1002B6230 /* NSFileManager+CLFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C5620BFC2B1002B6230 /* NSFileManager+CLFileManager.m */; };
+		BFAE1C7F20BFC2B1002B6230 /* NSTimer+CLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C5920BFC2B1002B6230 /* NSTimer+CLTimer.m */; };
+		BFAE1C8020BFC2B1002B6230 /* NSDate+CLDate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C5C20BFC2B1002B6230 /* NSDate+CLDate.m */; };
+		BFAE1C8120BFC2B1002B6230 /* NSBundle+CLBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C5E20BFC2B1002B6230 /* NSBundle+CLBundle.m */; };
+		BFAE1C8220BFC2B1002B6230 /* NSURL+CLURL.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C6120BFC2B1002B6230 /* NSURL+CLURL.m */; };
+		BFAE1C8320BFC2B1002B6230 /* NSMutableArray+CLMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C6520BFC2B1002B6230 /* NSMutableArray+CLMutableArray.m */; };
+		BFAE1C8420BFC2B1002B6230 /* NSMutableAttributedString+CLMutableAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C6820BFC2B1002B6230 /* NSMutableAttributedString+CLMutableAttributedString.m */; };
+		BFAE1C8520BFC2B1002B6230 /* NSString+CLString.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C6B20BFC2B1002B6230 /* NSString+CLString.m */; };
+		BFAE1C8620BFC2B1002B6230 /* NSArray+CLArray.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C6E20BFC2B1002B6230 /* NSArray+CLArray.m */; };
+		BFAE1C8720BFC2B1002B6230 /* NSNumber+CLNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C7120BFC2B1002B6230 /* NSNumber+CLNumber.m */; };
+		BFAE1C8820BFC2B1002B6230 /* NSMutableDictionary+CLMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C7320BFC2B1002B6230 /* NSMutableDictionary+CLMutableDictionary.m */; };
+		BFAE1C8920BFC2B1002B6230 /* NSData+CLData.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C7620BFC2B1002B6230 /* NSData+CLData.m */; };
+		BFAE1C8A20BFC2B1002B6230 /* NSDictionary+CLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C7A20BFC2B1002B6230 /* NSDictionary+CLDictionary.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		70FF2BFBA5CE3B890BBD4BFC /* Pods-CLFoundationExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLFoundationExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CLFoundationExample/Pods-CLFoundationExample.debug.xcconfig"; sourceTree = "<group>"; };
 		8CCCB4B4B5D99FC7A6BBD8E1 /* Pods_CLFoundationExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CLFoundationExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A42FEFE7203DC79C0054C8A3 /* NSObject+CLObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+CLObject.h"; sourceTree = "<group>"; };
-		A42FEFE8203DC79C0054C8A3 /* NSObject+CLObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CLObject.m"; sourceTree = "<group>"; };
 		A48D73A72034478B00378353 /* EXDateController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXDateController.h; sourceTree = "<group>"; };
 		A48D73A82034478B00378353 /* EXDateController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXDateController.m; sourceTree = "<group>"; };
-		A48D73AC2034544C00378353 /* NSBundle+CLBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+CLBundle.h"; sourceTree = "<group>"; };
-		A48D73AD2034544C00378353 /* NSBundle+CLBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+CLBundle.m"; sourceTree = "<group>"; };
-		A48D73AF2034544C00378353 /* NSData+CLData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CLData.m"; sourceTree = "<group>"; };
-		A48D73B02034544C00378353 /* NSData+CLData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CLData.h"; sourceTree = "<group>"; };
-		A48D73B22034544C00378353 /* NSMutableArray+CLMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+CLMutableArray.h"; sourceTree = "<group>"; };
-		A48D73B32034544C00378353 /* NSMutableArray+CLMutableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+CLMutableArray.m"; sourceTree = "<group>"; };
-		A48D73B52034544C00378353 /* NSAttributedString+CLAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+CLAttributedString.h"; sourceTree = "<group>"; };
-		A48D73B62034544C00378353 /* NSAttributedString+CLAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+CLAttributedString.m"; sourceTree = "<group>"; };
-		A48D73B82034544C00378353 /* NSMutableAttributedString+CLMutableAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+CLMutableAttributedString.m"; sourceTree = "<group>"; };
-		A48D73B92034544C00378353 /* NSMutableAttributedString+CLMutableAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+CLMutableAttributedString.h"; sourceTree = "<group>"; };
-		A48D73BB2034544C00378353 /* NSMutableDictionary+CLMutableDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+CLMutableDictionary.h"; sourceTree = "<group>"; };
-		A48D73BC2034544C00378353 /* NSMutableDictionary+CLMutableDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+CLMutableDictionary.m"; sourceTree = "<group>"; };
 		A48D73BD2034544C00378353 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A48D73BE2034544C00378353 /* CLFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLFoundation.h; sourceTree = "<group>"; };
-		A48D73C02034544C00378353 /* NSURL+CLURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+CLURL.m"; sourceTree = "<group>"; };
-		A48D73C12034544C00378353 /* NSURL+CLURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+CLURL.h"; sourceTree = "<group>"; };
-		A48D73C32034544C00378353 /* NSString+CLString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CLString.m"; sourceTree = "<group>"; };
-		A48D73C42034544C00378353 /* NSString+CLString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CLString.h"; sourceTree = "<group>"; };
-		A48D73C62034544C00378353 /* NSDictionary+CLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+CLDictionary.m"; sourceTree = "<group>"; };
-		A48D73C72034544C00378353 /* NSDictionary+CLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+CLDictionary.h"; sourceTree = "<group>"; };
-		A48D73C92034544C00378353 /* NSDate+CLDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CLDate.h"; sourceTree = "<group>"; };
-		A48D73CA2034544C00378353 /* NSDate+CLDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CLDate.m"; sourceTree = "<group>"; };
-		A48D73CC2034544C00378353 /* NSArray+CLArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CLArray.h"; sourceTree = "<group>"; };
-		A48D73CD2034544C00378353 /* NSArray+CLArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CLArray.m"; sourceTree = "<group>"; };
 		A48D73DB2035561B00378353 /* EXDictionaryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXDictionaryController.h; sourceTree = "<group>"; };
 		A48D73DC2035561B00378353 /* EXDictionaryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXDictionaryController.m; sourceTree = "<group>"; };
 		A48D73DF2035AD3B00378353 /* EXStringController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXStringController.h; sourceTree = "<group>"; };
 		A48D73E02035AD3B00378353 /* EXStringController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXStringController.m; sourceTree = "<group>"; };
 		A48D73E32035B2AE00378353 /* EXURLController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXURLController.h; sourceTree = "<group>"; };
 		A48D73E42035B2AE00378353 /* EXURLController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXURLController.m; sourceTree = "<group>"; };
-		A4A6C32B203ED89B001EF8FD /* NSTimer+CLTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+CLTimer.h"; sourceTree = "<group>"; };
-		A4A6C32C203ED89B001EF8FD /* NSTimer+CLTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+CLTimer.m"; sourceTree = "<group>"; };
 		A4A6C32F203EDF53001EF8FD /* EXTimerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXTimerController.h; sourceTree = "<group>"; };
 		A4A6C330203EDF53001EF8FD /* EXTimerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXTimerController.m; sourceTree = "<group>"; };
 		A4A8A40B2040731700FA9EC5 /* EXObjectController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXObjectController.h; sourceTree = "<group>"; };
 		A4A8A40C2040731700FA9EC5 /* EXObjectController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXObjectController.m; sourceTree = "<group>"; };
-		A4A8A40F2042925100FA9EC5 /* NSNumber+CLNumber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSNumber+CLNumber.h"; sourceTree = "<group>"; };
-		A4A8A4102042925100FA9EC5 /* NSNumber+CLNumber.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+CLNumber.m"; sourceTree = "<group>"; };
 		A4A8A4132042931900FA9EC5 /* EXNumberController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXNumberController.h; sourceTree = "<group>"; };
 		A4A8A4142042931900FA9EC5 /* EXNumberController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXNumberController.m; sourceTree = "<group>"; };
 		A4ACC4992034103600E756D1 /* CLFoundationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CLFoundationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,16 +91,44 @@
 		A4BA3135204BA00F002E0ED7 /* EXFileManagerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXFileManagerController.h; sourceTree = "<group>"; };
 		A4BA3136204BA00F002E0ED7 /* EXFileManagerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXFileManagerController.m; sourceTree = "<group>"; };
 		A4BA313B204CCD95002E0ED7 /* CLFoundationExample.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CLFoundationExample.bundle; sourceTree = "<group>"; };
-		A4F17CE9204705B500C70EA7 /* NSFileManager+CLFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+CLFileManager.h"; sourceTree = "<group>"; };
-		A4F17CEA204705B500C70EA7 /* NSFileManager+CLFileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+CLFileManager.m"; sourceTree = "<group>"; };
 		BF47C02C208D849F00FD5C78 /* EXNotificationCenterController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXNotificationCenterController.h; sourceTree = "<group>"; };
 		BF47C02D208D849F00FD5C78 /* EXNotificationCenterController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXNotificationCenterController.m; sourceTree = "<group>"; };
-		BF47C035208DADBD00FD5C78 /* NSNotificationCenter+CLNotificationCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+CLNotificationCenter.h"; sourceTree = "<group>"; };
-		BF47C036208DADBD00FD5C78 /* NSNotificationCenter+CLNotificationCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+CLNotificationCenter.m"; sourceTree = "<group>"; };
 		BF84D60D20897A890061D29F /* CLSpeechSynthesizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLSpeechSynthesizer.h; sourceTree = "<group>"; };
 		BF84D60E20897A890061D29F /* CLSpeechSynthesizer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLSpeechSynthesizer.m; sourceTree = "<group>"; };
 		BF84D61120897C770061D29F /* EXSpeechController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXSpeechController.h; sourceTree = "<group>"; };
 		BF84D61220897C770061D29F /* EXSpeechController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXSpeechController.m; sourceTree = "<group>"; };
+		BFAE1C4C20BFC2B1002B6230 /* NSObject+CLObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CLObject.h"; sourceTree = "<group>"; };
+		BFAE1C4D20BFC2B1002B6230 /* NSObject+CLObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CLObject.m"; sourceTree = "<group>"; };
+		BFAE1C4F20BFC2B1002B6230 /* NSNotificationCenter+CLNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+CLNotificationCenter.h"; sourceTree = "<group>"; };
+		BFAE1C5020BFC2B1002B6230 /* NSNotificationCenter+CLNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+CLNotificationCenter.m"; sourceTree = "<group>"; };
+		BFAE1C5220BFC2B1002B6230 /* NSAttributedString+CLAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+CLAttributedString.m"; sourceTree = "<group>"; };
+		BFAE1C5320BFC2B1002B6230 /* NSAttributedString+CLAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+CLAttributedString.h"; sourceTree = "<group>"; };
+		BFAE1C5520BFC2B1002B6230 /* NSFileManager+CLFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+CLFileManager.h"; sourceTree = "<group>"; };
+		BFAE1C5620BFC2B1002B6230 /* NSFileManager+CLFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+CLFileManager.m"; sourceTree = "<group>"; };
+		BFAE1C5820BFC2B1002B6230 /* NSTimer+CLTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+CLTimer.h"; sourceTree = "<group>"; };
+		BFAE1C5920BFC2B1002B6230 /* NSTimer+CLTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+CLTimer.m"; sourceTree = "<group>"; };
+		BFAE1C5B20BFC2B1002B6230 /* NSDate+CLDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CLDate.h"; sourceTree = "<group>"; };
+		BFAE1C5C20BFC2B1002B6230 /* NSDate+CLDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CLDate.m"; sourceTree = "<group>"; };
+		BFAE1C5E20BFC2B1002B6230 /* NSBundle+CLBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+CLBundle.m"; sourceTree = "<group>"; };
+		BFAE1C5F20BFC2B1002B6230 /* NSBundle+CLBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+CLBundle.h"; sourceTree = "<group>"; };
+		BFAE1C6120BFC2B1002B6230 /* NSURL+CLURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+CLURL.m"; sourceTree = "<group>"; };
+		BFAE1C6220BFC2B1002B6230 /* NSURL+CLURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+CLURL.h"; sourceTree = "<group>"; };
+		BFAE1C6420BFC2B1002B6230 /* NSMutableArray+CLMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+CLMutableArray.h"; sourceTree = "<group>"; };
+		BFAE1C6520BFC2B1002B6230 /* NSMutableArray+CLMutableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+CLMutableArray.m"; sourceTree = "<group>"; };
+		BFAE1C6720BFC2B1002B6230 /* NSMutableAttributedString+CLMutableAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+CLMutableAttributedString.h"; sourceTree = "<group>"; };
+		BFAE1C6820BFC2B1002B6230 /* NSMutableAttributedString+CLMutableAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+CLMutableAttributedString.m"; sourceTree = "<group>"; };
+		BFAE1C6A20BFC2B1002B6230 /* NSString+CLString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CLString.h"; sourceTree = "<group>"; };
+		BFAE1C6B20BFC2B1002B6230 /* NSString+CLString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CLString.m"; sourceTree = "<group>"; };
+		BFAE1C6D20BFC2B1002B6230 /* NSArray+CLArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CLArray.h"; sourceTree = "<group>"; };
+		BFAE1C6E20BFC2B1002B6230 /* NSArray+CLArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CLArray.m"; sourceTree = "<group>"; };
+		BFAE1C7020BFC2B1002B6230 /* NSNumber+CLNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+CLNumber.h"; sourceTree = "<group>"; };
+		BFAE1C7120BFC2B1002B6230 /* NSNumber+CLNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+CLNumber.m"; sourceTree = "<group>"; };
+		BFAE1C7320BFC2B1002B6230 /* NSMutableDictionary+CLMutableDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+CLMutableDictionary.m"; sourceTree = "<group>"; };
+		BFAE1C7420BFC2B1002B6230 /* NSMutableDictionary+CLMutableDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+CLMutableDictionary.h"; sourceTree = "<group>"; };
+		BFAE1C7620BFC2B1002B6230 /* NSData+CLData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CLData.m"; sourceTree = "<group>"; };
+		BFAE1C7720BFC2B1002B6230 /* NSData+CLData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CLData.h"; sourceTree = "<group>"; };
+		BFAE1C7920BFC2B1002B6230 /* NSDictionary+CLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+CLDictionary.h"; sourceTree = "<group>"; };
+		BFAE1C7A20BFC2B1002B6230 /* NSDictionary+CLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+CLDictionary.m"; sourceTree = "<group>"; };
 		D8AFC4BF0E762F1B9F28A338 /* Pods-CLFoundationExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLFoundationExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-CLFoundationExample/Pods-CLFoundationExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,15 +144,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A42FEFE6203DC7840054C8A3 /* NSObject+CLObject */ = {
-			isa = PBXGroup;
-			children = (
-				A42FEFE7203DC79C0054C8A3 /* NSObject+CLObject.h */,
-				A42FEFE8203DC79C0054C8A3 /* NSObject+CLObject.m */,
-			);
-			path = "NSObject+CLObject";
-			sourceTree = "<group>";
-		};
 		A48D73A62034477E00378353 /* EXDate */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,124 +159,9 @@
 				A48D73BE2034544C00378353 /* CLFoundation.h */,
 				A48D73BD2034544C00378353 /* Info.plist */,
 				BF84D60C20897A7F0061D29F /* CLSpeechSynthesizer */,
-				A48D73CB2034544C00378353 /* NSArray+CLArray */,
-				A48D73B42034544C00378353 /* NSAttributedString+CLAttributedString */,
-				A48D73AB2034544C00378353 /* NSBundle+CLBundle */,
-				A48D73AE2034544C00378353 /* NSData+CLData */,
-				A48D73C82034544C00378353 /* NSDate+CLDate */,
-				A48D73C52034544C00378353 /* NSDictionary+CLDictionary */,
-				A4F17CE82047058B00C70EA7 /* NSFileManager+CLFileManager */,
-				A48D73B12034544C00378353 /* NSMutableArray+CLMutableArray */,
-				A48D73B72034544C00378353 /* NSMutableAttributedString+CLMutableAttributedString */,
-				A48D73BA2034544C00378353 /* NSMutableDictionary+CLMutableDictionary */,
-				BF47C034208DAD9C00FD5C78 /* NSNotificationCenter+CLNotificationCenter */,
-				A4A8A40E2042923D00FA9EC5 /* NSNumber+CLNumber */,
-				A42FEFE6203DC7840054C8A3 /* NSObject+CLObject */,
-				A48D73C22034544C00378353 /* NSString+CLString */,
-				A4A6C32A203ED884001EF8FD /* NSTimer+CLTimer */,
-				A48D73BF2034544C00378353 /* NSURL+CLURL */,
 			);
 			name = CLFoundation;
 			path = ../../CLFoundation;
-			sourceTree = "<group>";
-		};
-		A48D73AB2034544C00378353 /* NSBundle+CLBundle */ = {
-			isa = PBXGroup;
-			children = (
-				A48D73AC2034544C00378353 /* NSBundle+CLBundle.h */,
-				A48D73AD2034544C00378353 /* NSBundle+CLBundle.m */,
-			);
-			path = "NSBundle+CLBundle";
-			sourceTree = "<group>";
-		};
-		A48D73AE2034544C00378353 /* NSData+CLData */ = {
-			isa = PBXGroup;
-			children = (
-				A48D73B02034544C00378353 /* NSData+CLData.h */,
-				A48D73AF2034544C00378353 /* NSData+CLData.m */,
-			);
-			path = "NSData+CLData";
-			sourceTree = "<group>";
-		};
-		A48D73B12034544C00378353 /* NSMutableArray+CLMutableArray */ = {
-			isa = PBXGroup;
-			children = (
-				A48D73B22034544C00378353 /* NSMutableArray+CLMutableArray.h */,
-				A48D73B32034544C00378353 /* NSMutableArray+CLMutableArray.m */,
-			);
-			path = "NSMutableArray+CLMutableArray";
-			sourceTree = "<group>";
-		};
-		A48D73B42034544C00378353 /* NSAttributedString+CLAttributedString */ = {
-			isa = PBXGroup;
-			children = (
-				A48D73B52034544C00378353 /* NSAttributedString+CLAttributedString.h */,
-				A48D73B62034544C00378353 /* NSAttributedString+CLAttributedString.m */,
-			);
-			path = "NSAttributedString+CLAttributedString";
-			sourceTree = "<group>";
-		};
-		A48D73B72034544C00378353 /* NSMutableAttributedString+CLMutableAttributedString */ = {
-			isa = PBXGroup;
-			children = (
-				A48D73B92034544C00378353 /* NSMutableAttributedString+CLMutableAttributedString.h */,
-				A48D73B82034544C00378353 /* NSMutableAttributedString+CLMutableAttributedString.m */,
-			);
-			path = "NSMutableAttributedString+CLMutableAttributedString";
-			sourceTree = "<group>";
-		};
-		A48D73BA2034544C00378353 /* NSMutableDictionary+CLMutableDictionary */ = {
-			isa = PBXGroup;
-			children = (
-				A48D73BB2034544C00378353 /* NSMutableDictionary+CLMutableDictionary.h */,
-				A48D73BC2034544C00378353 /* NSMutableDictionary+CLMutableDictionary.m */,
-			);
-			path = "NSMutableDictionary+CLMutableDictionary";
-			sourceTree = "<group>";
-		};
-		A48D73BF2034544C00378353 /* NSURL+CLURL */ = {
-			isa = PBXGroup;
-			children = (
-				A48D73C12034544C00378353 /* NSURL+CLURL.h */,
-				A48D73C02034544C00378353 /* NSURL+CLURL.m */,
-			);
-			path = "NSURL+CLURL";
-			sourceTree = "<group>";
-		};
-		A48D73C22034544C00378353 /* NSString+CLString */ = {
-			isa = PBXGroup;
-			children = (
-				A48D73C42034544C00378353 /* NSString+CLString.h */,
-				A48D73C32034544C00378353 /* NSString+CLString.m */,
-			);
-			path = "NSString+CLString";
-			sourceTree = "<group>";
-		};
-		A48D73C52034544C00378353 /* NSDictionary+CLDictionary */ = {
-			isa = PBXGroup;
-			children = (
-				A48D73C72034544C00378353 /* NSDictionary+CLDictionary.h */,
-				A48D73C62034544C00378353 /* NSDictionary+CLDictionary.m */,
-			);
-			path = "NSDictionary+CLDictionary";
-			sourceTree = "<group>";
-		};
-		A48D73C82034544C00378353 /* NSDate+CLDate */ = {
-			isa = PBXGroup;
-			children = (
-				A48D73C92034544C00378353 /* NSDate+CLDate.h */,
-				A48D73CA2034544C00378353 /* NSDate+CLDate.m */,
-			);
-			path = "NSDate+CLDate";
-			sourceTree = "<group>";
-		};
-		A48D73CB2034544C00378353 /* NSArray+CLArray */ = {
-			isa = PBXGroup;
-			children = (
-				A48D73CC2034544C00378353 /* NSArray+CLArray.h */,
-				A48D73CD2034544C00378353 /* NSArray+CLArray.m */,
-			);
-			path = "NSArray+CLArray";
 			sourceTree = "<group>";
 		};
 		A48D73DA2035560B00378353 /* EXDictionary */ = {
@@ -323,15 +199,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A4A6C32A203ED884001EF8FD /* NSTimer+CLTimer */ = {
-			isa = PBXGroup;
-			children = (
-				A4A6C32B203ED89B001EF8FD /* NSTimer+CLTimer.h */,
-				A4A6C32C203ED89B001EF8FD /* NSTimer+CLTimer.m */,
-			);
-			path = "NSTimer+CLTimer";
-			sourceTree = "<group>";
-		};
 		A4A6C32E203EDCA7001EF8FD /* EXTimer */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,15 +215,6 @@
 				A4A8A40C2040731700FA9EC5 /* EXObjectController.m */,
 			);
 			path = EXObject;
-			sourceTree = "<group>";
-		};
-		A4A8A40E2042923D00FA9EC5 /* NSNumber+CLNumber */ = {
-			isa = PBXGroup;
-			children = (
-				A4A8A40F2042925100FA9EC5 /* NSNumber+CLNumber.h */,
-				A4A8A4102042925100FA9EC5 /* NSNumber+CLNumber.m */,
-			);
-			path = "NSNumber+CLNumber";
 			sourceTree = "<group>";
 		};
 		A4A8A4122042930800FA9EC5 /* EXNumber */ = {
@@ -392,6 +250,7 @@
 				A4ACC4E22034106000E756D1 /* AppDelegate */,
 				A4ACC4F720342A8300E756D1 /* Base */,
 				A48D73AA2034544C00378353 /* CLFoundation */,
+				BFAE1C4A20BFC2B1002B6230 /* CLFoundation+Category */,
 				A4ACC4E82034150B00E756D1 /* Module */,
 				A4ACC4E32034107600E756D1 /* Resource */,
 			);
@@ -505,15 +364,6 @@
 			path = EXFileManager;
 			sourceTree = "<group>";
 		};
-		A4F17CE82047058B00C70EA7 /* NSFileManager+CLFileManager */ = {
-			isa = PBXGroup;
-			children = (
-				A4F17CE9204705B500C70EA7 /* NSFileManager+CLFileManager.h */,
-				A4F17CEA204705B500C70EA7 /* NSFileManager+CLFileManager.m */,
-			);
-			path = "NSFileManager+CLFileManager";
-			sourceTree = "<group>";
-		};
 		BF47C02B208D841F00FD5C78 /* EXNotificationCenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -521,15 +371,6 @@
 				BF47C02D208D849F00FD5C78 /* EXNotificationCenterController.m */,
 			);
 			path = EXNotificationCenter;
-			sourceTree = "<group>";
-		};
-		BF47C034208DAD9C00FD5C78 /* NSNotificationCenter+CLNotificationCenter */ = {
-			isa = PBXGroup;
-			children = (
-				BF47C035208DADBD00FD5C78 /* NSNotificationCenter+CLNotificationCenter.h */,
-				BF47C036208DADBD00FD5C78 /* NSNotificationCenter+CLNotificationCenter.m */,
-			);
-			path = "NSNotificationCenter+CLNotificationCenter";
 			sourceTree = "<group>";
 		};
 		BF84D60C20897A7F0061D29F /* CLSpeechSynthesizer */ = {
@@ -548,6 +389,174 @@
 				BF84D61220897C770061D29F /* EXSpeechController.m */,
 			);
 			path = EXSpeech;
+			sourceTree = "<group>";
+		};
+		BFAE1C4A20BFC2B1002B6230 /* CLFoundation+Category */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C4B20BFC2B1002B6230 /* NSObject+CLObject */,
+				BFAE1C4E20BFC2B1002B6230 /* NSNotificationCenter+CLNotificationCenter */,
+				BFAE1C5120BFC2B1002B6230 /* NSAttributedString+CLAttributedString */,
+				BFAE1C5420BFC2B1002B6230 /* NSFileManager+CLFileManager */,
+				BFAE1C5720BFC2B1002B6230 /* NSTimer+CLTimer */,
+				BFAE1C5A20BFC2B1002B6230 /* NSDate+CLDate */,
+				BFAE1C5D20BFC2B1002B6230 /* NSBundle+CLBundle */,
+				BFAE1C6020BFC2B1002B6230 /* NSURL+CLURL */,
+				BFAE1C6320BFC2B1002B6230 /* NSMutableArray+CLMutableArray */,
+				BFAE1C6620BFC2B1002B6230 /* NSMutableAttributedString+CLMutableAttributedString */,
+				BFAE1C6920BFC2B1002B6230 /* NSString+CLString */,
+				BFAE1C6C20BFC2B1002B6230 /* NSArray+CLArray */,
+				BFAE1C6F20BFC2B1002B6230 /* NSNumber+CLNumber */,
+				BFAE1C7220BFC2B1002B6230 /* NSMutableDictionary+CLMutableDictionary */,
+				BFAE1C7520BFC2B1002B6230 /* NSData+CLData */,
+				BFAE1C7820BFC2B1002B6230 /* NSDictionary+CLDictionary */,
+			);
+			name = "CLFoundation+Category";
+			path = "../../CLFoundation+Category";
+			sourceTree = "<group>";
+		};
+		BFAE1C4B20BFC2B1002B6230 /* NSObject+CLObject */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C4C20BFC2B1002B6230 /* NSObject+CLObject.h */,
+				BFAE1C4D20BFC2B1002B6230 /* NSObject+CLObject.m */,
+			);
+			path = "NSObject+CLObject";
+			sourceTree = "<group>";
+		};
+		BFAE1C4E20BFC2B1002B6230 /* NSNotificationCenter+CLNotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C4F20BFC2B1002B6230 /* NSNotificationCenter+CLNotificationCenter.h */,
+				BFAE1C5020BFC2B1002B6230 /* NSNotificationCenter+CLNotificationCenter.m */,
+			);
+			path = "NSNotificationCenter+CLNotificationCenter";
+			sourceTree = "<group>";
+		};
+		BFAE1C5120BFC2B1002B6230 /* NSAttributedString+CLAttributedString */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C5220BFC2B1002B6230 /* NSAttributedString+CLAttributedString.m */,
+				BFAE1C5320BFC2B1002B6230 /* NSAttributedString+CLAttributedString.h */,
+			);
+			path = "NSAttributedString+CLAttributedString";
+			sourceTree = "<group>";
+		};
+		BFAE1C5420BFC2B1002B6230 /* NSFileManager+CLFileManager */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C5520BFC2B1002B6230 /* NSFileManager+CLFileManager.h */,
+				BFAE1C5620BFC2B1002B6230 /* NSFileManager+CLFileManager.m */,
+			);
+			path = "NSFileManager+CLFileManager";
+			sourceTree = "<group>";
+		};
+		BFAE1C5720BFC2B1002B6230 /* NSTimer+CLTimer */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C5820BFC2B1002B6230 /* NSTimer+CLTimer.h */,
+				BFAE1C5920BFC2B1002B6230 /* NSTimer+CLTimer.m */,
+			);
+			path = "NSTimer+CLTimer";
+			sourceTree = "<group>";
+		};
+		BFAE1C5A20BFC2B1002B6230 /* NSDate+CLDate */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C5B20BFC2B1002B6230 /* NSDate+CLDate.h */,
+				BFAE1C5C20BFC2B1002B6230 /* NSDate+CLDate.m */,
+			);
+			path = "NSDate+CLDate";
+			sourceTree = "<group>";
+		};
+		BFAE1C5D20BFC2B1002B6230 /* NSBundle+CLBundle */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C5E20BFC2B1002B6230 /* NSBundle+CLBundle.m */,
+				BFAE1C5F20BFC2B1002B6230 /* NSBundle+CLBundle.h */,
+			);
+			path = "NSBundle+CLBundle";
+			sourceTree = "<group>";
+		};
+		BFAE1C6020BFC2B1002B6230 /* NSURL+CLURL */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C6120BFC2B1002B6230 /* NSURL+CLURL.m */,
+				BFAE1C6220BFC2B1002B6230 /* NSURL+CLURL.h */,
+			);
+			path = "NSURL+CLURL";
+			sourceTree = "<group>";
+		};
+		BFAE1C6320BFC2B1002B6230 /* NSMutableArray+CLMutableArray */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C6420BFC2B1002B6230 /* NSMutableArray+CLMutableArray.h */,
+				BFAE1C6520BFC2B1002B6230 /* NSMutableArray+CLMutableArray.m */,
+			);
+			path = "NSMutableArray+CLMutableArray";
+			sourceTree = "<group>";
+		};
+		BFAE1C6620BFC2B1002B6230 /* NSMutableAttributedString+CLMutableAttributedString */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C6720BFC2B1002B6230 /* NSMutableAttributedString+CLMutableAttributedString.h */,
+				BFAE1C6820BFC2B1002B6230 /* NSMutableAttributedString+CLMutableAttributedString.m */,
+			);
+			path = "NSMutableAttributedString+CLMutableAttributedString";
+			sourceTree = "<group>";
+		};
+		BFAE1C6920BFC2B1002B6230 /* NSString+CLString */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C6A20BFC2B1002B6230 /* NSString+CLString.h */,
+				BFAE1C6B20BFC2B1002B6230 /* NSString+CLString.m */,
+			);
+			path = "NSString+CLString";
+			sourceTree = "<group>";
+		};
+		BFAE1C6C20BFC2B1002B6230 /* NSArray+CLArray */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C6D20BFC2B1002B6230 /* NSArray+CLArray.h */,
+				BFAE1C6E20BFC2B1002B6230 /* NSArray+CLArray.m */,
+			);
+			path = "NSArray+CLArray";
+			sourceTree = "<group>";
+		};
+		BFAE1C6F20BFC2B1002B6230 /* NSNumber+CLNumber */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C7020BFC2B1002B6230 /* NSNumber+CLNumber.h */,
+				BFAE1C7120BFC2B1002B6230 /* NSNumber+CLNumber.m */,
+			);
+			path = "NSNumber+CLNumber";
+			sourceTree = "<group>";
+		};
+		BFAE1C7220BFC2B1002B6230 /* NSMutableDictionary+CLMutableDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C7320BFC2B1002B6230 /* NSMutableDictionary+CLMutableDictionary.m */,
+				BFAE1C7420BFC2B1002B6230 /* NSMutableDictionary+CLMutableDictionary.h */,
+			);
+			path = "NSMutableDictionary+CLMutableDictionary";
+			sourceTree = "<group>";
+		};
+		BFAE1C7520BFC2B1002B6230 /* NSData+CLData */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C7620BFC2B1002B6230 /* NSData+CLData.m */,
+				BFAE1C7720BFC2B1002B6230 /* NSData+CLData.h */,
+			);
+			path = "NSData+CLData";
+			sourceTree = "<group>";
+		};
+		BFAE1C7820BFC2B1002B6230 /* NSDictionary+CLDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				BFAE1C7920BFC2B1002B6230 /* NSDictionary+CLDictionary.h */,
+				BFAE1C7A20BFC2B1002B6230 /* NSDictionary+CLDictionary.m */,
+			);
+			path = "NSDictionary+CLDictionary";
 			sourceTree = "<group>";
 		};
 		DCE8D1436616542F3B34396A /* Pods */ = {
@@ -679,40 +688,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4A6C331203EDF53001EF8FD /* EXTimerController.m in Sources */,
+				BFAE1C8920BFC2B1002B6230 /* NSData+CLData.m in Sources */,
 				A4ACC4F62034265700E756D1 /* EXBundleController.m in Sources */,
 				A48D73E12035AD3B00378353 /* EXStringController.m in Sources */,
-				A48D73D22034544C00378353 /* NSMutableAttributedString+CLMutableAttributedString.m in Sources */,
 				A48D73E52035B2AE00378353 /* EXURLController.m in Sources */,
+				BFAE1C8420BFC2B1002B6230 /* NSMutableAttributedString+CLMutableAttributedString.m in Sources */,
 				A4A8A40D2040731700FA9EC5 /* EXObjectController.m in Sources */,
-				A48D73CE2034544C00378353 /* NSBundle+CLBundle.m in Sources */,
 				A4ACC4FA20342A8E00E756D1 /* EXBaseViewController.m in Sources */,
 				A4ACC4E72034129100E756D1 /* EXRootController.m in Sources */,
-				A48D73CF2034544C00378353 /* NSData+CLData.m in Sources */,
 				A4ACC4F22034212400E756D1 /* EXAttributeStringController.m in Sources */,
+				BFAE1C7E20BFC2B1002B6230 /* NSFileManager+CLFileManager.m in Sources */,
+				BFAE1C8120BFC2B1002B6230 /* NSBundle+CLBundle.m in Sources */,
+				BFAE1C7F20BFC2B1002B6230 /* NSTimer+CLTimer.m in Sources */,
 				A48D73DD2035561B00378353 /* EXDictionaryController.m in Sources */,
-				A48D73D72034544C00378353 /* NSDictionary+CLDictionary.m in Sources */,
 				BF84D61320897C770061D29F /* EXSpeechController.m in Sources */,
 				A4BA3137204BA00F002E0ED7 /* EXFileManagerController.m in Sources */,
-				BF47C037208DADBD00FD5C78 /* NSNotificationCenter+CLNotificationCenter.m in Sources */,
+				BFAE1C8820BFC2B1002B6230 /* NSMutableDictionary+CLMutableDictionary.m in Sources */,
+				BFAE1C8520BFC2B1002B6230 /* NSString+CLString.m in Sources */,
 				A4ACC4AC2034103600E756D1 /* main.m in Sources */,
-				A4A6C32D203ED89B001EF8FD /* NSTimer+CLTimer.m in Sources */,
+				BFAE1C8620BFC2B1002B6230 /* NSArray+CLArray.m in Sources */,
 				A4ACC49E2034103600E756D1 /* AppDelegate.m in Sources */,
 				BF47C02E208D849F00FD5C78 /* EXNotificationCenterController.m in Sources */,
-				A48D73D52034544C00378353 /* NSURL+CLURL.m in Sources */,
-				A4A8A4112042925100FA9EC5 /* NSNumber+CLNumber.m in Sources */,
-				A48D73D32034544C00378353 /* NSMutableDictionary+CLMutableDictionary.m in Sources */,
-				A4F17CEB204705B500C70EA7 /* NSFileManager+CLFileManager.m in Sources */,
-				A42FEFE9203DC79C0054C8A3 /* NSObject+CLObject.m in Sources */,
-				A48D73D82034544C00378353 /* NSDate+CLDate.m in Sources */,
 				A4ACC4EE203419A200E756D1 /* EXArrayController.m in Sources */,
+				BFAE1C7C20BFC2B1002B6230 /* NSNotificationCenter+CLNotificationCenter.m in Sources */,
+				BFAE1C8A20BFC2B1002B6230 /* NSDictionary+CLDictionary.m in Sources */,
+				BFAE1C7B20BFC2B1002B6230 /* NSObject+CLObject.m in Sources */,
+				BFAE1C7D20BFC2B1002B6230 /* NSAttributedString+CLAttributedString.m in Sources */,
 				A4ACC4FE20342C0E00E756D1 /* EXDataController.m in Sources */,
+				BFAE1C8220BFC2B1002B6230 /* NSURL+CLURL.m in Sources */,
+				BFAE1C8320BFC2B1002B6230 /* NSMutableArray+CLMutableArray.m in Sources */,
+				BFAE1C8720BFC2B1002B6230 /* NSNumber+CLNumber.m in Sources */,
+				BFAE1C8020BFC2B1002B6230 /* NSDate+CLDate.m in Sources */,
 				A4A8A4152042931900FA9EC5 /* EXNumberController.m in Sources */,
-				A48D73D62034544C00378353 /* NSString+CLString.m in Sources */,
 				BF84D60F20897A890061D29F /* CLSpeechSynthesizer.m in Sources */,
 				A48D73A92034478B00378353 /* EXDateController.m in Sources */,
-				A48D73D92034544C00378353 /* NSArray+CLArray.m in Sources */,
-				A48D73D02034544C00378353 /* NSMutableArray+CLMutableArray.m in Sources */,
-				A48D73D12034544C00378353 /* NSAttributedString+CLAttributedString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
