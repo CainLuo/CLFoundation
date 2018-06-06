@@ -436,8 +436,8 @@
 		BFAE1C5120BFC2B1002B6230 /* NSAttributedString+CLAttributedString */ = {
 			isa = PBXGroup;
 			children = (
-				BFAE1C5220BFC2B1002B6230 /* NSAttributedString+CLAttributedString.m */,
 				BFAE1C5320BFC2B1002B6230 /* NSAttributedString+CLAttributedString.h */,
+				BFAE1C5220BFC2B1002B6230 /* NSAttributedString+CLAttributedString.m */,
 			);
 			path = "NSAttributedString+CLAttributedString";
 			sourceTree = "<group>";
