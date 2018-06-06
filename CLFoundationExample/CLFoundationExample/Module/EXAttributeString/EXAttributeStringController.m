@@ -52,11 +52,19 @@
 
     NSMutableAttributedString *cl_mutableAttributedString = [[NSMutableAttributedString alloc] init];
     
+//    NSMutableAttributedString *cl_prefixImageAttributedString = [NSMutableAttributedString cl_attributeStringWithPrefixString:@"----------NSMutableAttributedString----------\n图片在文字的后面"
+//                                                                                                                  prefixImage:[UIImage imageNamed:@"icon1"]];
     NSMutableAttributedString *cl_prefixImageAttributedString = [NSMutableAttributedString cl_attributeStringWithPrefixString:@"----------NSMutableAttributedString----------\n图片在文字的后面"
+                                                                                                                   imageFrame:CGRectMake(0, 30, 30, 30)
                                                                                                                   prefixImage:[UIImage imageNamed:@"icon1"]];
-    NSMutableAttributedString *cl_subffixImageAttributedString = [NSMutableAttributedString cl_attributeStringWithSubffixString:@"图片在文字的前面"
-                                                                                                                   subffixImage:[UIImage imageNamed:@"icon1"]];
+
+//    NSMutableAttributedString *cl_subffixImageAttributedString = [NSMutableAttributedString cl_attributeStringWithSubffixString:@"图片在文字的前面"
+//                                                                                                                   subffixImage:[UIImage imageNamed:@"icon1"]];
     
+    NSMutableAttributedString *cl_subffixImageAttributedString = [NSMutableAttributedString cl_attributeStringWithSubffixString:@"图片在文字的前面"
+                                                                                                                     imageFrame:CGRectMake(0, -40, 30, 30)
+                                                                                                                   subffixImage:[UIImage imageNamed:@"icon1"]];
+
     NSMutableAttributedString *cl_lineAttributedString = [NSMutableAttributedString cl_attributedStringWithString:@"设置字符串的行距\nHello Word"
                                                                                                       lineSpacing:5];
 
