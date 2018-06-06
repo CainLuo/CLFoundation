@@ -22,6 +22,18 @@
                                                       subffixImage:(UIImage *)subffixImage;
 
 /**
+ 添加图片在字符串之前
+ 
+ @param subffixString 字符串
+ @param imageFrame CGRect
+ @param subffixImage 图片
+ @return NSMutableAttributedString
+ */
++ (NSMutableAttributedString *)cl_attributeStringWithSubffixString:(NSString *)subffixString
+                                                        imageFrame:(CGRect)imageFrame
+                                                      subffixImage:(UIImage *)subffixImage;
+
+/**
  添加多张图片在字符串之前
 
  @param subffixString 字符串
@@ -38,6 +50,18 @@
  @return NSMutableAttributedString
  */
 + (NSMutableAttributedString *)cl_attributeStringWithPrefixString:(NSString *)prefixString
+                                                      prefixImage:(UIImage *)prefixImage;
+
+/**
+ 添加图片在字符串之后
+ 
+ @param prefixString 富文本
+ @param imageFrame CGRect
+ @param prefixImage 图片
+ @return NSMutableAttributedString
+ */
++ (NSMutableAttributedString *)cl_attributeStringWithPrefixString:(NSString *)prefixString
+                                                       imageFrame:(CGRect)imageFrame
                                                       prefixImage:(UIImage *)prefixImage;
 
 /**

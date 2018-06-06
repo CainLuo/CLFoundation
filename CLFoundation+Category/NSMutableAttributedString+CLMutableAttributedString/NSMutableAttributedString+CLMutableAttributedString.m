@@ -14,12 +14,21 @@
 + (NSMutableAttributedString *)cl_attributeStringWithSubffixString:(NSString *)subffixString
                                                       subffixImage:(UIImage *)subffixImage {
     
+    return [self cl_attributeStringWithSubffixString:subffixString
+                                          imageFrame:CGRectMake(0, -2, subffixImage.size.width, subffixImage.size.height)
+                                        subffixImage:subffixImage];
+}
+
++ (NSMutableAttributedString *)cl_attributeStringWithSubffixString:(NSString *)subffixString
+                                                        imageFrame:(CGRect)imageFrame
+                                                      subffixImage:(UIImage *)subffixImage {
+  
     NSMutableAttributedString *cl_mutableAttributedString = [[NSMutableAttributedString alloc] init];
     
     NSTextAttachment *cl_backAttachment = [[NSTextAttachment alloc] init];
     
-    cl_backAttachment.image = subffixImage;
-    cl_backAttachment.bounds = CGRectMake(0, -2, subffixImage.size.width, subffixImage.size.height);
+    cl_backAttachment.image  = subffixImage;
+    cl_backAttachment.bounds = imageFrame;
     
     NSAttributedString *cl_backString = [NSAttributedString attributedStringWithAttachment:cl_backAttachment];
     NSAttributedString *cl_attributedString = [[NSAttributedString alloc] initWithString:subffixString];
@@ -57,12 +66,21 @@
 + (NSMutableAttributedString *)cl_attributeStringWithPrefixString:(NSString *)prefixString
                                                       prefixImage:(UIImage *)prefixImage {
     
+    return [self cl_attributeStringWithPrefixString:prefixString
+                                         imageFrame:CGRectMake(0, -2, prefixImage.size.width, prefixImage.size.height)
+                                        prefixImage:prefixImage];
+}
+
++ (NSMutableAttributedString *)cl_attributeStringWithPrefixString:(NSString *)prefixString
+                                                       imageFrame:(CGRect)imageFrame
+                                                      prefixImage:(UIImage *)prefixImage {
+    
     NSMutableAttributedString *cl_mutableAttributedString = [[NSMutableAttributedString alloc] initWithString:prefixString];
     
     NSTextAttachment *cl_backAttachment = [[NSTextAttachment alloc] init];
     
-    cl_backAttachment.image = prefixImage;
-    cl_backAttachment.bounds = CGRectMake(0, -2, prefixImage.size.width, prefixImage.size.height);
+    cl_backAttachment.image  = prefixImage;
+    cl_backAttachment.bounds = imageFrame;
     
     NSAttributedString *cl_backString = [NSAttributedString attributedStringWithAttachment:cl_backAttachment];
     
