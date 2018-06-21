@@ -43,46 +43,46 @@
     [self cl_showSheetViewControllerWithTitle:nil
                                       message:nil
                                  actionTitles:ex_titleArray
-                                      handler:^(UIAlertAction *action, NSUInteger index) {
+                                     complete:^(UIAlertAction *action, NSUInteger index) {
         
-                                          self.ex_label.text = ex_titleArray[index];
-                                          
-                                          switch (index) {
-                                              case 0:
-                                                  
-                                                  [self ex_postNotificationOnMainThread];
-                                                  
-                                                  break;
-                                                  
-                                              case 1:
-                                                  
-                                                  [self ex_deleteButtonAction];
-                                                  
-                                                  break;
-                                              case 2:
-                                                  
-                                                  [self ex_postNotificationOnMainThreadWait];
-                                                  
-                                                  break;
-                                              case 3:
-                                                  
-                                                  [self ex_postNotificationOnMainThreadObject];
-                                                  
-                                                  break;
-                                              case 4:
-                                                  
-                                                  [self ex_postNotificationOnMainThreadUserInfo];
-                                                  
-                                                  break;
-                                              case 5:
-                                                  
-                                                  [self ex_postNotificationOnMainThreadUserInfoWait];
-                                                  
-                                                  break;
-                                              default:
-                                                  break;
-                                          }
-                                      }];
+                                         self.ex_label.text = ex_titleArray[index];
+                                         
+                                         switch (index) {
+                                             case 0:
+                                             
+                                             [self ex_postNotificationOnMainThread];
+                                             
+                                             break;
+                                             
+                                             case 1:
+                                             
+                                             [self ex_deleteButtonAction];
+                                             
+                                             break;
+                                             case 2:
+                                             
+                                             [self ex_postNotificationOnMainThreadWait];
+                                             
+                                             break;
+                                             case 3:
+                                             
+                                             [self ex_postNotificationOnMainThreadObject];
+                                             
+                                             break;
+                                             case 4:
+                                             
+                                             [self ex_postNotificationOnMainThreadUserInfo];
+                                             
+                                             break;
+                                             case 5:
+                                             
+                                             [self ex_postNotificationOnMainThreadUserInfoWait];
+                                             
+                                             break;
+                                             default:
+                                             break;
+                                         }
+                                     }];
 }
 
 #pragma mark - 通知的操作
@@ -152,7 +152,7 @@
     _ex_button.backgroundColor = [UIColor cl_colorWithHex:0x2e7ae6];
     
     [_ex_button cl_setNormalButtonWithTitle:@"调用NotificationCenter"];
-    [_ex_button cl_setNormalButtonWithTitleColor:[UIColor whiteColor]];
+    [_ex_button cl_setNormalTitleWithColor:[UIColor whiteColor]];
     [_ex_button cl_addButtonActionComplete:^(UIButton *sender) {
         
         [self ex_buttonAction];

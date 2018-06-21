@@ -1,6 +1,13 @@
 PODS:
-  - CLFoundation (1.6.3)
-  - CLUIKit (1.8.2):
+  - CLFoundation (1.7.2):
+    - "CLFoundation/CLFoundation+Category (= 1.7.2)"
+  - "CLFoundation/CLFoundation+Category (1.7.2)"
+  - CLUIKit (2.2.5):
+    - CLFoundation
+    - "CLUIKit/CLUIKit+Category (= 2.2.5)"
+    - Masonry
+    - MJRefresh
+  - "CLUIKit/CLUIKit+Category (2.2.5)":
     - CLFoundation
     - Masonry
     - MJRefresh
@@ -19,11 +26,11 @@ SPEC REPOS:
     - MJRefresh
 
 SPEC CHECKSUMS:
-  CLFoundation: 43469264621c018c98915ff95c5ed4b31cd93040
-  CLUIKit: 028cabb9664bab735f27d27ef094735e56be1e82
+  CLFoundation: d329a9f578ae0654022d811f160db8ac404346c7
+  CLUIKit: 17641484893205061b4f23d6547a1f5646a3fddb
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
 
-PODFILE CHECKSUM: d094e536972db2f89fac1335f46b620b13fcbce5
+PODFILE CHECKSUM: 821eb440d184d4ecd0af5b33ade5aa3217ec57f5
 
 COCOAPODS: 1.5.0

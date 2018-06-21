@@ -22,33 +22,43 @@
 
 ## 目录
 
+- [CLAnimatorManager@](#CLAnimatorManager)
+  - [UICubicTimingParameters@](#UICubicTimingParameters)
+  - [UISpringTimingParameters@](#UISpringTimingParameters)
+  - [UIViewPropertyAnimator@](#UIViewPropertyAnimator)
+  - [UIViewPropertyAnimator控制相关@](#UIViewPropertyAnimator控制相关)
 - [CLButton@](#CLButton)
 - [CLCollectionViewController@](#CLCollectionViewController)
   - [UICollectionView与MJRefresh@](#UICollectionView与MJRefresh)
   - [UICollectionView代理与数据源@](#代理与数据源)
   - [注册类@](#注册类)
-- ​
-- [CLCollectionViewDataSource@](#CLCollectionViewDataSource)
-- [CLCollectionViewDelegate@](#CLCollectionViewDelegate)
-- [CLCollectionViewDragDelegate@](#CLCollectionViewDragDelegate)
-- [CLCollectionViewDropDelegate@](#CLCollectionViewDropDelegate)
-- [CLCollectionViewViewModel@](#CLCollectionViewViewModel)
+  - [CLCollectionViewDataSource@](#CLCollectionViewDataSource)
+  - [CLCollectionViewDelegate@](#CLCollectionViewDelegate)
+  - [CLCollectionViewDragDelegate@](#CLCollectionViewDragDelegate)
+  - [CLCollectionViewDropDelegate@](#CLCollectionViewDropDelegate)
+  - [CLCollectionViewViewModel@](#CLCollectionViewViewModel)
 - [CLNavigationController@](#CLNavigationController)
 - [CLScanQRCodeController@](#CLScanQRCodeController)
   - [获取数据(Block)@](#获取数据(Block))
   - [获取数据(Delegate)@](#获取数据(Delegate))
+- [CLScrollViewController@](#CLScrollViewController)
+  - [UIScrollView代理与数据源@](#UIScrollView代理与数据源)
 - [CLTableViewController@](#CLTableViewController)
   - [UITableView与MJRefresh@](#UITableView与MJRefresh)
   - [UITableView代理与数据源@](#UITableView代理与数据源)
-- [CLTableViewDataSource@](#CLTableViewDataSource)
-- [CLTableViewDelegate@](#CLTableViewDelegate)
-- [CLTableViewDragDelegate@](#CLTableViewDragDelegate)
-- [CLTableViewDropDelegate@](#CLTableViewDropDelegate)
-- [CLTableViewViewModel@](#CLTableViewViewModel)
+  - [CLTableViewDataSource@](#CLTableViewDataSource)
+  - [CLTableViewDelegate@](#CLTableViewDelegate)
+  - [CLTableViewDragDelegate@](#CLTableViewDragDelegate)
+  - [CLTableViewDropDelegate@](#CLTableViewDropDelegate)
+  - [CLTableViewViewModel@](#CLTableViewViewModel)
 - [CLTextField@](#CLTextField)
 - [CLToolBarListView@](#CLToolBarListView)
 - [CLViewController@](#CLViewController)
-- [CLViewControllerViewModel@](#CLViewControllerViewModel)
+  - [CLViewControllerViewModel@](#CLViewControllerViewModel)
+- [CLWebViewControoler@](#CLWebViewControoler)
+  - [CLWebViewNavigationDelegate@](#CLWebViewNavigationDelegate)
+  - [CLWebViewUIDelegate@](#CLWebViewUIDelegate)
+  - [CLWebViewViewModel@](#CLWebViewViewModel)
 - [UIApplication+CLApplication@](#UIApplication+CLApplication)
 - [UIButton+CLButton@](#UIButton+CLButton)
 - [UICollectionView+CLCollectionView@](#UICollectionView+CLCollectionView)
@@ -57,25 +67,170 @@
 - [UIColor+CLColor@](#UIColor+CLColor)
 - [UIControl+CLControl@](#UIControl+CLControl)
 - [UIDevice+CLDevice@](#UIDevice+CLDevice)
+  - [设备相关@](#设备相关)
+  - [CPU相关@](#CPU相关)
+  - [网络相关@](#网络相关)
+  - [存储相关@](#存储相关)
+  - [内存相关@](#内存相关)
 - [UIFont+CLFont@](#UIFont+CLFont)
 - [UIImage+CLImage@](#UIImage+CLImage)
-  - [生成指定颜色的图片@](#生成指定颜色的图片@)
-  - [截取指定视图大小的截图@](#截取指定视图大小的截图@)
-  - [缩放指定比例的图片@](#缩放指定比例的图片@)
-  - [加载GIF图片@](#加载GIF图片@)
-  - [生成二维码@](#生成二维码@)
-  - [获取图片@](#获取图片@)
-  - [图片高斯模糊处理@](#图片高斯模糊处理@)
-  - [图片圆角处理@](图片圆角处理@)
+  - [生成指定颜色的图片@](#生成指定颜色的图片)
+  - [截取指定视图大小的截图@](#截取指定视图大小的截图)
+  - [缩放指定比例的图片@](#缩放指定比例的图片)
+  - [加载GIF图片@](#加载GIF图片)
+  - [生成二维码@](#生成二维码)
+  - [获取图片@](#获取图片)
+  - [图片高斯模糊处理@](#图片高斯模糊处理)
+  - [图片圆角处理@](图片圆角处理)
   - [图片处理](#图片处理)
-- [UINavigationController+CLNavigationController@](#UINavigationController+CLNavigationController)
+- [UINavigationController+CLNavigationController](#UINavigationController+CLNavigationController)
 - [UINavigationItem+CLNavigationItem@](#UINavigationItem+CLNavigationItem)
 - [UIScreen+CLScreen@](#UIScreen+CLScreen)
 - [UITableView+CLTableView@](#UITableView+CLTableView)
+  - [UITableView+CLTableView占位代理@](#UITableView+CLTableView占位代理)
+  - [UITableView+CLTableView刷新@](#UITableView+CLTableView刷新)
+  - [UITableView+CLTableView显示IndexPath@](#UITableView+CLTableView显示IndexPath)
+  - [UITableView+CLTableView插入IndexPath@](#UITableView+CLTableView插入IndexPath)
+  - [UITableView+CLTableView删除IndexPath@](#UITableView+CLTableView删除IndexPath)
 - [UIView+CLView@](#UIView+CLView)
 - [UIViewController+CLViewController@](#UIViewController+CLViewController)
   - [UIViewControllerBackItem检测代理@](#UIViewControllerBackItem检测代理)
   - [UIViewController+CLViewController方法@](#UIViewController+CLViewController方法)
+
+## CLAnimatorManager
+
+`CLAnimatorManager`是针对系统的`UIViewPropertyAnimator `封装的一个类库, 只支持`iOS 10`之后的系统.
+
+### UICubicTimingParameters
+
+```objective-c
+- (void)cl_cubicTimingParametersWithDuration:(NSTimeInterval)duration
+                                       curve:(UIViewAnimationCurve)curve
+                                  animations:(CLAnimatorManagerBlock)animations NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_cubicTimingParametersWithDuration:(NSTimeInterval)duration
+                                       curve:(UIViewAnimationCurve)curve
+                                  animations:(CLAnimatorManagerBlock)animations
+                                  completion:(CLAnimatorManagerCompleteBlock)completion NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_cubicTimingParametersWithDuration:(NSTimeInterval)duration
+                               controlPoint1:(CGPoint)controlPoint1
+                               controlPoint2:(CGPoint)controlPoint2
+                                  animations:(CLAnimatorManagerBlock)animations NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_cubicTimingParametersWithDuration:(NSTimeInterval)duration
+                               controlPoint1:(CGPoint)controlPoint1
+                               controlPoint2:(CGPoint)controlPoint2
+                                  animations:(CLAnimatorManagerBlock)animations
+                                  completion:(CLAnimatorManagerCompleteBlock)completion NS_AVAILABLE_IOS(10_0);
+```
+
+### UISpringTimingParameters
+
+```objective-c
+- (void)cl_springTimingParametersWithDuration:(NSTimeInterval)duration
+                                 dampingRatio:(CGFloat)dampingRatio
+                                   animations:(CLAnimatorManagerBlock)animations NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_springTimingParametersWithDuration:(NSTimeInterval)duration
+                                 dampingRatio:(CGFloat)dampingRatio
+                                   animations:(CLAnimatorManagerBlock)animations
+                                   completion:(CLAnimatorManagerCompleteBlock)completion NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_springTimingParametersWithDuration:(NSTimeInterval)duration
+                                 dampingRatio:(CGFloat)dampingRatio
+                                     velocity:(CGVector)velocity
+                                   animations:(CLAnimatorManagerBlock)animations NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_springTimingParametersWithDuration:(NSTimeInterval)duration
+                                 dampingRatio:(CGFloat)dampingRatio
+                                     velocity:(CGVector)velocity
+                                   animations:(CLAnimatorManagerBlock)animations
+                                   completion:(CLAnimatorManagerCompleteBlock)completion NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_springTimingParametersWithDuration:(NSTimeInterval)duration
+                                         mass:(CGFloat)mass
+                                    stiffness:(CGFloat)stiffness
+                                      damping:(CGFloat)damping
+                                     velocity:(CGVector)velocity
+                                   animations:(CLAnimatorManagerBlock)animations NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_springTimingParametersWithDuration:(NSTimeInterval)duration
+                                         mass:(CGFloat)mass
+                                    stiffness:(CGFloat)stiffness
+                                      damping:(CGFloat)damping
+                                     velocity:(CGVector)velocity
+                                   animations:(CLAnimatorManagerBlock)animations
+                                   completion:(CLAnimatorManagerCompleteBlock)completion NS_AVAILABLE_IOS(10_0);
+```
+
+### UIViewPropertyAnimator
+
+```objective-c
+typedef void(^CLAnimatorManagerBlock)(void);
+typedef void(^CLAnimatorManagerCompleteBlock)(UIViewAnimatingPosition finalPosition);
+typedef void(^CLAnimatorManagerStatusBlock)(UIViewAnimatingState state);
+
+@property (nonatomic, strong, readonly) UIViewPropertyAnimator *cl_viewPropertyAnimator;
+
+- (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
+                           timingParameters:(id <UITimingCurveProvider>)parameters
+                                 animations:(CLAnimatorManagerBlock)animations NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
+                           timingParameters:(id <UITimingCurveProvider>)parameters
+                                 animations:(CLAnimatorManagerBlock)animations
+                                 completion:(CLAnimatorManagerCompleteBlock)completion NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
+                                      curve:(UIViewAnimationCurve)curve
+                                 animations:(CLAnimatorManagerBlock)animations NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
+                                      curve:(UIViewAnimationCurve)curve
+                                 animations:(CLAnimatorManagerBlock)animations
+                                 completion:(CLAnimatorManagerCompleteBlock)completion NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
+                              controlPoint1:(CGPoint)point1
+                              controlPoint2:(CGPoint)point2
+                                 animations:(CLAnimatorManagerBlock)animations NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
+                              controlPoint1:(CGPoint)point1
+                              controlPoint2:(CGPoint)point2
+                                 animations:(CLAnimatorManagerBlock)animations
+                                 completion:(CLAnimatorManagerCompleteBlock)completion NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
+                               dampingRatio:(CGFloat)ratio
+                                 animations:(CLAnimatorManagerBlock)animations NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
+                               dampingRatio:(CGFloat)ratio
+                                 animations:(CLAnimatorManagerBlock)animations
+                                 completion:(CLAnimatorManagerCompleteBlock)completion NS_AVAILABLE_IOS(10_0);
+
+- (void)cl_viewPropertyAnimatorWithDuration:(NSTimeInterval)duration
+                                 afterDelay:(NSTimeInterval)delay
+                                    options:(UIViewAnimationOptions)options
+                                 animations:(CLAnimatorManagerBlock)animations
+                                 completion:(CLAnimatorManagerCompleteBlock)completion NS_AVAILABLE_IOS(10_0);
+```
+
+### UIViewPropertyAnimator控制相关
+
+```objective-c
+- (void)cl_starViewPropertyAnimator;
+
+- (void)cl_starViewPropertyAnimatorAfterDelay:(NSTimeInterval)delay;
+
+- (void)cl_pauseViewPropertyAnimator;
+
+- (void)cl_stopViewPropertyAnimator:(BOOL)stop;
+
+- (void)cl_finishViewPropertyAnimatorWithPosition:(UIViewAnimatingPosition)position;
+```
 
 
 
@@ -103,6 +258,10 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 
 `CLCollectionViewController`是对系统`UIViewController + UICollectionView`的封装并添加了一些特性:
 
+```objective-c
+- (void)cl_hiddenCollectionViewScrollIndicator;
+```
+
 
 ### UICollectionView与MJRefresh@
 
@@ -124,6 +283,8 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 - (void)cl_pullUpBeginRefresh;
 
 - (void)cl_pullUpEndRefresh;
+
+- (void)cl_endCollectionViewRefreshWithType:(CLCollectionViewRefreshType)refreshType;
 ```
 
 
@@ -145,9 +306,7 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
               identifier:(NSString *)identifier;
 ```
 
-
-
-## CLCollectionViewDataSource@
+### CLCollectionViewDataSource@
 
 `CLCollectionViewDataSource`是`CLCollectionViewController`的数据源, 需要配合着使用:
 
@@ -157,9 +316,7 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 - (instancetype)initCollectionViewDataSourceWithViewModel:(CLCollectionViewViewModel *)viewModel;
 ```
 
-
-
-## CLCollectionViewDelegate@
+### CLCollectionViewDelegate@
 
 `CLCollectionViewDelegate`是`CLCollectionViewController`的代理, 需要配合着使用:
 
@@ -169,9 +326,7 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 - (instancetype)initCollectionViewDelegateWithViewModel:(CLCollectionViewViewModel *)viewModel;
 ```
 
-
-
-## CLCollectionViewDragDelegate@
+### CLCollectionViewDragDelegate@
 
 `CLCollectionViewDragDelegate`是`CLCollectionViewController`的代理, 需要配合着使用:
 
@@ -181,9 +336,7 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 - (instancetype)initCollectionViewDragDelegateWithViewModel:(CLCollectionViewViewModel *)viewModel;
 ```
 
-
-
-## CLCollectionViewDropDelegate@
+### CLCollectionViewDropDelegate@
 
 `CLCollectionViewDropDelegate`是`CLCollectionViewController`的代理, 需要配合着使用:
 
@@ -193,9 +346,7 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 - (instancetype)initCollectionViewDropDelegateWithViewModel:(CLCollectionViewViewModel *)viewModel;
 ```
 
-
-
-## CLCollectionViewViewModel
+### CLCollectionViewViewModel
 
 `CLCollectionViewViewModel`是`CLCollectionViewController`的`ViewModel`, 需要配合着使用:
 
@@ -228,6 +379,8 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 
 
 `CLNavigationController`默认重载了`pushViewController:animated:`, 会在`pushViewController`的时候自动隐藏掉`UITarBar`.
+
+
 
 ## CLScanQRCodeController@
 
@@ -265,6 +418,32 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 
 
 
+## CLScrollViewController@
+
+`CLScrollViewController`是基于系统`UIViewController+UIScrollView`的封装并添加了一些特性:
+
+```objective-c
+@property (nonatomic, strong, readonly) UIScrollView *cl_scrollView;
+
+- (void)cl_hiddenScrollIndicator;
+```
+
+### UIScrollView代理@
+
+```objective-c
+- (void)cl_setScrollViewDelegate:(_Nullable id <UIScrollViewDelegate>)delegate;
+```
+
+### CLScrollViewViewModel
+
+```objective-c
+@property (nonatomic, weak, readonly) CLScrollViewController *cl_scrollViewController;
+
+- (instancetype)initScrollViewDelegateWithController:(CLScrollViewController *)controller;
+```
+
+
+
 ## CLTableViewController@
 
 `CLTableViewController`是针对系统`UIViewController + UITableView`的封装并添加了一些特性:
@@ -273,6 +452,8 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 @property (nonatomic, strong, null_resettable, readonly) UITableView *cl_tableView;
 
 - (instancetype)initTableViewControllerWithStyle:(UITableViewStyle)style;
+
+- (void)cl_hiddenTableViewScrollIndicator;
 ```
 
 
@@ -296,6 +477,8 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 - (void)cl_pullUpBeginRefresh;
 
 - (void)cl_pullUpEndRefresh;
+
+- (void)cl_endTableViewRefreshWithType:(CLTableViewRefreshType)refreshType;
 ```
 
 
@@ -309,9 +492,7 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
                        dropDelegate:(_Nullable id <UITableViewDropDelegate>)dropDelegate API_AVAILABLE(ios(11.0));
 ```
 
-
-
-## CLTableViewDataSource@
+### CLTableViewDataSource@
 
 `CLTableViewDataSource`是`CLTableViewController`的数据源, 需要配合着使用:
 
@@ -321,9 +502,7 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 - (instancetype)initTableViewDataSourceWithViewModel:(CLTableViewViewModel *)viewModel;
 ```
 
-
-
-## CLTableViewDelegate@
+### CLTableViewDelegate@
 
 `CLTableViewDelegate`是`CLTableViewController`的代理, 需要配合着使用:
 
@@ -333,9 +512,7 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 - (instancetype)initTableViewDelegateWithViewModel:(CLTableViewViewModel *)viewModel;
 ```
 
-
-
-## CLTableViewDragDelegate@
+### CLTableViewDragDelegate@
 
 `CLTableViewDragDelegate`是`CLTableViewController`的代理, 需要配合着使用:
 
@@ -345,9 +522,7 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 - (instancetype)initTableViewDragDelegateWithViewModel:(CLTableViewViewModel *)viewModel;
 ```
 
-
-
-## CLTableViewDropDelegate@
+### CLTableViewDropDelegate@
 
 `CLTableViewDropDelegate`是`CLTableViewController`的代理, 需要配合着使用:
 
@@ -357,9 +532,7 @@ typedef NS_ENUM(NSInteger, CLButtonStyle) {
 - (instancetype)initTableViewDropDelegateWithViewModel:(CLTableViewViewModel *)viewModel;
 ```
 
-
-
-## CLTableViewViewModel@
+### CLTableViewViewModel@
 
 `CLTableViewViewModel`是`CLTableViewController`的`ViewModel`, 需要配合着使用:
 
@@ -470,9 +643,7 @@ typedef NS_ENUM(NSInteger, CLViewControllerStyle) {
 - (instancetype)initCLViewControllerWith:(CLViewControllerStyle)style;
 ```
 
-
-
-## CLViewControllerViewModel@
+### CLViewControllerViewModel@
 
 `CLViewControllerViewModel`是对系统`CLViewController`的`ViewModel`, 需要配合使用:
 
@@ -480,6 +651,49 @@ typedef NS_ENUM(NSInteger, CLViewControllerStyle) {
 @property (nonatomic, weak, readonly) CLViewController *cl_viewController;
 
 - (instancetype)initViewControllerViewModelWithController:(CLViewController *)controller;
+```
+
+
+
+## CLWebViewController@
+
+`CLWebViewController`是对系统`UIViewController` + `WKWebView`的封装并添加了一些特性:
+
+```objective-c
+@property (nonatomic, strong, readonly) WKWebView *cl_webView;
+
+- (void)cl_setWebViewUIDelegate:(_Nullable id <WKUIDelegate>)UIDelegate
+             navigationDelegate:(_Nullable id <WKNavigationDelegate>)navigationDelegate;
+```
+
+### CLWebViewNavigationDelegate
+
+`CLWebViewNavigationDelegate`是`CLWebViewController`的`WKNavigationDelegate`, 需要配合着使用:
+
+```objective-c
+@property (nonatomic, weak, readonly) CLWebViewViewModel *cl_viewModel;
+
+- (instancetype)initWebViewNavigationDelegateWithViewModel:(CLWebViewViewModel *)viewModel;
+```
+
+### CLWebViewUIDelegate
+
+`CLWebViewUIDelegate`是`CLWebViewController`的`UIDelegate`, 需要配合着使用:
+
+```objective-c
+@property (nonatomic, weak, readonly) CLWebViewViewModel *cl_viewModel;
+
+- (instancetype)initWebViewUIDelegateWithViewModel:(CLWebViewViewModel *)viewModel;
+```
+
+### CLWebViewViewModel
+
+`CLWebViewViewModel`是`CLWebViewController`的`ViewModel`, 需要配合着使用:
+
+```objective-c
+@property (nonatomic, weak, readonly) CLWebViewController *cl_webViewController;
+
+- (instancetype)initWebViewModelWithController:(CLWebViewController *)controller;
 ```
 
 
@@ -505,7 +719,11 @@ typedef NS_ENUM(NSInteger, CLViewControllerStyle) {
 
 + (void)cl_sendEmailWithEmailAddress:(NSString *)emailAddress;
 
++ (void)cl_goToAppSetting;
+
 + (UIImage *)cl_getApplicationLaunchImage;
+
++ (CGFloat)cl_getStatusBarHeight;
 ```
 
 
@@ -524,27 +742,42 @@ typedef void(^CLButtonStar)(UIButton *cl_starButton, CLButtonStarStyle cl_button
 
 typedef void (^CLButtonAction)(UIButton *sender);
 
+@interface UIButton (CLButton)
+
 @property (nonatomic, assign) UIEdgeInsets cl_clickAreaEdgeInsets;
 
 @property (nonatomic, assign, readonly) BOOL cl_isSubmitting;
 
+#pragma mark - 倒计时方法
 - (void)cl_starButtonWithTime:(NSInteger)time
                      complete:(CLButtonStar)complete;
 
+#pragma mark - 添加UIButton点击方法
 - (void)cl_addButtonActionComplete:(CLButtonAction)complete;
 
+#pragma mark - 用UIActivityIndicatorView代替文字
 - (void)cl_showActivityIndicatorViewWithStyle:(UIActivityIndicatorViewStyle)style;
 
 - (void)cl_hideActivityIndicatorView;
 
+#pragma mark - 设置UIButton图片
 - (void)cl_setNormalButtonWithImage:(UIImage *)image;
+
+- (void)cl_setNormalButtonImageWithColor:(UIColor *)color;
 
 - (void)cl_setHighlightedButtonWithImage:(UIImage *)image;
 
+- (void)cl_setHighlightedButtonImageWithColor:(UIColor *)color;
+
 - (void)cl_setSelectedButtonWithImage:(UIImage *)image;
+
+- (void)cl_setSelectedButtonImageWithColor:(UIColor *)color;
 
 - (void)cl_setDisabledButtonWithImage:(UIImage *)image;
 
+- (void)cl_setDisabledButtonImageWithColor:(UIColor *)color;
+
+#pragma mark - 设置UIButton背景图片
 - (void)cl_setNormalButtonBackgroundImageWithImage:(UIImage *)image;
 
 - (void)cl_setHighlightedButtonBackgroundImageWithImage:(UIImage *)image;
@@ -553,6 +786,7 @@ typedef void (^CLButtonAction)(UIButton *sender);
 
 - (void)cl_setDisabledButtonBackgroundImageWithImage:(UIImage *)image;
 
+#pragma mark - 获取UIButton的图片
 - (UIImage *)cl_getNormalButtonImage;
 
 - (UIImage *)cl_getHighlightedButtonImage;
@@ -561,6 +795,7 @@ typedef void (^CLButtonAction)(UIButton *sender);
 
 - (UIImage *)cl_getDisabledButtonImage;
 
+#pragma mark - 获取UIButton的背景图片
 - (UIImage *)cl_getNormalButtonBackgroundImage;
 
 - (UIImage *)cl_getHighlightedButtonBackgroundImage;
@@ -569,6 +804,7 @@ typedef void (^CLButtonAction)(UIButton *sender);
 
 - (UIImage *)cl_getDisabledButtonBackgroundImage;
 
+#pragma mark - 设置UIButton标题
 - (void)cl_setNormalButtonWithTitle:(NSString *)title;
 
 - (void)cl_setHighlightedButtonWithTitle:(NSString *)title;
@@ -577,6 +813,7 @@ typedef void (^CLButtonAction)(UIButton *sender);
 
 - (void)cl_setDisabledButtonWithTitle:(NSString *)title;
 
+#pragma mark - 获取UIButton标题
 - (NSString *)cl_getNormalButtonTitle;
 
 - (NSString *)cl_getHighlightedButtonTitle;
@@ -585,14 +822,16 @@ typedef void (^CLButtonAction)(UIButton *sender);
 
 - (NSString *)cl_getDisabledButtonTitle;
 
-- (void)cl_setNormalButtonWithTitleColor:(UIColor *)color;
+#pragma mark - 设置UIButton标题
+- (void)cl_setNormalTitleWithColor:(UIColor *)color;
 
-- (void)cl_setHighlightedButtonWithColor:(UIColor *)color;
+- (void)cl_setHighlightedTitleWithColor:(UIColor *)color;
 
-- (void)cl_setSelectedButtonWithColor:(UIColor *)color;
+- (void)cl_setSelectedTitleWithColor:(UIColor *)color;
 
-- (void)cl_setDisabledButtonWithColor:(UIColor *)color;
+- (void)cl_setDisabledTitleWithColor:(UIColor *)color;
 
+#pragma mark - 获取UIButton标题颜色
 - (UIColor *)cl_getNormalButtonTitleColor;
 
 - (UIColor *)cl_getHighlightedButtonTitleColor;
@@ -600,6 +839,24 @@ typedef void (^CLButtonAction)(UIButton *sender);
 - (UIColor *)cl_getSelectedButtonTitleColor;
 
 - (UIColor *)cl_getDisabledButtonTitleColor;
+
+#pragma mark - 设置UIButton的NSAttributedString标题
+- (void)cl_setNormalButtonWithAttributedStringTitle:(NSAttributedString *)attributedString;
+
+- (void)cl_setHighlightedButtonWithAttributedStringTitle:(NSAttributedString *)attributedString;
+
+- (void)cl_setSelectedButtonWithAttributedStringTitle:(NSAttributedString *)attributedString;
+
+- (void)cl_setDisabledButtonWithAttributedStringTitle:(NSAttributedString *)attributedString;
+
+#pragma mark - 获取UIButton标题
+- (NSAttributedString *)cl_getNormalButtonAttributedStringTitle;
+
+- (NSAttributedString *)cl_getHighlightedButtonAttributedStringTitle;
+
+- (NSAttributedString *)cl_getSelectedButtonAttributedStringTitle;
+
+- (NSAttributedString *)cl_getDisabledButtonAttributedStringTitle;
 ```
 
 
@@ -690,7 +947,12 @@ typedef void(^CLControlAction)(id sender);
 - (void)cl_addControlActionWithEvents:(UIControlEvents)controlEvents
                              complete:(CLControlAction)complete;
 
+- (void)cl_setControlActionWithEvents:(UIControlEvents)controlEvents
+                             complete:(CLControlAction)complete;
+
 - (void)cl_removeControlActionWithEvents:(UIControlEvents)controlEvents;
+
+- (void)cl_removeAllActions;
 
 @end
 ```
@@ -714,6 +976,12 @@ typedef void(^CLControlAction)(id sender);
 + (NSString *)cl_getUUIDString;
 
 + (NSString *)cl_getCurrentDeviceModelName;
+
++ (BOOL)cl_isPad;
+
++ (BOOL)cl_isSimulator;
+
++ (BOOL)cl_isJailbroken;
 ```
 
 
@@ -725,7 +993,6 @@ typedef void(^CLControlAction)(id sender);
 + (CGFloat)cl_getCurrentDeviceAllCoreCPUUse;
 
 + (NSArray *)cl_getCurrentDeviceSingleCoreCPUUse;
-
 ```
 
 
@@ -741,6 +1008,36 @@ typedef void(^CLControlAction)(id sender);
 + (NSString *)cl_getCurrentDeviceIPAddressWithWiFi;
 
 + (NSString *)cl_getCurrentDeviceIPAddressWithCell;
+```
+
+
+
+### 存储相关@
+
+```objective-c
++ (int64_t)cl_getDiskSpace;
+
++ (int64_t)cl_getDiskSpaceFree;
+
++ (int64_t)cl_getDiskSpaceUsed;
+```
+
+
+
+### 内存相关@
+
+```objective-c
++ (int64_t)cl_getMemoryTotal;
+
++ (int64_t)cl_getMemoryFree;
+
++ (int64_t)cl_getMemoryActive;
+
++ (int64_t)cl_getMemoryInactive;
+
++ (int64_t)cl_getMemoryWired;
+
++ (int64_t)cl_getMemoryPurgable;
 ```
 
 
@@ -761,6 +1058,17 @@ typedef void(^CLControlAction)(id sender);
 
 + (UIFont *)cl_fitMonospacedDigitSystemFontOfSize:(CGFloat)fontSize
                                            weight:(UIFontWeight)weight NS_AVAILABLE_IOS(9_0);
+
++ (BOOL)cl_loadFontWithPath:(NSString *)path;
+
++ (void)cl_unloadFontWithPath:(NSString *)path;
+
++ (UIFont *)cl_loadFontWithData:(NSData *)data;
+
++ (BOOL)cl_unloadFontWithData:(UIFont *)font;
+
++ (UIFont *)cl_fitCustomFontWithName:(NSString *)name
+                            fontSize:(CGFloat)fontSize;
 ```
 
 
@@ -815,6 +1123,10 @@ typedef void(^CLControlAction)(id sender);
 
 + (void)cl_asyncLoadGIFImageWithData:(NSData *)data
                           completion:(CLImage)completion;
+
++ (BOOL)cl_isAnimatedGIFWithData:(NSData *)data;
+
++ (BOOL)cl_isAnimatedGIFWithFilePath:(NSString *)filePath;
 ```
 
 
@@ -905,6 +1217,8 @@ typedef void(^CLControlAction)(id sender);
 
 - (NSArray *)cl_popToViewControllerWithLevel:(NSUInteger)level
                                     animated:(BOOL)animated;
+
+- (CGFloat)cl_getNavigationBarHeight;
 ```
 
 
@@ -922,7 +1236,11 @@ typedef void(^CLControlAction)(id sender);
 针对`UIKit`的`UIScreen`进行系统外的方法补充:
 
 ```objective-c
++ (CGFloat)cl_getScreenScale;
+
 + (CGSize)cl_getScreenSize;
+
++ (CGRect)cl_getCurrentScreenBounds;
 
 + (CGFloat)cl_getScreenWidth;
 
@@ -960,7 +1278,7 @@ typedef void(^CLControlAction)(id sender);
 针对`UIKit`的`UITableView`进行系统外的方法补充:
 
 
-### UITableView占位代理@
+### UITableView+CLTableView占位代理@
 
 ```objective-c
 @protocol CLTableViewPlaceholderDelegate <NSObject>
@@ -977,15 +1295,80 @@ typedef void(^CLControlAction)(id sender);
 
 @end
 
+- (void)cl_removePlaceholderViewWithSuperView;
 ```
 
 
-### UITableView刷新@
+
+### UITableView+CLTableView刷新@
 
 ```objective-c
+typedef void(^CLTableViewUpdateBlock)(UITableView *tableView);
+
 - (void)cl_reloadData;
 
-- (void)cl_removePlaceholderViewWithSuperView;
+
+- (void)cl_updateTableViewWithComplete:(CLTableViewUpdateBlock)complete;
+
+- (void)cl_reloadRowWithIndexPath:(NSIndexPath *)indexPath
+                        animation:(UITableViewRowAnimation)animation;
+
+- (void)cl_reloadWithSection:(NSUInteger)section
+                   animation:(UITableViewRowAnimation)animation;
+
+- (void)cl_reloadWithRow:(NSUInteger)row
+                 section:(NSUInteger)section
+               animation:(UITableViewRowAnimation)animation;
+```
+
+
+
+### UITableView+CLTableView显示IndexPath
+
+```objective-c
+- (void)cl_scrollToIndexPath:(NSIndexPath *)indexPath
+              scrollPosition:(UITableViewScrollPosition)scrollPosition
+                    animated:(BOOL)animated;
+
+- (void)cl_scrollToRow:(NSUInteger)row
+               section:(NSUInteger)section
+        scrollPosition:(UITableViewScrollPosition)scrollPosition
+              animated:(BOOL)animated;
+```
+
+
+
+### UITableView+CLTableView插入IndexPath@
+
+```objective-c
+- (void)cl_insertRowWithIndexPath:(NSIndexPath *)indexPath
+                        animation:(UITableViewRowAnimation)animation;
+
+- (void)cl_insertWithSection:(NSUInteger)section
+                   animation:(UITableViewRowAnimation)animation;
+
+- (void)cl_insertWithRow:(NSUInteger)row
+                 section:(NSUInteger)section
+               animation:(UITableViewRowAnimation)animation;
+
+```
+
+
+
+### UITableView+CLTableView删除IndexPath@
+
+```objective-c
+- (void)cl_deleteRowWithIndexPath:(NSIndexPath *)indexPath
+                        animation:(UITableViewRowAnimation)animation;
+
+- (void)cl_deleteWithSection:(NSUInteger)section
+                   animation:(UITableViewRowAnimation)animation;
+
+- (void)cl_deleteWithRow:(NSUInteger)row
+                 section:(NSUInteger)section
+               animation:(UITableViewRowAnimation)animation;
+
+- (void)cl_resetSelectedRowsAnimated:(BOOL)animated;
 ```
 
 
@@ -1054,10 +1437,12 @@ typedef void (^CLGestureActionBlock)(UIGestureRecognizer *gestureRecoginzer);
 
 - (void)cl_setTabBarTranslucentWithBOOL:(BOOL)bools;
 
+#pragma mark - 呼叫手机
 - (void)cl_callPhoneWithPhoneNumber:(NSString *)phoneNumber
                             message:(NSString *)message
                              titile:(NSString *)title;
 
+#pragma mark - UIAlertController自定义
 - (void)cl_showAlertViewControllerWithTitle:(NSString *)title
                                     message:(NSString *)message
                                 buttonTitle:(NSString *)buttonTitle;
@@ -1065,11 +1450,16 @@ typedef void (^CLGestureActionBlock)(UIGestureRecognizer *gestureRecoginzer);
 - (void)cl_showSheetViewControllerWithTitle:(NSString *)title
                                     message:(NSString *)message
                                actionTitles:(NSArray<NSString *> *)actionTitles
-                                    handler:(void (^)(UIAlertAction *action, NSUInteger index))handler;
+                                   complete:(CLAlertControlAction)complete;
 
 - (void)cl_showAlertViewControllerWithTitle:(NSString *)title
                                     message:(NSString *)message
-                                    actions:(NSArray<UIAlertAction *> *) actions
+                               actionTitles:(NSArray<NSString *> *)actionTitles
+                                   complete:(CLAlertControlAction)complete;
+
+- (void)cl_showAlertViewControllerWithTitle:(NSString *)title
+                                    message:(NSString *)message
+                                    actions:(NSArray<UIAlertAction *> *)actions
                              preferredStyle:(UIAlertControllerStyle)preferredStyle;
 ```
 

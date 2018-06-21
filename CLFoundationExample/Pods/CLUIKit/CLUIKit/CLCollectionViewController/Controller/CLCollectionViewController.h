@@ -14,6 +14,11 @@
 
 #import "CLViewController.h"
 
+typedef NS_ENUM(NSInteger, CLCollectionViewRefreshType) {
+    CLCollectionViewRefreshTypeDropDown = 0,
+    CLCollectionViewRefreshTypePullUp
+};
+
 NS_ASSUME_NONNULL_BEGIN
 @interface CLCollectionViewController : CLViewController
 
@@ -28,9 +33,73 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) UICollectionViewFlowLayout *cl_collectionViewFlowLayout;
 
 /**
- 删除刷新控件
+ 设置UICollectionView的代理与数据源
+ 
+ @param delegate UICollectionViewDelegate
+ @param dataSource UICollectionViewDataSource
  */
-- (void)cl_removeRefresh;
+- (void)cl_setCollectionViewDelegate:(_Nullable id <UICollectionViewDelegate>)delegate
+                          dataSource:(_Nullable id <UICollectionViewDataSource>)dataSource;
+
+/**
+ 设置UICollectionView的拖拽代理与拖放代理
+ 
+ @param dragDelegate UICollectionViewDragDelegate
+ @param dropDelegate UICollectionViewDropDelegate
+ */
+- (void)cl_setCollectionViewDragDelegate:(_Nullable id <UICollectionViewDragDelegate>)dragDelegate
+                            dropDelegate:(_Nullable id <UICollectionViewDropDelegate>)dropDelegate API_AVAILABLE(ios(11.0));
+
+/**
+ 隐藏UICollectionView的ScrollIndicator
+ */
+- (void)cl_hiddenCollectionViewScrollIndicator;
+
+/**
+ 给UICollectionView注册类
+ 
+ @param cellClass Class
+ @param identifier NSString
+ */
+- (void)cl_registerClass:(nullable Class)cellClass
+              identifier:(NSString *)identifier;
+
+/**
+ 开始下拉刷新
+ */
+- (void)cl_dropDownBeginRefresh;
+
+/**
+ 下拉刷新时调用的方法, 需要重载, 默认不实现任何东西
+ */
+- (void)cl_dropDownRefresh;
+
+/**
+ 结束下拉刷新
+ */
+- (void)cl_dropDownEndRefresh;
+
+/**
+ 开始上拉加载
+ */
+- (void)cl_pullUpBeginRefresh;
+
+/**
+ 上拉加载时调用的方法, 需要重载, 默认不实现任何东西
+ */
+- (void)cl_pullUpRefresh;
+
+/**
+ 结束上拉加载
+ */
+- (void)cl_pullUpEndRefresh;
+
+/**
+ 选择指定的类型结束刷新
+ 
+ @param refreshType CLCollectionViewRefreshType
+ */
+- (void)cl_endCollectionViewRefreshWithType:(CLCollectionViewRefreshType)refreshType;
 
 /**
  删除下拉加载控件
@@ -43,61 +112,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)cl_removeFooterRefresh;
 
 /**
- 下拉刷新时调用的方法, 需要重载, 默认不实现任何东西
+ 删除刷新控件
  */
-- (void)cl_dropDownRefresh;
-
-/**
- 开始下拉刷新
- */
-- (void)cl_dropDownBeginRefresh;
-
-/**
- 结束下拉刷新
- */
-- (void)cl_dropDownEndRefresh;
-
-/**
- 上拉加载时调用的方法, 需要重载, 默认不实现任何东西
- */
-- (void)cl_pullUpRefresh;
-
-/**
- 开始上拉加载
- */
-- (void)cl_pullUpBeginRefresh;
-
-/**
- 结束上拉加载
- */
-- (void)cl_pullUpEndRefresh;
-
-/**
- 设置UICollectionView的代理与数据源
-
- @param delegate UICollectionViewDelegate
- @param dataSource UICollectionViewDataSource
- */
-- (void)cl_setCollectionViewDelegate:(_Nullable id <UICollectionViewDelegate>)delegate
-                          dataSource:(_Nullable id <UICollectionViewDataSource>)dataSource;
-
-/**
- 设置UICollectionView的拖拽代理与拖放代理
-
- @param dragDelegate UICollectionViewDragDelegate
- @param dropDelegate UICollectionViewDropDelegate
- */
-- (void)cl_setCollectionViewDragDelegate:(_Nullable id <UICollectionViewDragDelegate>)dragDelegate
-                            dropDelegate:(_Nullable id <UICollectionViewDropDelegate>)dropDelegate API_AVAILABLE(ios(11.0));
-
-/**
- 给UICollectionView注册类
-
- @param cellClass Class
- @param identifier NSString
- */
-- (void)cl_registerClass:(nullable Class)cellClass
-              identifier:(NSString *)identifier;
+- (void)cl_removeRefresh;
 
 @end
 NS_ASSUME_NONNULL_END

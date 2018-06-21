@@ -49,6 +49,9 @@
 #pragma mark - NSMutableDictionary+CLMutableDictionary
 #import "NSMutableDictionary+CLMutableDictionary.h"
 
+#pragma mark - NSNotificationCenter+CLNotificationCenter
+#import "NSNotificationCenter+CLNotificationCenter.h"
+
 #pragma mark - NSNumber+CLNumber
 #import "NSNumber+CLNumber.h"
 

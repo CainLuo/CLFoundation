@@ -305,7 +305,7 @@
         
                          self.cl_selectedLineLayer.frame = CGRectMake(self.cl_currentButton.frame.origin.x,
                                                                       self.frame.size.height - SELECTED_LINE_LAYER_HEIGHT,
-                                                                      self.frame.size.width / _cl_titleArray.count - _cl_buttonSpacing,
+                                                                      self.frame.size.width / self.cl_titleArray.count - self.cl_buttonSpacing,
                                                                       SELECTED_LINE_LAYER_HEIGHT);
                      }];
 }

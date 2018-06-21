@@ -42,26 +42,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
-
     [self.view addSubview:self.cl_tableView];
     [self cl_addRefresh];
-}
-
-- (UITableView *)cl_tableView {
-    
-    if (!_cl_tableView) {
-
-        _cl_tableView = [[UITableView alloc] initWithFrame:self.view.frame
-                                                     style:self.tableViewStyle];
-        
-        if (self.tableViewStyle == UITableViewStylePlain) {
-            
-            _cl_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        }
-    }
-
-    return _cl_tableView;
 }
 
 #pragma mark - 设置Delegate与DataSource
@@ -80,7 +62,14 @@
     self.cl_tableView.dropDelegate = dropDelegate;
 }
 
-#pragma mark - Refresh
+#pragma mark - 隐藏UITableView的ScrollIndicator
+- (void)cl_hiddenTableViewScrollIndicator {
+    
+    self.cl_tableView.showsVerticalScrollIndicator   = NO;
+    self.cl_tableView.showsHorizontalScrollIndicator = NO;
+}
+
+#pragma mark - MJRefresh相关
 - (void)cl_addRefresh {
     
     __weak typeof(self) weakSelf = self;
@@ -91,34 +80,53 @@
     
     self.cl_tableView.mj_header = header;
     
-    MJRefreshAutoFooter *refreshFooter = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+    MJRefreshBackNormalFooter *refreshFooter = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         
         [weakSelf cl_pullUpRefresh];
     }];
     
-    refreshFooter.automaticallyHidden = YES;
-    
     self.cl_tableView.mj_footer = refreshFooter;
 }
 
-- (void)cl_dropDownRefresh {}
-
-- (void)cl_pullUpRefresh {}
-
+#pragma mark - 下拉刷新相关
 - (void)cl_dropDownBeginRefresh {
     [self.cl_tableView.mj_header beginRefreshing];
 }
+
+- (void)cl_dropDownRefresh {}
 
 - (void)cl_dropDownEndRefresh {
     [self.cl_tableView.mj_header endRefreshing];
 }
 
+#pragma mark - 上拉刷新相关
 - (void)cl_pullUpBeginRefresh {
     [self.cl_tableView.mj_footer beginRefreshing];
 }
 
+- (void)cl_pullUpRefresh {}
+
 - (void)cl_pullUpEndRefresh {
     [self.cl_tableView.mj_footer endRefreshing];
+}
+
+- (void)cl_endTableViewRefreshWithType:(CLTableViewRefreshType)refreshType {
+    
+    if (refreshType == CLTableViewRefreshTypeDropDown) {
+        
+        [self cl_dropDownEndRefresh];
+    } else {
+        [self cl_pullUpEndRefresh];
+    }
+}
+
+#pragma mark - 移除MJRefresh
+- (void)cl_removeHeaderRefresh {
+    self.cl_tableView.mj_header = nil;
+}
+
+- (void)cl_removeFooterRefresh {
+    self.cl_tableView.mj_footer = nil;
 }
 
 - (void)cl_removeRefresh {
@@ -127,12 +135,21 @@
     self.cl_tableView.mj_footer = nil;
 }
 
-- (void)cl_removeHeaderRefresh {
-    self.cl_tableView.mj_header = nil;
-}
-
-- (void)cl_removeFooterRefresh {
-    self.cl_tableView.mj_footer = nil;
+#pragma mark - 懒加载
+- (UITableView *)cl_tableView {
+    
+    if (!_cl_tableView) {
+        
+        _cl_tableView = [[UITableView alloc] initWithFrame:self.view.frame
+                                                     style:self.tableViewStyle];
+        
+        if (self.tableViewStyle == UITableViewStylePlain) {
+            
+            _cl_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        }
+    }
+    
+    return _cl_tableView;
 }
 
 @end
