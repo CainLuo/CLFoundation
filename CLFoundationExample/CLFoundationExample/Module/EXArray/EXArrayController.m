@@ -36,7 +36,7 @@
     [self.ex_textViewString appendFormat:@"获取指定区间的数组: %@\n", [ex_safeArray cl_safeArrayWithRange:NSMakeRange(0, 10)]];
     [self.ex_textViewString appendFormat:@"获取指定索引的对象: %@\n", [ex_safeArray cl_safeObjectAtIndex:10]];
     [self.ex_textViewString appendFormat:@"获取指定Plist文件的数组: %@\n", [NSArray cl_getArrayWithPlistName:@"Array"]];
-    
+
     NSArray *ex_friendArray = @[@"A", @"B", @"C", @"E", @"F"];
     
     NSData *ex_arrayData = [NSPropertyListSerialization dataWithPropertyList:ex_friendArray
@@ -51,6 +51,10 @@
     [self.ex_textViewString appendFormat:@"获取长度为\"%ld\"NSData序列化数组: %@\n\n", ex_arrayData.length, ex_array];
     [self.ex_textViewString appendFormat:@"获取倒序排列的数组: %@\n", [ex_mutableArray cl_getReverseArray]];
     [self.ex_textViewString appendFormat:@"获取乱序排列的数组: %@\n", [ex_mutableArray cl_getDisorderArray]];
+    
+    NSString *ex_jsonString = [NSString cl_jsonStringWithObject:ex_friendArray];
+    
+    [self.ex_textViewString appendFormat:@"JSON %@ To Array: %@\n", ex_jsonString, [NSArray cl_getArrayWithJSONString:ex_jsonString]];
 }
 
 - (void)ex_mutableArray {
