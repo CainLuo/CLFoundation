@@ -7,6 +7,7 @@
 //
 
 #import "NSArray+CLArray.h"
+#import "NSString+CLString.h"
 
 @implementation NSArray (CLArray)
 
@@ -93,6 +94,23 @@
                                                      ofType:@"plist"];
         
     return [NSArray arrayWithContentsOfFile:path];
+}
+
++ (NSArray *)cl_getArrayWithJSONString:(NSString *)jsonString {
+    
+    if ([NSString cl_checkEmptyWithString:jsonString]) {
+        
+        return nil;
+    }
+    
+    NSData *cl_jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *cl_error;
+    
+    NSArray *cl_jsonArray = [NSJSONSerialization JSONObjectWithData:cl_jsonData
+                                                            options:NSJSONReadingMutableContainers
+                                                              error:&cl_error];
+    
+    return cl_jsonArray;
 }
 
 @end

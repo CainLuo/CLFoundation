@@ -58,4 +58,12 @@
  */
 + (NSArray *)cl_getArrayWithPlistName:(NSString *)name;
 
+/**
+ 根据给定的JSON String转成NSArray
+
+ @param jsonString NSString
+ @return NSArray
+ */
++ (NSArray *)cl_getArrayWithJSONString:(NSString *)jsonString;
+
 @end
