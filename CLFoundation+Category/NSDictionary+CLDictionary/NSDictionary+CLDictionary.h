@@ -27,6 +27,14 @@
 + (NSDictionary *)cl_dictionaryWithURLString:(NSString *)urlString;
 
 /**
+ 根据给定的JSON String转成NSDictionary
+ 
+ @param jsonString NSString
+ @return NSDictionary
+ */
++ (NSDictionary *)cl_dictionaryWithJSONString:(NSString *)jsonString;
+
+/**
  获取NSDictionary的所有排序完成的Keys
 
  @return NSArray

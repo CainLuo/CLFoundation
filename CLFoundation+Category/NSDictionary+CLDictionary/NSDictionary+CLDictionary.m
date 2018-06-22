@@ -67,6 +67,23 @@
     return [cl_queryDictionary copy];
 }
 
++ (NSDictionary *)cl_dictionaryWithJSONString:(NSString *)jsonString {
+    
+    if ([NSString cl_checkEmptyWithString:jsonString]) {
+        
+        return nil;
+    }
+    
+    NSData *cl_jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *cl_error;
+    
+    NSDictionary *cl_dictionary = [NSJSONSerialization JSONObjectWithData:cl_jsonData
+                                                                  options:NSJSONReadingMutableContainers
+                                                                    error:&cl_error];
+    
+    return cl_dictionary;
+}
+
 - (NSArray *)cl_getAllKeysSorted {
     return [[self allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
 }
