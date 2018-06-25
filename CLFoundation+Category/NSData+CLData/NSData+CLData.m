@@ -8,6 +8,7 @@
 
 #import "NSData+CLData.h"
 #import "NSString+CLString.h"
+#import <CommonCrypto/CommonCrypto.h>
 
 @implementation NSData (CLData)
 

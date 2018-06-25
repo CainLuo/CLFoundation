@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <CommonCrypto/CommonCrypto.h>
 
 typedef NS_ENUM(NSInteger, CLEncodedType) {
     
