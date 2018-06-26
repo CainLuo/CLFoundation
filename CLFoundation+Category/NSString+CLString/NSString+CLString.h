@@ -162,6 +162,21 @@
  */
 + (BOOL)cl_checkEmptyWithString:(NSString *)string;
 
+/**
+ 判断字符串是否为空
+
+ @return BOOL, YES为空, NO不为空
+ */
+- (BOOL)cl_checkStringEmpty;
+
+/**
+ 将NSData转换为十六进制字符串
+
+ @param data NSData
+ @return NSString
+ */
++ (NSString *)cl_hexStringWithData:(NSData *)data;
+
 #pragma mark - 字符串格式化
 /**
  返回过滤后的数字

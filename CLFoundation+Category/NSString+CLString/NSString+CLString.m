@@ -369,6 +369,39 @@ static char cl_base64EncodingTable[64] = {
     return NO;
 }
 
+- (BOOL)cl_checkStringEmpty {
+    
+    if (self == nil || self == NULL || [self isKindOfClass:[NSNull class]] || [self length] == 0 || [self isEqualToString: @"(null)"]) {
+        
+        return YES;
+    }
+    return NO;
+}
+
++ (NSString *)cl_hexStringWithData:(NSData *)data {
+    
+    if (!data) {
+        return @"";
+    }
+    
+    Byte *cl_dataByte = (Byte *)[data bytes];
+    
+    NSString *cl_formatHexString = @"";
+    
+    for (NSInteger i = 0; i < [data length]; i++) {
+        
+        NSString *cl_hexString = [NSString stringWithFormat:@"%x", cl_dataByte[i]&0xff];
+        
+        if([cl_hexString length] == 1)
+            
+            cl_formatHexString = [NSString stringWithFormat:@"%@0%@", cl_formatHexString, cl_hexString];
+        else
+            cl_formatHexString = [NSString stringWithFormat:@"%@%@", cl_formatHexString, cl_hexString];
+    }
+    
+    return cl_formatHexString;
+}
+
 #pragma mark - 字符串格式化
 + (NSString *)cl_getNumberWithString:(NSString *)string {
     
