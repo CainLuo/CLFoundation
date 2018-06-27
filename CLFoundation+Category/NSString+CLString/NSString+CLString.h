@@ -170,12 +170,52 @@
 - (BOOL)cl_checkStringEmpty;
 
 /**
- 将NSData转换为十六进制字符串
+ 十六进制字符串转二进制字符串
 
+ @param hexadecimal NSString
+ @return NSString
+ */
++ (NSString *)cl_formatBinaryWithHexadecimal:(NSString *)hexadecimal;
+
+/**
+ 将十进制转换成二进制字符串
+ 
+ @param decimal NSInteger
+ @return NSString
+ */
++ (NSString *)cl_formatBinaryWithDecimal:(NSInteger)decimal;
+
+/**
+ 二进制字符串转十六进制字符串
+ 
+ @param binary NSString
+ @return NSString
+ */
++ (NSString *)cl_formatHexadecimalWithBinary:(NSString *)binary;
+
+/**
+ 将二进制字符串转十进制字符串
+
+ @param binary NSString
+ @return NSString
+ */
++ (NSString *)cl_formatDecimalWithBinary:(NSString *)binary;
+
+/**
+ 将NSData转换为十六进制字符串
+ 
  @param data NSData
  @return NSString
  */
-+ (NSString *)cl_hexStringWithData:(NSData *)data;
++ (NSString *)cl_formatHexadecimalWithData:(NSData *)data;
+
+/**
+ 将十进制转换成十六进制字符串
+
+ @param decimal NSInteger
+ @return NSString
+ */
++ (NSString *)cl_formatHexadecimalWithDecimal:(NSInteger)decimal;
 
 #pragma mark - 字符串格式化
 /**

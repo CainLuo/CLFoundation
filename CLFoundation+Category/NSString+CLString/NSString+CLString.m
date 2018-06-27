@@ -378,7 +378,138 @@ static char cl_base64EncodingTable[64] = {
     return NO;
 }
 
-+ (NSString *)cl_hexStringWithData:(NSData *)data {
+#pragma mark - 进制字符串转换
++ (NSString *)cl_formatBinaryWithHexadecimal:(NSString *)hexadecimal {
+    
+    NSDictionary *cl_hexadecimalDictionary = @{@"0":@"0000",
+                                               @"1":@"0001",
+                                               @"2":@"0010",
+                                               @"3":@"0011",
+                                               @"4":@"0100",
+                                               @"5":@"0101",
+                                               @"6":@"0110",
+                                               @"7":@"0111",
+                                               @"8":@"1000",
+                                               @"9":@"1001",
+                                               @"A":@"1010",
+                                               @"B":@"1011",
+                                               @"C":@"1100",
+                                               @"D":@"1101",
+                                               @"E":@"1110",
+                                               @"F":@"1111"};
+
+    NSString *cl_binaryString = @"";
+    
+    for (NSInteger i = 0; i < hexadecimal.length; i++) {
+        
+        NSString *cl_hexadecimalKey   = [hexadecimal substringWithRange:NSMakeRange(i, 1)];
+        NSString *cl_hexadecimalValue = cl_hexadecimalDictionary[cl_hexadecimalKey];
+        
+        if (cl_hexadecimalValue) {
+            
+            cl_binaryString = [cl_binaryString stringByAppendingString:cl_hexadecimalValue];
+        }
+    }
+    return cl_binaryString;
+}
+
++ (NSString *)cl_formatBinaryWithDecimal:(NSInteger)decimal {
+    
+    NSString *cl_binaryString = @"";
+    
+    while (decimal) {
+        
+        NSString *cl_decimalString = [NSString stringWithFormat:@"%ld", decimal % 2];
+        
+        cl_binaryString = [cl_decimalString stringByAppendingString:cl_binaryString];
+        
+        if (decimal / 2 < 1) {
+            break;
+        }
+        
+        decimal = decimal / 2;
+    }
+    
+    if (cl_binaryString.length % 4 != 0) {
+        
+        NSMutableString *cl_mutableString = [[NSMutableString alloc] init];;
+        
+        for (NSInteger i = 0; i < 4 - cl_binaryString.length % 4; i++) {
+            
+            [cl_mutableString appendString:@"0"];
+        }
+        
+        cl_binaryString = [cl_mutableString stringByAppendingString:cl_binaryString];
+    }
+    
+    return cl_binaryString;
+}
+
++ (NSString *)cl_formatHexadecimalWithBinary:(NSString *)binary {
+    
+    NSDictionary *cl_hexadecimalDictionary = @{@"0000":@"0",
+                                               @"0001":@"1",
+                                               @"0010":@"2",
+                                               @"0011":@"3",
+                                               @"0100":@"4",
+                                               @"0101":@"5",
+                                               @"0110":@"6",
+                                               @"0111":@"7",
+                                               @"1000":@"8",
+                                               @"1001":@"9",
+                                               @"1010":@"A",
+                                               @"1011":@"B",
+                                               @"1100":@"C",
+                                               @"1101":@"D",
+                                               @"1110":@"E",
+                                               @"1111":@"F"};
+    
+    if (binary.length % 4 != 0) {
+        
+        NSMutableString *cl_mutableString = [[NSMutableString alloc] init];;
+        
+        for (NSInteger i = 0; i < 4 - binary.length % 4; i++) {
+            
+            [cl_mutableString appendString:@"0"];
+        }
+        
+        binary = [cl_mutableString stringByAppendingString:binary];
+    }
+    
+    NSString *cl_hexadecimalString = @"";
+    
+    for (NSInteger i = 0; i < binary.length; i += 4) {
+        
+        NSString *cl_hexadecimalKey = [binary substringWithRange:NSMakeRange(i, 4)];
+        NSString *cl_hexadecimalValue = cl_hexadecimalDictionary[cl_hexadecimalKey];
+        
+        if (cl_hexadecimalValue) {
+            
+            cl_hexadecimalString = [cl_hexadecimalString stringByAppendingString:cl_hexadecimalValue];
+        }
+    }
+    
+    return cl_hexadecimalString;
+}
+
++ (NSString *)cl_formatDecimalWithBinary:(NSString *)binary {
+    
+    NSInteger decimal = 0;
+    
+    for (NSInteger i = 0; i < binary.length; i++) {
+        
+        NSString *number = [binary substringWithRange:NSMakeRange(binary.length - i - 1, 1)];
+        
+        if ([number isEqualToString:@"1"]) {
+            
+            decimal += pow(2, i);
+        }
+    }
+    
+    return [NSString stringWithFormat:@"%ld", decimal];
+}
+
++ (NSString *)cl_formatHexadecimalWithData:(NSData *)data {
     
     if (!data) {
         return @"";
@@ -400,6 +531,53 @@ static char cl_base64EncodingTable[64] = {
     }
     
     return cl_formatHexString;
+}
+
++ (NSString *)cl_formatHexadecimalWithDecimal:(NSInteger)decimal {
+    
+    NSString *cl_hexadecimalString = @"";
+    
+    NSString *cl_complementString;
+    
+    for (NSInteger i = 0; i < 9; i++) {
+        
+        NSInteger cl_number = decimal % 16;
+        
+        decimal = decimal / 16;
+        
+        switch (cl_number) {
+                
+            case 10:
+                cl_complementString = @"A";
+                break;
+            case 11:
+                cl_complementString = @"B";
+                break;
+            case 12:
+                cl_complementString = @"C";
+                break;
+            case 13:
+                cl_complementString = @"D";
+                break;
+            case 14:
+                cl_complementString = @"E";
+                break;
+            case 15:
+                cl_complementString = @"F";
+                break;
+            default:
+                cl_complementString = [NSString stringWithFormat:@"%ld", cl_number];
+        }
+        
+        cl_hexadecimalString = [cl_complementString stringByAppendingString:cl_hexadecimalString];
+        
+        if (decimal == 0) {
+            
+            break;
+        }
+    }
+    
+    return cl_hexadecimalString;
 }
 
 #pragma mark - 字符串格式化
