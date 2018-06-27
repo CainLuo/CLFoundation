@@ -69,6 +69,13 @@
                                                                                                                   separator:@"-"]];
     [self.ex_textViewString appendFormat:@"格式化数值: %@\n\n", [NSString cl_stringUnitFormat:100000.0
                                                                                  unitString:@"万"]];
+    
+    [self.ex_textViewString appendFormat:@"将十六进制0xFFFFFF转换成二进制为: %@\n\n", [NSString cl_formatBinaryWithHexadecimal:@"0xFFFFFF"]];
+    [self.ex_textViewString appendFormat:@"将十进制100转换成二进制为: %@\n\n", [NSString cl_formatBinaryWithDecimal:3]];
+    [self.ex_textViewString appendFormat:@"将二进制100转换成十进制为: %@\n\n", [NSString cl_formatDecimalWithBinary:@"100"]];
+    [self.ex_textViewString appendFormat:@"将二进制01111转换成十六进制为: %@\n\n", [NSString cl_formatHexadecimalWithBinary:@"01111"]];
+    [self.ex_textViewString appendFormat:@"将NSData转换成十六进制为: %@\n\n", [NSString cl_formatHexadecimalWithData:[NSData data]]];
+    [self.ex_textViewString appendFormat:@"将十进制100转换成十六进制为: %@\n\n", [NSString cl_formatHexadecimalWithDecimal:100]];
 }
 
 #pragma mark - 计算字符串
