@@ -27,9 +27,14 @@
 		A4ACC4FE20342C0E00E756D1 /* EXDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4ACC4FD20342C0E00E756D1 /* EXDataController.m */; };
 		A4BA3137204BA00F002E0ED7 /* EXFileManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BA3136204BA00F002E0ED7 /* EXFileManagerController.m */; };
 		A4BA313C204CCD95002E0ED7 /* CLFoundationExample.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4BA313B204CCD95002E0ED7 /* CLFoundationExample.bundle */; };
+		BF3FC8E820E9AFE800320B10 /* EXLocaleController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3FC8E720E9AFE800320B10 /* EXLocaleController.m */; };
+		BF3FC8F720E9C34B00320B10 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF3FC8F920E9C34B00320B10 /* InfoPlist.strings */; };
+		BF3FC8FD20E9C52A00320B10 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF3FC8FF20E9C52A00320B10 /* Localizable.strings */; };
+		BF3FC90320E9C8C600320B10 /* EXLanguage.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF3FC90520E9C8C600320B10 /* EXLanguage.strings */; };
 		BF47C02E208D849F00FD5C78 /* EXNotificationCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF47C02D208D849F00FD5C78 /* EXNotificationCenterController.m */; };
 		BF84D60F20897A890061D29F /* CLSpeechSynthesizer.m in Sources */ = {isa = PBXBuildFile; fileRef = BF84D60E20897A890061D29F /* CLSpeechSynthesizer.m */; };
 		BF84D61320897C770061D29F /* EXSpeechController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF84D61220897C770061D29F /* EXSpeechController.m */; };
+		BFAD92C120E9AF01008691AE /* CLLocaleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAD92C020E9AF01008691AE /* CLLocaleManager.m */; };
 		BFAE1C7B20BFC2B1002B6230 /* NSObject+CLObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C4D20BFC2B1002B6230 /* NSObject+CLObject.m */; };
 		BFAE1C7C20BFC2B1002B6230 /* NSNotificationCenter+CLNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C5020BFC2B1002B6230 /* NSNotificationCenter+CLNotificationCenter.m */; };
 		BFAE1C7D20BFC2B1002B6230 /* NSAttributedString+CLAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE1C5220BFC2B1002B6230 /* NSAttributedString+CLAttributedString.m */; };
@@ -89,12 +94,23 @@
 		A4BA3135204BA00F002E0ED7 /* EXFileManagerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXFileManagerController.h; sourceTree = "<group>"; };
 		A4BA3136204BA00F002E0ED7 /* EXFileManagerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXFileManagerController.m; sourceTree = "<group>"; };
 		A4BA313B204CCD95002E0ED7 /* CLFoundationExample.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CLFoundationExample.bundle; sourceTree = "<group>"; };
+		BF3FC8E620E9AFE800320B10 /* EXLocaleController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXLocaleController.h; sourceTree = "<group>"; };
+		BF3FC8E720E9AFE800320B10 /* EXLocaleController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXLocaleController.m; sourceTree = "<group>"; };
+		BF3FC8E920E9BF4400320B10 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		BF3FC8F820E9C34B00320B10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BF3FC8FA20E9C34C00320B10 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		BF3FC8FE20E9C52A00320B10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BF3FC90020E9C52B00320B10 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		BF3FC90420E9C8C600320B10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/EXLanguage.strings; sourceTree = "<group>"; };
+		BF3FC90620E9C8C700320B10 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/EXLanguage.strings"; sourceTree = "<group>"; };
 		BF47C02C208D849F00FD5C78 /* EXNotificationCenterController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXNotificationCenterController.h; sourceTree = "<group>"; };
 		BF47C02D208D849F00FD5C78 /* EXNotificationCenterController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXNotificationCenterController.m; sourceTree = "<group>"; };
 		BF84D60D20897A890061D29F /* CLSpeechSynthesizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLSpeechSynthesizer.h; sourceTree = "<group>"; };
 		BF84D60E20897A890061D29F /* CLSpeechSynthesizer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLSpeechSynthesizer.m; sourceTree = "<group>"; };
 		BF84D61120897C770061D29F /* EXSpeechController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXSpeechController.h; sourceTree = "<group>"; };
 		BF84D61220897C770061D29F /* EXSpeechController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXSpeechController.m; sourceTree = "<group>"; };
+		BFAD92BF20E9AF01008691AE /* CLLocaleManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLLocaleManager.h; sourceTree = "<group>"; };
+		BFAD92C020E9AF01008691AE /* CLLocaleManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLLocaleManager.m; sourceTree = "<group>"; };
 		BFAE1C4C20BFC2B1002B6230 /* NSObject+CLObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CLObject.h"; sourceTree = "<group>"; };
 		BFAE1C4D20BFC2B1002B6230 /* NSObject+CLObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CLObject.m"; sourceTree = "<group>"; };
 		BFAE1C4F20BFC2B1002B6230 /* NSNotificationCenter+CLNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+CLNotificationCenter.h"; sourceTree = "<group>"; };
@@ -155,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				A48D73BE2034544C00378353 /* CLFoundation.h */,
+				BFAD92BE20E9AEED008691AE /* CLLocaleManager */,
 				BF84D60C20897A7F0061D29F /* CLSpeechSynthesizer */,
 			);
 			name = CLFoundation;
@@ -272,6 +289,9 @@
 				A4ACC4AA2034103600E756D1 /* Info.plist */,
 				A4ACC4A72034103600E756D1 /* LaunchScreen.storyboard */,
 				A4ACC4AB2034103600E756D1 /* main.m */,
+				BF3FC8F920E9C34B00320B10 /* InfoPlist.strings */,
+				BF3FC8FF20E9C52A00320B10 /* Localizable.strings */,
+				BF3FC90520E9C8C600320B10 /* EXLanguage.strings */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -286,6 +306,7 @@
 				A48D73A62034477E00378353 /* EXDate */,
 				A48D73DA2035560B00378353 /* EXDictionary */,
 				A4BA3134204B9FF1002E0ED7 /* EXFileManager */,
+				BF3FC8E520E9AFCE00320B10 /* EXLocale */,
 				BF47C02B208D841F00FD5C78 /* EXNotificationCenter */,
 				A4A8A4122042930800FA9EC5 /* EXNumber */,
 				A4A8A40A2040730200FA9EC5 /* EXObject */,
@@ -361,6 +382,15 @@
 			path = EXFileManager;
 			sourceTree = "<group>";
 		};
+		BF3FC8E520E9AFCE00320B10 /* EXLocale */ = {
+			isa = PBXGroup;
+			children = (
+				BF3FC8E620E9AFE800320B10 /* EXLocaleController.h */,
+				BF3FC8E720E9AFE800320B10 /* EXLocaleController.m */,
+			);
+			path = EXLocale;
+			sourceTree = "<group>";
+		};
 		BF47C02B208D841F00FD5C78 /* EXNotificationCenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,6 +416,15 @@
 				BF84D61220897C770061D29F /* EXSpeechController.m */,
 			);
 			path = EXSpeech;
+			sourceTree = "<group>";
+		};
+		BFAD92BE20E9AEED008691AE /* CLLocaleManager */ = {
+			isa = PBXGroup;
+			children = (
+				BFAD92BF20E9AF01008691AE /* CLLocaleManager.h */,
+				BFAD92C020E9AF01008691AE /* CLLocaleManager.m */,
+			);
+			path = CLLocaleManager;
 			sourceTree = "<group>";
 		};
 		BFAE1C4A20BFC2B1002B6230 /* CLFoundation+Category */ = {
@@ -609,6 +648,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = A4ACC4902034103600E756D1;
 			productRefGroup = A4ACC49A2034103600E756D1 /* Products */;
@@ -625,7 +665,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF3FC8FD20E9C52A00320B10 /* Localizable.strings in Resources */,
 				A4ACC4A92034103600E756D1 /* LaunchScreen.storyboard in Resources */,
+				BF3FC8F720E9C34B00320B10 /* InfoPlist.strings in Resources */,
+				BF3FC90320E9C8C600320B10 /* EXLanguage.strings in Resources */,
 				A4ACC4A62034103600E756D1 /* Assets.xcassets in Resources */,
 				A4BA313C204CCD95002E0ED7 /* CLFoundationExample.bundle in Resources */,
 			);
@@ -687,6 +730,7 @@
 				BFAE1C8920BFC2B1002B6230 /* NSData+CLData.m in Sources */,
 				A4ACC4F62034265700E756D1 /* EXBundleController.m in Sources */,
 				A48D73E12035AD3B00378353 /* EXStringController.m in Sources */,
+				BF3FC8E820E9AFE800320B10 /* EXLocaleController.m in Sources */,
 				A48D73E52035B2AE00378353 /* EXURLController.m in Sources */,
 				BFAE1C8420BFC2B1002B6230 /* NSMutableAttributedString+CLMutableAttributedString.m in Sources */,
 				A4A8A40D2040731700FA9EC5 /* EXObjectController.m in Sources */,
@@ -699,6 +743,7 @@
 				A48D73DD2035561B00378353 /* EXDictionaryController.m in Sources */,
 				BF84D61320897C770061D29F /* EXSpeechController.m in Sources */,
 				A4BA3137204BA00F002E0ED7 /* EXFileManagerController.m in Sources */,
+				BFAD92C120E9AF01008691AE /* CLLocaleManager.m in Sources */,
 				BFAE1C8820BFC2B1002B6230 /* NSMutableDictionary+CLMutableDictionary.m in Sources */,
 				BFAE1C8520BFC2B1002B6230 /* NSString+CLString.m in Sources */,
 				A4ACC4AC2034103600E756D1 /* main.m in Sources */,
@@ -728,8 +773,36 @@
 			isa = PBXVariantGroup;
 			children = (
 				A4ACC4A82034103600E756D1 /* Base */,
+				BF3FC8E920E9BF4400320B10 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		BF3FC8F920E9C34B00320B10 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF3FC8F820E9C34B00320B10 /* en */,
+				BF3FC8FA20E9C34C00320B10 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BF3FC8FF20E9C52A00320B10 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF3FC8FE20E9C52A00320B10 /* en */,
+				BF3FC90020E9C52B00320B10 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		BF3FC90520E9C8C600320B10 /* EXLanguage.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF3FC90420E9C8C600320B10 /* en */,
+				BF3FC90620E9C8C700320B10 /* zh-Hans */,
+			);
+			name = EXLanguage.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -739,6 +812,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -796,6 +870,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

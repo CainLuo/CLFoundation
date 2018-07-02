@@ -45,6 +45,8 @@
                                                 @"controller":@"EXNumberController"},
                                               @{@"title":@"EXFileManagerController",
                                                 @"controller":@"EXFileManagerController"},
+                                              @{@"title":@"EXLocaleController",
+                                                @"controller":@"EXLocaleController"},
                                               @{@"title":@"EXSpeechController",
                                                 @"controller":@"EXSpeechController"},
                                               @{@"title":@"EXNotificationCenterController",

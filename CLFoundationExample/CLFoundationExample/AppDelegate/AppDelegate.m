@@ -29,6 +29,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    if (![CLLocaleManager cl_getCurrentLocale]) {
+    
+        [CLLocaleManager cl_saveCurrentLocaleWithKey:@"zh-Hans"];
+    }
+    
     UINavigationController *ex_navigationController = [[UINavigationController alloc] initWithRootViewController:[EXRootController new]];
     
     ex_navigationController.navigationBar.tintColor = [UIColor whiteColor];

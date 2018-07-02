@@ -45,7 +45,7 @@
 + (NSString *)cl_getBundleIdentifier;
 
 /**
- 获取指定名字的Bundle
+ 获取指定名字的NSBundle路径
 
  @param name NSString
  @param type NSString
