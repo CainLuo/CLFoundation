@@ -419,7 +419,7 @@ static char cl_base64EncodingTable[64] = {
     
     while (decimal) {
         
-        NSString *cl_decimalString = [NSString stringWithFormat:@"%ld", decimal % 2];
+        NSString *cl_decimalString = [NSString stringWithFormat:@"%ld", (long)decimal % 2];
         
         cl_binaryString = [cl_decimalString stringByAppendingString:cl_binaryString];
         
@@ -506,7 +506,7 @@ static char cl_base64EncodingTable[64] = {
         }
     }
     
-    return [NSString stringWithFormat:@"%ld", decimal];
+    return [NSString stringWithFormat:@"%ld", (long)decimal];
 }
 
 + (NSString *)cl_formatHexadecimalWithData:(NSData *)data {
@@ -566,7 +566,7 @@ static char cl_base64EncodingTable[64] = {
                 cl_complementString = @"F";
                 break;
             default:
-                cl_complementString = [NSString stringWithFormat:@"%ld", cl_number];
+                cl_complementString = [NSString stringWithFormat:@"%ld", (long)cl_number];
         }
         
         cl_hexadecimalString = [cl_complementString stringByAppendingString:cl_hexadecimalString];
