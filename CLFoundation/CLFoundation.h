@@ -13,6 +13,9 @@
 //  Copyright © 2016年 Cain. All rights reserved.
 //
 
+#pragma mark - CLLocaleManager
+#import "CLLocaleManager.h"
+
 #pragma mark - CLSpeechSunthesizer
 #import "CLSpeechSynthesizer.h"
 
