@@ -29,7 +29,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    if (![CLLocaleManager cl_getCurrentLocale]) {
+    if (![CLLocaleManager cl_getCurrentSaveLocale]) {
     
         [CLLocaleManager cl_saveCurrentLocaleWithKey:@"zh-Hans"];
     }

@@ -47,7 +47,7 @@
                                                                                                   localeType:@"zh-Hans"
                                                                                                    tableName:@"EXLanguage"]];
     
-    if ([[CLLocaleManager cl_getCurrentLocale] isEqualToString:@"zh-Hans"]) {
+    if ([[CLLocaleManager cl_getCurrentSaveLocale] isEqualToString:@"zh-Hans"]) {
         
         [CLLocaleManager cl_saveCurrentLocaleWithKey:@"en"];
     } else {
