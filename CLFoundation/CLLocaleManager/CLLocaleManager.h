@@ -27,7 +27,7 @@
 /**
  获取当前语言环境
  */
-+ (NSString *)cl_getCurrentLocale;
++ (NSString *)cl_getCurrentSaveLocale;
 
 /**
  删除已保存的语言环境
@@ -63,6 +63,20 @@
  @return NSArray<NSString *>
  */
 + (NSArray<NSString *> *)cl_getAllSystemLocales;
+
+/**
+ 获取系统语言的代号, 比如: zh, en
+
+ @return NSString
+ */
++ (NSString *)cl_getSystemLanguageCode;
+
+/**
+ 获取系统语言当前显示的语言, 比如: 中文(中国), 中文(香港)
+
+ @return NSString
+ */
++ (NSString *)cl_getSystemShowLanguage;
 
 /**
  获取系统当前语言下的Key标签文字

@@ -32,7 +32,7 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-+ (NSString *)cl_getCurrentLocale {
++ (NSString *)cl_getCurrentSaveLocale {
     
     return [[NSUserDefaults standardUserDefaults] objectForKey:@"CLApplicationLocale"];
 }
@@ -62,6 +62,19 @@
 + (NSArray<NSString *> *)cl_getAllSystemLocales {
     
     return [NSLocale availableLocaleIdentifiers];
+}
+
++ (NSString *)cl_getSystemLanguageCode {
+    
+    return [[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode];
+}
+
++ (NSString *)cl_getSystemShowLanguage {
+    
+    NSString *cl_identifier = [[NSLocale currentLocale] localeIdentifier];
+    
+    return [[NSLocale currentLocale] displayNameForKey:NSLocaleIdentifier
+                                                 value:cl_identifier];
 }
 
 + (NSString *)cl_followSystemLocaleWithKey:(NSString *)key {
@@ -134,7 +147,7 @@
 + (NSString *)cl_customLocaleWithKey:(NSString *)key
                            tableName:(NSString *)tableName {
     
-    NSString *ex_localType = [CLLocaleManager cl_getCurrentLocale];
+    NSString *ex_localType = [CLLocaleManager cl_getCurrentSaveLocale];
     
     return [self cl_customLocaleWithKey:key
                              localeType:ex_localType
