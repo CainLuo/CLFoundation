@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CLFoundation"
-  s.version      = "1.8.0"
+  s.version      = "1.8.1"
   s.summary      = "CLFoundation of iOS"
   s.homepage     = "https://github.com/CainLuo/CLFoundation"
   s.license      = { :type => "MIT", :file => "LICENSE" }
