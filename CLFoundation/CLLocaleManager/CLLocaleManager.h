@@ -150,6 +150,14 @@
 
 #pragma mark - 自定义语言相关
 /**
+ 自定义多语言下的Key标签文字, 默认使用"Localizable"表
+
+ @param key NSString
+ @return NSString
+ */
++ (NSString *)cl_customLocaleWithKey:(NSString *)key;
+
+/**
  自定义多语言下的Key标签文字
 
  @param key NSString

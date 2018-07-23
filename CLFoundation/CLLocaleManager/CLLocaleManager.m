@@ -144,6 +144,12 @@
 }
 
 #pragma mark - 自定义语言相关
++ (NSString *)cl_customLocaleWithKey:(NSString *)key {
+    
+    return [self cl_customLocaleWithKey:key
+                              tableName:@"Localizable"];
+}
+
 + (NSString *)cl_customLocaleWithKey:(NSString *)key
                            tableName:(NSString *)tableName {
     
