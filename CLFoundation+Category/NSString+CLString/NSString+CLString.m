@@ -617,7 +617,7 @@ static char cl_base64EncodingTable[64] = {
 
 + (NSString *)cl_getSecrectStringWithPhoneNumber:(NSString *)phoneNumber {
     
-    if (![phoneNumber cl_checkPhoneNumber]) {
+    if ([self cl_checkEmptyWithString:phoneNumber] || (phoneNumber.length != 11)) {
         
         return nil;
     }
