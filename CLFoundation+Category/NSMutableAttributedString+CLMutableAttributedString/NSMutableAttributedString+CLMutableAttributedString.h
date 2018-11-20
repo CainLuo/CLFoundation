@@ -85,6 +85,16 @@
                                                  lineSpacing:(CGFloat)lineSpacing;
 
 /**
+ 给指定字符串设置NSMutableParagraphStyle
+
+ @param string NSString
+ @param paragraphStyle NSMutableParagraphStyle
+ @return NSMutableAttributedString
+ */
++ (NSMutableAttributedString *)cl_attributedStringWithString:(NSString *)string
+                                              paragraphStyle:(NSMutableParagraphStyle *)paragraphStyle;
+
+/**
  给指定富文本字符串设置行距
  
  @param attributedString NSAttributedString
@@ -94,6 +104,15 @@
 + (NSMutableAttributedString *)cl_attributedStringWithAttributedString:(NSAttributedString *)attributedString
                                                            lineSpacing:(CGFloat)lineSpacing;
 
+/**
+ 给指定NSAttributedString设置NSMutableAttributedString
+
+ @param attributedString NSAttributedString
+ @param paragraphStyle NSMutableParagraphStyle
+ @return NSMutableAttributedString
+ */
++ (NSMutableAttributedString *)cl_attributedStringWithAttributedString:(NSAttributedString *)attributedString
+                                                        paragraphStyle:(NSMutableParagraphStyle *)paragraphStyle;
 
 /**
  给指定字符串添加下划线

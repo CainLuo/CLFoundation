@@ -112,16 +112,23 @@
 + (NSMutableAttributedString *)cl_attributedStringWithString:(NSString *)string
                                                  lineSpacing:(CGFloat)lineSpacing {
     
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    
+    paragraphStyle.lineSpacing = lineSpacing;
+    
+    return [self cl_attributedStringWithString:string
+                                paragraphStyle:paragraphStyle];
+}
+
++ (NSMutableAttributedString *)cl_attributedStringWithString:(NSString *)string
+                                              paragraphStyle:(NSMutableParagraphStyle *)paragraphStyle {
+    
     if ([NSString cl_checkEmptyWithString:string]) {
         
         return nil;
     }
     
     NSMutableAttributedString *cl_attributedString = [[NSMutableAttributedString alloc] initWithString:string];
-    
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    
-    [paragraphStyle setLineSpacing:lineSpacing];
     
     [cl_attributedString addAttribute:NSParagraphStyleAttributeName
                                 value:paragraphStyle
@@ -133,16 +140,23 @@
 + (NSMutableAttributedString *)cl_attributedStringWithAttributedString:(NSAttributedString *)attributedString
                                                            lineSpacing:(CGFloat)lineSpacing {
     
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    
+    [paragraphStyle setLineSpacing:lineSpacing];
+
+    return [self cl_attributedStringWithAttributedString:attributedString
+                                          paragraphStyle:paragraphStyle];
+}
+
++ (NSMutableAttributedString *)cl_attributedStringWithAttributedString:(NSAttributedString *)attributedString
+                                                        paragraphStyle:(NSMutableParagraphStyle *)paragraphStyle {
+    
     if (attributedString.length <= 0) {
         
         return nil;
     }
-
+    
     NSMutableAttributedString *cl_attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:attributedString];
-    
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    
-    [paragraphStyle setLineSpacing:lineSpacing];
     
     [cl_attributedString addAttribute:NSParagraphStyleAttributeName
                                 value:paragraphStyle

@@ -66,7 +66,7 @@
                                                                                                                    subffixImage:[UIImage imageNamed:@"icon1"]];
 
     NSMutableAttributedString *cl_lineAttributedString = [NSMutableAttributedString cl_attributedStringWithString:@"设置字符串的行距\nHello Word"
-                                                                                                      lineSpacing:5];
+                                                                                                      lineSpacing:50];
 
 
     [cl_mutableAttributedString appendAttributedString:cl_prefixImageAttributedString];

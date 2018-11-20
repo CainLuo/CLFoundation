@@ -117,6 +117,7 @@
 
 - (void)ex_addConstraintsWithSuperView {
     
+    [self.view addSubview:self.ex_textView];
     [self.view addSubview:self.ex_scheduledTimerButton];
     [self.view addSubview:self.ex_timerButton];
     
