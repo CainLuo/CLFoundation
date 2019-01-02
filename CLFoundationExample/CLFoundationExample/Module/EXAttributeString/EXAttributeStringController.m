@@ -68,6 +68,14 @@
     NSMutableAttributedString *cl_lineAttributedString = [NSMutableAttributedString cl_attributedStringWithString:@"设置字符串的行距\nHello Word"
                                                                                                       lineSpacing:50];
 
+    NSMutableParagraphStyle *cl_paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    
+    cl_paragraphStyle.lineSpacing = [UIScreen cl_fitPlusScreen:20];
+    cl_paragraphStyle.alignment   = NSTextAlignmentCenter;
+
+    NSMutableAttributedString *cl_paragraphStyleAttributedString = [NSMutableAttributedString cl_attributedStringWithAttributedString:cl_lineAttributedString.copy
+                                                                                                                       paragraphStyle:cl_paragraphStyle];
+
 
     [cl_mutableAttributedString appendAttributedString:cl_prefixImageAttributedString];
     [cl_mutableAttributedString appendAttributedString:cl_enterString];
@@ -75,6 +83,7 @@
     [cl_mutableAttributedString appendAttributedString:cl_enterString];
     [cl_mutableAttributedString appendAttributedString:cl_enterString];
     [cl_mutableAttributedString appendAttributedString:cl_lineAttributedString];
+    [cl_mutableAttributedString appendAttributedString:cl_paragraphStyleAttributedString];
 
     return cl_mutableAttributedString;
 }

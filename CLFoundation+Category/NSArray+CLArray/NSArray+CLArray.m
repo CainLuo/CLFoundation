@@ -77,6 +77,47 @@
     }
 }
 
+- (NSArray *)cl_filterArrayWithKey:(NSString *)key {
+    
+    NSString *cl_string = [NSString stringWithFormat:@"SELF CONTAINS %@", key];
+    
+    NSPredicate *cl_predicate = [NSPredicate predicateWithFormat:cl_string];
+    
+    return [self filteredArrayUsingPredicate:cl_predicate];
+}
+
+- (NSArray *)cl_filterArrayWithCondition:(NSString *)condition {
+    
+    NSPredicate *cl_predicate = [NSPredicate predicateWithFormat:condition];
+    
+    return [self filteredArrayUsingPredicate:cl_predicate];
+}
+
+- (NSArray *)cl_sortArrayWithKey:(NSString *)key
+                       ascending:(BOOL)ascending {
+    
+    NSSortDescriptor *cl_sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:key
+                                                                        ascending:ascending];
+    
+    return [self sortedArrayUsingDescriptors:@[cl_sortDescriptor]];
+}
+
+- (NSArray *)cl_sortArrayWithKeys:(NSArray<NSString *> *)keys
+                        ascending:(BOOL)ascending {
+    
+    NSMutableArray *cl_sortDescriptorArray = [NSMutableArray array];
+    
+    [keys enumerateObjectsUsingBlock:^(NSString *key, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        NSSortDescriptor *cl_sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:key
+                                                                            ascending:ascending];
+        
+        [cl_sortDescriptorArray addObject:cl_sortDescriptor];
+    }];
+    
+    return [self sortedArrayUsingDescriptors:cl_sortDescriptorArray];
+}
+
 - (NSUInteger)cl_safeIndexOfObject:(id)object {
     
     if (object == nil) {

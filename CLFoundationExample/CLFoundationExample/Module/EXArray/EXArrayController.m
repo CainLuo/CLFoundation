@@ -20,6 +20,8 @@
     [self ex_array];
     [self ex_mutableArray];
     
+    [self ex_filterArray];
+    
     [self ex_reloadTextView];
 }
 
@@ -86,6 +88,42 @@
     [ex_safeMutableArray cl_safeRemoveObjectsInRange:NSMakeRange(2, 1)];
     
     [self.ex_textViewString appendFormat:@"安全的区域为2~1的对象: %@\n", ex_safeMutableArray];
+}
+
+- (void)ex_filterArray {
+    
+    NSArray *ex_array = @[@{@"name":@"1",
+                            @"age":@"3",
+                            @"height":@"2",
+                            @"width":@"3"},
+                          @{@"name":@"1",
+                            @"age":@"3",
+                            @"width":@"3"},
+                          @{@"name":@"1",
+                            @"age":@"3",
+                            @"height":@"2"},
+                          @{@"name":@"1",
+                            @"age":@"3"},
+                          @{@"name":@"1",
+                            @"age":@"3"}];
+    
+//    NSArray *ex_array = @[@"a", @"b", @"c", @"d"];
+//    NSArray *ex_arrayOne = @[@"a"];
+//
+    
+    NSString *ex_string = [NSString stringWithFormat:@"SELF CONTAINS %@", @"height"];
+    
+    NSPredicate *ex_predicate = [NSPredicate predicateWithFormat:ex_string];
+
+    NSArray *ex_filterArray = [ex_array cl_filterArrayWithKey:@"width"];
+    
+//    NSArray *ex_filterArray = [ex_array cl_sortArrayWithKey:@"width"
+//                                                  ascending:NO];
+    
+//    NSArray *ex_filterArray = [ex_array cl_sortArrayWithKeys:@[@"height", @"width"]
+//                                                   ascending:NO];
+
+    NSLog(@"%@", ex_filterArray);
 }
 
 @end
