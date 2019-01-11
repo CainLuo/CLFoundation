@@ -11,6 +11,9 @@
 
 @interface NSAttributedString (CLAttributedString)
 
+- (CGFloat)cl_attributedStringHeightWithFont:(UIFont *)font
+                                       width:(CGFloat)width
+                                 lineSpacing:(CGFloat)lineSpacing;
 /**
  根据富文本的宽度返回文字的高度
  

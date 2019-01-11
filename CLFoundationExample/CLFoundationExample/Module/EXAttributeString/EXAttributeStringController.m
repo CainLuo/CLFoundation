@@ -22,7 +22,7 @@
     [cl_mutableAttributedString appendAttributedString:[self ex_textViewAttributedTextWithString]];
     [cl_mutableAttributedString appendAttributedString:[self ex_textViewMutableAttributedTextWithString]];
 
-    self.ex_textView.attributedText = cl_mutableAttributedString;
+    self.ex_textView.attributedText  = cl_mutableAttributedString;
 }
 
 - (NSMutableAttributedString *)ex_textViewAttributedTextWithString {
@@ -87,4 +87,5 @@
 
     return cl_mutableAttributedString;
 }
+
 @end

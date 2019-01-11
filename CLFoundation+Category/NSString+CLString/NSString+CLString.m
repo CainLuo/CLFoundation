@@ -27,10 +27,27 @@ static char cl_base64EncodingTable[64] = {
 @implementation NSString (CLString)
 
 #pragma mark - 字符串计算
-- (CGFloat)cl_heightWithFontSize:(CGFloat)fontSize
+- (CGFloat)cl_stringLineWithFont:(UIFont *)font
                            width:(CGFloat)width {
     
-    NSDictionary *attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:fontSize]};
+    if (!self.length) {
+        return 0;
+    }
+    
+    NSString *cl_rangeString = [self substringWithRange:NSMakeRange(0, 1)];
+    
+    CGFloat cl_stringH = [self cl_heightWithFont:font
+                                           width:width];
+    CGFloat cl_testString = [cl_rangeString cl_heightWithFont:font
+                                                        width:width];
+    
+    return cl_stringH / cl_testString;
+}
+
+- (CGFloat)cl_heightWithFont:(UIFont *)font
+                       width:(CGFloat)width {
+    
+    NSDictionary *attributes = @{NSFontAttributeName:font};
     
     return  [self boundingRectWithSize:CGSizeMake(width, 0) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
                             attributes:attributes

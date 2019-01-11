@@ -18,16 +18,24 @@
 @interface NSString (CLString)
 
 #pragma mark - 字符串计算
-
 /**
- 根据条件计算文字的高度
+ 计算字符串的行数
 
- @param fontSize CGFloat
+ @param font UIFont
  @param width CGFloat
  @return CGFloat
  */
-- (CGFloat)cl_heightWithFontSize:(CGFloat)fontSize
+- (CGFloat)cl_stringLineWithFont:(UIFont *)font
                            width:(CGFloat)width;
+/**
+ 根据条件计算文字的高度
+
+ @param font UIFont
+ @param width CGFloat
+ @return CGFloat
+ */
+- (CGFloat)cl_heightWithFont:(UIFont *)font
+                       width:(CGFloat)width;
 
 /**
  获取指定字符串的高度

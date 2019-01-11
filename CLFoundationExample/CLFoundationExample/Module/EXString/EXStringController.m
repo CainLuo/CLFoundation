@@ -84,8 +84,8 @@
     NSString *ex_baseString = @"Hello Word";
     
     [self.ex_textViewString appendString:@"\n----------字体相关----------\n"];
-    [self.ex_textViewString appendFormat:@"获取指定\"%@\"字号的高度: %f\n", ex_baseString, [ex_baseString cl_heightWithFontSize:20
-                                                                                                                       width:ex_baseString.length]];
+    [self.ex_textViewString appendFormat:@"获取指定\"%@\"字号的高度: %f\n", ex_baseString, [ex_baseString cl_heightWithFont:[UIFont cl_fitSystemFontOfSize:20]
+                                                                                                                width:ex_baseString.length]];
     
     [self.ex_textViewString appendFormat:@"计算30字号的字符串\"%@\"的Size: %@\n", ex_baseString, NSStringFromCGSize([NSString cl_measureStringSizeWithString:ex_baseString
                                                                                                                                                      font:[UIFont systemFontOfSize:30]])];
