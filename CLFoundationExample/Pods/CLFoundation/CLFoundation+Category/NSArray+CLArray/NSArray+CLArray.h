@@ -43,6 +43,42 @@
 - (NSArray *)cl_safeArrayWithRange:(NSRange)range;
 
 /**
+ 输入指定的筛选条件获取对应的数据
+ 
+ @param key NSString
+ @return NSArray
+ */
+- (NSArray *)cl_filterArrayWithKey:(NSString *)key;
+
+/**
+ 输入指定的筛选条件获取对应的数据
+
+ @param condition NSString, 比如: SELF CONTAINS height
+ @return NSArray
+ */
+- (NSArray *)cl_filterArrayWithCondition:(NSString *)condition;
+
+/**
+ 根据指定的Key排序
+
+ @param key NSString
+ @param ascending BOOL
+ @return NSArray
+ */
+- (NSArray *)cl_sortArrayWithKey:(NSString *)key
+                       ascending:(BOOL)ascending;
+
+/**
+ 根据指定的Keys排序
+
+ @param keys NSArray<NSString *>
+ @param ascending BOOL
+ @return NSArray
+ */
+- (NSArray *)cl_sortArrayWithKeys:(NSArray<NSString *> *)keys
+                        ascending:(BOOL)ascending;
+
+/**
  根据对象返回对应的索引
 
  @param object 对象
@@ -57,5 +93,13 @@
  @return NSArray
  */
 + (NSArray *)cl_getArrayWithPlistName:(NSString *)name;
+
+/**
+ 根据给定的JSON String转成NSArray
+
+ @param jsonString NSString
+ @return NSArray
+ */
++ (NSArray *)cl_getArrayWithJSONString:(NSString *)jsonString;
 
 @end

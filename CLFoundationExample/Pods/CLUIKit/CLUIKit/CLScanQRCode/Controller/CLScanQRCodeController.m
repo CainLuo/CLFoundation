@@ -158,6 +158,11 @@ didOutputMetadataObjects:(NSArray *)metadataObjects
     
     if ([metadataObjects count] > 0) {
         
+        if (self.cl_autoStopCaptureSessionRunning) {
+            
+            [self cl_stopCaptureSessionRunning];
+        }
+
         AVMetadataMachineReadableCodeObject * metadataObject = [metadataObjects objectAtIndex:0];
         
         if (self.cl_scanQRCodeGetMetadataObjectsBlock) {
@@ -176,11 +181,6 @@ didOutputMetadataObjects:(NSArray *)metadataObjects
         if ([self.cl_scanQRCodeControllerDelegate respondsToSelector:@selector(cl_scanQRCodeGetMetadataStringValue:)]) {
             
             [self.cl_scanQRCodeControllerDelegate cl_scanQRCodeGetMetadataStringValue:metadataObject.stringValue];
-        }
-        
-        if (self.cl_autoStopCaptureSessionRunning) {
-         
-            [self cl_stopCaptureSessionRunning];
         }
     }
 }

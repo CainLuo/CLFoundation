@@ -32,6 +32,15 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
+    [self cl_addConstraintsWithSuperView];
+}
+
+- (void)cl_addConstraintsWithSuperView {
+    
+    if (!self.imageView.image) {
+        return;
+    }
+    
     if (CGSizeEqualToSize(CGSizeZero, self.cl_imageSize)) {
         
         [self.imageView sizeToFit];

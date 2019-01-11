@@ -24,6 +24,13 @@
 + (NSString *)cl_getBundleDisplayName;
 
 /**
+ 获取Bundle的Scheme
+
+ @return NSString
+ */
++ (NSString *)cl_getBundleScheme;
+
+/**
  获取App版本号
 
  @return NSString
@@ -45,7 +52,7 @@
 + (NSString *)cl_getBundleIdentifier;
 
 /**
- 获取指定名字的NSBundle路径
+ 获取指定名字的Bundle
 
  @param name NSString
  @param type NSString

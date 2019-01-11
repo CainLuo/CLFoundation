@@ -13,7 +13,6 @@
 //
 
 #import "CLTableViewController.h"
-
 #import "MJRefresh.h"
 
 @interface CLTableViewController ()
@@ -21,6 +20,9 @@
 @property (nonatomic, assign) UITableViewStyle tableViewStyle;
 
 @property (nonatomic, strong, readwrite) UITableView *cl_tableView;
+
+@property (nonatomic, strong) MJRefreshNormalHeader     *cl_refreshHeader;
+@property (nonatomic, strong) MJRefreshBackNormalFooter *cl_refreshFooter;
 
 @end
 
@@ -72,20 +74,35 @@
 #pragma mark - MJRefresh相关
 - (void)cl_addRefresh {
     
+    self.cl_tableView.mj_header = self.cl_refreshHeader;
+    self.cl_tableView.mj_footer = self.cl_refreshFooter;
+}
+
+- (MJRefreshNormalHeader *)cl_refreshHeader {
     __weak typeof(self) weakSelf = self;
     
-    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [weakSelf cl_dropDownRefresh];
-    }];
+    if (!_cl_refreshHeader) {
     
-    self.cl_tableView.mj_header = header;
+        _cl_refreshHeader = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            [weakSelf cl_dropDownRefresh];
+        }];
+    }
     
-    MJRefreshBackNormalFooter *refreshFooter = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+    return _cl_refreshHeader;
+}
+
+- (MJRefreshBackNormalFooter *)cl_refreshFooter {
+    
+    __weak typeof(self) weakSelf = self;
+
+    if (!_cl_refreshFooter) {
         
-        [weakSelf cl_pullUpRefresh];
-    }];
+        _cl_refreshFooter = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+            [weakSelf cl_pullUpRefresh];
+        }];
+    }
     
-    self.cl_tableView.mj_footer = refreshFooter;
+    return _cl_refreshFooter;
 }
 
 #pragma mark - 下拉刷新相关
@@ -133,6 +150,48 @@
     
     self.cl_tableView.mj_header = nil;
     self.cl_tableView.mj_footer = nil;
+}
+
+/**
+ 隐藏MJRefreshHeader的StateLabel与TimeLabel
+ */
+- (void)cl_hiddenRefreshStateOrLastTimeLabel {
+    
+    [self cl_hiddenRefreshStateLabel];
+    [self cl_hiddenHeaderRefreshLastTimeLabel];
+}
+
+/**
+ 隐藏MJRefreshHeader与MJRefreshFooter的StateLabel
+ */
+- (void)cl_hiddenRefreshStateLabel {
+    
+    [self cl_hiddenHeaderRefreshStateLabel];
+    [self cl_hiddenFooterRefreshStateLabel];
+}
+
+/**
+ 隐藏MJRefreshHeader的StateLabel
+ */
+- (void)cl_hiddenHeaderRefreshStateLabel {
+    
+    self.cl_refreshHeader.stateLabel.hidden = YES;
+}
+
+/**
+ 隐藏MJRefreshFooter的StateLabel
+ */
+- (void)cl_hiddenFooterRefreshStateLabel {
+    
+    self.cl_refreshFooter.stateLabel.hidden = YES;
+}
+
+/**
+ 隐藏MJRefreshHeader的LastTimeLabel
+ */
+- (void)cl_hiddenHeaderRefreshLastTimeLabel {
+    
+    self.cl_refreshHeader.lastUpdatedTimeLabel.hidden = YES;
 }
 
 #pragma mark - 懒加载

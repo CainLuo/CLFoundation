@@ -12,6 +12,24 @@
 
 @implementation NSAttributedString (CLAttributedString)
 
+- (CGFloat)cl_attributedStringHeightWithFont:(UIFont *)font
+                                       width:(CGFloat)width
+                                 lineSpacing:(CGFloat)lineSpacing {
+    
+    CGFloat cl_stringH = [self.string cl_heightWithFont:font
+                                                  width:width];
+    CGFloat cl_stringLine = [self.string cl_stringLineWithFont:font
+                                                         width:width];
+    CGFloat cl_stringHeight = cl_stringH;
+    
+    if (lineSpacing > 0) {
+        
+        cl_stringHeight = cl_stringH + (lineSpacing * (cl_stringLine - 1));
+    }
+    
+    return cl_stringHeight;
+}
+
 - (CGFloat)cl_attributedStringHeightWithContainWidth:(CGFloat)width {
     
     NSInteger total_height = 0;

@@ -120,59 +120,68 @@
 - (NSData *)cl_encryptedDataWithAESKey:(NSString *)key
                            encryptData:(NSData *)encryptData {
     
-    NSData *cl_keyData = [key dataUsingEncoding:NSUTF8StringEncoding];
-    
-    size_t cl_dataMoved;
-    NSMutableData *cl_encryptedData = [NSMutableData dataWithLength:self.length + kCCBlockSizeAES128];
-    
-    CCCryptorStatus cl_cryptorStatus = CCCrypt(kCCEncrypt,
-                                               kCCAlgorithmAES128,
-                                               kCCOptionPKCS7Padding,
-                                               cl_keyData.bytes,
-                                               cl_keyData.length,
-                                               encryptData.bytes,
-                                               self.bytes,
-                                               self.length,
-                                               cl_encryptedData.mutableBytes,
-                                               cl_encryptedData.length,
-                                               &cl_dataMoved);
-    
-    if (cl_cryptorStatus == kCCSuccess) {
-        
-        cl_encryptedData.length = cl_dataMoved;
-        
-        return cl_encryptedData;
-    }
-    
-    return nil;
+    return [self cl_formatAES128DataWithOperation:kCCEncrypt
+                                          options:kCCOptionPKCS7Padding
+                                              key:key
+                                             data:encryptData];
 }
 
 - (NSData *)cl_decryptedDataWithAESKey:(NSString *)key
                            decryptData:(NSData *)decryptData {
     
+    return [self cl_formatAES128DataWithOperation:kCCDecrypt
+                                          options:kCCOptionPKCS7Padding
+                                              key:key
+                                             data:decryptData];
+}
+
+- (NSData *)cl_encryptedECBDataWithAESKey:(NSString *)key
+                              encryptData:(NSData *)encryptData {
+    
+    return [self cl_formatAES128DataWithOperation:kCCEncrypt
+                                          options:kCCOptionPKCS7Padding|kCCOptionECBMode
+                                              key:key
+                                             data:encryptData];
+}
+
+- (NSData *)cl_decryptedECBDataWithAESKey:(NSString *)key
+                              decryptData:(NSData *)decryptData {
+    
+    return [self cl_formatAES128DataWithOperation:kCCDecrypt
+                                          options:kCCOptionPKCS7Padding|kCCOptionECBMode
+                                              key:key
+                                             data:decryptData];
+}
+
+#pragma mark - AES通用加密/解密私有方法, 私有
+- (NSData *)cl_formatAES128DataWithOperation:(CCOperation)operation
+                                     options:(CCOptions)options
+                                         key:(NSString *)key
+                                        data:(NSData *)data {
+    
     NSData *cl_keyData = [key dataUsingEncoding:NSUTF8StringEncoding];
     
     size_t cl_dataMoved;
     
-    NSMutableData *cl_decryptedData = [NSMutableData dataWithLength:self.length + kCCBlockSizeAES128];
+    NSMutableData *cl_mutableData = [NSMutableData dataWithLength:self.length + kCCBlockSizeAES128];
     
-    CCCryptorStatus cl_cryptorStatus = CCCrypt(kCCDecrypt,
+    CCCryptorStatus cl_cryptorStatus = CCCrypt(operation,
                                                kCCAlgorithmAES128,
-                                               kCCOptionPKCS7Padding,
+                                               options,
                                                cl_keyData.bytes,
                                                cl_keyData.length,
-                                               decryptData.bytes,
+                                               data.bytes,
                                                self.bytes,
                                                self.length,
-                                               cl_decryptedData.mutableBytes,
-                                               cl_decryptedData.length,
+                                               cl_mutableData.mutableBytes,
+                                               cl_mutableData.length,
                                                &cl_dataMoved);
     
     if (cl_cryptorStatus == kCCSuccess) {
         
-        cl_decryptedData.length = cl_dataMoved;
+        cl_mutableData.length = cl_dataMoved;
         
-        return cl_decryptedData;
+        return cl_mutableData;
     }
     
     return nil;
@@ -182,64 +191,74 @@
 - (NSData *)cl_encryptedDataWith3DESKey:(NSString *)key
                             encryptData:(NSData *)encryptData {
     
+    return [self cl_format3DESDataWithOperation:kCCEncrypt
+                                        options:kCCOptionPKCS7Padding
+                                            key:key
+                                           data:encryptData];
+}
+
+- (NSData *)cl_decryptedDataWith3DESKey:(NSString *)key
+                            decryptData:(NSData *)decryptData {
+    
+    return [self cl_format3DESDataWithOperation:kCCDecrypt
+                                        options:kCCOptionPKCS7Padding
+                                            key:key
+                                           data:decryptData];
+}
+
+- (NSData *)cl_encryptedECBDataWith3DESKey:(NSString *)key
+                               encryptData:(NSData *)encryptData {
+    
+    return [self cl_format3DESDataWithOperation:kCCEncrypt
+                                        options:kCCOptionPKCS7Padding|kCCOptionECBMode
+                                            key:key
+                                           data:encryptData];
+}
+
+- (NSData *)cl_decryptedECBDataWith3DESKey:(NSString *)key
+                               decryptData:(NSData *)decryptData {
+    
+    return [self cl_format3DESDataWithOperation:kCCDecrypt
+                                        options:kCCOptionPKCS7Padding|kCCOptionECBMode
+                                            key:key
+                                           data:decryptData];
+}
+
+#pragma mark - 3DES加密/解密通用方法, 私有
+- (NSData *)cl_format3DESDataWithOperation:(CCOperation)operation
+                                   options:(CCOptions)options
+                                       key:(NSString *)key
+                                      data:(NSData *)data {
+    
     NSData *cl_keyData = [key dataUsingEncoding:NSUTF8StringEncoding];
     
     size_t cl_dataMoved;
-    NSMutableData *cl_encryptedData = [NSMutableData dataWithLength:self.length + kCCBlockSize3DES];
     
-    CCCryptorStatus cl_cryptorStatus = CCCrypt(kCCEncrypt,
+    NSMutableData *cl_mutableData = [NSMutableData dataWithLength:self.length + kCCBlockSize3DES];
+    
+    CCCryptorStatus cl_cryptorStatus = CCCrypt(operation,
                                                kCCAlgorithm3DES,
-                                               kCCOptionPKCS7Padding,
+                                               options,
                                                cl_keyData.bytes,
-                                               cl_keyData.length,
-                                               encryptData.bytes,
+                                               kCCKeySize3DES,
+                                               data.bytes,
                                                self.bytes,
                                                self.length,
-                                               cl_encryptedData.mutableBytes,
-                                               cl_encryptedData.length,
+                                               cl_mutableData.mutableBytes,
+                                               cl_mutableData.length,
                                                &cl_dataMoved);
     
     if (cl_cryptorStatus == kCCSuccess) {
         
-        cl_encryptedData.length = cl_dataMoved;
+        cl_mutableData.length = cl_dataMoved;
         
-        return cl_encryptedData;
+        return cl_mutableData;
     }
     
     return nil;
 }
 
-- (NSData *)cl_decryptedDataWith3DEKey:(NSString *)key
-                           decryptData:(NSData *)decryptData {
-    
-    NSData *cl_keyData = [key dataUsingEncoding:NSUTF8StringEncoding];
-    
-    size_t cl_dataMoved;
-    
-    NSMutableData *cl_decryptedData = [NSMutableData dataWithLength:self.length + kCCBlockSize3DES];
-    
-    CCCryptorStatus cl_cryptorStatus = CCCrypt(kCCDecrypt,
-                                               kCCAlgorithm3DES,
-                                               kCCOptionPKCS7Padding,
-                                               cl_keyData.bytes,
-                                               cl_keyData.length,
-                                               decryptData.bytes,
-                                               self.bytes,
-                                               self.length,
-                                               cl_decryptedData.mutableBytes,
-                                               cl_decryptedData.length,
-                                               &cl_dataMoved);
-    
-    if (cl_cryptorStatus == kCCSuccess) {
-        
-        cl_decryptedData.length = cl_dataMoved;
-        
-        return cl_decryptedData;
-    }
-    
-    return nil;
-}
-
+#pragma mark - MD加密
 - (NSString *)cl_encryptredMD2String {
     
     unsigned char cl_result[CC_MD2_DIGEST_LENGTH];

@@ -56,7 +56,7 @@ typedef NS_ENUM(NSInteger, CLEncodedType) {
 
 #pragma mark - AES加密/解密
 /**
- 利用AES加密NSData
+ 加密AES 128 CBC数据
 
  @param key NSString
  @param encryptData NSData
@@ -66,7 +66,7 @@ typedef NS_ENUM(NSInteger, CLEncodedType) {
                            encryptData:(NSData *)encryptData;
 
 /**
- 利用AES解密NSData
+ 解密AES 128 CBC数据
 
  @param key NSString
  @param decryptData NSData
@@ -75,9 +75,29 @@ typedef NS_ENUM(NSInteger, CLEncodedType) {
 - (NSData *)cl_decryptedDataWithAESKey:(NSString *)key
                            decryptData:(NSData *)decryptData;
 
+/**
+ 加密AES 128 ECB数据
+
+ @param key NSString
+ @param encryptData NSData
+ @return NSData
+ */
+- (NSData *)cl_encryptedECBDataWithAESKey:(NSString *)key
+                              encryptData:(NSData *)encryptData;
+
+/**
+ 解密ARS 128 ECB数据
+
+ @param key NSString
+ @param decryptData NSData
+ @return NSData
+ */
+- (NSData *)cl_decryptedECBDataWithAESKey:(NSString *)key
+                              decryptData:(NSData *)decryptData;
+
 #pragma mark - 3DES加密/解密
 /**
- 利用3DES加密NSData
+ 加密3DES数据
  
  @param key NSString
  @param encryptData NSData
@@ -87,14 +107,34 @@ typedef NS_ENUM(NSInteger, CLEncodedType) {
                             encryptData:(NSData *)encryptData;
 
 /**
- 利用3DES解密NSData
- 
+ 解密3DES数据
+
  @param key NSString
  @param decryptData NSData
  @return NSData
  */
-- (NSData *)cl_decryptedDataWith3DEKey:(NSString *)key
-                           decryptData:(NSData *)decryptData;
+- (NSData *)cl_decryptedDataWith3DESKey:(NSString *)key
+                            decryptData:(NSData *)decryptData;
+
+/**
+ 加密3DES ECB数据
+
+ @param key NSString
+ @param encryptData NSData
+ @return NSData
+ */
+- (NSData *)cl_encryptedECBDataWith3DESKey:(NSString *)key
+                               encryptData:(NSData *)encryptData;
+
+/**
+ 解密3DES ECB数据
+
+ @param key NSString
+ @param decryptData NSData
+ @return NSData
+ */
+- (NSData *)cl_decryptedECBDataWith3DESKey:(NSString *)key
+                               decryptData:(NSData *)decryptData;
 
 #pragma mark - MD加密
 /**

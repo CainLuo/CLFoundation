@@ -15,21 +15,29 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-typedef NS_ENUM(NSInteger, CLViewControllerStyle) {
+typedef NS_ENUM(NSInteger, CLViewControllerType) {
     
-    CLMainViewController = 0, // Default
-    CLChildViewController
+    CLViewControllerTypeMain = 0, // Default
+    CLViewControllerTypeChild
 };
 
 @interface CLViewController : UIViewController
 
 /**
- 初始化CLViewController, 默认为CLMainViewController
+ 初始化CLViewController, 默认为CLViewControllerTypeMain
 
- @param style CLViewControllerStyle
+ @param type CLViewControllerStyle
  @return self
  */
-- (instancetype)initCLViewControllerWith:(CLViewControllerStyle)style;
+- (instancetype)initViewControllerWithType:(CLViewControllerType)type;
+
+/**
+ 初始化CLViewController, 并输入指定的UIViewControllerTransitioningDelegate代理
+
+ @param delegate id<UIViewControllerTransitioningDelegate>
+ @return CLViewController
+ */
+- (instancetype)initViewControllerWithTransitioningDelegate:(id<UIViewControllerTransitioningDelegate>)delegate;
 
 @end
 NS_ASSUME_NONNULL_END

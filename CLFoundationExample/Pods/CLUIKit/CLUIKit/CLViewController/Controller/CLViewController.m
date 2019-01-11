@@ -20,16 +20,28 @@
 
 @implementation CLViewController
 
-- (instancetype)initCLViewControllerWith:(CLViewControllerStyle)style {
+- (instancetype)initViewControllerWithType:(CLViewControllerType)type {
     
     self = [super init];
     
     if (self) {
         
-        if (style == CLChildViewController) {
+        if (type == CLViewControllerTypeChild) {
             
             self.hidesBottomBarWhenPushed = YES;
         }
+    }
+    
+    return self;
+}
+
+- (instancetype)initViewControllerWithTransitioningDelegate:(id<UIViewControllerTransitioningDelegate>)delegate {
+    
+    self = [super init];
+    
+    if (self) {
+        
+        self.transitioningDelegate = delegate;
     }
     
     return self;

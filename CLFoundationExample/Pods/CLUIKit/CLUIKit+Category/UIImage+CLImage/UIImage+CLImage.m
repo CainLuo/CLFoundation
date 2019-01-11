@@ -117,19 +117,15 @@
 #pragma mark - 截取指定视图大小的截图
 + (UIImage *)cl_getImageForView:(UIView *)view {
     
-    UIImage *__block cl_image = nil;
+    UIImage *cl_image = nil;
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-
-        UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 0.0);
-        
-        [view.layer renderInContext:UIGraphicsGetCurrentContext()];
-        
-        cl_image = UIGraphicsGetImageFromCurrentImageContext();
-        
-        UIGraphicsEndImageContext();
-    });
+    UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 0.0);
     
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    cl_image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
 
     return cl_image;
 }

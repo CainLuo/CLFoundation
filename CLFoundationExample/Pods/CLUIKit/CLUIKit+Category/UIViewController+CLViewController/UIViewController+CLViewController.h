@@ -31,6 +31,11 @@ typedef void(^CLAlertControlAction)(UIAlertAction *action, NSUInteger index);
 @interface UIViewController (CLViewController) <CLNavigationControllerBackItemProtocol>
 
 /**
+ 设置Modal转场动画时的UIViewController高度
+ */
+@property (assign, nonatomic) CGFloat cl_presentationViewHeight;
+
+/**
  检测UIViewController的UINavigationController返回事件
  
  @return BOOL
@@ -38,18 +43,25 @@ typedef void(^CLAlertControlAction)(UIAlertAction *action, NSUInteger index);
 - (BOOL)cl_navigationShouldPopOnBackButton;
 
 /**
- 设置NavigationBar的Translucent, 默认为YES, 如果为NO, 那么视图的Top会紧挨UINavigationBar的底部, 但前提automaticallyAdjustsScrollViewInsets要为YES
+ 设置UINavigationBar是否透明
  
  @param bools BOOL
  */
 - (void)cl_setNavigationBarTranslucentWithBOOL:(BOOL)bools;
 
 /**
- 设置TabBar的Translucent, 默认为YES, 如果为NO, 那么视图的Bottom会和屏幕底部紧挨, 但前提automaticallyAdjustsScrollViewInsets要为YES
+ 设置UITabBar是否透明
  
  @param bools BOOL
  */
 - (void)cl_setTabBarTranslucentWithBOOL:(BOOL)bools;
+
+/**
+ 设置当前UIViewController的UINavigationBar是否可以右滑返回
+
+ @param enabled BOOL
+ */
+- (void)cl_setNavigationBarInteractivePopGestureRecognizerWithEnabled:(BOOL)enabled;
 
 #pragma mark - 呼叫手机
 /**

@@ -46,6 +46,13 @@
 + (NSString *)cl_getUUIDString;
 
 /**
+ 获取设备是否是X系列
+
+ @return BOOL
+ */
++ (BOOL)cl_isXDeviceModel;
+
+/**
  获取对应的设备名称
  
  @return NSString
@@ -53,11 +60,32 @@
 + (NSString *)cl_getCurrentDeviceModelName;
 
 /**
- 获取设备是否是iPad
+ 获取设备是否是iPhone UI
+
+ @return BOOL
+ */
++ (BOOL)cl_isPhone;
+
+/**
+ 获取设备是否是iPad UI
  
  @return BOOL
  */
 + (BOOL)cl_isPad;
+
+/**
+ 获取设备是否是Car Play UI
+ 
+ @return BOOL
+ */
++ (BOOL)cl_isCarPlay API_AVAILABLE(ios(9.0));
+
+/**
+ 获取设备是否是Apple TV UI
+ 
+ @return BOOL
+ */
++ (BOOL)cl_isTV API_AVAILABLE(ios(9.0));
 
 /**
  获取设备是否是模拟器

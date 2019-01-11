@@ -18,16 +18,24 @@
 @interface NSString (CLString)
 
 #pragma mark - 字符串计算
-
 /**
- 根据条件计算文字的高度
+ 计算字符串的行数
 
- @param fontSize CGFloat
+ @param font UIFont
  @param width CGFloat
  @return CGFloat
  */
-- (CGFloat)cl_heightWithFontSize:(CGFloat)fontSize
+- (CGFloat)cl_stringLineWithFont:(UIFont *)font
                            width:(CGFloat)width;
+/**
+ 根据条件计算文字的高度
+
+ @param font UIFont
+ @param width CGFloat
+ @return CGFloat
+ */
+- (CGFloat)cl_heightWithFont:(UIFont *)font
+                       width:(CGFloat)width;
 
 /**
  获取指定字符串的高度
@@ -161,6 +169,61 @@
  @return BOOL, YES为空, NO不为空
  */
 + (BOOL)cl_checkEmptyWithString:(NSString *)string;
+
+/**
+ 判断字符串是否为空
+
+ @return BOOL, YES为空, NO不为空
+ */
+- (BOOL)cl_checkStringEmpty;
+
+/**
+ 十六进制字符串转二进制字符串
+
+ @param hexadecimal NSString
+ @return NSString
+ */
++ (NSString *)cl_formatBinaryWithHexadecimal:(NSString *)hexadecimal;
+
+/**
+ 将十进制转换成二进制字符串
+ 
+ @param decimal NSInteger
+ @return NSString
+ */
++ (NSString *)cl_formatBinaryWithDecimal:(NSInteger)decimal;
+
+/**
+ 二进制字符串转十六进制字符串
+ 
+ @param binary NSString
+ @return NSString
+ */
++ (NSString *)cl_formatHexadecimalWithBinary:(NSString *)binary;
+
+/**
+ 将二进制字符串转十进制字符串
+
+ @param binary NSString
+ @return NSString
+ */
++ (NSString *)cl_formatDecimalWithBinary:(NSString *)binary;
+
+/**
+ 将NSData转换为十六进制字符串
+ 
+ @param data NSData
+ @return NSString
+ */
++ (NSString *)cl_formatHexadecimalWithData:(NSData *)data;
+
+/**
+ 将十进制转换成十六进制字符串
+
+ @param decimal NSInteger
+ @return NSString
+ */
++ (NSString *)cl_formatHexadecimalWithDecimal:(NSInteger)decimal;
 
 #pragma mark - 字符串格式化
 /**

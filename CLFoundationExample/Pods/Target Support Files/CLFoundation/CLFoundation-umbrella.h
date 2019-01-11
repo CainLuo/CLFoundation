@@ -11,6 +11,7 @@
 #endif
 
 #import "CLFoundation.h"
+#import "CLLocaleManager.h"
 #import "CLSpeechSynthesizer.h"
 #import "NSArray+CLArray.h"
 #import "NSAttributedString+CLAttributedString.h"

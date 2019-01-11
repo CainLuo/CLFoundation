@@ -22,15 +22,30 @@
     
     return [UIFont systemFontOfSize:[UIScreen cl_fitScreen:fontSize]];
 }
+    
++ (UIFont *)cl_fitPlusSystemFontOfSize:(CGFloat)fontSize {
+    
+    return [UIFont systemFontOfSize:[UIScreen cl_fitPlusScreen:fontSize]];
+}
 
 + (UIFont *)cl_fitBoldSystemFontOfSize:(CGFloat)fontSize {
     
     return [UIFont boldSystemFontOfSize:[UIScreen cl_fitScreen:fontSize]];
 }
 
++ (UIFont *)cl_fitPlusBoldSystemFontOfSize:(CGFloat)fontSize {
+    
+    return [UIFont boldSystemFontOfSize:[UIScreen cl_fitPlusScreen:fontSize]];
+}
+
 + (UIFont *)cl_fitItalicSystemFontOfSize:(CGFloat)fontSize {
     
     return [UIFont italicSystemFontOfSize:[UIScreen cl_fitScreen:fontSize]];
+}
+
++ (UIFont *)cl_fitPlusItalicSystemFontOfSize:(CGFloat)fontSize {
+    
+    return [UIFont italicSystemFontOfSize:[UIScreen cl_fitPlusScreen:fontSize]];
 }
 
 + (UIFont *)cl_fitSystemFontOfSize:(CGFloat)fontSize
@@ -40,11 +55,25 @@
                              weight:[UIScreen cl_fitScreen:weight]];
 }
 
++ (UIFont *)cl_fitPlusSystemFontOfSize:(CGFloat)fontSize
+                                weight:(UIFontWeight)weight NS_AVAILABLE_IOS(8_2) {
+    
+    return [UIFont systemFontOfSize:[UIScreen cl_fitPlusScreen:fontSize]
+                             weight:[UIScreen cl_fitPlusScreen:weight]];
+}
+
 + (UIFont *)cl_fitMonospacedDigitSystemFontOfSize:(CGFloat)fontSize
                                            weight:(UIFontWeight)weight NS_AVAILABLE_IOS(9_0) {
     
     return [UIFont monospacedDigitSystemFontOfSize:[UIScreen cl_fitScreen:fontSize]
                                             weight:[UIScreen cl_fitScreen:weight]];
+}
+
++ (UIFont *)cl_fitPlusMonospacedDigitSystemFontOfSize:(CGFloat)fontSize
+                                               weight:(UIFontWeight)weight NS_AVAILABLE_IOS(9_0) {
+    
+    return [UIFont monospacedDigitSystemFontOfSize:[UIScreen cl_fitPlusScreen:fontSize]
+                                            weight:[UIScreen cl_fitPlusScreen:weight]];
 }
 
 #pragma mark - 自定义字体
@@ -140,5 +169,13 @@
     return [UIFont fontWithName:name
                            size:[UIScreen cl_fitScreen:fontSize]];
 }
+    
++ (UIFont *)cl_fitPlusCustomFontWithName:(NSString *)name
+                                fontSize:(CGFloat)fontSize {
+    
+    return [UIFont fontWithName:name
+                           size:[UIScreen cl_fitPlusScreen:fontSize]];
+}
+
 
 @end

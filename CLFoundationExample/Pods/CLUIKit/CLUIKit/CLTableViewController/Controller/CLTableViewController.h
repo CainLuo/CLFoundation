@@ -111,5 +111,30 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)cl_removeRefresh;
 
+/**
+ 隐藏MJRefreshHeader的StateLabel与TimeLabel
+ */
+- (void)cl_hiddenRefreshStateOrLastTimeLabel;
+
+/**
+ 隐藏MJRefreshHeader与MJRefreshFooter的StateLabel
+ */
+- (void)cl_hiddenRefreshStateLabel;
+
+/**
+ 隐藏MJRefreshHeader的StateLabel
+ */
+- (void)cl_hiddenHeaderRefreshStateLabel;
+
+/**
+ 隐藏MJRefreshFooter的StateLabel
+ */
+- (void)cl_hiddenFooterRefreshStateLabel;
+
+/**
+ 隐藏MJRefreshHeader的LastTimeLabel
+ */
+- (void)cl_hiddenHeaderRefreshLastTimeLabel;
+
 @end
 NS_ASSUME_NONNULL_END

@@ -21,6 +21,14 @@ static void *AlertControllerKey = &AlertControllerKey;
 
 @implementation UIViewController (CLViewController)
 
+- (void)setCl_presentationViewHeight:(CGFloat)cl_presentationViewHeight {
+    objc_setAssociatedObject(self, @"height", @(cl_presentationViewHeight), OBJC_ASSOCIATION_ASSIGN);
+}
+
+- (CGFloat)cl_presentationViewHeight {
+    return [objc_getAssociatedObject(self, @"height") floatValue];
+}
+
 - (BOOL)cl_navigationShouldPopOnBackButton {
     
     return YES;
@@ -32,6 +40,13 @@ static void *AlertControllerKey = &AlertControllerKey;
 
 - (void)cl_setTabBarTranslucentWithBOOL:(BOOL)bools {
     self.tabBarController.tabBar.translucent = bools;
+}
+
+- (void)cl_setNavigationBarInteractivePopGestureRecognizerWithEnabled:(BOOL)enabled {
+    
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = enabled;
+    }
 }
 
 #pragma mark - AlertController
