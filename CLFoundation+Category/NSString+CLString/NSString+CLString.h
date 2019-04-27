@@ -418,6 +418,13 @@
 + (NSString *)cl_hmacEncodingSHA512StringWithString:(NSString *)string
                                                 key:(NSString *)key;
 
+#pragma mark - RSA加密
++ (NSString *)cl_rsaEncodingWithString:(NSString *)string
+                             publicKey:(NSString *)key;
+
++ (NSString *)cl_rsaEncodingWithString:(NSString *)string
+                             privateKey:(NSString *)key;
+
 #pragma mark - NSString获取首字母
 /**
  获取字符串的首个字符

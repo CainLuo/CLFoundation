@@ -860,6 +860,19 @@ static char cl_base64EncodingTable[64] = {
     return [[string dataUsingEncoding:NSUTF8StringEncoding] cl_hmacEncryptredSHA512StringWithKey:key];
 }
 
+#pragma mark - RSA加密
++ (NSString *)cl_rsaEncodingWithString:(NSString *)string
+                             publicKey:(NSString *)key {
+
+    return @"";
+}
+
++ (NSString *)cl_rsaEncodingWithString:(NSString *)string
+                            privateKey:(NSString *)key {
+    
+    return @"";
+}
+
 #pragma mark - 获取字符串首字母
 + (NSString *)cl_transformPinYinWithString:(NSString *)string {
     

@@ -10,10 +10,17 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, CLEncodedType) {
-    
     CLEncodedType64 = 64,
     CLEncodedType76 = 76
 };
+
+typedef NS_ENUM(NSInteger, CLRSAKeyType) {
+    CLRSAKeyTypePublic = 0,
+    CLRSAKeyTypePrivate
+};
+
+extern NSString *const CLPublicTag;
+extern NSString *const CLPrivateTag;
 
 @interface NSData (CLData)
 
@@ -345,6 +352,55 @@ typedef NS_ENUM(NSInteger, CLEncodedType) {
  @return NSData
  */
 - (NSData *)cl_hmacEncryptredSHA512DataWithKey:(NSData *)key;
+
+#pragma mark - RSA加密
+/**
+ 使用RSA Public Key或者RSA Private Key加密
+
+ @param conent NSString
+ @param rsaKey NSString
+ @param keyType CLRSAKeyType, Option CLRSAKeyTypePrivate&CLRSAKeyTypePublic
+ @return NSString
+ */
++ (NSString *)cl_encryptString:(NSString *)conent
+                        rsaKey:(NSString *)rsaKey
+                       keyType:(CLRSAKeyType)keyType;
+
+/**
+ 使用RSA Public Key或者RSA Private Key加密
+ 
+ @param data NSData
+ @param rsaKey NSString
+ @param keyType CLRSAKeyType, Option CLRSAKeyTypePrivate&CLRSAKeyTypePublic
+ @return NSData
+ */
++ (NSData *)cl_encryptData:(NSData *)data
+                    rsaKey:(NSString *)rsaKey
+                   keyType:(CLRSAKeyType)keyType;
+
+/**
+ 使用RSA Public Key或者RSA Private Key解密
+ 
+ @param conent NSString
+ @param rsaKey NSString
+ @param keyType CLRSAKeyType, Option CLRSAKeyTypePrivate&CLRSAKeyTypePublic
+ @return NSString
+ */
++ (NSString *)cl_decryptString:(NSString *)conent
+                        rsaKey:(NSString *)rsaKey
+                       keyType:(CLRSAKeyType)keyType;
+
+/**
+ 使用RSA Public Key或者RSA Private Key解密
+ 
+ @param data NSData
+ @param rsaKey NSString
+ @param keyType CLRSAKeyType, Option CLRSAKeyTypePrivate&CLRSAKeyTypePublic
+ @return NSData
+ */
++ (NSData *)cl_decryptData:(NSData *)data
+                    rsaKey:(NSString *)rsaKey
+                   keyType:(CLRSAKeyType)keyType;
 
 /**
  解析JSON数据
